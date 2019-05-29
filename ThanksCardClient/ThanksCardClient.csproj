@@ -58,6 +58,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\Department.cs" />
+    <Compile Include="Models\Tag.cs" />
     <Compile Include="Services\IRestService.cs" />
     <Compile Include="Services\RestService.cs" />
     <Compile Include="Services\SessionService.cs" />
@@ -66,10 +67,13 @@
     <Compile Include="ViewModels\ThanksCardCreateViewModel.cs" />
     <Compile Include="ViewModels\ThanksCardListViewModel.cs" />
     <Compile Include="ViewModels\DepartmentCreateViewModel.cs" />
+    <Compile Include="ViewModels\TagCreateViewModel.cs" />
     <Compile Include="ViewModels\UserCreateViewModel.cs" />
     <Compile Include="ViewModels\DepartmentEditViewModel.cs" />
+    <Compile Include="ViewModels\TagEditViewModel.cs" />
     <Compile Include="ViewModels\UserEditViewModel.cs" />
     <Compile Include="ViewModels\DepartmentMstViewModel.cs" />
+    <Compile Include="ViewModels\TagMstViewModel.cs" />
     <Compile Include="ViewModels\UserMstViewModel.cs" />
     <Compile Include="Views\Logon.xaml.cs">
       <DependentUpon>Logon.xaml</DependentUpon>
@@ -86,17 +90,26 @@
     <Compile Include="Views\DepartmentCreate.xaml.cs">
       <DependentUpon>DepartmentCreate.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\TagCreate.xaml.cs">
+      <DependentUpon>TagCreate.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\UserCreate.xaml.cs">
       <DependentUpon>UserCreate.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\DepartmentEdit.xaml.cs">
       <DependentUpon>DepartmentEdit.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\TagEdit.xaml.cs">
+      <DependentUpon>TagEdit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\UserEdit.xaml.cs">
       <DependentUpon>UserEdit.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\DepartmentMst.xaml.cs">
       <DependentUpon>DepartmentMst.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TagMst.xaml.cs">
+      <DependentUpon>TagMst.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UserMst.xaml.cs">
       <DependentUpon>UserMst.xaml</DependentUpon>
@@ -160,6 +173,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\TagCreate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\UserCreate.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -168,11 +185,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\TagEdit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\UserEdit.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\DepartmentMst.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TagMst.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
