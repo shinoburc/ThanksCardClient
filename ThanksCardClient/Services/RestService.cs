@@ -21,6 +21,7 @@ namespace ThanksCardClient.Services
             this.Client = new HttpClient();
             this.BaseUrl = "http://localhost:5000";
         }
+
         public async Task<User> LogonAsync(User user)
         {
             var jObject = JsonConvert.SerializeObject(user);
@@ -273,6 +274,97 @@ namespace ThanksCardClient.Services
             }
             return responseThanksCard;
         }
+
+        public async Task<List<Tag>> GetTagsAsync()
+        {
+            List<Tag> responseTags = null;
+            try
+            {
+                var response = await Client.GetAsync(this.BaseUrl + "/api/Tags");
+                if (response.IsSuccessStatusCode)
+                {
+                    var responseContent = await response.Content.ReadAsStringAsync();
+                    responseTags = JsonConvert.DeserializeObject<List<Tag>>(responseContent);
+                }
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine("Exception in RestService.GetTagsAsync: " + e);
+            }
+            return responseTags;
+        }
+
+        public async Task<Tag> PostTagAsync(Tag tag)
+        {
+            var jObject = JsonConvert.SerializeObject(tag);
+
+            //Make Json object into content type
+            var content = new StringContent(jObject);
+            //Adding header of the contenttype
+            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+            Tag responseTag = null;
+            try
+            {
+                var response = await Client.PostAsync(this.BaseUrl + "/api/Tags", content);
+                if (response.IsSuccessStatusCode)
+                {
+                    var responseContent = await response.Content.ReadAsStringAsync();
+                    responseTag = JsonConvert.DeserializeObject<Tag>(responseContent);
+                }
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine("Exception in RestService.PostTagAsync: " + e);
+            }
+            return responseTag;
+        }
+
+        public async Task<Tag> PutTagAsync(Tag tag)
+        {
+            var jObject = JsonConvert.SerializeObject(tag);
+
+            //Make Json object into content type
+            var content = new StringContent(jObject);
+            //Adding header of the contenttype
+            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+            Tag responseTag = null;
+            try
+            {
+                var response = await Client.PutAsync(this.BaseUrl + "/api/Tags/" + tag.Id, content);
+                if (response.IsSuccessStatusCode)
+                {
+                    var responseContent = await response.Content.ReadAsStringAsync();
+                    responseTag = JsonConvert.DeserializeObject<Tag>(responseContent);
+                }
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine("Exception in RestService.PutTagAsync: " + e);
+            }
+            return responseTag;
+        }
+
+        public async Task<Tag> DeleteTagAsync(long Id)
+        {
+            Tag responseTag = null;
+            try
+            {
+                var response = await Client.DeleteAsync(this.BaseUrl + "/api/Tags/" + Id);
+                if (response.IsSuccessStatusCode)
+                {
+                    var responseContent = await response.Content.ReadAsStringAsync();
+                    responseTag = JsonConvert.DeserializeObject<Tag>(responseContent);
+                }
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine("Exception in RestService.DeleteTagAsync: " + e);
+            }
+            return responseTag;
+        }
+
 
     }
 }
