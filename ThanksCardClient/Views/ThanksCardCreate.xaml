@@ -43,10 +43,32 @@
             <TextBox Text="{Binding ThanksCard.Title}"/>
             <TextBlock Text="感謝の言葉:"/>
             <TextBox Text="{Binding ThanksCard.Body}"/>
-            <TextBlock Text="From:"/>
-            <ComboBox ItemsSource="{Binding Users}" DisplayMemberPath="Name" SelectedValue="{Binding ThanksCard.FromId}" SelectedValuePath="Id"/>
-            <TextBlock Text="To:"/>
-            <ComboBox ItemsSource="{Binding Users}" DisplayMemberPath="Name" SelectedValue="{Binding ThanksCard.ToId}" SelectedValuePath="Id"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="部署:"/>
+                <ComboBox x:Name="FromDepartments" ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValuePath="Id">
+                    <!-- Deparment が選択されたら DepartmentsChangedCommand を発行する -->
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <i:InvokeCommandAction Command="{Binding FromDepartmentsChangedCommand}" CommandParameter="{Binding ElementName=FromDepartments, Path=SelectedValue}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </ComboBox>
+                <TextBlock Text="From:"/>
+                <ComboBox ItemsSource="{Binding FromUsers}" DisplayMemberPath="Name" SelectedValue="{Binding ThanksCard.FromId}" SelectedValuePath="Id"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="部署:"/>
+                <ComboBox x:Name="ToDepartments" ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValuePath="Id">
+                    <!-- Deparment が選択されたら DepartmentsChangedCommand を発行する -->
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <i:InvokeCommandAction Command="{Binding ToDepartmentsChangedCommand}" CommandParameter="{Binding ElementName=ToDepartments, Path=SelectedValue}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </ComboBox>
+                <TextBlock Text="To:"/>
+                <ComboBox ItemsSource="{Binding ToUsers}" DisplayMemberPath="Name" SelectedValue="{Binding ThanksCard.ToId}" SelectedValuePath="Id"/>
+            </StackPanel>
             <TextBlock Text="作成日:"/>
             <DatePicker SelectedDate="{Binding ThanksCard.CreatedDateTime}"/>
             <ListBox ItemsSource="{Binding Tags}" IsSynchronizedWithCurrentItem="True" SelectionMode="Multiple" DisplayMemberPath="Name">

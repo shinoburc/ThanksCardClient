@@ -37,18 +37,35 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
-        #region UsersProperty
-        private List<User> _Users;
+        #region FromUsersProperty
+        private List<User> _FromUsers;
 
-        public List<User> Users
+        public List<User> FromUsers
         {
             get
-            { return _Users; }
+            { return _FromUsers; }
             set
             {
-                if (_Users == value)
+                if (_FromUsers == value)
                     return;
-                _Users = value;
+                _FromUsers = value;
+                RaisePropertyChanged();
+            }
+        }
+        #endregion
+
+        #region ToUsersProperty
+        private List<User> _ToUsers;
+
+        public List<User> ToUsers
+        {
+            get
+            { return _ToUsers; }
+            set
+            {
+                if (_ToUsers == value)
+                    return;
+                _ToUsers = value;
                 RaisePropertyChanged();
             }
         }
@@ -71,15 +88,35 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
+        #region DepartmentsProperty
+        private List<Department> _Departments;
+
+        public List<Department> Departments
+        {
+            get
+            { return _Departments; }
+            set
+            { 
+                if (_Departments == value)
+                    return;
+                _Departments = value;
+                RaisePropertyChanged();
+            }
+        }
+        #endregion
+
         public async void Initialize()
         {
             this.ThanksCard = new ThanksCard();
             if (SessionService.Instance.AuthorizedUser != null)
             {
-                this.Users = await SessionService.Instance.AuthorizedUser.GetUsersAsync();
+                this.FromUsers = await SessionService.Instance.AuthorizedUser.GetDepartmentUsersAsync(null);
+                this.ToUsers = this.FromUsers;
             }
             var tag = new Tag();
             this.Tags = await tag.GetTagsAsync();
+            var dept = new Department();
+            this.Departments = await dept.GetDepartmentsAsync();
         }
 
         #region SubmitCommand
@@ -115,6 +152,50 @@ namespace ThanksCardClient.ViewModels
 
             //TODO: Error handling
             Messenger.Raise(new WindowActionMessage(WindowAction.Close, "Created"));
+        }
+        #endregion
+
+        #region FromDepartmentsChangedCommand
+        private ListenerCommand<long> _FromDepartmentsChangedCommand;
+
+        public ListenerCommand<long> FromDepartmentsChangedCommand
+        {
+            get
+            {
+                if (_FromDepartmentsChangedCommand == null)
+                {
+                    _FromDepartmentsChangedCommand = new ListenerCommand<long>(FromDepartmentsChanged);
+                }
+                return _FromDepartmentsChangedCommand;
+            }
+        }
+
+        public async void FromDepartmentsChanged(long DepartmentId)
+        {
+            System.Diagnostics.Debug.WriteLine(DepartmentId);
+            this.FromUsers = await SessionService.Instance.AuthorizedUser.GetDepartmentUsersAsync(DepartmentId);
+        }
+        #endregion
+
+        #region ToDepartmentsChangedCommand
+        private ListenerCommand<long> _ToDepartmentsChangedCommand;
+
+        public ListenerCommand<long> ToDepartmentsChangedCommand
+        {
+            get
+            {
+                if (_ToDepartmentsChangedCommand == null)
+                {
+                    _ToDepartmentsChangedCommand = new ListenerCommand<long>(ToDepartmentsChanged);
+                }
+                return _ToDepartmentsChangedCommand;
+            }
+        }
+
+        public async void ToDepartmentsChanged(long DepartmentId)
+        {
+            System.Diagnostics.Debug.WriteLine(DepartmentId);
+            this.ToUsers = await SessionService.Instance.AuthorizedUser.GetDepartmentUsersAsync(DepartmentId);
         }
         #endregion
     }
