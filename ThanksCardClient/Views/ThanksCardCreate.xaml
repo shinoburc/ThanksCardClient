@@ -46,7 +46,7 @@
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="部署:"/>
                 <ComboBox x:Name="FromDepartments" ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValuePath="Id">
-                    <!-- Deparment が選択されたら DepartmentsChangedCommand を発行する -->
+                    <!-- Deparment が選択されたら FromDepartmentsChangedCommand を発行する -->
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="SelectionChanged">
                             <i:InvokeCommandAction Command="{Binding FromDepartmentsChangedCommand}" CommandParameter="{Binding ElementName=FromDepartments, Path=SelectedValue}"/>
@@ -59,7 +59,7 @@
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="部署:"/>
                 <ComboBox x:Name="ToDepartments" ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValuePath="Id">
-                    <!-- Deparment が選択されたら DepartmentsChangedCommand を発行する -->
+                    <!-- Deparment が選択されたら ToDepartmentsChangedCommand を発行する -->
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="SelectionChanged">
                             <i:InvokeCommandAction Command="{Binding ToDepartmentsChangedCommand}" CommandParameter="{Binding ElementName=ToDepartments, Path=SelectedValue}"/>
