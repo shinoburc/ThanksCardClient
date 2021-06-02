@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="ThanksCardClient.Views.送信確認"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ThanksCardClient.Views"
+             mc:Ignorable="d" Width="481.219" Height="181.839">
+    <Grid>
+        <StackPanel Margin="0,0,10,0">
+            <TextBlock Text=""/>
+            <TextBlock Text="送信確認" FontFamily="Alef" FontWeight="Bold" FontSize="14"/>
+            <TextBlock><Run Background="#FFEF6018" Text="カードの内容を確認し、間違いなければ送信ボタンを押してください"/></TextBlock>
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="59.999" Margin="45,33.333,0,0" Stroke="Black" VerticalAlignment="Top" Width="387.333"/>
+
+            <StackPanel Orientation="Horizontal" Margin="380,0,29.553,0">
+                <Button Content="送信"/>
+                <Button Content="戻る"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

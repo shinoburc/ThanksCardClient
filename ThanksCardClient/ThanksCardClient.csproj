@@ -118,6 +118,30 @@
     <Compile Include="Views\UserMst.xaml.cs">
       <DependentUpon>UserMst.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\個人間連携.xaml.cs">
+      <DependentUpon>個人間連携.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\全体掲示.xaml.cs">
+      <DependentUpon>全体掲示.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\全体掲示詳細.xaml.cs">
+      <DependentUpon>全体掲示詳細.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\全体掲示（人事）.xaml.cs">
+      <DependentUpon>全体掲示（人事）.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\受信詳細.xaml.cs">
+      <DependentUpon>受信詳細.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Process.xaml.cs">
+      <DependentUpon>Process.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\送信確認.xaml.cs">
+      <DependentUpon>送信確認.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\部署間関連解析.xaml.cs">
+      <DependentUpon>部署間関連解析.xaml</DependentUpon>
+    </Compile>
     <Page Include="Views\DepartmentCreate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -131,8 +155,8 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Footer.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Header.xaml">
       <SubType>Designer</SubType>
@@ -188,6 +212,38 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\UserMst.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\個人間連携.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\全体掲示.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\全体掲示詳細.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\全体掲示（人事）.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\受信詳細.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Process.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\送信確認.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\部署間関連解析.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
