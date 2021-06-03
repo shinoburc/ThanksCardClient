@@ -79,6 +79,18 @@
     <Compile Include="ViewModels\UserCreateViewModel.cs" />
     <Compile Include="ViewModels\UserEditViewModel.cs" />
     <Compile Include="ViewModels\UserMstViewModel.cs" />
+    <Compile Include="Views\Board.xaml.cs">
+      <DependentUpon>Board.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BoardS.xaml.cs">
+      <DependentUpon>BoardS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Cardcreate.xaml.cs">
+      <DependentUpon>Cardcreate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Category.xaml.cs">
+      <DependentUpon>Category.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\DepartmentCreate.xaml.cs">
       <DependentUpon>DepartmentCreate.xaml</DependentUpon>
     </Compile>
@@ -88,11 +100,32 @@
     <Compile Include="Views\DepartmentMst.xaml.cs">
       <DependentUpon>DepartmentMst.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Document.xaml.cs">
+      <DependentUpon>Document.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Footer.xaml.cs">
       <DependentUpon>Footer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\From.xaml.cs">
+      <DependentUpon>From.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Graph.xaml.cs">
+      <DependentUpon>Graph.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Header.xaml.cs">
       <DependentUpon>Header.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Memory.xaml.cs">
+      <DependentUpon>Memory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MemoryS.xaml.cs">
+      <DependentUpon>MemoryS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Password.xaml.cs">
+      <DependentUpon>Password.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TagCreate.xaml.cs">
       <DependentUpon>TagCreate.xaml</DependentUpon>
@@ -109,6 +142,15 @@
     <Compile Include="Views\ThanksCardList.xaml.cs">
       <DependentUpon>ThanksCardList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\To.xaml.cs">
+      <DependentUpon>To.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ToS.xaml.cs">
+      <DependentUpon>ToS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UpDate.xaml.cs">
+      <DependentUpon>UpDate.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\UserCreate.xaml.cs">
       <DependentUpon>UserCreate.xaml</DependentUpon>
     </Compile>
@@ -118,6 +160,22 @@
     <Compile Include="Views\UserMst.xaml.cs">
       <DependentUpon>UserMst.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\Board.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BoardS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Cardcreate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Category.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\DepartmentCreate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -130,11 +188,31 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Document.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Footer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\From.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FromS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Graph.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Header.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Home.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -159,6 +237,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\Memory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MemoryS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Password.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\TagCreate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -176,6 +266,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ThanksCardList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\To.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ToS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UpDate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

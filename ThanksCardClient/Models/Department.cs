@@ -8,6 +8,7 @@ using ThanksCardClient.Services;
 
 namespace ThanksCardClient.Models
 {
+    // depertment model class
     public class Department : BindableBase
     {
         #region IdProperty
