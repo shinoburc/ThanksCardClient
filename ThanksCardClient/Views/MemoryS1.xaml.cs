@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace ThanksCardClient.Views
 {
     /// <summary>
-    /// UpDate.xaml の相互作用ロジック
+    /// MemoryS1.xaml の相互作用ロジック
     /// </summary>
-    public partial class UpDate : Page
+    public partial class MemoryS1 : UserControl
     {
-        public UpDate()
+        public MemoryS1()
         {
             InitializeComponent();
         }

@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace ThanksCardClient.Views
 {
     /// <summary>
-    /// Graph.xaml の相互作用ロジック
+    /// Home2.xaml の相互作用ロジック
     /// </summary>
-    public partial class Graph : Page
+    public partial class Home2 : UserControl
     {
-        public Graph()
+        public Home2()
         {
             InitializeComponent();
         }

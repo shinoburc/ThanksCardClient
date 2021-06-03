@@ -18,7 +18,7 @@ namespace ThanksCardClient.Views
     /// <summary>
     /// Board.xaml の相互作用ロジック
     /// </summary>
-    public partial class Board : Page
+    public partial class Board : UserControl
     {
         public Board()
         {
