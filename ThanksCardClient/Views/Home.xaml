@@ -9,7 +9,7 @@
       Title="Home" Background="#FF78FF8C">
 
     <Grid Margin="0,0,671.503,373.057">
-        <Button Content="ログオフ" Command="{Binding LogoffCommand}" FontSize="20" Background="#FFDDDDDD" BorderBrush="Black"/>
+        <Button Content="ログアウト" Command="{Binding LogoffCommand}" FontSize="20" Background="#FFDDDDDD" BorderBrush="Black"/>
         <Button Content="感謝カードを作成する" Command="{Binding ShowThanksCardCreateCommand}" Margin="0,135.554,-48.503,-139.193" FontSize="20" Background="#FFDDDDDD" BorderBrush="Black"/>
         <Button Content="掲示板" Command="{Binding ShowThanksCardCreateCommand}" Margin="182,135.554,-232.503,-139.193" FontSize="20" Background="#FFDDDDDD" BorderBrush="Black"/>
         <Button Content="受信BOX" Command="{Binding ShowThanksCardCreateCommand}" Margin="366,135.554,-406.606,-139.193" FontSize="20" Background="#FFDDDDDD" BorderBrush="Black"/>
