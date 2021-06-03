@@ -2,15 +2,15 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:prism="http://prismlibrary.com/"             
-             prism:ViewModelLocator.AutoWireViewModel="True">
+             prism:ViewModelLocator.AutoWireViewModel="True" Width="464.76" Height="179.76">
     <Grid>
-        <StackPanel>
-            <TextBlock Text="{Binding ErrorMessage}" Foreground="Red"/>
-            <TextBlock Text="Name:"/>
-            <TextBox Text="{Binding User.Name}"/>
-            <TextBlock Text="Password:"/>
-            <TextBox Text="{Binding User.Password}"/>
-            <Button Content="Logon" Command="{Binding LogonCommand}"/>
-        </StackPanel>
+
+        <TextBox Height="22.294" Margin="145.667,36.733,158.093,120.732" TextWrapping="Wrap"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="社員ID" VerticalAlignment="Top" Margin="103.06,36.734,0,0" Height="22.293" Width="37.607"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Margin="145.667,72.695,0,0"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="パスワード" VerticalAlignment="Top" Margin="92.747,72.695,0,0" Height="23" Width="47.92"/>
+        <Button Content="Login" HorizontalAlignment="Left" Height="19.667" Margin="348,56.225,0,0" VerticalAlignment="Top" Width="57.999"/>
+        <Button Content="Sign up" HorizontalAlignment="Left" VerticalAlignment="Top" Width="57.999" Margin="348,90,0,0"/>
+        <Button Content="Request" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="348,132.666,0,0"/>
     </Grid>
 </UserControl>
