@@ -64,5 +64,16 @@ namespace ThanksCardClient.ViewModels
             this.regionManager.Regions["FooterRegion"].RemoveAll();
         }
         #endregion
+
+        #region ShowOverallCardListCommand
+        private DelegateCommand _ShowOverallCardListCommand;
+        public DelegateCommand ShowOverallCardListCommand =>
+            _ShowOverallCardListCommand ?? (_logoffCommand = new DelegateCommand(ExecuteShowOverallCardListCommand));
+
+        void ExecuteShowOverallCardListCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.OverallCardList));
+        }
+        #endregion
     }
 }

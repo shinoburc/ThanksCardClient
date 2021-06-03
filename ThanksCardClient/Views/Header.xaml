@@ -9,7 +9,7 @@
             <StackPanel Orientation="Horizontal">
                 <Button Content="戻る"/>
                 <Button Content="受信BOX" Command="{Binding ShowThanksCardListCommand}"/>
-                <Button Content="全体掲示" />
+                <Button Content="全体掲示" Command="{Binding ShowOverallCardListCommand}"/> 
                 <Button Content="カード作成" Command="{Binding ShowThanksCardCreateCommand}"/>
                 <Button Content="マニュアル"/>
                 <Button Content="ログアウト" Command="{Binding LogoffCommand}"/>

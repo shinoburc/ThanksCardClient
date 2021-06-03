@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace ThanksCardClient.Views
 {
     /// <summary>
-    /// 全体掲示詳細.xaml の相互作用ロジック
+    /// 全体掲示.xaml の相互作用ロジック
     /// </summary>
-    public partial class 全体掲示詳細 : UserControl
+    public partial class OverallCardList : UserControl
     {
-        public 全体掲示詳細()
+        public OverallCardList()
         {
             InitializeComponent();
         }

@@ -71,6 +71,7 @@
     <Compile Include="ViewModels\DepartmentMstViewModel.cs" />
     <Compile Include="ViewModels\FooterViewModel.cs" />
     <Compile Include="ViewModels\HeaderViewModel.cs" />
+    <Compile Include="ViewModels\ProcessViewModel.cs" />
     <Compile Include="ViewModels\TagCreateViewModel.cs" />
     <Compile Include="ViewModels\TagEditViewModel.cs" />
     <Compile Include="ViewModels\TagMstViewModel.cs" />
@@ -118,29 +119,29 @@
     <Compile Include="Views\UserMst.xaml.cs">
       <DependentUpon>UserMst.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\個人間連携.xaml.cs">
-      <DependentUpon>個人間連携.xaml</DependentUpon>
+    <Compile Include="Views\UserLink.xaml.cs">
+      <DependentUpon>UserLink.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\全体掲示.xaml.cs">
-      <DependentUpon>全体掲示.xaml</DependentUpon>
+    <Compile Include="Views\OverallCardList.xaml.cs">
+      <DependentUpon>OverallCardList.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\全体掲示詳細.xaml.cs">
-      <DependentUpon>全体掲示詳細.xaml</DependentUpon>
+    <Compile Include="Views\OverallCardListDetail.xaml.cs">
+      <DependentUpon>OverallCardListDetail.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\全体掲示（人事）.xaml.cs">
-      <DependentUpon>全体掲示（人事）.xaml</DependentUpon>
+    <Compile Include="Views\CardDelete.xaml.cs">
+      <DependentUpon>CardDelete.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\受信詳細.xaml.cs">
-      <DependentUpon>受信詳細.xaml</DependentUpon>
+    <Compile Include="Views\Detail.xaml.cs">
+      <DependentUpon>Detail.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Process.xaml.cs">
       <DependentUpon>Process.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\送信確認.xaml.cs">
-      <DependentUpon>送信確認.xaml</DependentUpon>
+    <Compile Include="Views\SendConfirm.xaml.cs">
+      <DependentUpon>SendConfirm.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\部署間関連解析.xaml.cs">
-      <DependentUpon>部署間関連解析.xaml</DependentUpon>
+    <Compile Include="Views\DepartmentLink.xaml.cs">
+      <DependentUpon>DepartmentLink.xaml</DependentUpon>
     </Compile>
     <Page Include="Views\DepartmentCreate.xaml">
       <SubType>Designer</SubType>
@@ -215,23 +216,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\個人間連携.xaml">
+    <Page Include="Views\UserLink.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\全体掲示.xaml">
+    <Page Include="Views\OverallCardList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\全体掲示詳細.xaml">
+    <Page Include="Views\OverallCardListDetail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\全体掲示（人事）.xaml">
+    <Page Include="Views\CardDelete.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\受信詳細.xaml">
+    <Page Include="Views\Detail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -239,11 +240,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\送信確認.xaml">
+    <Page Include="Views\SendConfirm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\部署間関連解析.xaml">
+    <Page Include="Views\DepartmentLink.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

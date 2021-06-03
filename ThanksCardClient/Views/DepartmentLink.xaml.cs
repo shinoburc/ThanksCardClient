@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace ThanksCardClient.Views
 {
     /// <summary>
-    /// 受信詳細.xaml の相互作用ロジック
+    /// 部署間関連解析.xaml の相互作用ロジック
     /// </summary>
-    public partial class 受信詳細 : UserControl
+    public partial class DepartmentLink : UserControl
     {
-        public 受信詳細()
+        public DepartmentLink()
         {
             InitializeComponent();
         }

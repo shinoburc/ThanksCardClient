@@ -18,9 +18,9 @@ namespace ThanksCardClient.Views
     /// <summary>
     /// 個人間連携.xaml の相互作用ロジック
     /// </summary>
-    public partial class 個人間連携 : UserControl
+    public partial class UserLink : UserControl
     {
-        public 個人間連携()
+        public UserLink()
         {
             InitializeComponent();
         }

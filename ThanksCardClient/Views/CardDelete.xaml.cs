@@ -18,9 +18,9 @@ namespace ThanksCardClient.Views
     /// <summary>
     /// 全体掲示_人事_.xaml の相互作用ロジック
     /// </summary>
-    public partial class 全体掲示_人事_ : UserControl
+    public partial class CardDelete : UserControl
     {
-        public 全体掲示_人事_()
+        public CardDelete()
         {
             InitializeComponent();
         }

@@ -1,30 +1,37 @@
-﻿<UserControl x:Class="ThanksCardClient.Views.全体掲示"
+﻿<UserControl x:Class="ThanksCardClient.Views.Detail"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ThanksCardClient.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="287.333" d:DesignWidth="434.667">
+             d:DesignHeight="294.28" d:DesignWidth="544.733">
     <Grid>
         <StackPanel>
-            <TextBlock Text="代表的な事例"></TextBlock>
-            <DataGrid >
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="タイトル"/>
-                    <DataGridTextColumn Header="To"/>
-                </DataGrid.Columns>
-            </DataGrid>
-
-            <TextBlock Text="全体掲示"></TextBlock>
+            <TextBlock Text=""></TextBlock>
             <DataGrid >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="タイトル" />
-                    <DataGridTextColumn Header="From"/>
-                    <DataGridTextColumn Header="To"/>
-                    <DataGridTextColumn Header="作成日時" />
                 </DataGrid.Columns>
             </DataGrid>
+
+            <TextBlock Text=""></TextBlock>
+            <DataGrid >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="From" />
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <TextBlock Text=""></TextBlock>
+            <DataGrid >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="内容" />
+                </DataGrid.Columns>
+            </DataGrid>
+            <TextBlock Text=""/>
+            <TextBox Height="69.855"></TextBox>
+
+            <Button Content="送信" Margin="490,0,0,0"></Button>
         </StackPanel>
     </Grid>
 </UserControl>

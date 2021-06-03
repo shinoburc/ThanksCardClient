@@ -32,6 +32,12 @@ namespace ThanksCardClient
             containerRegistry.RegisterForNavigation<TagMst>();
             containerRegistry.RegisterForNavigation<TagCreate>();
             containerRegistry.RegisterForNavigation<TagEdit>();
+            containerRegistry.RegisterForNavigation<Process>();
+            containerRegistry.RegisterForNavigation<DepartmentLink>();
+            containerRegistry.RegisterForNavigation<UserLink>();
+            containerRegistry.RegisterForNavigation<CardDelete>();
+            containerRegistry.RegisterForNavigation<OverallCardList>(); 
+            containerRegistry.RegisterForNavigation<OverallCardListDetail>();
         }
     }
 }
