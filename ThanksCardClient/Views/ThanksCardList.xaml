@@ -6,7 +6,7 @@
     <Grid>
         <StackPanel>
             <TextBlock Text="感謝カード一覧"/>
-            <DataGrid ItemsSource="{Binding ThanksCards}" AutoGenerateColumns="False" CanUserAddRows="False">
+            <DataGrid ItemsSource="{Binding UThanksCards}" AutoGenerateColumns="False" CanUserAddRows="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
                     <DataGridTextColumn Header="タイトル" Binding="{Binding Title}" />

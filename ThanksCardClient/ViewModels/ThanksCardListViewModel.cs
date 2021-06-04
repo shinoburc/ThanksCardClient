@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using ThanksCardClient.Models;
+using ThanksCardClient.Services;
 
 namespace ThanksCardClient.ViewModels
 {
@@ -12,12 +13,23 @@ namespace ThanksCardClient.ViewModels
     {
         private IRegionManager regionManager;
 
+        IRestService service = new RestService();
+
         #region ThanksCardsProperty
         private List<ThanksCard> _ThanksCards;
         public List<ThanksCard> ThanksCards
         {
             get { return _ThanksCards; }
             set { SetProperty(ref _ThanksCards, value); }
+        }
+        #endregion
+
+        #region ThanksCardsLoginUserProperty
+        private List<ThanksCard> _UThanksCards;
+        public List<ThanksCard> UThanksCards
+        {
+            get { return _UThanksCards; }
+            set { SetProperty(ref _UThanksCards, value); }
         }
         #endregion
 
@@ -31,6 +43,9 @@ namespace ThanksCardClient.ViewModels
         {
             ThanksCard thanksCard = new ThanksCard();
             this.ThanksCards = await thanksCard.GetThanksCardsAsync();
+            this.UThanksCards = await service.GetThanksCardsAsync();
+            User AuthorizedUser = SessionService.Instance.AuthorizedUser;
+            UThanksCards = UThanksCards.Where(x => x.ToId == AuthorizedUser.Id).ToList();
 
         }
 
