@@ -66,12 +66,17 @@
     <Compile Include="Services\IRestService.cs" />
     <Compile Include="Services\RestService.cs" />
     <Compile Include="Services\SessionService.cs" />
+    <Compile Include="ViewModels\CardDeleteViewModel.cs" />
     <Compile Include="ViewModels\DepartmentCreateViewModel.cs" />
     <Compile Include="ViewModels\DepartmentEditViewModel.cs" />
+    <Compile Include="ViewModels\DepartmentLinkViewModel.cs" />
     <Compile Include="ViewModels\DepartmentMstViewModel.cs" />
+    <Compile Include="ViewModels\DetailViewModel.cs" />
     <Compile Include="ViewModels\FooterViewModel.cs" />
     <Compile Include="ViewModels\HeaderViewModel.cs" />
+    <Compile Include="ViewModels\OverallCardListViewModel.cs" />
     <Compile Include="ViewModels\ProcessViewModel.cs" />
+    <Compile Include="ViewModels\SendConfirmViewModel.cs" />
     <Compile Include="ViewModels\TagCreateViewModel.cs" />
     <Compile Include="ViewModels\TagEditViewModel.cs" />
     <Compile Include="ViewModels\TagMstViewModel.cs" />
@@ -80,20 +85,38 @@
     <Compile Include="ViewModels\UserCreateViewModel.cs" />
     <Compile Include="ViewModels\UserEditViewModel.cs" />
     <Compile Include="ViewModels\UserMstViewModel.cs" />
+    <Compile Include="Views\CardDelete.xaml.cs">
+      <DependentUpon>CardDelete.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\DepartmentCreate.xaml.cs">
       <DependentUpon>DepartmentCreate.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\DepartmentEdit.xaml.cs">
       <DependentUpon>DepartmentEdit.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\DepartmentLink.xaml.cs">
+      <DependentUpon>DepartmentLink.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\DepartmentMst.xaml.cs">
       <DependentUpon>DepartmentMst.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Detail.xaml.cs">
+      <DependentUpon>Detail.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Footer.xaml.cs">
       <DependentUpon>Footer.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Header.xaml.cs">
       <DependentUpon>Header.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OverallCardList.xaml.cs">
+      <DependentUpon>OverallCardList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Process.xaml.cs">
+      <DependentUpon>Process.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SendConfirm.xaml.cs">
+      <DependentUpon>SendConfirm.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TagCreate.xaml.cs">
       <DependentUpon>TagCreate.xaml</DependentUpon>
@@ -122,27 +145,13 @@
     <Compile Include="Views\UserLink.xaml.cs">
       <DependentUpon>UserLink.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\OverallCardList.xaml.cs">
-      <DependentUpon>OverallCardList.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\OverallCardListDetail.xaml.cs">
       <DependentUpon>OverallCardListDetail.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\CardDelete.xaml.cs">
-      <DependentUpon>CardDelete.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Detail.xaml.cs">
-      <DependentUpon>Detail.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Process.xaml.cs">
-      <DependentUpon>Process.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\SendConfirm.xaml.cs">
-      <DependentUpon>SendConfirm.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\DepartmentLink.xaml.cs">
-      <DependentUpon>DepartmentLink.xaml</DependentUpon>
-    </Compile>
+    <Page Include="Views\CardDelete.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\DepartmentCreate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -151,7 +160,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\DepartmentLink.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\DepartmentMst.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Detail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -184,6 +201,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\OverallCardList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Process.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SendConfirm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\TagCreate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -220,31 +249,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\OverallCardList.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\OverallCardListDetail.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\CardDelete.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Detail.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Process.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\SendConfirm.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\DepartmentLink.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

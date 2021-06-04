@@ -8,7 +8,7 @@ using ThanksCardClient.Models;
 
 namespace ThanksCardClient.ViewModels
 {
-    public class ThanksCardListViewModel : BindableBase, INavigationAware
+    public class CardDeleteViewModel : BindableBase, INavigationAware
     {
         private IRegionManager regionManager;
 
@@ -21,7 +21,7 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
-        public ThanksCardListViewModel(IRegionManager regionManager)
+        public CardDeleteViewModel(IRegionManager regionManager)
         {
             this.regionManager = regionManager;
         }
@@ -44,15 +44,5 @@ namespace ThanksCardClient.ViewModels
             //throw new NotImplementedException();
         }
 
-        #region ShowDetailCommand
-        private DelegateCommand _ShowDetailCommand;
-        public DelegateCommand ShowDetailCommand =>
-            _ShowDetailCommand ?? (_ShowDetailCommand = new DelegateCommand(ExecuteShowDetailCommand));
-
-        void ExecuteShowDetailCommand()
-        {
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Detail));
-        }
-        #endregion
     }
 }

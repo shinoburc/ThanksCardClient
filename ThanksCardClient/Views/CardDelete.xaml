@@ -1,29 +1,37 @@
 ﻿<UserControl x:Class="ThanksCardClient.Views.CardDelete"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:ThanksCardClient.Views"
-             mc:Ignorable="d" 
-             d:DesignHeight="224.801" d:DesignWidth="319.667">
+             xmlns:prism="http://prismlibrary.com/"             
+             prism:ViewModelLocator.AutoWireViewModel="True">
     <Grid>
         <StackPanel>
-            <TextBlock Text="全体掲示"></TextBlock>
-            <DataGrid >
+            <TextBlock Text="感謝カード削除"/>
+            <DataGrid ItemsSource="{Binding ThanksCards}" AutoGenerateColumns="False" CanUserAddRows="False">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="タイトル" />
-                    <DataGridTextColumn Header="From"/>
-                    <DataGridTextColumn Header="To"/>
-                    <DataGridTextColumn Header="作成日時" />
+                    <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
+                    <DataGridTextColumn Header="タイトル" Binding="{Binding Title}" />
+                    <DataGridTextColumn Header="本文" Binding="{Binding Body}" />
+                    <DataGridTextColumn Header="From" Binding="{Binding From.Name}" />
+                    <DataGridTextColumn Header="To" Binding="{Binding To.Name}" />
+                    <DataGridTextColumn Header="作成日時" Binding="{Binding CreatedDateTime}" />
+                    <DataGridTemplateColumn IsReadOnly="True" Header="タグ">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <ListBox ItemsSource="{Binding ThanksCardTags}" DisplayMemberPath="Tag.Name"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <!-- CommandParameter に {Binding} とだけ記述すると、TagMstViewModel.Tags の要素、つまり Tag モデルを指定したことになる。-->
+                                <Button Content="削除"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
                 </DataGrid.Columns>
-                <DataGridTemplateColumn Header="">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <!-- CommandParameter に {Binding} とだけ記述すると、TagMstViewModel.Tags の要素、つまり Tag モデルを指定したことになる。-->
-                            <Button Content="削除" />
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
             </DataGrid>
         </StackPanel>
     </Grid>

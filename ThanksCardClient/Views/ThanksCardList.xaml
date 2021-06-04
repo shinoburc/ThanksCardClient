@@ -10,7 +10,7 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
                     <DataGridTextColumn Header="タイトル" Binding="{Binding Title}" />
-                    <DataGridTextColumn Header="感謝の言葉" Binding="{Binding Body}" />
+                    <DataGridTextColumn Header="本文" Binding="{Binding Body}" />
                     <DataGridTextColumn Header="From" Binding="{Binding From.Name}" />
                     <DataGridTextColumn Header="To" Binding="{Binding To.Name}" />
                     <DataGridTextColumn Header="作成日時" Binding="{Binding CreatedDateTime}" />
@@ -18,6 +18,15 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <ListBox ItemsSource="{Binding ThanksCardTags}" DisplayMemberPath="Tag.Name"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <!-- CommandParameter に {Binding} とだけ記述すると、TagMstViewModel.Tags の要素、つまり Tag モデルを指定したことになる。-->
+                                <Button Content="詳細" Command="{Binding DataContext.ShowDetailCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" />
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>

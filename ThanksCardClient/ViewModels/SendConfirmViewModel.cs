@@ -6,9 +6,9 @@ using System.Linq;
 
 namespace ThanksCardClient.ViewModels
 {
-    public class ProcessViewModel : BindableBase
+    public class SendConfirmViewModel : BindableBase
     {
-        public ProcessViewModel()
+        public SendConfirmViewModel()
         {
 
         }
