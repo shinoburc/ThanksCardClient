@@ -26,7 +26,7 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <!-- CommandParameter に {Binding} とだけ記述すると、TagMstViewModel.Tags の要素、つまり Tag モデルを指定したことになる。-->
-                                <Button Content="削除"/>
+                                <Button Content="削除" Command="{Binding DataContext.CardDeleteCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" />
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>

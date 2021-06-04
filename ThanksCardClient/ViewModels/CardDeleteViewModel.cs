@@ -26,12 +26,21 @@ namespace ThanksCardClient.ViewModels
             this.regionManager = regionManager;
         }
 
-
         public async void OnNavigatedTo(NavigationContext navigationContext)
         {
             ThanksCard thanksCard = new ThanksCard();
             this.ThanksCards = await thanksCard.GetThanksCardsAsync();
+        }
 
+        private async void UpdateCards()
+        {
+            var card = new ThanksCard();
+            this.ThanksCards = await card.GetThanksCardsAsync();
+        }
+
+        private void UpdateCard()
+        {
+            throw new NotImplementedException();
         }
 
         public bool IsNavigationTarget(NavigationContext navigationContext)
@@ -43,6 +52,20 @@ namespace ThanksCardClient.ViewModels
         {
             //throw new NotImplementedException();
         }
+
+        #region CardDeleteCommand
+        private DelegateCommand<ThanksCard> _CardDeleteCommand;
+        public DelegateCommand<ThanksCard> CardDeleteCommand =>
+            _CardDeleteCommand ?? (_CardDeleteCommand = new DelegateCommand<ThanksCard>(ExecuteCardDeleteCommand));
+
+        async void ExecuteCardDeleteCommand(ThanksCard SelectedUser)
+        {
+            ThanksCard deletedUser = await SelectedUser.DeleteThanksCardAsync(SelectedUser.Id);
+
+            // ユーザ一覧 Users を更新する。
+            this.UpdateCards();
+        }
+        #endregion
 
     }
 }
