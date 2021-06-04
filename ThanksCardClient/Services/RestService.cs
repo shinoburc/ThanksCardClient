@@ -293,6 +293,25 @@ namespace ThanksCardClient.Services
             return responseThanksCard;
         }
 
+        public async Task<ThanksCard> DeleteThanksCardAsync(long Id)
+        {
+            ThanksCard responseThanksCard = null;
+            try
+            {
+                var response = await Client.DeleteAsync(this.BaseUrl + "/api/ThanksCard/" + Id);
+                if (response.IsSuccessStatusCode)
+                {
+                    var responseContent = await response.Content.ReadAsStringAsync();
+                    responseThanksCard = JsonConvert.DeserializeObject<ThanksCard>(responseContent);
+                }
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine("Exception in RestService.DeleteUserAsync: " + e);
+            }
+            return responseThanksCard;
+        }
+
         public async Task<List<Tag>> GetTagsAsync()
         {
             List<Tag> responseTags = null;
