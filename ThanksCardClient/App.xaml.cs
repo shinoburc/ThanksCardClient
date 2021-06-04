@@ -38,6 +38,8 @@ namespace ThanksCardClient
             containerRegistry.RegisterForNavigation<CardDelete>();
             containerRegistry.RegisterForNavigation<OverallCardList>(); 
             containerRegistry.RegisterForNavigation<OverallCardListDetail>();
+            containerRegistry.RegisterForNavigation<Detail>();
+            containerRegistry.RegisterForNavigation<SendConfirm>();
         }
     }
 }

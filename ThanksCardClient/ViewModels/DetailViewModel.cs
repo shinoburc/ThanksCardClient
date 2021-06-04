@@ -6,9 +6,9 @@ using System.Linq;
 
 namespace ThanksCardClient.ViewModels
 {
-    public class ProcessViewModel : BindableBase
+    public class DetailViewModel : BindableBase
     {
-        public ProcessViewModel()
+        public DetailViewModel()
         {
 
         }

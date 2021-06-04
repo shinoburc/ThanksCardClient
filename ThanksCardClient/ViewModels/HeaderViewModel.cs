@@ -68,7 +68,7 @@ namespace ThanksCardClient.ViewModels
         #region ShowOverallCardListCommand
         private DelegateCommand _ShowOverallCardListCommand;
         public DelegateCommand ShowOverallCardListCommand =>
-            _ShowOverallCardListCommand ?? (_logoffCommand = new DelegateCommand(ExecuteShowOverallCardListCommand));
+            _ShowOverallCardListCommand ?? (_ShowOverallCardListCommand = new DelegateCommand(ExecuteShowOverallCardListCommand));
 
         void ExecuteShowOverallCardListCommand()
         {
