@@ -15,7 +15,7 @@
         <TextBlock Margin="16.666,70,219.871,65.333"><Run Text="Password"/><Run Text="："/></TextBlock>
         <TextBox Text="{Binding User.Password}" Margin="95.205,68.445,23.202,65.333"/>
         <Button Content="Logon" Command="{Binding LogonCommand}" HorizontalAlignment="Left" Width="41.703" Margin="0,52.096,0,77.573" Grid.Column="1"/>
-        <Button Content="SignUp" HorizontalAlignment="Left" Height="20.667" Margin="309.345,79.854,0,51.906" Grid.ColumnSpan="2" Click="SignUp1"/>
+        <Button Content="SignUp" Command="{Binding SignUpCommand}" HorizontalAlignment="Left" Height="20.667" Margin="309.345,79.854,0,51.906" Grid.ColumnSpan="2" Click="SignUp1"/>
         <Button Content="Request" HorizontalAlignment="Left" Height="20.667" Margin="0,105.521,0,26.239" Grid.Column="1"/>
 
     </Grid>
