@@ -58,8 +58,8 @@ namespace ThanksCardClient.ViewModels
                 SessionService.Instance.AuthorizedUser = authorizedUser;
                 this.ErrorMessage = "";
                 this.regionManager.RequestNavigate("HeaderRegion", nameof(Views.Header));
-                this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardList));
-                this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Footer));
+                this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Footer));
+                this.regionManager.RequestNavigate("FooterRegion", nameof(Views.ThanksCardList));
             }
             else
             {
