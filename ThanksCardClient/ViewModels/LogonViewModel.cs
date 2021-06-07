@@ -75,7 +75,9 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteCommandName()
         {
-
+            this.regionManager.Regions["HeaderRegion"].RemoveAll();
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.SignUp));
+            this.regionManager.Regions["FooterRegion"].RemoveAll();
         }
         #endregion
     }
