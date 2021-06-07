@@ -2,14 +2,14 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:prism="http://prismlibrary.com/"             
-             prism:ViewModelLocator.AutoWireViewModel="True" Width="375.87">
+             prism:ViewModelLocator.AutoWireViewModel="True">
     <Grid>
         <StackPanel>
             <TextBlock Text="{Binding AuthorizedUser.Name, StringFormat=ログオン中のユーザ: {0} }" HorizontalAlignment="Right"/>
             <StackPanel Orientation="Horizontal">
                 <Button Content="戻る"/>
                 <Button Content="受信BOX" Command="{Binding ShowThanksCardListCommand}"/>
-                <Button Content="全体掲示" Command="{Binding ShowOverallCardListCommand}"/> 
+                <Button Content="全体掲示" Command="{Binding ShowOverallCardListCommand}"/>
                 <Button Content="カード作成" Command="{Binding ShowThanksCardCreateCommand}"/>
                 <Button Content="マニュアル"/>
                 <Button Content="ログアウト" Command="{Binding LogoffCommand}"/>

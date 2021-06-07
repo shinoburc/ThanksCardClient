@@ -11,5 +11,6 @@ namespace ThanksCardClient.Views
         {
             InitializeComponent();
         }
+ 
     }
 }
