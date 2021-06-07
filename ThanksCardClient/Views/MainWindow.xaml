@@ -5,12 +5,14 @@
         prism:ViewModelLocator.AutoWireViewModel="True"
         Title="{Binding Title}" Height="500" Width="600">
     <Grid>
-        <StackPanel>
+        <ScrollViewer>
+            <StackPanel>
             <ContentControl prism:RegionManager.RegionName="HeaderRegion" />
             <Border Background="AliceBlue" Height="15"/>
             <ContentControl prism:RegionManager.RegionName="ContentRegion" />
             <Border Background="AliceBlue" Height="15"/>
             <ContentControl prism:RegionManager.RegionName="FooterRegion" />
         </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Window>

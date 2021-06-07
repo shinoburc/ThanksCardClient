@@ -45,9 +45,13 @@
         </ListBox>
             <StackPanel>
                 <TextBlock Text="感謝度:"/>
-                <ComboBox >
-                    <!-- Deparment が選択されたら ToDepartmentsChangedCommand を発行する -->
-                 </ComboBox>
+                <ComboBox ItemsSource="{Binding ThanksCard}" SelectedValue="{Binding ThanksCard.ThanksRank}" >
+                    <ComboBoxItem>5</ComboBoxItem>
+                    <ComboBoxItem>4</ComboBoxItem>
+                    <ComboBoxItem>3</ComboBoxItem>
+                    <ComboBoxItem>2</ComboBoxItem>
+                    <ComboBoxItem>1</ComboBoxItem>
+                </ComboBox>
             </StackPanel>
             <TextBlock Text=""/>
                 <Button Content="確認" Command="{Binding ShowSendConfirmCommand}"/>

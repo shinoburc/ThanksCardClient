@@ -91,6 +91,15 @@ namespace ThanksCardClient.Models
         }
         #endregion
 
+        #region ThanksCardThanksRank
+        //new
+        private int? _ThanksRank;
+        public int? ThanksRank
+        {
+            get { return _ThanksRank; }
+            set { SetProperty(ref _ThanksRank, value); }
+        }
+        #endregion
 
         public ThanksCard()
         {
