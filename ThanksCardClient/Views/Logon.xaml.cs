@@ -12,9 +12,5 @@ namespace ThanksCardClient.Views
             InitializeComponent();
         }
 
-        private void SignUp1(object sender, System.Windows.RoutedEventArgs e)
-        {
-            Name.Content = new SignUp();
-        }
     }
 }
