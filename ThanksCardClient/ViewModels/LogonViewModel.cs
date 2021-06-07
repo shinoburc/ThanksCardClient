@@ -67,5 +67,16 @@ namespace ThanksCardClient.ViewModels
             }
         }
         #endregion
+
+        #region SignUpCommand
+        private DelegateCommand _SignUpCommand;
+        public DelegateCommand SignUpCommand =>
+            _SignUpCommand ?? (_SignUpCommand = new DelegateCommand(ExecuteCommandName));
+
+        void ExecuteCommandName()
+        {
+
+        }
+        #endregion
     }
 }
