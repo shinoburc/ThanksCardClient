@@ -4,23 +4,17 @@
              xmlns:prism="http://prismlibrary.com/"             
              prism:ViewModelLocator.AutoWireViewModel="True">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="102*"/>
-            <ColumnDefinition Width="35*"/>
-            <ColumnDefinition Width="137*"/>
-        </Grid.ColumnDefinitions>
-        <StackPanel Grid.ColumnSpan="3" Width="700">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center"><Run Text="社員名"/><Run Text=":"/></TextBlock>
-                <TextBox Text="{Binding User.Name}" Margin="4,0,9.334,0" Width="86" Height="17.96" Background="White" HorizontalAlignment="Center"/>
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center"><Run Text="パスワード"/><Run Text=":"/></TextBlock>
-                <TextBox Text="{Binding User.Password}" Margin="9,0,13,0" Width="98" Height="17.96" HorizontalAlignment="Center"/>
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center"><Run Text="管理者権限"/><Run Text="："/></TextBlock>
-                <CheckBox IsChecked="{Binding User.IsAdmin}" RenderTransformOrigin="0.48,0.85" VerticalAlignment="Center"/>
-                <TextBlock VerticalAlignment="Center" Width="71.493" TextAlignment="Center" HorizontalAlignment="Center"><Run Text="課"/><Run Text=":"/></TextBlock>
-                <ComboBox SelectedItem="{Binding User}" ItemsSource="{Binding DepartmentChildrens}" DisplayMemberPath="Name" SelectedValue="{Binding User.DepartmentChildren.Id}" SelectedValuePath="Id" Margin="-20,0,0,0" Foreground="#FF0E0D0D" Width="73.333" Height="20.627" HorizontalAlignment="Center" SelectionChanged="ComboBox_SelectionChanged"/>
-            </StackPanel>
-            <Button Content="変更" Command="{Binding SubmitCommand}" Margin="252.5,0,272.667,0" Width="94.666" Height="23.96" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <StackPanel>
+            <TextBlock Text="{Binding ErrorMessage}" Foreground="Red"/>
+            <TextBlock Text="Name:"/>
+            <TextBox Text="{Binding User.Name}"/>
+            <TextBlock Text="Password:"/>
+            <TextBox Text="{Binding User.Password}"/>
+            <TextBlock Text="IsAdmin:"/>
+            <CheckBox IsChecked="{Binding User.IsAdmin}"/>
+            <TextBlock Text="Department:"/>
+            <ComboBox SelectedItem="{Binding User.Department}" ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValue="{Binding User.DepartmentId}" SelectedValuePath="Id"/>
+            <Button Content="Submit" Command="{Binding SubmitCommand}"/>
         </StackPanel>
     </Grid>
 </UserControl>

@@ -5,13 +5,13 @@
              prism:ViewModelLocator.AutoWireViewModel="True">
     <Grid>
         <StackPanel>
-            <Button Content="+カテゴリの新規作成" Command="{Binding TagCreateCommand}" Width="107" HorizontalAlignment="Left" Margin="0,0,-7,0"/>
+            <Button Content="+タグの新規作成" Command="{Binding TagCreateCommand}" Width="100" HorizontalAlignment="Left"/>
 
             <!-- タグ一覧(Tagモデルのリスト)である ViewModel の Tags をグリッド表示する。-->
-            <DataGrid ItemsSource="{Binding Tags}" AutoGenerateColumns="False" CanUserAddRows="False" HorizontalAlignment="Left" Width="107" Margin="0,0,-7,0">
+            <DataGrid ItemsSource="{Binding Tags}" AutoGenerateColumns="False" CanUserAddRows="False">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
-                    <DataGridTextColumn Header="カテゴリ名" Binding="{Binding Name}" />
+                    <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
+                    <DataGridTextColumn Header="名前" Binding="{Binding Name}" />
                     <DataGridTemplateColumn Header="">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>

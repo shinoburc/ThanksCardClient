@@ -10,9 +10,10 @@
             <!-- ユーザ一覧(Departmentモデルのリスト)である MainWindowViewModel.Departments をグリッド表示する。-->
             <DataGrid ItemsSource="{Binding Departments}" AutoGenerateColumns="False" CanUserAddRows="False">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
+                    <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
                     <DataGridTextColumn Header="コード" Binding="{Binding Code}" />
-                    <DataGridTextColumn Header="部署名" Binding="{Binding Name}" />
+                    <DataGridTextColumn Header="名前" Binding="{Binding Name}" />
+                    <DataGridTextColumn Header="親部署" Binding="{Binding Parent.Name}" />
                     <DataGridTemplateColumn Header="">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>

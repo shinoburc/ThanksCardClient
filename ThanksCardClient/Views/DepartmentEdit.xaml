@@ -5,11 +5,15 @@
              prism:ViewModelLocator.AutoWireViewModel="True">
     <Grid>
         <StackPanel>
+            <TextBlock Text="{Binding ErrorMessage}" Foreground="Red"/>
             <TextBlock Text="Code:"/>
             <TextBox Text="{Binding Department.Code}"/>
-            <TextBlock Text="部署名:"/>
+            <TextBlock Text="Name:"/>
             <TextBox Text="{Binding Department.Name}"/>
-            <Button Content="変更" Command="{Binding SubmitCommand}"/>
+            <TextBlock Text="Parent:"/>
+            <ComboBox SelectedItem="{Binding Department.Parent}" ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValue="{Binding Department.ParentId}" SelectedValuePath="Id"/>
+
+            <Button Content="Submit" Command="{Binding SubmitCommand}"/>
         </StackPanel>
     </Grid>
 </UserControl>

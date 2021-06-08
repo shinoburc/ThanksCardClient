@@ -49,12 +49,12 @@ namespace ThanksCardClient.Services
             return responseUser;
         }
 
-        public async Task<List<User>> GetDepartmentUsersAsync(long? DepartmentChildrenId)
+        public async Task<List<User>> GetDepartmentUsersAsync(long? DepartmentId)
         {
             List<User> responseUsers = null;
             try
             {
-                var response = await Client.GetAsync(this.BaseUrl + "/api/DepartmentUsers/" + DepartmentChildrenId);
+                var response = await Client.GetAsync(this.BaseUrl + "/api/DepartmentUsers/" + DepartmentId);
                 if (response.IsSuccessStatusCode)
                 {
                     var responseContent = await response.Content.ReadAsStringAsync();
@@ -293,33 +293,6 @@ namespace ThanksCardClient.Services
             return responseThanksCard;
         }
 
-        public async Task<ThanksCard> PutThanksCardAsync(ThanksCard thanksCard)
-        {
-            var jObject = JsonConvert.SerializeObject(thanksCard);
-
-            //Make Json object into content type
-            var content = new StringContent(jObject);
-            //Adding header of the contenttype
-            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-
-            ThanksCard responseThanksCard = null;
-            try
-            {
-                var response = await Client.PutAsync(this.BaseUrl + "/api/ThanksCards/" + thanksCard.Id, content);
-                if (response.IsSuccessStatusCode)
-                {
-                    var responseContent = await response.Content.ReadAsStringAsync();
-                    responseThanksCard = JsonConvert.DeserializeObject<ThanksCard>(responseContent);
-                }
-            }
-            catch (Exception e)
-            {
-                System.Diagnostics.Debug.WriteLine("Exception in RestService.PutThanksCardAsync: " + e);
-            }
-            return responseThanksCard;
-        }
-
-
         public async Task<List<Tag>> GetTagsAsync()
         {
             List<Tag> responseTags = null;
@@ -408,120 +381,6 @@ namespace ThanksCardClient.Services
                 System.Diagnostics.Debug.WriteLine("Exception in RestService.DeleteTagAsync: " + e);
             }
             return responseTag;
-        }
-        public async Task<List<DepartmentChildren>> GetDepartmentChildrensAsync()
-        {
-            List<DepartmentChildren> responseDepartmentChildrens = null;
-            try
-            {
-                var response = await Client.GetAsync(this.BaseUrl + "/api/DepartmentChildrens");
-                if (response.IsSuccessStatusCode)
-                {
-                    var responseContent = await response.Content.ReadAsStringAsync();
-                    responseDepartmentChildrens = JsonConvert.DeserializeObject<List<DepartmentChildren>>(responseContent);
-                }
-            }
-            catch (Exception e)
-            {
-                System.Diagnostics.Debug.WriteLine("Exception in Restservice.GetDepartmentsAsync:" + e);
-            }
-            return responseDepartmentChildrens;
-        }
-
-        public async Task<DepartmentChildren> PostDepartmentChildrenAsync(DepartmentChildren departmentChildren)
-        {
-            var jObject = JsonConvert.SerializeObject(departmentChildren);
-
-            //Make Json object into content type
-            var content = new StringContent(jObject);
-            //Adding header of the contenttype
-            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-
-            DepartmentChildren responseDepartmentChildren = null;
-            try
-            {
-                var response = await Client.PostAsync(this.BaseUrl + "/api/DepartmentChildrens", content);
-                if (response.IsSuccessStatusCode)
-                {
-                    var responseContent = await response.Content.ReadAsStringAsync();
-                    responseDepartmentChildren  = JsonConvert.DeserializeObject<DepartmentChildren>(responseContent);
-                }
-            }
-            catch (Exception e)
-            {
-                System.Diagnostics.Debug.WriteLine("Exception in RestService.PostTagAsync: " + e);
-            }
-            return responseDepartmentChildren;
-        }
-
-        public async Task<DepartmentChildren> PutDepartmentChildrenAsync(DepartmentChildren departmentChildren)
-        {
-            var jObject = JsonConvert.SerializeObject(departmentChildren);
-
-            //Make Json object into content type
-            var content = new StringContent(jObject);
-            //Adding header of the contenttype
-            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-
-            DepartmentChildren responseDepartmentChildren = null;
-            try
-            {
-                var response = await Client.PutAsync(this.BaseUrl + "/api/DepartmentChildrens/" + departmentChildren.Id, content);
-                if (response.IsSuccessStatusCode)
-                {
-                    var responseContent = await response.Content.ReadAsStringAsync();
-                    responseDepartmentChildren = JsonConvert.DeserializeObject<DepartmentChildren>(responseContent);
-                }
-            }
-            catch (Exception e)
-            {
-                System.Diagnostics.Debug.WriteLine("Exception in RestService.PutTagAsync: " + e);
-            }
-            return responseDepartmentChildren;
-        }
-
-        public async Task<DepartmentChildren> DeleteDepartmentChildrenAsync(long Id)
-        {
-            DepartmentChildren responseDepartmentChildren = null;
-            try
-            {
-                var response = await Client.DeleteAsync(this.BaseUrl + "/api/DepartmentChildrens/" + Id);
-                if (response.IsSuccessStatusCode)
-                {
-                    var responseContent = await response.Content.ReadAsStringAsync();
-                    responseDepartmentChildren = JsonConvert.DeserializeObject<DepartmentChildren>(responseContent);
-                }
-            }
-            catch (Exception e)
-            {
-                System.Diagnostics.Debug.WriteLine("Exception in RestService.DeleteTagAsync: " + e);
-            }
-            return responseDepartmentChildren;
-        }
-
-        public Task<List<DepartmentChildren>> GetDepartmentChildrensAsync(long? departmentChildrenId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<DepartmentChildren> LogonAsync(DepartmentChildren departmentChildren)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<List<User>> GetDepartmentChildrenUsersAsync(long? DepartmentChildrenId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<List<DepartmentChildren>> GetDepartmentDepartmentChildrensAsync(long? departmentChildrenId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<ThanksCard> DeleteThanksCardAsync(long Id)
-        {
-            throw new NotImplementedException();
         }
     }
 }
