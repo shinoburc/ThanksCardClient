@@ -53,6 +53,26 @@ namespace ThanksCardClient.ViewModels
             set { SetProperty(ref _Tags, value); }
         }
         #endregion
+
+        private int[] _Rank = new int[]
+        {
+            1,
+            2,
+            3,
+            4,
+            5,
+        };
+        public int[] Rank
+        {
+            get { return _Rank; }
+        }
+        private int _SelectedRank;
+        public int SelectedRank
+        {
+            get { return _SelectedRank; }
+            set { SetProperty(ref _SelectedRank, value); }
+        }
+
         public ThanksCardCreateViewModel(IRegionManager regionManager)
         {
             this.regionManager = regionManager;
@@ -114,6 +134,8 @@ namespace ThanksCardClient.ViewModels
                 ThanksCardTags.Add(thanksCardTag);
             }
             this.ThanksCard.ThanksCardTags = ThanksCardTags;
+
+            this.ThanksCard.ThanksRank = SelectedRank;
             ThanksCard createdThanksCard = await ThanksCard.PostThanksCardAsync(this.ThanksCard);
             //TODO: Error handling
             this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardList));
