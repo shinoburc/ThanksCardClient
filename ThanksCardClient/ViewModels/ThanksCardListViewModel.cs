@@ -45,7 +45,6 @@ namespace ThanksCardClient.ViewModels
             //throw new NotImplementedException();
 
         }
-<<<<<<< HEAD
 
         #region BackCommand
         private DelegateCommand _BackCommand;
@@ -74,7 +73,5 @@ namespace ThanksCardClient.ViewModels
             this.regionManager.RequestNavigate("ContentRegion", nameof(Views.board_sort2));
         }
         #endregion
-=======
->>>>>>> parent of 0a34f6d (るみなのブランチ)
     }
 }

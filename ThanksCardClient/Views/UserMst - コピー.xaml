@@ -3,22 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:prism="http://prismlibrary.com/"             
              prism:ViewModelLocator.AutoWireViewModel="True">
-
     <Grid>
         <StackPanel>
-            <Button Content="+課の新規作成" Command="{Binding DepartmentChildrenCreateCommand}"/>
+            <Button Content="+ユーザの新規作成" Command="{Binding DepartmentChildrenCreateCommand}" Width="100" HorizontalAlignment="Left"/>
 
             <!-- ユーザ一覧(DepartmentChildrenモデルのリスト)である MainWindowViewModel.DepartmentChildrens をグリッド表示する。-->
             <DataGrid ItemsSource="{Binding DepartmentChildrens}" AutoGenerateColumns="False" CanUserAddRows="False">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
-                    <DataGridTextColumn Header="課コード" Binding="{Binding Code}" />
-                    <DataGridTextColumn Header="課名" Binding="{Binding Name}" />
-                    <DataGridTextColumn Header="所属部署" Binding="{Binding Department.Name}" />
+                    <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
+                    <DataGridTextColumn Header="名前" Binding="{Binding Name}" />
+                    <DataGridTextColumn Header="パスワード" Binding="{Binding Password}" />
+                    <DataGridTextColumn Header="管理者" Binding="{Binding IsAdmin}" />
+                    <DataGridTextColumn Header="部署" Binding="{Binding Department.Name}" />
                     <DataGridTemplateColumn Header="">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <!-- CommandParameter に {Binding} とだけ記述すると、UserMstViewModel.Users の要素、つまり User モデルを指定したことになる。-->
+                                <!-- CommandParameter に {Binding} とだけ記述すると、DepartmentChildrenMstViewModel.DepartmentChildrens の要素、つまり DepartmentChildren モデルを指定したことになる。-->
                                 <Button Content="編集" Command="{Binding DataContext.DepartmentChildrenEditCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" />
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>

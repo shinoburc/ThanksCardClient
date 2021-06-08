@@ -5,16 +5,16 @@
              prism:ViewModelLocator.AutoWireViewModel="True">
     <Grid>
         <StackPanel>
-            <Button Content="+ユーザの新規作成" Command="{Binding UserCreateCommand}" Width="100" HorizontalAlignment="Left"/>
+            <Button Content="+ユーザーの新規作成" Command="{Binding UserCreateCommand}" Width="107.9" HorizontalAlignment="Left"/>
 
             <!-- ユーザ一覧(Userモデルのリスト)である MainWindowViewModel.Users をグリッド表示する。-->
             <DataGrid ItemsSource="{Binding Users}" AutoGenerateColumns="False" CanUserAddRows="False">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
+                    <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
                     <DataGridTextColumn Header="名前" Binding="{Binding Name}" />
                     <DataGridTextColumn Header="パスワード" Binding="{Binding Password}" />
-                    <DataGridTextColumn Header="管理者" Binding="{Binding IsAdmin}" />
-                    <DataGridTextColumn Header="部署" Binding="{Binding Department.Name}" />
+                    <DataGridTextColumn Header="管理者権限" Binding="{Binding IsAdmin}" />
+                    <DataGridTextColumn Header="所属課名" Binding="{Binding DepartmentChildren.Name}" />
                     <DataGridTemplateColumn Header="">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>

@@ -14,7 +14,8 @@ namespace ThanksCardClient.Services
         Task<User> LogonAsync(User user);
 
         // DepartmentUsers REST API Client
-        Task<List<User>> GetDepartmentUsersAsync(long? DepartmentId);
+        Task<List<User>> GetDepartmentUsersAsync(long? DepartmentChildrenId);
+        Task<List<User>> GetDepartmentChildrenUsersAsync(long? DepartmentChildrenId);
 
         // User REST API Client
         Task<List<User>> GetUsersAsync();
@@ -30,12 +31,23 @@ namespace ThanksCardClient.Services
 
         // TanksCard REST API Client
         Task<List<ThanksCard>> GetThanksCardsAsync();
+        Task<DepartmentChildren> LogonAsync(DepartmentChildren departmentChildren);
         Task<ThanksCard> PostThanksCardAsync(ThanksCard thanksCard);
+        Task<ThanksCard> PutThanksCardAsync(ThanksCard thanksCard);
+        Task<ThanksCard> DeleteThanksCardAsync(long Id);
 
         // Tag REST API Client
         Task<List<Tag>> GetTagsAsync();
         Task<Tag> PostTagAsync(Tag tag);
         Task<Tag> PutTagAsync(Tag tag);
         Task<Tag> DeleteTagAsync(long Id);
+
+        // DepartmentChildren REST API Client
+        Task<List<DepartmentChildren>> GetDepartmentChildrensAsync();
+        Task<DepartmentChildren> PostDepartmentChildrenAsync(DepartmentChildren departmentChildren);
+        Task<DepartmentChildren> PutDepartmentChildrenAsync(DepartmentChildren departmentChildren);
+        Task<DepartmentChildren> DeleteDepartmentChildrenAsync(long Id);
+        Task<List<DepartmentChildren>> GetDepartmentDepartmentChildrensAsync(long? departmentChildrenId);
+        
     }
 }

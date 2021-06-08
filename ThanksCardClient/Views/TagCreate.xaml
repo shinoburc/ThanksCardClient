@@ -5,10 +5,9 @@
              prism:ViewModelLocator.AutoWireViewModel="True">
     <Grid>
         <StackPanel>
-            <TextBlock Text="{Binding ErrorMessage}" Foreground="Red"/>
-            <TextBlock Text="Name:"/>
+            <TextBlock Text="カテゴリ名:"/>
             <TextBox Text="{Binding Tag.Name}"/>
-            <Button Content="Submit" Command="{Binding SubmitCommand}"/>
+            <Button Content="登録" Command="{Binding SubmitCommand}"/>
         </StackPanel>
     </Grid>
 </UserControl>

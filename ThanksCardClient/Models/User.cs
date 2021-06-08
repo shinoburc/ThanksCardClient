@@ -55,12 +55,30 @@ namespace ThanksCardClient.Models
         }
         #endregion
 
+        #region DepartmentChildrenIdProperty
+        private long? _DepartmentChildrenId;
+        public long? DepartmentChildrenId
+        {
+            get { return _DepartmentChildrenId; }
+            set { SetProperty(ref _DepartmentChildrenId, value); }
+        }
+        #endregion
+
         #region DepartmentProperty
         private Department _Department;
         public Department Department
         {
             get { return _Department; }
             set { SetProperty(ref _Department, value); }
+        }
+        #endregion
+
+        #region DepartmentChildrenProperty
+        private DepartmentChildren _DepartmentChildren;
+        public DepartmentChildren DepartmentChildren
+        { 
+            get { return _DepartmentChildren; }
+            set { SetProperty(ref _DepartmentChildren, value); }
         }
         #endregion
 
@@ -75,6 +93,13 @@ namespace ThanksCardClient.Models
         {
             IRestService rest = new RestService();
             List<User> users = await rest.GetDepartmentUsersAsync(DepartmentId);
+            return users;
+        }
+
+        public async Task<List<User>> GetDepartmentChildrenUsersAsync(long? DepartmentChildrenId)
+        {
+            IRestService rest = new RestService();
+            List<User> users = await rest.GetDepartmentChildrenUsersAsync(DepartmentChildrenId);
             return users;
         }
 
