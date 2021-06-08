@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="ThanksCardClient.Views.HomePage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"             
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid Height="80" Width="400">
+        <Button Content="Card Create" HorizontalAlignment="Left" Margin="20,25,0,0" VerticalAlignment="Top" Width="75" Command="{Binding ShowThanksCardCreateCommand}"/>
+        <Button Content="Home" HorizontalAlignment="Left" Margin="110,25,0,0" VerticalAlignment="Top" Width="75" Command="{Binding ShowThanksCardListCommand}"/>
+        <Button Content="Create User" HorizontalAlignment="Left" Margin="200,25,0,0" VerticalAlignment="Top" Width="75" Command="{Binding ShowUserMstCommand}" IsEnabled="{Binding AuthorizedUser.IsAdmin}"/>
+        <Button Content="Logout" HorizontalAlignment="Left" Margin="290,25,0,0" VerticalAlignment="Top" Width="75" Command="{Binding LogoffCommand}"/>
+
+    </Grid>
+</UserControl>
