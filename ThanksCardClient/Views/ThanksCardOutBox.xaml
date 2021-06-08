@@ -31,7 +31,7 @@
         <Path Data="M10,20 L10,144.96" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="125.96" Margin="18,42,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="1"/>
         <Path Data="M11,22 L506.094,20" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="3" Margin="19,41,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="485.094"/>
         <Button Content="削除" HorizontalAlignment="Left" Height="27" Margin="348,13,0,0" VerticalAlignment="Top" Width="85"/>
-        <Button Content="受送信数" HorizontalAlignment="Left" Height="19.467" Margin="19,170.96,0,0" VerticalAlignment="Top" Width="63"/>
+        <Button Content="受送信数" HorizontalAlignment="Left" Height="19.467" Margin="19,170.96,0,0" VerticalAlignment="Top" Width="66"/>
         <Button Content="戻る" HorizontalAlignment="Left" Height="19.467" Margin="471.094,170.96,0,0" VerticalAlignment="Top" Width="33" RenderTransformOrigin="0.306,0.039"/>
         <TextBlock HorizontalAlignment="Left" Height="16.467" Margin="241,173.96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78.327"><Run Text="&lt;&lt;"/><Run Text="前"/><Run Text="のページ"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Height="15.427" Margin="358,175,0,0" TextWrapping="Wrap" Text="次のページ&gt;&gt;" VerticalAlignment="Top" Width="75"/>
