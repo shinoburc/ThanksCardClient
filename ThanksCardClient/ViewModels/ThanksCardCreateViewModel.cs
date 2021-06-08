@@ -141,5 +141,22 @@ namespace ThanksCardClient.ViewModels
 
         }
         #endregion
+
+        #region BackCommand
+        private DelegateCommand _BackCommand;
+        public DelegateCommand BackCommand =>
+            _BackCommand ?? (_BackCommand = new DelegateCommand(ExecuteBackCommand));
+
+        void ExecuteBackCommand()
+        {
+            SessionService.Instance.AuthorizedUser = null;
+            SessionService.Instance.IsAuthorized = false;
+
+            // HeaderRegion, FooterRegion を破棄して、ContentRegion をログオン画面に遷移させる。
+            this.regionManager.Regions["HeaderRegion"].RemoveAll();
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Home));
+            this.regionManager.Regions["FooterRegion"].RemoveAll();
+        }
+        #endregion
     }
 }

@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using ThanksCardClient.Models;
+using ThanksCardClient.Services;
 
 namespace ThanksCardClient.ViewModels
 {
@@ -42,6 +43,35 @@ namespace ThanksCardClient.ViewModels
         public void OnNavigatedFrom(NavigationContext navigationContext)
         {
             //throw new NotImplementedException();
+
         }
+
+        #region BackCommand
+        private DelegateCommand _BackCommand;
+        public DelegateCommand BackCommand =>
+            _BackCommand ?? (_BackCommand = new DelegateCommand(ExecuteBackCommand));
+
+        void ExecuteBackCommand()
+        {
+            SessionService.Instance.AuthorizedUser = null;
+            SessionService.Instance.IsAuthorized = false;
+
+            // HeaderRegion, FooterRegion を破棄して、ContentRegion をログオン画面に遷移させる。
+            this.regionManager.Regions["HeaderRegion"].RemoveAll();
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Home));
+            this.regionManager.Regions["FooterRegion"].RemoveAll();
+        }
+        #endregion
+
+        #region board_sort2Command
+        private DelegateCommand _board_sort2Command;
+        public DelegateCommand board_sort2Command =>
+            _board_sort2Command ?? (_board_sort2Command = new DelegateCommand(Executeboard_sort2Command));
+
+        void Executeboard_sort2Command()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.board_sort2));
+        }
+        #endregion
     }
 }

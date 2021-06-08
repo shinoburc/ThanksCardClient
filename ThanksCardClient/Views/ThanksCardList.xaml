@@ -1,28 +1,32 @@
-﻿<UserControl x:Class="ThanksCardClient.Views.ThanksCardList"
+﻿<UserControl
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:prism="http://prismlibrary.com/"             
-             prism:ViewModelLocator.AutoWireViewModel="True">
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="ThanksCardClient.Views.ThanksCardList"
+             prism:ViewModelLocator.AutoWireViewModel="True" Height="137.183" Width="630.477" Margin="0">
     <Grid>
-        <StackPanel>
-            <DataGrid ItemsSource="{Binding ThanksCards}" AutoGenerateColumns="False" CanUserAddRows="False">
+        <StackPanel Margin="0,0,0,-35">
+            <DataGrid ItemsSource="{Binding ThanksCards}" AutoGenerateColumns="False" CanUserAddRows="False" Margin="0" Height="27.96">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
+                    <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
                     <DataGridTextColumn Header="タイトル" Binding="{Binding Title}" />
                     <DataGridTextColumn Header="感謝の言葉" Binding="{Binding Body}" />
                     <DataGridTextColumn Header="From" Binding="{Binding From.Name}" />
                     <DataGridTextColumn Header="To" Binding="{Binding To.Name}" />
                     <DataGridTextColumn Header="作成日時" Binding="{Binding CreatedDateTime}" />
-                    <DataGridTemplateColumn IsReadOnly="True" Header="タグ">
+                    <DataGridTextColumn Header="返信" Binding="{Binding Reply}" />
+                    <DataGridTemplateColumn IsReadOnly="True" Header="カテゴリ">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <ListBox ItemsSource="{Binding ThanksCardTags}" DisplayMemberPath="Tag.Name"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-
                 </DataGrid.Columns>
             </DataGrid>
+            <Button Content="ソート" Command="{Binding board_sort2Command}" HorizontalAlignment="Right" Height="24" Margin="446,-27,42,0" Width="41" RenderTransformOrigin="0.472,0.502" VerticalAlignment="Center"/>
+            <Button Content="戻る" Command="{Binding BackCommand}" Height="32.667" Margin="367,72,0,4" VerticalAlignment="Bottom" RenderTransformOrigin="0.553,0.756" HorizontalAlignment="Right" Width="32.668"/>
+            <Button Content="❔" Height="24" Margin="0,-136,-1,-8" RenderTransformOrigin="0.178,2.285" Width="41" HorizontalAlignment="Right" VerticalAlignment="Top"/>
         </StackPanel>
     </Grid>
 </UserControl>
