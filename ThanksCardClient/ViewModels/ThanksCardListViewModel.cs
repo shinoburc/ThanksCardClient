@@ -58,16 +58,20 @@ namespace ThanksCardClient.ViewModels
         {
             //throw new NotImplementedException();
         }
-
+        
         #region ShowDetailCommand
-        private DelegateCommand _ShowDetailCommand;
-        public DelegateCommand ShowDetailCommand =>
-            _ShowDetailCommand ?? (_ShowDetailCommand = new DelegateCommand(ExecuteShowDetailCommand));
+        private DelegateCommand<ThanksCard> _ShowDetailCommand;
+        public DelegateCommand<ThanksCard> ShowDetailCommand =>
+            _ShowDetailCommand ?? (_ShowDetailCommand = new DelegateCommand<ThanksCard>(ExecuteShowDetailCommand));
 
-        void ExecuteShowDetailCommand()
+        void ExecuteShowDetailCommand(ThanksCard SelectedDetail)
         {
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Detail));
+
+            // 対象のThanksCardをパラメーターとして画面遷移先に渡す。
+            var parameters = new NavigationParameters();
+            parameters.Add("SelectedDetail", SelectedDetail);
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Detail), parameters);
         }
-        #endregion
+        #endregion*
     }
 }
