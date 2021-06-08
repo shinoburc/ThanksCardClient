@@ -66,30 +66,46 @@
     <Compile Include="Services\IRestService.cs" />
     <Compile Include="Services\RestService.cs" />
     <Compile Include="Services\SessionService.cs" />
+    <Compile Include="ViewModels\Board2ViewModel.cs" />
+    <Compile Include="ViewModels\BoardS2ViewModel.cs" />
+    <Compile Include="ViewModels\BoardViewModel.cs" />
+    <Compile Include="ViewModels\CardCreateViewModel.cs" />
+    <Compile Include="ViewModels\Category2ViewModel.cs" />
     <Compile Include="ViewModels\DepartmentCreateViewModel.cs" />
     <Compile Include="ViewModels\DepartmentEditViewModel.cs" />
     <Compile Include="ViewModels\DepartmentMstViewModel.cs" />
+    <Compile Include="ViewModels\Document2ViewModel.cs" />
     <Compile Include="ViewModels\FooterViewModel.cs" />
+    <Compile Include="ViewModels\From2ViewModel.cs" />
+    <Compile Include="ViewModels\FromS2ViewModel.cs" />
+    <Compile Include="ViewModels\Graph2ViewModel.cs" />
     <Compile Include="ViewModels\HeaderViewModel.cs" />
+    <Compile Include="ViewModels\Home2ViewModel.cs" />
+    <Compile Include="ViewModels\Memory2ViewModel.cs" />
+    <Compile Include="ViewModels\MemoryS2ViewModel.cs" />
+    <Compile Include="ViewModels\Password2ViewModel.cs" />
     <Compile Include="ViewModels\TagCreateViewModel.cs" />
     <Compile Include="ViewModels\TagEditViewModel.cs" />
     <Compile Include="ViewModels\TagMstViewModel.cs" />
     <Compile Include="ViewModels\ThanksCardCreateViewModel.cs" />
     <Compile Include="ViewModels\ThanksCardListViewModel.cs" />
+    <Compile Include="ViewModels\To2ViewModel.cs" />
+    <Compile Include="ViewModels\ToS2ViewModel.cs" />
+    <Compile Include="ViewModels\UpDate2ViewModel.cs" />
     <Compile Include="ViewModels\UserCreateViewModel.cs" />
     <Compile Include="ViewModels\UserEditViewModel.cs" />
     <Compile Include="ViewModels\UserMstViewModel.cs" />
-    <Compile Include="Views\Board.xaml.cs">
-      <DependentUpon>Board.xaml</DependentUpon>
+    <Compile Include="Views\Board2.xaml.cs">
+      <DependentUpon>Board2.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\BoardS.xaml.cs">
-      <DependentUpon>BoardS.xaml</DependentUpon>
+    <Compile Include="Views\BoardS2.xaml.cs">
+      <DependentUpon>BoardS2.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Cardcreate.xaml.cs">
-      <DependentUpon>Cardcreate.xaml</DependentUpon>
+    <Compile Include="Views\CardCreate.xaml.cs">
+      <DependentUpon>CardCreate.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Category.xaml.cs">
-      <DependentUpon>Category.xaml</DependentUpon>
+    <Compile Include="Views\Category2.xaml.cs">
+      <DependentUpon>Category2.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\DepartmentCreate.xaml.cs">
       <DependentUpon>DepartmentCreate.xaml</DependentUpon>
@@ -100,32 +116,35 @@
     <Compile Include="Views\DepartmentMst.xaml.cs">
       <DependentUpon>DepartmentMst.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Document.xaml.cs">
-      <DependentUpon>Document.xaml</DependentUpon>
+    <Compile Include="Views\Document2.xaml.cs">
+      <DependentUpon>Document2.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Footer.xaml.cs">
       <DependentUpon>Footer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\From.xaml.cs">
-      <DependentUpon>From.xaml</DependentUpon>
+    <Compile Include="Views\From2.xaml.cs">
+      <DependentUpon>From2.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Graph.xaml.cs">
-      <DependentUpon>Graph.xaml</DependentUpon>
+    <Compile Include="Views\FromS2.xaml.cs">
+      <DependentUpon>FromS2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Graph2.xaml.cs">
+      <DependentUpon>Graph2.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Header.xaml.cs">
       <DependentUpon>Header.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Home.xaml.cs">
-      <DependentUpon>Home.xaml</DependentUpon>
+    <Compile Include="Views\Home2.xaml.cs">
+      <DependentUpon>Home2.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Memory.xaml.cs">
-      <DependentUpon>Memory.xaml</DependentUpon>
+    <Compile Include="Views\Memory2.xaml.cs">
+      <DependentUpon>Memory2.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\MemoryS.xaml.cs">
-      <DependentUpon>MemoryS.xaml</DependentUpon>
+    <Compile Include="Views\MemoryS2.xaml.cs">
+      <DependentUpon>MemoryS2.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Password.xaml.cs">
-      <DependentUpon>Password.xaml</DependentUpon>
+    <Compile Include="Views\Password2.xaml.cs">
+      <DependentUpon>Password2.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TagCreate.xaml.cs">
       <DependentUpon>TagCreate.xaml</DependentUpon>
@@ -142,14 +161,14 @@
     <Compile Include="Views\ThanksCardList.xaml.cs">
       <DependentUpon>ThanksCardList.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\To.xaml.cs">
-      <DependentUpon>To.xaml</DependentUpon>
+    <Compile Include="Views\To2.xaml.cs">
+      <DependentUpon>To2.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ToS.xaml.cs">
-      <DependentUpon>ToS.xaml</DependentUpon>
+    <Compile Include="Views\ToS2.xaml.cs">
+      <DependentUpon>ToS2.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\UpDate.xaml.cs">
-      <DependentUpon>UpDate.xaml</DependentUpon>
+    <Compile Include="Views\UpDate2.xaml.cs">
+      <DependentUpon>UpDate2.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UserCreate.xaml.cs">
       <DependentUpon>UserCreate.xaml</DependentUpon>
@@ -160,19 +179,19 @@
     <Compile Include="Views\UserMst.xaml.cs">
       <DependentUpon>UserMst.xaml</DependentUpon>
     </Compile>
-    <Page Include="Views\Board.xaml">
+    <Page Include="Views\Board2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\BoardS.xaml">
+    <Page Include="Views\BoardS2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Cardcreate.xaml">
+    <Page Include="Views\CardCreate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Category.xaml">
+    <Page Include="Views\Category2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -188,7 +207,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Document.xaml">
+    <Page Include="Views\Document2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -196,15 +215,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\From.xaml">
+    <Page Include="Views\From2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\FromS.xaml">
+    <Page Include="Views\FromS2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Graph.xaml">
+    <Page Include="Views\Graph2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -212,7 +231,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Home.xaml">
+    <Page Include="Views\Home2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -237,15 +256,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\Memory.xaml">
+    <Page Include="Views\Memory2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\MemoryS.xaml">
+    <Page Include="Views\MemoryS2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Password.xaml">
+    <Page Include="Views\Password2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -269,15 +288,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\To.xaml">
+    <Page Include="Views\To2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ToS.xaml">
+    <Page Include="Views\ToS2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\UpDate.xaml">
+    <Page Include="Views\UpDate2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
