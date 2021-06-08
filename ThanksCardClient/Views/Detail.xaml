@@ -5,26 +5,27 @@
              prism:ViewModelLocator.AutoWireViewModel="True">
     <Grid>
         <StackPanel>
-            <TextBlock Text="受信詳細"></TextBlock>
             <DataGrid >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="タイトル" />
                 </DataGrid.Columns>
             </DataGrid>
+            <TextBlock Text="{Binding UThanksCards.Title}"/>
 
-            <TextBlock Text=""></TextBlock>
             <DataGrid >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="From" />
                 </DataGrid.Columns>
             </DataGrid>
+            <TextBlock Text="{Binding UThanksCards.From.Name}"></TextBlock>
 
-            <TextBlock Text=""></TextBlock>
             <DataGrid >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="内容" />
                 </DataGrid.Columns>
             </DataGrid>
+            <TextBlock Text="{Binding UThanksCards.Body}"></TextBlock>
+            
             <TextBlock Text=""/>
             <TextBox Height="69.855"></TextBox>
 

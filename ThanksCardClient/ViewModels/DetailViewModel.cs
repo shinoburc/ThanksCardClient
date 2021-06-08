@@ -13,8 +13,8 @@ namespace ThanksCardClient.ViewModels
         private readonly IRegionManager regionManager;
 
         #region ThanksCardsProperty
-        private List<ThanksCard> _UThanksCards;
-        public List<ThanksCard> UThanksCards
+        private ThanksCard _UThanksCards;
+        public ThanksCard UThanksCards
         {
             get { return _UThanksCards; }
             set { SetProperty(ref _UThanksCards, value); }
