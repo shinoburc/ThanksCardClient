@@ -1,4 +1,4 @@
-﻿<UserControl 
+﻿<UserControl x:Class="ThanksCardClient.Views.ThanksCardCreate"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:prism="http://prismlibrary.com/" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
@@ -42,20 +42,12 @@
                     <!-- Deparment が選択されたら ToDepartmentsChangedCommand を発行する -->
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="SelectionChanged">
-                            <i:InvokeCommandAction Command="{Binding FromDepartmentsChangedCommand}" CommandParameter="{Binding ElementName=FromDepartments, Path=SelectedValue}"/>
+                            <prism:InvokeCommandAction Command="{Binding FromDepartmentChildrensChangedCommand}" CommandParameter="{Binding ElementName=FromDepartmentChildrens, Path=SelectedValue}"/>
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </ComboBox>
-                <ComboBox ItemsSource="{Binding ToUsers}" DisplayMemberPath="Name" SelectedValue="{Binding ThanksCard.ToId}" SelectedValuePath="Id" Margin="152,15.346,-8,53.312" RenderTransformOrigin="0.752,-1.779" Width="100" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <ComboBox.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="-0.123"/>
-                            <TranslateTransform X="-0.833" Y="-0.078"/>
-                        </TransformGroup>
-                    </ComboBox.RenderTransform>
-                </ComboBox>
+                <TextBlock Text="From:"/>
+                <ComboBox ItemsSource="{Binding FromUsers}" DisplayMemberPath="Name" SelectedValue="{Binding ThanksCard.FromId}" SelectedValuePath="Id"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="部署:"/>
