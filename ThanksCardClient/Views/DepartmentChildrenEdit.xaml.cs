@@ -5,16 +5,11 @@ namespace ThanksCardClient.Views
     /// <summary>
     /// Interaction logic for UserEdit
     /// </summary>
-    public partial class UserEdit : UserControl
+    public partial class DepartmentChildrenEdit : UserControl
     {
-        public UserEdit()
+        public DepartmentChildrenEdit()
         {
             InitializeComponent();
-        }
-
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
         }
     }
 }

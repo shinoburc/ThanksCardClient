@@ -43,5 +43,8 @@ namespace ThanksCardClient.ViewModels
         {
             //throw new NotImplementedException();
         }
+
+        
+       
     }
 }

@@ -8,40 +8,39 @@ using ThanksCardClient.Models;
 
 namespace ThanksCardClient.ViewModels
 {
-    public class UserEditViewModel : BindableBase, INavigationAware
+    public class DepartmentChildrenCreateViewModel : BindableBase, INavigationAware
     {
         private readonly IRegionManager regionManager;
 
-        #region UserProperty
-        private User _User;
-        public User User
+        #region DepartmentChildrenProperty
+        private DepartmentChildren _DepartmentChildren;
+        public DepartmentChildren DepartmentChildren
         {
-            get { return _User; }
-            set { SetProperty(ref _User, value); }
+            get { return _DepartmentChildren; }
+            set { SetProperty(ref _DepartmentChildren, value); }
         }
         #endregion
 
-        #region DepartmentChildrensProperty
-        private List<DepartmentChildren> _DepartmentChildrens;
-        public List<DepartmentChildren> DepartmentChildrens
+        #region DepartmentsProperty
+        private List<Department> _Departments;
+        public List<Department> Departments
         {
-            get { return _DepartmentChildrens; }
-            set { SetProperty(ref _DepartmentChildrens, value); }
+            get { return _Departments; }
+            set { SetProperty(ref _Departments, value); }
         }
         #endregion
 
-        public UserEditViewModel(IRegionManager regionManager)
+        public DepartmentChildrenCreateViewModel(IRegionManager regionManager)
         {
             this.regionManager = regionManager;
         }
 
         public async void OnNavigatedTo(NavigationContext navigationContext)
         {
-            // 画面遷移元から送られる SelectedUser パラメーターを取得。
-            this.User = navigationContext.Parameters.GetValue<User>("SelectedUser");
+            Department dept = new Department();
+            this.Departments = await dept.GetDepartmentsAsync();
 
-            DepartmentChildren dept = new DepartmentChildren();
-            this.DepartmentChildrens = await dept.GetDepartmentChildrensAsync();
+            this.DepartmentChildren = new DepartmentChildren();
         }
 
         public bool IsNavigationTarget(NavigationContext navigationContext)
@@ -61,9 +60,9 @@ namespace ThanksCardClient.ViewModels
 
         async void ExecuteSubmitCommand()
         {
-            User updatedUser = await User.PutUserAsync(this.User);
+            DepartmentChildren createdDepartmentChildren = await DepartmentChildren.PostDepartmentChildrenAsync(this.DepartmentChildren);
 
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.UserMst));
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.DepartmentChildrenMst));
         }
         #endregion
     }

@@ -57,6 +57,12 @@ namespace ThanksCardClient.Models
 
         #region ChildrenProperty
         private List<Department> _Children;
+
+        internal Task<List<Department>> GetDepartmentAsync()
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Department> Children
         {
             get { return _Children; }
@@ -71,6 +77,8 @@ namespace ThanksCardClient.Models
             get { return _Users; }
             set { SetProperty(ref _Users, value); }
         }
+
+        public Task<List<Department>> DepartmentAsync { get; internal set; }
         #endregion
 
         public async Task<List<Department>> GetDepartmentsAsync()
