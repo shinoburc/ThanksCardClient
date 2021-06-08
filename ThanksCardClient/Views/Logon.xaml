@@ -2,15 +2,24 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:prism="http://prismlibrary.com/"             
-             prism:ViewModelLocator.AutoWireViewModel="True">
+             prism:ViewModelLocator.AutoWireViewModel="True" Height="152.427" Width="382.094">
     <Grid>
-        <StackPanel>
-            <TextBlock Text="{Binding ErrorMessage}" Foreground="Red"/>
-            <TextBlock Text="Name:"/>
-            <TextBox Text="{Binding User.Name}"/>
-            <TextBlock Text="Password:"/>
-            <TextBox Text="{Binding User.Password}"/>
-            <Button Content="Logon" Command="{Binding LogonCommand}"/>
-        </StackPanel>
+        <Grid.Background>
+            <ImageBrush ImageSource="1900857.jpg" Stretch="None"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="155*"/>
+            <ColumnDefinition Width="36*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="{Binding ErrorMessage}" Foreground="Red" Margin="95.205,15.793,72.777,122.616"/>
+        <TextBlock Margin="16.665,34.811,238.238,100.356"><Run Text="Name"/><Run Text="："/></TextBlock>
+        <TextBox Text="{Binding User.Name}" Margin="95.205,34.811,23.202,100.356"/>
+        <TextBlock Margin="16.666,70,219.871,65.333"><Run Text="Password"/><Run Text="："/></TextBlock>
+        <TextBox Text="{Binding User.Password}" Margin="95.205,68.445,23.202,65.333"/>
+        <Button Content="ログイン" Command="{Binding LogonCommand}" HorizontalAlignment="Left" Width="63" Margin="157,98,0,32"/>
+        <Button Content="サインアップ
+" Command="{Binding SignUpCommand}" HorizontalAlignment="Left" Height="20.667" Margin="157,125,0,6" Width="63"/>
+        <Button Content="リクエスト" HorizontalAlignment="Left" Height="20.667" Margin="10,121,0,10" Width="56" Grid.Column="1"/>
+
     </Grid>
 </UserControl>

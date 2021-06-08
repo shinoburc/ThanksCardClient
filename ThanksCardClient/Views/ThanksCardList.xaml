@@ -7,13 +7,13 @@
         <StackPanel>
             <DataGrid ItemsSource="{Binding ThanksCards}" AutoGenerateColumns="False" CanUserAddRows="False">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
-                    <DataGridTextColumn Header="タイトル" Binding="{Binding Title}" />
-                    <DataGridTextColumn Header="感謝の言葉" Binding="{Binding Body}" />
-                    <DataGridTextColumn Header="From" Binding="{Binding From.Name}" />
-                    <DataGridTextColumn Header="To" Binding="{Binding To.Name}" />
-                    <DataGridTextColumn Header="作成日時" Binding="{Binding CreatedDateTime}" />
-                    <DataGridTemplateColumn IsReadOnly="True" Header="タグ">
+                    <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="50" />
+                    <DataGridTextColumn Header="From" Binding="{Binding From.Name}" Width="200" />
+                    <DataGridTextColumn Header="To" Binding="{Binding To.Name}" Width="200" />
+                    <DataGridTextColumn Header="タイトル" Binding="{Binding Title}" Width="300" />
+                    <DataGridTextColumn Header="感謝の言葉" Binding="{Binding Body}" Width="300" />
+                    <DataGridTextColumn Header="作成日時" Binding="{Binding CreatedDateTime}" Width="100" />
+                    <DataGridTemplateColumn IsReadOnly="True" Header="タグ" Width="100">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <ListBox ItemsSource="{Binding ThanksCardTags}" DisplayMemberPath="Tag.Name"/>

@@ -3,14 +3,13 @@
 namespace ThanksCardClient.Views
 {
     /// <summary>
-    /// Interaction logic for Logon
+    /// Interaction logic for HomePage
     /// </summary>
-    public partial class Logon : UserControl
+    public partial class HomePage : UserControl
     {
-        public Logon()
+        public HomePage()
         {
             InitializeComponent();
         }
-
     }
 }
