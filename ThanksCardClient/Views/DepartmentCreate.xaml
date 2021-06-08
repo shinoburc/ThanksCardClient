@@ -7,7 +7,7 @@
     <Grid Background="#FF78FF8C">
         
         <StackPanel>
-            <Button Content="戻る" HorizontalAlignment="Left" Height="17.67" VerticalAlignment="Top" Width="33.595" Background="#FFDDDDDD" BorderBrush="Black"/>
+            <Button Content="戻る" Command="{Binding Home2Command}" HorizontalAlignment="Left" Height="17.67" VerticalAlignment="Top" Width="33.595" Background="#FFDDDDDD" BorderBrush="Black"/>
             <TextBlock Text="{Binding ErrorMessage}" Foreground="Red" Height="31.899"/>
             <TextBlock><InlineUIContainer/><Run Text="新部署"/><Run Text="名"/><Run Text=":"/></TextBlock>
             <TextBox Text="{Binding Department.Name}"/>

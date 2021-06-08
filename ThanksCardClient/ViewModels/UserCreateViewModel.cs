@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using ThanksCardClient.Models;
+using ThanksCardClient.Services;
 
 namespace ThanksCardClient.ViewModels
 {
@@ -27,6 +28,15 @@ namespace ThanksCardClient.ViewModels
         {
             get { return _Departments; }
             set { SetProperty(ref _Departments, value); }
+        }
+        #endregion
+
+        #region ErrorMessage
+        private string _ErrorMessage;
+        public string ErrorMessage
+        {
+            get { return _ErrorMessage; }
+            set { SetProperty(ref _ErrorMessage, value); }
         }
         #endregion
 
@@ -65,5 +75,23 @@ namespace ThanksCardClient.ViewModels
             this.regionManager.RequestNavigate("ContentRegion", nameof(Views.UserMst));
         }
         #endregion
+
+        #region LogoffCommand
+        private DelegateCommand _logoffCommand;
+        public DelegateCommand LogoffCommand =>
+            _logoffCommand ?? (_logoffCommand = new DelegateCommand(ExecuteLogoffCommand));
+
+        void ExecuteLogoffCommand()
+        {
+            SessionService.Instance.AuthorizedUser = null;
+            SessionService.Instance.IsAuthorized = false;
+
+            // HeaderRegion, FooterRegion を破棄して、ContentRegion をログオン画面に遷移させる。
+            this.regionManager.Regions["HeaderRegion"].RemoveAll();
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Logon));
+            this.regionManager.Regions["FooterRegion"].RemoveAll();
+        }
+        #endregion
+
     }
 }

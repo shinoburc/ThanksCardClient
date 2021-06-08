@@ -26,7 +26,7 @@
                 </TextBlock.OpacityMask><Run Text="Password"/><Run Text=":"/></TextBlock>
             <TextBox Text="{Binding User.Password}"/>
             <Button Content="ログイン" Command="{Binding LogonCommand}" AutomationProperties.IsColumnHeader="True" Foreground="Black" BorderBrush="Black" Background="#FFDDDDDD"/>
-            <Button Content="社員登録" Command="{Binding LogonCommand}" Background="#FFDDDDDD" BorderBrush="#FF040000" Foreground="Black"/>
+            <Button Content="社員登録" Command="{Binding ShowUserCreateCommand}" Background="#FFDDDDDD" BorderBrush="#FF040000" Foreground="Black"/>
         </StackPanel>
     </Grid>
 </UserControl>

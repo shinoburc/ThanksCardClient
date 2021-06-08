@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="ThanksCardClient.Views.Home2"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"             
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid>
+        <Button Content="Rogout" Command="{Binding LogoffCommand}" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="76" Background="#FFDDDDDD" BorderBrush="Black" FontSize="20" Click="Button_Click"/>
+        <Button Content="パスワード変更" Command="{Binding Password2Command}" HorizontalAlignment="Left" Height="47.034" VerticalAlignment="Top" Width="120.069" Background="#FFDDDDDD" BorderBrush="Black" FontSize="20" Margin="555.334,0,0,0" />
+        <Button Content="Help" HorizontalAlignment="Left" Height="47.034" VerticalAlignment="Top" Width="78.166" Background="#FFDDDDDD" BorderBrush="Black" FontSize="20" Margin="711.834,0,0,0"/>
+        <Button Content="感謝カード作成" Command="{Binding Cardcreate2Command}" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="136" Background="#FFDDDDDD" BorderBrush="Black" FontSize="20" Margin="124,117,0,0"/>
+        <Button Content="掲示板" Command="{Binding Board2Command}" HorizontalAlignment="Left" Height="48.856" VerticalAlignment="Top" Width="110.96" Background="#FFDDDDDD" BorderBrush="Black" FontSize="20" Margin="300.273,116.599,0,0"/>
+        <Button Content="受信BOX" Command="{Binding To2Command}" HorizontalAlignment="Left" Height="48.856" VerticalAlignment="Top" Width="110.96" Background="#FFDDDDDD" BorderBrush="Black" FontSize="20" Margin="462.419,116.599,0,0"/>
+        <Button Content="送信履歴"  Command="{Binding From2Command}"  HorizontalAlignment="Left" Height="48.856" VerticalAlignment="Top" Width="110.96" Background="#FFDDDDDD" BorderBrush="Black" FontSize="20" Margin="619.099,116.599,0,0"/>
+        <Button Content="過去の記録" Command="{Binding Memory2Command}" HorizontalAlignment="Left" Height="49" VerticalAlignment="Top" Width="111" Background="#FFDDDDDD" BorderBrush="Black" FontSize="20" Margin="42,269,0,0"/>
+        <Button Content="連携グラフ" Command="{Binding Graph2Command}" HorizontalAlignment="Left" Height="48.856" VerticalAlignment="Top" Width="110.96" Background="#FFDDDDDD" BorderBrush="Black" FontSize="20" Margin="181.853,269.384,0,0"/>
+        <Button Content="資料作成"  Command="{Binding Document2Command}" HorizontalAlignment="Left" Height="48.856" VerticalAlignment="Top" Width="110.96" Background="#FFDDDDDD" BorderBrush="Black" FontSize="20" Margin="322.136,269.384,0,0"/>
+        <Button Content="部署・課登録"  Command="{Binding DepartmentCreateCommand}" HorizontalAlignment="Left" Height="48.856" VerticalAlignment="Top" Width="129.818" Background="#FFDDDDDD" BorderBrush="Black" FontSize="20" Margin="462.419,269.384,0,0"/>
+        <Button Content="更新/削除" Command="{Binding UpDate2Command}" HorizontalAlignment="Left" Height="48.856" VerticalAlignment="Top" Width="110.96" Background="#FFDDDDDD" BorderBrush="Black" FontSize="20" Margin="619.099,269.384,0,0"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1.822" Margin="0,225.911,0,0" VerticalAlignment="Top" Width="800" Background="Black"/>
+    </Grid>
+</UserControl>
