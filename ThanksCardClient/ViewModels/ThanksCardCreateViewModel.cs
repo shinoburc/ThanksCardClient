@@ -41,12 +41,12 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
-        #region DepartmentsProperty
-        private List<Department> _Departments;
-        public List<Department> Departments
+        #region DepartmentChildrensProperty
+        private List<DepartmentChildren> _DepartmentChildrens;
+        public List<DepartmentChildren> DepartmentChildrens
         {
-            get { return _Departments; }
-            set { SetProperty(ref _Departments, value); }
+            get { return _DepartmentChildrens; }
+            set { SetProperty(ref _DepartmentChildrens, value); }
         }
         #endregion
 
@@ -79,8 +79,8 @@ namespace ThanksCardClient.ViewModels
             var tag = new Tag();
             this.Tags = await tag.GetTagsAsync();
 
-            var dept = new Department();
-            this.Departments = await dept.GetDepartmentsAsync();
+            var dept = new DepartmentChildren();
+            this.DepartmentChildrens = await dept.GetDepartmentChildrensAsync();
         }
 
         public bool IsNavigationTarget(NavigationContext navigationContext)
@@ -93,25 +93,25 @@ namespace ThanksCardClient.ViewModels
             //throw new NotImplementedException();
         }
 
-        #region FromDepartmentsChangedCommand
-        private DelegateCommand<long?> _FromDepartmentsChangedCommand;
-        public DelegateCommand<long?> FromDepartmentsChangedCommand =>
-            _FromDepartmentsChangedCommand ?? (_FromDepartmentsChangedCommand = new DelegateCommand<long?>(ExecuteFromDepartmentsChangedCommand));
+        #region FromDepartmentChildrensChangedCommand
+        private DelegateCommand<long?> _FromDepartmentChildrensChangedCommand;
+        public DelegateCommand<long?> FromDepartmentChildrensChangedCommand =>
+            _FromDepartmentChildrensChangedCommand ?? (_FromDepartmentChildrensChangedCommand = new DelegateCommand<long?>(ExecuteFromDepartmentChildrensChangedCommand));
 
-        async void ExecuteFromDepartmentsChangedCommand(long? FromDepartmentId)
+        async void ExecuteFromDepartmentChildrensChangedCommand(long? FromDepartmentChildrenId)
         {
-            this.FromUsers = await SessionService.Instance.AuthorizedUser.GetDepartmentUsersAsync(FromDepartmentId);
+            this.FromUsers = await SessionService.Instance.AuthorizedUser.GetDepartmentUsersAsync(FromDepartmentChildrenId);
         }
         #endregion
 
-        #region ToDepartmentsChangedCommand
-        private DelegateCommand<long?> _ToDepartmentsChangedCommand;
-        public DelegateCommand<long?> ToDepartmentsChangedCommand =>
-            _ToDepartmentsChangedCommand ?? (_ToDepartmentsChangedCommand = new DelegateCommand<long?>(ExecuteToDepartmentsChangedCommand));
+        #region ToDepartmentChildrensChangedCommand
+        private DelegateCommand<long?> _ToDepartmentChildrensChangedCommand;
+        public DelegateCommand<long?> ToDepartmentChildrensChangedCommand =>
+            _ToDepartmentChildrensChangedCommand ?? (_ToDepartmentChildrensChangedCommand = new DelegateCommand<long?>(ExecuteToDepartmentChildrensChangedCommand));
 
-        async void ExecuteToDepartmentsChangedCommand(long? ToDepartmentId)
+        async void ExecuteToDepartmentChildrensChangedCommand(long? ToDepartmentChildrenId)
         {
-            this.ToUsers = await SessionService.Instance.AuthorizedUser.GetDepartmentUsersAsync(ToDepartmentId);
+            this.ToUsers = await SessionService.Instance.AuthorizedUser.GetDepartmentUsersAsync(ToDepartmentChildrenId);
         }
         #endregion
 

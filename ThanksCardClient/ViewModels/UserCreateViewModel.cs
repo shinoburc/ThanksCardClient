@@ -21,12 +21,12 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
-        #region DepartmentsProperty
-        private List<Department> _Departments;
-        public List<Department> Departments
+        #region DepartmentChildrensProperty
+        private List<DepartmentChildren> _DepartmentChildrens;
+        public List<DepartmentChildren> DepartmentChildrens
         {
-            get { return _Departments; }
-            set { SetProperty(ref _Departments, value); }
+            get { return _DepartmentChildrens; }
+            set { SetProperty(ref _DepartmentChildrens, value); }
         }
         #endregion
 
@@ -37,8 +37,8 @@ namespace ThanksCardClient.ViewModels
 
         public async void OnNavigatedTo(NavigationContext navigationContext)
         {
-            Department dept = new Department();
-            this.Departments = await dept.GetDepartmentsAsync();
+            DepartmentChildren dept = new DepartmentChildren();
+            this.DepartmentChildrens = await dept.GetDepartmentChildrensAsync();
 
             this.User = new User();
         }

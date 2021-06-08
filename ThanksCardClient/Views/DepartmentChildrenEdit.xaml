@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="ThanksCardClient.Views.DepartmentChildrenEdit"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"             
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="課コード:"/>
+            <TextBox Text="{Binding DepartmentChildren.Code}"/>
+            <TextBlock Text="課名"/>
+            <TextBox Text="{Binding DepartmentChildren.Name}"/>
+            <TextBlock Text="所属部署"/>
+            <ComboBox SelectedItem="{Binding DepartmentChildren.Department}" ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValue="{Binding DepartmentChildren.DepartmentId}" SelectedValuePath="Id"/>
+            <Button Content="変更" Command="{Binding SubmitCommand}"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
