@@ -1,7 +1,7 @@
 ﻿<UserControl x:Class="ThanksCardClient.Views.OverallCardListDetail"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-              xmlns:prism="http://prismlibrary.com/"             
+              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True"
     >
     <Grid>
@@ -13,36 +13,30 @@
                 </DataGrid.Columns>
             </DataGrid>
             <TextBlock Text="{Binding ThanksCards.Title}"/>
-
-
             <DataGrid >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="差出人" />
                 </DataGrid.Columns>
             </DataGrid>
             <TextBlock Text="{Binding ThanksCards.From.Name}"></TextBlock>
-
             <DataGrid >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="受取人" />
                 </DataGrid.Columns>
             </DataGrid>
             <TextBlock Text="{Binding ThanksCards.To.Name}"></TextBlock>
-
             <DataGrid >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="内容" />
                 </DataGrid.Columns>
             </DataGrid>
             <TextBlock Text="{Binding ThanksCards.Body}"></TextBlock>
-
             <DataGrid >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="作成日時" />
                 </DataGrid.Columns>
             </DataGrid>
             <TextBlock Text="{Binding ThanksCards.CreatedDateTime}"></TextBlock>
-
         </StackPanel>
     </Grid>
 </UserControl>
