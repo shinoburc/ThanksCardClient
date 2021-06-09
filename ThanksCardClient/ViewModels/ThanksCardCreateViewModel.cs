@@ -144,7 +144,7 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion*/
 
-         #region ShowSendConfirmCommand
+        #region ShowSendConfirmCommand
         private DelegateCommand _ShowSendConfirmCommand;
         public DelegateCommand ShowSendConfirmCommand =>
             _ShowSendConfirmCommand ?? (_ShowSendConfirmCommand = new DelegateCommand(ExecuteShowSendConfirmCommand));
@@ -179,8 +179,8 @@ namespace ThanksCardClient.ViewModels
                 //　その他の場合の処理
             }
         }
-        #endregion 
+        #endregion
 
-       
+        
     }
 }
