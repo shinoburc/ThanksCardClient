@@ -142,7 +142,7 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
-         #region ShowSendConfirmCommand
+        #region ShowSendConfirmCommand
         private DelegateCommand _ShowSendConfirmCommand;
         public DelegateCommand ShowSendConfirmCommand =>
             _ShowSendConfirmCommand ?? (_ShowSendConfirmCommand = new DelegateCommand(ExecuteShowSendConfirmCommand));
@@ -151,8 +151,8 @@ namespace ThanksCardClient.ViewModels
         {
             this.regionManager.RequestNavigate("ContentRegion", nameof(Views.SendConfirm));
         }
-        #endregion 
+        #endregion
 
-       
+        
     }
 }

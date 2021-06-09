@@ -36,13 +36,14 @@
         </StackPanel>
         <TextBlock Text="作成日:"/>
         <DatePicker SelectedDate="{Binding ThanksCard.CreatedDateTime}"/>
-        <ListBox ItemsSource="{Binding Tags}" IsSynchronizedWithCurrentItem="True" SelectionMode="Multiple" DisplayMemberPath="Name">
-            <ListBox.ItemContainerStyle>
+            <TextBlock Text="カテゴリ:"/>
+            <ComboBox ItemsSource="{Binding Tags}" IsSynchronizedWithCurrentItem="True"  DisplayMemberPath="Name">
+            <ComboBox.ItemContainerStyle>
                 <Style TargetType="ListBoxItem">
                     <Setter Property="IsSelected" Value="{Binding Selected}" />
                 </Style>
-            </ListBox.ItemContainerStyle>
-        </ListBox>
+            </ComboBox.ItemContainerStyle>
+        </ComboBox>
             <StackPanel>
                 <TextBlock Text="感謝度:"/>
                 <ComboBox ItemsSource="{Binding Rank}" SelectedValue="{Binding SelectedRank}" >
@@ -50,10 +51,10 @@
                 </ComboBox>
             </StackPanel>
             <TextBlock Text=""/>
-                <Button Content="確認" Command="{Binding ShowSendConfirmCommand}"/>
+            <Button Content="確認" Command="{Binding ShowSendConfirmCommand}"/>
             <Button Content="作成" Command="{Binding SubmitCommand}"/>
-        
-             
+            
+
         </StackPanel>
 </Grid>
 </UserControl>

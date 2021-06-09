@@ -3,29 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:prism="http://prismlibrary.com/"             
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="ThanksCardClient.Views.Logon"             
-             prism:ViewModelLocator.AutoWireViewModel="True" d:DesignWidth="136.325" d:DesignHeight="111.095">
-    <Grid Height="133.095">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="119*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition Height="0*"/>
-            <RowDefinition Height="0*"/>
-            <RowDefinition Height="0*"/>
-            <RowDefinition Height="0*"/>
-        </Grid.RowDefinitions>
+             prism:ViewModelLocator.AutoWireViewModel="True"  >
+    <Grid>
         <StackPanel Grid.RowSpan="3" Margin="0,0,0,0.002" Grid.ColumnSpan="2">
             <TextBlock Text="{Binding ErrorMessage}" Foreground="Red"/>
 
             <TextBlock Text="Name:"/>
             <TextBox Text="{Binding User.Name}"/>
+
             <TextBlock Text="Password:"/>
             <TextBox Text="{Binding User.Password}"/>
-            <Button Content="ログイン" Command="{Binding LogonCommand}" Height="22.293" Background="#FFB4B4B4"/>
+            <TextBlock Text=""/>
+            <Button  Content="ログイン" Command="{Binding LogonCommand}" Height="30" Width="100"  FontSize="13" Background="#FFB4B4B4" Margin="18,0"/>
+            
         </StackPanel>
     </Grid>
 </UserControl>
