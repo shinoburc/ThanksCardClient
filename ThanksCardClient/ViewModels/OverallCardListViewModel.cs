@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using ThanksCardClient.Models;
 
+
 namespace ThanksCardClient.ViewModels
 {
     public class OverallCardListViewModel : BindableBase, INavigationAware
@@ -45,13 +46,15 @@ namespace ThanksCardClient.ViewModels
         }
 
         #region ShowOverallCardListDetailCommand
-        private DelegateCommand _ShowOverallCardListDetailCommand;
-        public DelegateCommand ShowOverallCardListDetailCommand =>
-            _ShowOverallCardListDetailCommand ?? (_ShowOverallCardListDetailCommand = new DelegateCommand(ExecuteShowOverallCardListDetailCommand));
+        private DelegateCommand<ThanksCard> _ShowOverallCardListDetailCommand;
+        public DelegateCommand<ThanksCard> ShowOverallCardListDetailCommand =>
+            _ShowOverallCardListDetailCommand ?? (_ShowOverallCardListDetailCommand = new DelegateCommand<ThanksCard>(ExecuteShowOverallCardListDetailCommand));
 
-        void ExecuteShowOverallCardListDetailCommand()
+        void ExecuteShowOverallCardListDetailCommand(ThanksCard SelectedOverallCardListDetail)
         {
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.OverallCardListDetail));
+            var parameters = new NavigationParameters();
+            parameters.Add("SelectedOverallCardListDetail", SelectedOverallCardListDetail);
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.OverallCardListDetail),parameters);
         }
         #endregion
     }

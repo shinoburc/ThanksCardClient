@@ -3,7 +3,10 @@ using Prism.Mvvm;
 using Prism.Regions;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Windows;
+using System.Windows.Media.Imaging;
 using ThanksCardClient.Models;
 using ThanksCardClient.Services;
 
@@ -75,5 +78,21 @@ namespace ThanksCardClient.ViewModels
             this.regionManager.RequestNavigate("ContentRegion", nameof(Views.OverallCardList));
         }
         #endregion
+
+        #region ShowManualCommand
+        private DelegateCommand _ShowManualCommand;
+        public DelegateCommand ShowManualCommand =>
+            _ShowManualCommand ?? (_ShowManualCommand = new DelegateCommand(ExecuteShowManualCommand));
+
+        void ExecuteShowManualCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Manual));
+        }
+        #endregion
+
+
     }
+
 }
+        
+    

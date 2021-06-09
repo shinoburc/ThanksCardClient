@@ -2,6 +2,7 @@
 using Prism.Ioc;
 using Prism.Modularity;
 using System.Windows;
+using ThanksCardClient.ViewModels;
 
 namespace ThanksCardClient
 {
@@ -39,7 +40,9 @@ namespace ThanksCardClient
             containerRegistry.RegisterForNavigation<OverallCardList>(); 
             containerRegistry.RegisterForNavigation<OverallCardListDetail>();
             containerRegistry.RegisterForNavigation<Detail>();
-            containerRegistry.RegisterForNavigation<SendConfirm>();
+            containerRegistry.RegisterForNavigation<SendConfirm>(); 
+            containerRegistry.RegisterForNavigation<Manual>();
+       
         }
     }
 }
