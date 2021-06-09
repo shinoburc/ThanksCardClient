@@ -8,6 +8,8 @@ using System.Linq;
 using ThanksCardClient.Models;
 using ThanksCardClient.Services;
 using Prism.Services.Dialogs;
+using System.Windows;
+
 namespace ThanksCardClient.ViewModels
 {
     public class ThanksCardCreateViewModel : BindableBase, INavigationAware
@@ -118,7 +120,7 @@ namespace ThanksCardClient.ViewModels
             this.ToUsers = await SessionService.Instance.AuthorizedUser.GetDepartmentUsersAsync(ToDepartmentId);
         }
         #endregion
-        #region SubmitCommand
+        /*#region SubmitCommand
         private DelegateCommand _SubmitCommand;
         public DelegateCommand SubmitCommand =>
             _SubmitCommand ?? (_SubmitCommand = new DelegateCommand(ExecuteSubmitCommand));
@@ -140,16 +142,42 @@ namespace ThanksCardClient.ViewModels
             //TODO: Error handling
             this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardList));
         }
-        #endregion
+        #endregion*/
 
          #region ShowSendConfirmCommand
         private DelegateCommand _ShowSendConfirmCommand;
         public DelegateCommand ShowSendConfirmCommand =>
             _ShowSendConfirmCommand ?? (_ShowSendConfirmCommand = new DelegateCommand(ExecuteShowSendConfirmCommand));
 
-        void ExecuteShowSendConfirmCommand()
+        async void ExecuteShowSendConfirmCommand()
         {
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.SendConfirm));
+            MessageBoxResult result = MessageBox.Show("内容に間違いはありませんか？\n間違いがなければ送信してください", "送信確認",MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                System.Diagnostics.Debug.WriteLine(this.Tags);
+                //選択された Tag を取得し、ThanksCard.ThanksCardTags にセットする。
+                List<ThanksCardTag> ThanksCardTags = new List<ThanksCardTag>();
+                foreach (var tag in this.Tags.Where(t => t.Selected))
+                {
+                    ThanksCardTag thanksCardTag = new ThanksCardTag();
+                    thanksCardTag.TagId = tag.Id;
+                    ThanksCardTags.Add(thanksCardTag);
+                }
+                this.ThanksCard.ThanksCardTags = ThanksCardTags;
+
+                this.ThanksCard.ThanksRank = SelectedRank;
+                ThanksCard createdThanksCard = await ThanksCard.PostThanksCardAsync(this.ThanksCard);
+                //TODO: Error handling
+                this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardList));
+            }
+            else if (result == MessageBoxResult.No)
+            {
+                // 「いいえ」ボタンを押した場合の処理
+            }
+            else
+            {
+                //　その他の場合の処理
+            }
         }
         #endregion 
 
