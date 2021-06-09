@@ -51,10 +51,7 @@
                 </ComboBox>
             </StackPanel>
             <TextBlock Text=""/>
-            <Button Content="確認" Command="{Binding ShowSendConfirmCommand}"/>
-            <Button Content="作成" Command="{Binding SubmitCommand}"/>
-            
-
+            <Button Content="作成" Command="{Binding ShowSendConfirmCommand}"/>
         </StackPanel>
 </Grid>
 </UserControl>
