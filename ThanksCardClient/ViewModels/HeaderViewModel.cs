@@ -86,7 +86,7 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteShowManualCommand()
         {
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Manual));
+            System.Diagnostics.Process p =System.Diagnostics.Process.Start("C:\\ThanksCardManual.pdf");
         }
         #endregion
 
