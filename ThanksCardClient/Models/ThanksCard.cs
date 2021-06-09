@@ -126,6 +126,13 @@ namespace ThanksCardClient.Models
             ThanksCard deletedThanksCards = await rest.DeleteThanksCardAsync(Id);
             return deletedThanksCards;
         }
+
+        public async Task<List<ThanksCard>> GetTagThanksCardsAsync()
+        {
+            IRestService rest = new RestService();
+            List<ThanksCard> TagthanksCards = await rest.GetTagThanksCardsAsync();
+            return TagthanksCards;
+        }
     }
 
     
