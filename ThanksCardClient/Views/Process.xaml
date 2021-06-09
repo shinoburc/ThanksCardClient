@@ -7,7 +7,7 @@
 
     <Grid>
         <StackPanel>
-            <TextBlock Text="業務プロセス改善"/>
+            <TextBlock Text="業務プロセス改善"  FontSize="15"/>
             <DataGrid ItemsSource="{Binding UThanksCards}" AutoGenerateColumns="False" CanUserAddRows="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="作成日時" Binding="{Binding CreatedDateTime}" />

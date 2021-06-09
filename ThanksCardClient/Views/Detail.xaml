@@ -7,21 +7,21 @@
         <StackPanel>
             <DataGrid >
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="タイトル" />
+                    <DataGridTextColumn Header="タイトル" Width="100" FontSize="15"/>
                 </DataGrid.Columns>
             </DataGrid>
             <TextBlock Text="{Binding UThanksCards.Title}"/>
 
             <DataGrid >
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="差出人" />
+                    <DataGridTextColumn Header="差出人" Width="100" FontSize="15"/>
                 </DataGrid.Columns>
             </DataGrid>
             <TextBlock Text="{Binding UThanksCards.From.Name}"></TextBlock>
 
             <DataGrid >
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="内容" />
+                    <DataGridTextColumn Header="内容" Width="100" FontSize="15"/>
                 </DataGrid.Columns>
             </DataGrid>
             <TextBlock Text="{Binding UThanksCards.Body}"></TextBlock>

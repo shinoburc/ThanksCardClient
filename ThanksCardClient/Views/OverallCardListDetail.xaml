@@ -6,7 +6,7 @@
     >
     <Grid>
         <StackPanel>
-            <TextBlock Text="全体掲示詳細"></TextBlock>
+            <TextBlock Text="全体掲示詳細" Width="100" FontSize="15"></TextBlock>
             <DataGrid >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="タイトル" />

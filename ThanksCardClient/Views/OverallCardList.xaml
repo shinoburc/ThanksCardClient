@@ -5,7 +5,7 @@
              prism:ViewModelLocator.AutoWireViewModel="True">
     <Grid>
         <StackPanel>
-            <TextBlock Text="代表的な事例"></TextBlock>
+            <TextBlock Text="代表的な事例" Width="100" FontSize="15" ></TextBlock>
             <DataGrid ItemsSource="{Binding ThanksCardsRank}" AutoGenerateColumns="False" CanUserAddRows="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="タイトル" Binding="{Binding Title}"/>
@@ -20,7 +20,7 @@
                 </DataGrid.Columns>
             </DataGrid>
 
-            <TextBlock Text="全体掲示"></TextBlock>
+            <TextBlock Text="全体掲示" Width="100" FontSize="15"></TextBlock>
             <DataGrid ItemsSource="{Binding ThanksCards}" AutoGenerateColumns="False" CanUserAddRows="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="タイトル" Binding="{Binding Title}" />

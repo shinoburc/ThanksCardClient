@@ -5,7 +5,8 @@
              prism:ViewModelLocator.AutoWireViewModel="True">
     <Grid>
         <StackPanel>
-            <TextBlock Text="受信BOX"/>
+            <TextBlock Text="受信BOX" Width="100" FontSize="15"
+                       />
             <DataGrid ItemsSource="{Binding UThanksCards}" AutoGenerateColumns="False" CanUserAddRows="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
