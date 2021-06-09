@@ -46,12 +46,8 @@
         </ComboBox>
             <StackPanel>
                 <TextBlock Text="感謝度:"/>
-                <ComboBox ItemsSource="{Binding ThanksCard}" SelectedValue="{Binding ThanksCard.ThanksRank}" >
-                    <ComboBoxItem>5</ComboBoxItem>
-                    <ComboBoxItem>4</ComboBoxItem>
-                    <ComboBoxItem>3</ComboBoxItem>
-                    <ComboBoxItem>2</ComboBoxItem>
-                    <ComboBoxItem>1</ComboBoxItem>
+                <ComboBox ItemsSource="{Binding Rank}" SelectedValue="{Binding SelectedRank}" >
+                    
                 </ComboBox>
             </StackPanel>
             <TextBlock Text=""/>

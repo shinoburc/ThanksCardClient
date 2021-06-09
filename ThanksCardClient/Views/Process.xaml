@@ -8,11 +8,21 @@
     <Grid>
         <StackPanel>
             <TextBlock Text="業務プロセス改善"/>
-            <DataGrid ItemsSource="{Binding ThanksCards}" AutoGenerateColumns="False" CanUserAddRows="False">
+            <DataGrid ItemsSource="{Binding UThanksCards}" AutoGenerateColumns="False" CanUserAddRows="False">
                 <DataGrid.Columns>
+                    <DataGridTextColumn Header="作成日時" Binding="{Binding CreatedDateTime}" />
                     <DataGridTextColumn Header="タイトル"  Binding="{Binding Title}"/>
+                    <DataGridTextColumn Header="To" Binding="{Binding To.Name}" />
                     <DataGridTextColumn Header="From"  Binding="{Binding From.Name}"/>
                     <DataGridTextColumn Header="作成日時" Binding="{Binding CreatedDateTime}"/>
+                    <DataGridTextColumn Header="本文" Binding="{Binding Body}" />
+                    <DataGridTemplateColumn IsReadOnly="True" Header="タグ">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <ListBox ItemsSource="{Binding ThanksCardTags}" DisplayMemberPath="Tag.Name"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>
