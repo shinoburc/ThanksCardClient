@@ -5,12 +5,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using ThanksCardClient.Models;
+using ThanksCardClient.Services;
 
 namespace ThanksCardClient.ViewModels
 {
     public class OverallCardListViewModel : BindableBase, INavigationAware
     {
         private IRegionManager regionManager;
+
+        IRestService service = new RestService();
 
         #region ThanksCardsProperty
         private List<ThanksCard> _ThanksCards;
@@ -20,6 +23,16 @@ namespace ThanksCardClient.ViewModels
             set { SetProperty(ref _ThanksCards, value); }
         }
         #endregion
+
+        #region ThanksCardsRanksProperty
+        private List<ThanksCard> _ThanksCardsRank;
+        public List<ThanksCard> ThanksCardsRank
+        {
+            get { return _ThanksCardsRank; }
+            set { SetProperty(ref _ThanksCardsRank, value);}
+        }
+        #endregion
+
 
         public OverallCardListViewModel(IRegionManager regionManager)
         {
@@ -31,7 +44,9 @@ namespace ThanksCardClient.ViewModels
         {
             ThanksCard thanksCard = new ThanksCard();
             this.ThanksCards = await thanksCard.GetThanksCardsAsync();
-
+            this.ThanksCardsRank = await service.GetThanksCardsAsync();
+            ThanksCardsRank = ThanksCardsRank.Where(x => x.ThanksRank > 4).ToList();
+            //ThanksCardsRank = ThanksCardsRank.OrderByDescending(x => x.ThanksRank).FirstOrDefault();
         }
 
         public bool IsNavigationTarget(NavigationContext navigationContext)
@@ -45,13 +60,17 @@ namespace ThanksCardClient.ViewModels
         }
 
         #region ShowOverallCardListDetailCommand
-        private DelegateCommand _ShowOverallCardListDetailCommand;
-        public DelegateCommand ShowOverallCardListDetailCommand =>
-            _ShowOverallCardListDetailCommand ?? (_ShowOverallCardListDetailCommand = new DelegateCommand(ExecuteShowOverallCardListDetailCommand));
+        private DelegateCommand<ThanksCard> _ShowOverallCardListDetailCommand;
+        public DelegateCommand<ThanksCard> ShowOverallCardListDetailCommand =>
+            _ShowOverallCardListDetailCommand ?? (_ShowOverallCardListDetailCommand = new DelegateCommand<ThanksCard>(ExecuteShowOverallCardListDetailCommand));
 
-        void ExecuteShowOverallCardListDetailCommand()
+        void ExecuteShowOverallCardListDetailCommand(ThanksCard SelectedOverallCardListDetail)
         {
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.OverallCardListDetail));
+
+            // 対象のThanksCardをパラメーターとして画面遷移先に渡す。
+            var parameters = new NavigationParameters();
+            parameters.Add("SelectedOverallCardListDetail", SelectedOverallCardListDetail);
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.OverallCardListDetail), parameters);
         }
         #endregion
     }

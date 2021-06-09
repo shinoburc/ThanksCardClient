@@ -6,10 +6,17 @@
     <Grid>
         <StackPanel>
             <TextBlock Text="代表的な事例"></TextBlock>
-            <DataGrid >
+            <DataGrid ItemsSource="{Binding ThanksCardsRank}" AutoGenerateColumns="False" CanUserAddRows="False">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="タイトル"/>
-                    <DataGridTextColumn Header="To"/>
+                    <DataGridTextColumn Header="タイトル" Binding="{Binding Title}"/>
+                    <DataGridTextColumn Header="To" Binding="{Binding To.Name}"/>
+                    <DataGridTemplateColumn Header="">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="詳細" Command="{Binding DataContext.ShowOverallCardListDetailCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
 
@@ -24,7 +31,6 @@
                     <DataGridTemplateColumn Header="">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <!-- CommandParameter に {Binding} とだけ記述すると、TagMstViewModel.Tags の要素、つまり Tag モデルを指定したことになる。-->
                                 <Button Content="詳細" Command="{Binding DataContext.ShowOverallCardListDetailCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" />
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>

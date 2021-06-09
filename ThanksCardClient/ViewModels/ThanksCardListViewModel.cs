@@ -72,6 +72,6 @@ namespace ThanksCardClient.ViewModels
             parameters.Add("SelectedDetail", SelectedDetail);
             this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Detail), parameters);
         }
-        #endregion*
+        #endregion
     }
 }
