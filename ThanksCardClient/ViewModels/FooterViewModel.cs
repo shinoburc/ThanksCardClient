@@ -98,6 +98,7 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
+
         #region To2Command
         private DelegateCommand _To2Command;
         public DelegateCommand To2Command =>
