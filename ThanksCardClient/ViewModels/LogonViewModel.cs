@@ -58,13 +58,27 @@ namespace ThanksCardClient.ViewModels
                 SessionService.Instance.AuthorizedUser = authorizedUser;
                 this.ErrorMessage = "";
                 this.regionManager.RequestNavigate("HeaderRegion", nameof(Views.Header));
-                this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardList));
-                this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Footer));
+                this.regionManager.RequestNavigate("ContentRegion", nameof(Views.To));
+                this.regionManager.Regions["FooterRegion"].RemoveAll();
+
+
+
             }
             else
             {
                 this.ErrorMessage = "ログオンに失敗しました。";
             }
+        }
+        #endregion
+
+        #region ShowUserCreateCommand
+        private DelegateCommand _ShowUserCreateCommand;
+        public DelegateCommand ShowUserCreateCommand =>
+            _ShowUserCreateCommand ?? (_ShowUserCreateCommand = new DelegateCommand(ExecuteShowUserCreateCommand));
+
+        void ExecuteShowUserCreateCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.UserCreate));
         }
         #endregion
     }

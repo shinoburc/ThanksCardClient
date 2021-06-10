@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using ThanksCardClient.Models;
+using ThanksCardClient.Services;
 
 namespace ThanksCardClient.ViewModels
 {
@@ -27,6 +28,15 @@ namespace ThanksCardClient.ViewModels
         {
             get { return _Departments; }
             set { SetProperty(ref _Departments, value); }
+        }
+        #endregion
+
+        #region ErrorMessage
+        private string _ErrorMessage;
+        public string ErrorMessage
+        {
+            get { return _ErrorMessage; }
+            set { SetProperty(ref _ErrorMessage, value); }
         }
         #endregion
 
@@ -65,5 +75,21 @@ namespace ThanksCardClient.ViewModels
             this.regionManager.RequestNavigate("ContentRegion", nameof(Views.UserMst));
         }
         #endregion
+
+        #region Home2Command
+        private DelegateCommand _Home2Command;
+        public DelegateCommand Home2Command =>
+            _Home2Command ?? (_Home2Command = new DelegateCommand(ExecuteHome2Command));
+
+        void ExecuteHome2Command()
+        {
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Home2));
+            this.regionManager.Regions["ContentRegion"].RemoveAll();
+
+        }
+        #endregion
+
+
+
     }
 }

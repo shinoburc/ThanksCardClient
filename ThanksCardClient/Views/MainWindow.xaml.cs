@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 
+
 namespace ThanksCardClient.Views
 {
     /// <summary>
@@ -10,6 +11,7 @@ namespace ThanksCardClient.Views
         public MainWindow()
         {
             InitializeComponent();
+            
         }
     }
 }

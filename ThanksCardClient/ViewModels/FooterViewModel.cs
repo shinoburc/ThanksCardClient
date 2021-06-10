@@ -97,5 +97,54 @@ namespace ThanksCardClient.ViewModels
             this.regionManager.Regions["FooterRegion"].RemoveAll();
         }
         #endregion
+
+
+        #region To2Command
+        private DelegateCommand _To2Command;
+        public DelegateCommand To2Command =>
+            _To2Command ?? (_To2Command = new DelegateCommand(ExecuteTo2Command));
+
+        void ExecuteTo2Command()
+        {
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.To2));
+
+        }
+        #endregion
+
+        #region From2Command
+        private DelegateCommand _From2Command;
+        public DelegateCommand From2Command =>
+            _From2Command ?? (_From2Command = new DelegateCommand(ExecuteFrom2Command));
+
+        void ExecuteFrom2Command()
+        {
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.From2));
+            this.regionManager.Regions["ContentRegion"].RemoveAll();
+        }
+        #endregion
+
+        #region Memory2Command
+        private DelegateCommand _Memory2Command;
+        public DelegateCommand Memory2Command =>
+            _Memory2Command ?? (_Memory2Command = new DelegateCommand(ExecuteMemory2Command));
+
+        void ExecuteMemory2Command()
+        {
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Memory2));
+            this.regionManager.Regions["ContentRegion"].RemoveAll();
+        }
+        #endregion
+
+        #region Document2Command
+        private DelegateCommand _Document2Command;
+        public DelegateCommand Document2Command =>
+            _Document2Command ?? (_Document2Command = new DelegateCommand(ExecuteDocument2Command));
+
+        void ExecuteDocument2Command()
+        {
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Document2));
+            
+        }
+        #endregion
     }
 }

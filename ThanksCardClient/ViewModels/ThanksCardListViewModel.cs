@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using ThanksCardClient.Models;
+using ThanksCardClient.Services;
 
 namespace ThanksCardClient.ViewModels
 {
@@ -26,6 +27,8 @@ namespace ThanksCardClient.ViewModels
             this.regionManager = regionManager;
         }
 
+       
+
 
         public async void OnNavigatedTo(NavigationContext navigationContext)
         {
@@ -43,5 +46,32 @@ namespace ThanksCardClient.ViewModels
         {
             //throw new NotImplementedException();
         }
+
+
+        #region Home2Command
+        private DelegateCommand _Home2Command;
+        public DelegateCommand Home2Command =>
+            _Home2Command ?? (_Home2Command = new DelegateCommand(ExecuteHome2Command));
+
+        void ExecuteHome2Command()
+        {
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Home2));
+            this.regionManager.Regions["ContentRegion"].RemoveAll();
+
+        }
+        #endregion
+        /*#region CardDeleteCommand
+        private DelegateCommand<User> _CardDeleteCommand;
+        public DelegateCommand<User> CardDeleteCommand =>
+            _CardDeleteCommand ?? (_CardDeleteCommand = new DelegateCommand<User>(ExecuteCardDeleteCommand));
+
+        async void ExecuteCardDeleteCommand(User SelectedUser)
+        {
+            User deletedUser = await SelectedUser.DeleteUserAsync(SelectedUser.Id);
+
+            // ユーザ一覧 Users を更新する。
+            this.UpdateCard();
+        }
+        #endregion*/
     }
 }
