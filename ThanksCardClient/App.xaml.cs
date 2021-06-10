@@ -48,7 +48,10 @@ namespace ThanksCardClient
             containerRegistry.RegisterForNavigation<To2>();
             containerRegistry.RegisterForNavigation<ToS2>();
             containerRegistry.RegisterForNavigation<UpDate2>();
-            
+            containerRegistry.RegisterForNavigation<To>();
+            containerRegistry.RegisterForNavigation<From>();
+            containerRegistry.RegisterForNavigation<Memory>();
+
 
         }
     }

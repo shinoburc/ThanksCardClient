@@ -2,9 +2,12 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:prism="http://prismlibrary.com/"             
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="ThanksCardClient.Views.Logon"             
-             prism:ViewModelLocator.AutoWireViewModel="True" d:DesignWidth="205.817" d:DesignHeight="169.22" Background="#FF78FF8C">
-    
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:viewmodels="clr-namespace:ThanksCardClient.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:LogonViewModel}" mc:Ignorable="d" x:Class="ThanksCardClient.Views.Logon"             
+             prism:ViewModelLocator.AutoWireViewModel="True" d:DesignWidth="260" d:DesignHeight="180">
+    <UserControl.Background>
+        <ImageBrush ImageSource="test.jpeg" Stretch="None"/>
+    </UserControl.Background>
+
     <Grid>
         <StackPanel>
             <TextBlock Text="{Binding ErrorMessage}" Foreground="Red"/>
@@ -26,7 +29,6 @@
                 </TextBlock.OpacityMask><Run Text="Password"/><Run Text=":"/></TextBlock>
             <TextBox Text="{Binding User.Password}"/>
             <Button Content="ログイン" Command="{Binding LogonCommand}" AutomationProperties.IsColumnHeader="True" Foreground="Black" BorderBrush="Black" Background="#FFDDDDDD"/>
-            <Button Content="社員登録" Command="{Binding ShowUserCreateCommand}" Background="#FFDDDDDD" BorderBrush="#FF040000" Foreground="Black"/>
         </StackPanel>
     </Grid>
 </UserControl>

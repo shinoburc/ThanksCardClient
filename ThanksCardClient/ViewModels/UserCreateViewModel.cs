@@ -76,22 +76,20 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
-        #region LogoffCommand
-        private DelegateCommand _logoffCommand;
-        public DelegateCommand LogoffCommand =>
-            _logoffCommand ?? (_logoffCommand = new DelegateCommand(ExecuteLogoffCommand));
+        #region Home2Command
+        private DelegateCommand _Home2Command;
+        public DelegateCommand Home2Command =>
+            _Home2Command ?? (_Home2Command = new DelegateCommand(ExecuteHome2Command));
 
-        void ExecuteLogoffCommand()
+        void ExecuteHome2Command()
         {
-            SessionService.Instance.AuthorizedUser = null;
-            SessionService.Instance.IsAuthorized = false;
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Home2));
+            this.regionManager.Regions["ContentRegion"].RemoveAll();
 
-            // HeaderRegion, FooterRegion を破棄して、ContentRegion をログオン画面に遷移させる。
-            this.regionManager.Regions["HeaderRegion"].RemoveAll();
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Logon));
-            this.regionManager.Regions["FooterRegion"].RemoveAll();
         }
         #endregion
+
+
 
     }
 }

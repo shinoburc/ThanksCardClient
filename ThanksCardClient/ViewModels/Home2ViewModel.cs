@@ -49,8 +49,8 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteCardcreate2Command()
         {
-            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.CardCreate));
-            this.regionManager.Regions["ContentRegion"].RemoveAll();
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardCreate));
+            this.regionManager.Regions["FooterRegion"].RemoveAll();
         }
         #endregion
 
@@ -61,8 +61,8 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteBoard2Command()
         {
-            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Board2));
-            this.regionManager.Regions["ContentRegion"].RemoveAll();
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardList));
+            this.regionManager.Regions["FooterRegion"].RemoveAll();
         }
         #endregion
 
@@ -73,9 +73,8 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteTo2Command()
         {
-            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.To2));
-            this.regionManager.Regions["ContentRegion"].RemoveAll();
-
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.To));
+            this.regionManager.Regions["FooterRegion"].RemoveAll();
         }
         #endregion
 
@@ -86,8 +85,8 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteFrom2Command()
         {
-            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.From2));
-            this.regionManager.Regions["ContentRegion"].RemoveAll();
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.From));
+            this.regionManager.Regions["FooterRegion"].RemoveAll();
         }
         #endregion
 
@@ -98,8 +97,8 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteMemory2Command()
         {
-            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Memory2));
-            this.regionManager.Regions["ContentRegion"].RemoveAll();
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Memory));
+            this.regionManager.Regions["FooterRegion"].RemoveAll();
         }
         #endregion
 
@@ -134,8 +133,8 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteDepartmentCreateCommand()
         {
-            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.DepartmentCreate));
-            this.regionManager.Regions["ContentRegion"].RemoveAll();
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.DepartmentMst));
+            this.regionManager.Regions["FooterRegion"].RemoveAll();
         }
         #endregion
 
@@ -146,8 +145,8 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteUpDate2Command()
         {
-            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.UpDate2));
-            this.regionManager.Regions["ContentRegion"].RemoveAll();
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.UserMst));
+            this.regionManager.Regions["FooterRegion"].RemoveAll();
         }
         #endregion
 

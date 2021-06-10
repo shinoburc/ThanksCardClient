@@ -3,14 +3,15 @@
 namespace ThanksCardClient.Views
 {
     /// <summary>
-    /// Interaction logic for UserMst
+    /// Interaction logic for Memory
     /// </summary>
-    public partial class UserMst : UserControl
+    public partial class Memory : UserControl
     {
-        public UserMst()
+        public Memory()
         {
             InitializeComponent();
         }
+
         private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
         {
 

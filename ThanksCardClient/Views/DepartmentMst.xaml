@@ -8,10 +8,9 @@
             <Button Content="+部署の新規作成" Command="{Binding DepartmentCreateCommand}" Width="100" HorizontalAlignment="Left"/>
 
             <!-- ユーザ一覧(Departmentモデルのリスト)である MainWindowViewModel.Departments をグリッド表示する。-->
-            <DataGrid ItemsSource="{Binding Departments}" AutoGenerateColumns="False" CanUserAddRows="False">
+            <DataGrid ItemsSource="{Binding Departments}" AutoGenerateColumns="False" CanUserAddRows="False" SelectionChanged="DataGrid_SelectionChanged">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
-                    <DataGridTextColumn Header="コード" Binding="{Binding Code}" />
                     <DataGridTextColumn Header="名前" Binding="{Binding Name}" />
                     <DataGridTextColumn Header="親部署" Binding="{Binding Parent.Name}" />
                     <DataGridTemplateColumn Header="">
@@ -31,6 +30,7 @@
                     </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
+            <Button Content="HOME"  Command="{Binding Home2Command}" Click="Button_Click_1" Height="20"/>
         </StackPanel>
     </Grid>
 </UserControl>

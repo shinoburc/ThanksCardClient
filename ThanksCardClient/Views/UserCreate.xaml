@@ -3,7 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:prism="http://prismlibrary.com/"             
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="ThanksCardClient.Views.UserCreate"             
-             prism:ViewModelLocator.AutoWireViewModel="True" d:DesignWidth="216.16" Background="#FF78FF8C" d:DesignHeight="223.68">
+             prism:ViewModelLocator.AutoWireViewModel="True" d:DesignWidth="275" d:DesignHeight="238.68">
+    <UserControl.Background>
+        <ImageBrush ImageSource="test.jpeg"/>
+    </UserControl.Background>
     <Grid>
         <StackPanel>
             <TextBlock Text="{Binding ErrorMessage}" Foreground="Red"/>
@@ -15,8 +18,10 @@
             <TextBox Text="{Binding User.Name}"/>
             <TextBlock Text="Password:"/>
             <TextBox Text="{Binding User.Password}"/>
+            <TextBlock Text="IsAdmin:"/>
+            <CheckBox IsChecked="{Binding User.IsAdmin}"/>
             <Button Content="登録" Command="{Binding SubmitCommand}"  Foreground="Black" BorderBrush="Black" Background="#FFDDDDDD"/>
-            <Button Content="戻る" Command="{Binding LogoffCommand}"  Foreground="Black" BorderBrush="Black" Background="#FFDDDDDD"/>
+            <Button Content="戻る" Command="{Binding Home2Command}"  Foreground="Black" BorderBrush="Black" Background="#FFDDDDDD"/>
         </StackPanel>
     </Grid>
 </UserControl>

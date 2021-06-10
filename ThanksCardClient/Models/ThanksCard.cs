@@ -91,6 +91,16 @@ namespace ThanksCardClient.Models
         }
         #endregion
 
+       /* #region Home2CommandProperty
+        private User _Home2;
+        public User Home2
+        {
+            get { return _Home2; }
+            set { SetProperty(ref _Home2, value); }
+        }
+        #endregion
+       */
+
 
         public ThanksCard()
         {
@@ -110,5 +120,6 @@ namespace ThanksCardClient.Models
             ThanksCard createdThanksCard = await rest.PostThanksCardAsync(thanksCard);
             return createdThanksCard;
         }
+
     }
 }

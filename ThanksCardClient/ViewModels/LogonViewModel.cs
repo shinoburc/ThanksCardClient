@@ -58,9 +58,9 @@ namespace ThanksCardClient.ViewModels
                 SessionService.Instance.AuthorizedUser = authorizedUser;
                 this.ErrorMessage = "";
                 this.regionManager.RequestNavigate("HeaderRegion", nameof(Views.Header));
-                this.regionManager.Regions["ContentRegion"].RemoveAll();
-                this.regionManager.RequestNavigate("FooterRegion", nameof(Views.To2));
-               
+                this.regionManager.RequestNavigate("ContentRegion", nameof(Views.To));
+                this.regionManager.Regions["FooterRegion"].RemoveAll();
+
 
 
             }
@@ -70,6 +70,7 @@ namespace ThanksCardClient.ViewModels
             }
         }
         #endregion
+
         #region ShowUserCreateCommand
         private DelegateCommand _ShowUserCreateCommand;
         public DelegateCommand ShowUserCreateCommand =>

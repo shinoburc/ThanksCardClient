@@ -9,7 +9,7 @@
         <Button Content="←" HorizontalAlignment="Left" Height="32.5" Margin="219,268.5,0,0" VerticalAlignment="Top" Width="85.5"/>
         <Button Content="→" HorizontalAlignment="Left" Height="32.5" Margin="468,268.5,0,0" VerticalAlignment="Top" Width="85.5"/>
         <Button Content="戻る" Command="{Binding Home2Command}" HorizontalAlignment="Left" Height="31.875" VerticalAlignment="Top" Width="48.5" Background="#FFDDDDDD" BorderBrush="Black" FontSize="20"/>
-        <Button Content="ホーム" Command="{Binding Home2Command}" HorizontalAlignment="Left" Height="31" VerticalAlignment="Top" Width="48" Background="#FFDDDDDD" BorderBrush="Black" FontSize="20" Margin="742,8,0,0" />
+        <Button Content="ホーム" Command="{Binding Home2Command}" HorizontalAlignment="Left" Height="31" VerticalAlignment="Top" Width="48" Background="#FFDDDDDD" BorderBrush="Black" FontSize="20" Margin="752,1,0,0" />
 
     </Grid>
 </UserControl>

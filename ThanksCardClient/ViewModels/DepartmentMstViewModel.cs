@@ -86,5 +86,21 @@ namespace ThanksCardClient.ViewModels
             this.UpdateDepartments();
         }
         #endregion
+        #region Home2Command
+        private DelegateCommand _Home2Command;
+        public DelegateCommand Home2Command =>
+            _Home2Command ?? (_Home2Command = new DelegateCommand(ExecuteHome2Command));
+
+        void ExecuteHome2Command()
+        {
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Home2));
+            this.regionManager.Regions["ContentRegion"].RemoveAll();
+
+        }
+        private string thanksCard;
+
+        public string ThanksCard { get => thanksCard; set => SetProperty(ref thanksCard, value); }
+        #endregion
+
     }
 }

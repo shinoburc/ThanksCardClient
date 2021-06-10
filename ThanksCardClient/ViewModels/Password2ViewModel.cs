@@ -64,6 +64,7 @@ namespace ThanksCardClient.ViewModels
 
         }
         #endregion
+
         #region SubmitCommand
         private DelegateCommand _SubmitCommand;
         public DelegateCommand SubmitCommand =>

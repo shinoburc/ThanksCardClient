@@ -52,12 +52,12 @@ namespace ThanksCardClient.ViewModels
             //throw new NotImplementedException();
         }
 
-        #region UserCreateCommand
-        private DelegateCommand _UserCreateCommand;
-        public DelegateCommand UserCreateCommand =>
-            _UserCreateCommand ?? (_UserCreateCommand = new DelegateCommand(ExecuteUserCreateCommand));
+        #region ShowUserCreateCommand
+        private DelegateCommand _ShowUserCreateCommand;
+        public DelegateCommand ShowUserCreateCommand =>
+            _ShowUserCreateCommand ?? (_ShowUserCreateCommand = new DelegateCommand(ExecuteShowUserCreateCommand));
 
-        void ExecuteUserCreateCommand()
+        void ExecuteShowUserCreateCommand()
         {
             this.regionManager.RequestNavigate("ContentRegion", nameof(Views.UserCreate));
         }
@@ -92,5 +92,19 @@ namespace ThanksCardClient.ViewModels
             this.UpdateUsers();
         }
         #endregion
+
+        #region Home2Command
+        private DelegateCommand _Home2Command;
+        public DelegateCommand Home2Command =>
+            _Home2Command ?? (_Home2Command = new DelegateCommand(ExecuteHome2Command));
+
+        void ExecuteHome2Command()
+        {
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Home2));
+            this.regionManager.Regions["ContentRegion"].RemoveAll();
+
+        }
+        #endregion
+
     }
 }

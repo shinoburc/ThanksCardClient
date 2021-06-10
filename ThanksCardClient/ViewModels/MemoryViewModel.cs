@@ -9,7 +9,7 @@ using ThanksCardClient.Services;
 
 namespace ThanksCardClient.ViewModels
 {
-    public class ThanksCardListViewModel : BindableBase, INavigationAware
+    public class MemoryViewModel : BindableBase, INavigationAware
     {
         private IRegionManager regionManager;
 
@@ -22,12 +22,12 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
-        public ThanksCardListViewModel(IRegionManager regionManager)
+        public MemoryViewModel(IRegionManager regionManager)
         {
             this.regionManager = regionManager;
         }
 
-       
+
 
 
         public async void OnNavigatedTo(NavigationContext navigationContext)

@@ -18,6 +18,6 @@
         <TextBlock HorizontalAlignment="Left" Height="23" Margin="37.625,116.201,0,0" TextWrapping="Wrap" Text="事例" VerticalAlignment="Top" Width="67.5" FontSize="20"/>
         <Button Content="保存" HorizontalAlignment="Left" Height="31.875" VerticalAlignment="Top" Width="71" Background="#FFDDDDDD" BorderBrush="Black" FontSize="20" Margin="729,0,0,0"/>
         <Button Content="戻る" Command="{Binding Home2Command}" HorizontalAlignment="Left" Height="31.875" VerticalAlignment="Top" Width="48.5" Background="#FFDDDDDD" BorderBrush="Black" FontSize="20"/>
-
+        
     </Grid>
 </UserControl>
