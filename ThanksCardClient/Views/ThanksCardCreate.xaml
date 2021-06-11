@@ -1,78 +1,73 @@
-﻿<UserControl 
+﻿<UserControl x:Class="ThanksCardClient.Views.ThanksCardCreate"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:prism="http://prismlibrary.com/" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
-             prism:ViewModelLocator.AutoWireViewModel="True" d:DesignWidth="493.004" d:DesignHeight="356.658">
-    <Grid Margin="10,34.589,-41.333,-10.667">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="103*"/>
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" 
+             prism:ViewModelLocator.AutoWireViewModel="True" d:DesignWidth="497.581" d:DesignHeight="381.755">
 
-
-
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-
-
-
-        </Grid.ColumnDefinitions>
-        <StackPanel Grid.ColumnSpan="4" Margin="0.128,-20,-12.027,-30.72" RenderTransformOrigin="0.5,0.5">
-            <StackPanel.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.283"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </StackPanel.RenderTransform>
+    <Grid Margin="0,34.589,0,0" HorizontalAlignment="Center" Width="497.581">
+        <StackPanel Margin="0,-34,0,0">
+            <StackPanel.Background>
+                <ImageBrush ImageSource="IMG_1154.JPG" Opacity="0.5"/>
+            </StackPanel.Background>
+            <!--日付-->
             <TextBlock Height="17.627" HorizontalAlignment="Left"><Run Text="Date"/><Run Text=":"/></TextBlock>
             <DatePicker SelectedDate="{Binding ThanksCard.CreatedDateTime}" RenderTransformOrigin="0.337,-5.213" Height="23.657" HorizontalAlignment="Left" Width="283.781"/>
-            <StackPanel Orientation="Horizontal" Height="88.658" Margin="0,0,10,0">
-                <TextBlock Text="部署:" RenderTransformOrigin="0.314,-1.021" Margin="-1,3,0,56" Width="27.188" Height="17.042" VerticalAlignment="Bottom" HorizontalAlignment="Left">
-                    <TextBlock.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="719.942"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </TextBlock.RenderTransform>
-                </TextBlock>
-                <ComboBox x:Name="ToDepartments" ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValuePath="Id" Margin="3,11.829,3,48" Width="90" RenderTransformOrigin="1.263,-1.167" Height="20" HorizontalAlignment="Left">
+            <StackPanel Orientation="Horizontal">
+                <!--To-->
+                <TextBlock Text="部署:" Height="20" Width="26" Margin="0,10,0,0"/>
+
+                <ComboBox x:Name="ToDepartments" ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValuePath="Id" Height="20" Margin="4,10,3,0" Width="50">
                     <!-- Deparment が選択されたら ToDepartmentsChangedCommand を発行する -->
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="SelectionChanged">
-                            <i:InvokeCommandAction Command="{Binding FromDepartmentsChangedCommand}" CommandParameter="{Binding ElementName=FromDepartments, Path=SelectedValue}"/>
+                            <i:InvokeCommandAction Command="{Binding ToDepartmentsChangedCommand}" CommandParameter="{Binding SelectedValue, ElementName=ToDepartments}"/>
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </ComboBox>
-                <ComboBox ItemsSource="{Binding ToUsers}" DisplayMemberPath="Name" SelectedValue="{Binding ThanksCard.ToId}" SelectedValuePath="Id" Margin="152,15.346,-8,53.312" RenderTransformOrigin="0.752,-1.779" Width="100" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <ComboBox.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="-0.123"/>
-                            <TranslateTransform X="-0.833" Y="-0.078"/>
-                        </TransformGroup>
-                    </ComboBox.RenderTransform>
-                </ComboBox>
+                <TextBlock Text="課:" Height="20" Width="20" Margin="30,10,0,0"/>
+                <TextBlock Text="To:" Height="20" Margin="78,10,3,0"/>
+                <ComboBox ItemsSource="{Binding ToUsers}" DisplayMemberPath="Name" SelectedValue="{Binding ThanksCard.ToId}" SelectedValuePath="Id" Height="20" Margin="4,10,3,0" Width="50"/>
+
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="部署:"/>
-                <TextBlock Text="From:" Margin="118,6,21,140.804" HorizontalAlignment="Left" RenderTransformOrigin="1.271,0.602" VerticalAlignment="Top"/>
-                <ComboBox ItemsSource="{Binding FromUsers}" DisplayMemberPath="Name" SelectedValue="{Binding ThanksCard.FromId}" SelectedValuePath="Id" Height="20" Margin="-12,6,35,140.667" Width="90" RenderTransformOrigin="-0.813,0.431" Padding="0,4,-5,3" HorizontalAlignment="Left" UseLayoutRounding="True" HorizontalContentAlignment="Center" VerticalAlignment="Top"/>
+                <TextBlock Text="Title:" Margin="0,15,0,0"/>
+                <TextBox Text="{Binding ThanksCard.Title}" Width="200" Margin="0,15,0,0"/>
             </StackPanel>
-            <Button Content="作成" Command="{Binding SubmitCommand}" Height="33" Margin="443,-282,13,-139" Width="33" Padding="1,2,1,1" VerticalAlignment="Center" HorizontalAlignment="Left" HorizontalContentAlignment="Center"/>
-            <Button Content="戻る" Command="{Binding BackCommand}" HorizontalAlignment="Left" Height="33" Margin="403,-282,0,-139" Width="33" RenderTransformOrigin="0.759,1.845" Padding="1,1,3,1" VerticalAlignment="Center"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="本文" Margin="0,14,0,0"/>
+                <TextBox Text="{Binding ThanksCard.Body}" Width="450" Height="100" Margin="0,18,0,0"/>
+            </StackPanel>
+            <TextBlock/>
+            <!--タイトル-->
+
+            <StackPanel Orientation="Horizontal" Height="20">
+                <TextBlock Text="部署:" Height="20" Margin="21,0,0,0"/>
+                <ComboBox x:Name="FromDepartments" ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValuePath="Id" Height="20" Width="80">
+                    <!-- Deparment が選択されたら FromDepartmentsChangedCommand を発行する -->
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <i:InvokeCommandAction Command="{Binding FromDepartmentsChangedCommand}" CommandParameter="{Binding SelectedValue, ElementName=FromDepartments}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </ComboBox>
+                <TextBlock Text="課:" Margin="69,0,1,0"/>
+                <TextBlock Text="From:" Margin="71,0,-47,0" Width="60"/>
+                <ComboBox ItemsSource="{Binding FromUsers}" DisplayMemberPath="Name" SelectedValue="{Binding ThanksCard.FromId}" SelectedValuePath="Id" Width="80" Margin="26,0,-49,0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0">
+                <Button Content="作成" Command="{Binding SubmitCommand}" Width="35" Height="35" RenderTransformOrigin="0.029,0.54" Margin="0,26,0,0" VerticalAlignment="Bottom" Background="#FFAECFFF"/>
+                <TextBlock Text=" "/>
+                <Button Content="戻る" Command="{Binding BackCommand}" Width="35" Margin="0,26,0,0" Background="#FFAECFFF"/>
+            </StackPanel>
+            <Button Content="クリア" Command="{Binding ClearCommand}" Height="35" Margin="385.645,-35,76.935,0" Width="35" VerticalAlignment="Bottom" Background="#FFAECFFF" />
 
         </StackPanel>
-        <TextBlock HorizontalAlignment="Center" Margin="371.12,-12.95,82.984,329.726" TextWrapping="Wrap" Text="カテゴリ" VerticalAlignment="Center" Height="15.96" Width="35.21" RenderTransformOrigin="-0.724,-0.141" Grid.ColumnSpan="2"/>
-        <ComboBox HorizontalAlignment="Center" Margin="361.522,8.01,76.815,307.726" Width="86" Height="17" HorizontalContentAlignment="Center" VerticalAlignment="Center"/>
-        <ComboBox HorizontalAlignment="Left" Height="20" Margin="148.78,38,0,0" VerticalAlignment="Top" Width="90"/>
-        <TextBlock HorizontalAlignment="Left" Height="24.822" Margin="120.78,38,0,0" TextWrapping="Wrap" Text="課:" VerticalAlignment="Top" Width="28" RenderTransformOrigin="2.048,0.708"/>
-        <TextBlock HorizontalAlignment="Left" Height="20" Margin="244.732,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="22" RenderTransformOrigin="5.977,0.446"><Run Text="To"/><Run Text=":"/><LineBreak/><Run/></TextBlock>
-        <ComboBox HorizontalAlignment="Center" Height="20" Margin="145,236.229,257.557,76.507" VerticalAlignment="Center" Width="90"/>
-        <TextBlock HorizontalAlignment="Center" Margin="118,236.229,352.557,76.507" TextWrapping="Wrap" Width="23" RenderTransformOrigin="2.226,2.043" VerticalAlignment="Center" Height="20" Padding="3,0,0,0"><Run Text="課"/><Run Text=":"/></TextBlock>
+        <TextBlock HorizontalAlignment="Center" Margin="375.747,0,86.624,331.206" TextWrapping="Wrap" Text="カテゴリ" VerticalAlignment="Center" Height="15.96" Width="35.21" RenderTransformOrigin="-0.724,-0.141"/>
+        <ComboBox HorizontalAlignment="Center" Margin="375.747,20.96,21.835,308.706" Width="99.999" Height="17.5" HorizontalContentAlignment="Center" VerticalAlignment="Center"/>
+
+
+
 
     </Grid>
 </UserControl>

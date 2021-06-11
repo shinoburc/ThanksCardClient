@@ -1,13 +1,9 @@
-﻿<UserControl x:Class="ThanksCardClient.Views.TagCreate"
+﻿<UserControl x:Class="ThanksCardClient.Views.PrismUserControl1"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:prism="http://prismlibrary.com/"             
              prism:ViewModelLocator.AutoWireViewModel="True">
     <Grid>
-        <StackPanel>
-            <TextBlock Text="カテゴリ名:"/>
-            <TextBox Text="{Binding Tag.Name}"/>
-            <Button Content="登録" Command="{Binding SubmitCommand}" Background="#FFAECFFF"/>
-        </StackPanel>
+            
     </Grid>
 </UserControl>

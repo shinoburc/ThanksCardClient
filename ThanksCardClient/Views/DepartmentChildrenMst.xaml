@@ -5,8 +5,9 @@
              prism:ViewModelLocator.AutoWireViewModel="True">
 
     <Grid>
-        <StackPanel>
-            <Button Content="+課の新規作成" Command="{Binding DepartmentChildrenCreateCommand}"/>
+        <StackPanel Margin="0">
+
+            <Button Content="+課の新規作成" Command="{Binding DepartmentChildrenCreateCommand}" Margin="0,0,49.56,0" Height="20" Background="#FFAECFFF"/>
 
             <!-- ユーザ一覧(DepartmentChildrenモデルのリスト)である MainWindowViewModel.DepartmentChildrens をグリッド表示する。-->
             <DataGrid ItemsSource="{Binding DepartmentChildrens}" AutoGenerateColumns="False" CanUserAddRows="False">
@@ -33,5 +34,6 @@
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>
+        <Button Content="戻る" Command="{Binding BackCommand}" Height="20" Margin="0,0,0,25.92" Width="50" VerticalAlignment="Top" HorizontalAlignment="Right" Background="#FFAECFFF"/>
     </Grid>
 </UserControl>

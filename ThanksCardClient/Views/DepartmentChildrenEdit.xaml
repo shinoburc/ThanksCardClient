@@ -11,7 +11,7 @@
             <TextBox Text="{Binding DepartmentChildren.Name}"/>
             <TextBlock Text="所属部署"/>
             <ComboBox SelectedItem="{Binding DepartmentChildren.Department}" ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValue="{Binding DepartmentChildren.DepartmentId}" SelectedValuePath="Id"/>
-            <Button Content="変更" Command="{Binding SubmitCommand}"/>
+            <Button Content="変更" Command="{Binding SubmitCommand}" Background="#FFAECFFF"/>
         </StackPanel>
     </Grid>
 </UserControl>

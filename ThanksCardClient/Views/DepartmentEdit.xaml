@@ -9,7 +9,7 @@
             <TextBox Text="{Binding Department.Code}"/>
             <TextBlock Text="部署名:"/>
             <TextBox Text="{Binding Department.Name}"/>
-            <Button Content="変更" Command="{Binding SubmitCommand}"/>
+            <Button Content="変更" Command="{Binding SubmitCommand}" Background="#FFAECFFF"/>
         </StackPanel>
     </Grid>
 </UserControl>

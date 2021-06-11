@@ -22,7 +22,7 @@
             <CheckBox IsChecked="{Binding User.IsAdmin}"/>
             <TextBlock Text="所属課名:"/>
             <ComboBox ItemsSource="{Binding DepartmentChildrens}" DisplayMemberPath="Name" SelectedValue="{Binding User.DepartmentChildrenId}" SelectedValuePath="Id" Margin="0,0,184.667,0"/>
-            <Button Content="登録" Command="{Binding SubmitCommand}" Height="21.96" Margin="0,0,184.667,0" VerticalAlignment="Center" RenderTransformOrigin="1.828,0.754"/>
+            <Button Content="登録" Command="{Binding SubmitCommand}" Height="21.96" Margin="0,0,184.667,0" VerticalAlignment="Center" RenderTransformOrigin="1.828,0.754" Background="#FFAECFFF"/>
         </StackPanel>
     </Grid>
 </UserControl>

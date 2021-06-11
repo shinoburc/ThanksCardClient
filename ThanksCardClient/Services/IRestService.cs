@@ -14,7 +14,7 @@ namespace ThanksCardClient.Services
         Task<User> LogonAsync(User user);
 
         // DepartmentUsers REST API Client
-        Task<List<User>> GetDepartmentUsersAsync(long? DepartmentChildrenId);
+        Task<List<User>> GetDepartmentUsersAsync(long? DepartmentId);
         Task<List<User>> GetDepartmentChildrenUsersAsync(long? DepartmentChildrenId);
 
         // User REST API Client

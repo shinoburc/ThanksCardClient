@@ -4,11 +4,23 @@
              xmlns:prism="http://prismlibrary.com/"             
              prism:ViewModelLocator.AutoWireViewModel="True">
     <Grid>
+        <Image Source="IMG_1154.JPG" Stretch="Fill" Opacity="0.5"/>
         <StackPanel>
-            <Button Content="+ユーザーの新規作成" Command="{Binding UserCreateCommand}" Width="107.9" HorizontalAlignment="Left"/>
+            <Button Content="+ユーザーの新規作成" Command="{Binding UserCreateCommand}" Margin="0,0,49.277,0" Background="#FFAECFFF"/>
 
             <!-- ユーザ一覧(Userモデルのリスト)である MainWindowViewModel.Users をグリッド表示する。-->
-            <DataGrid ItemsSource="{Binding Users}" AutoGenerateColumns="False" CanUserAddRows="False">
+            <DataGrid ItemsSource="{Binding Users}" AutoGenerateColumns="False" CanUserAddRows="False" RenderTransformOrigin="0.5,0.5" Margin="0.01,0,-0.007,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                <DataGrid.Background>
+                    <ImageBrush ImageSource="IMG_1154.JPG" Opacity="0.5"/>
+                </DataGrid.Background>
+                <DataGrid.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="-0.145"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="-0.491"/>
+                    </TransformGroup>
+                </DataGrid.RenderTransform>
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
                     <DataGridTextColumn Header="名前" Binding="{Binding Name}" />
@@ -33,5 +45,6 @@
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>
+        <Button Content="戻る" Command="{Binding BackCommand}" Height="20" VerticalAlignment="Top" HorizontalAlignment="Right" Width="50" Background="#FFAECFFF"/>
     </Grid>
 </UserControl>

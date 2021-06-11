@@ -3,10 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:prism="http://prismlibrary.com/"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="ThanksCardClient.Views.ThanksCardList"
-             prism:ViewModelLocator.AutoWireViewModel="True" Height="137.183" Width="630.477" Margin="0">
+             prism:ViewModelLocator.AutoWireViewModel="True" Margin="0" d:DesignWidth="433.847" d:DesignHeight="317.544" Width="600">
     <Grid>
-        <StackPanel Margin="0,0,0,-35">
-            <DataGrid ItemsSource="{Binding ThanksCards}" AutoGenerateColumns="False" CanUserAddRows="False" Margin="0" Height="27.96">
+        <StackPanel>
+            <StackPanel.Background>
+                <ImageBrush ImageSource="IMG_1154.JPG"/>
+            </StackPanel.Background>
+            <DataGrid ItemsSource="{Binding ThanksCards}" AutoGenerateColumns="False" CanUserAddRows="False" Margin="0,0,93.834,0" Height="228.044" Opacity="0.8">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
                     <DataGridTextColumn Header="タイトル" Binding="{Binding Title}" />
@@ -14,7 +17,6 @@
                     <DataGridTextColumn Header="From" Binding="{Binding From.Name}" />
                     <DataGridTextColumn Header="To" Binding="{Binding To.Name}" />
                     <DataGridTextColumn Header="作成日時" Binding="{Binding CreatedDateTime}" />
-                    <DataGridTextColumn Header="返信" Binding="{Binding Reply}" />
                     <DataGridTemplateColumn IsReadOnly="True" Header="カテゴリ">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
@@ -22,11 +24,18 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="削除" Command="{Binding DataContext.ThanksCardDeleteCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
-            <Button Content="ソート" Command="{Binding board_sort2Command}" HorizontalAlignment="Right" Height="24" Margin="446,-27,42,0" Width="41" RenderTransformOrigin="0.472,0.502" VerticalAlignment="Center"/>
-            <Button Content="戻る" Command="{Binding BackCommand}" Height="32.667" Margin="367,72,0,4" VerticalAlignment="Bottom" RenderTransformOrigin="0.553,0.756" HorizontalAlignment="Right" Width="32.668"/>
-            <Button Content="❔" Height="24" Margin="0,-136,-1,-8" RenderTransformOrigin="0.178,2.285" Width="41" HorizontalAlignment="Right" VerticalAlignment="Top"/>
         </StackPanel>
+        <Button Content="?" Height="26" Margin="0,0,-1.667,201.711" RenderTransformOrigin="0.178,2.285" Width="47.5" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="18" Background="#FFAECFFF"/>
+        <Button Content="ソート" Command="{Binding board_sort2Command}" Height="26" Margin="0,0,45.833,201.711" Width="47.5" RenderTransformOrigin="0.472,0.502" VerticalAlignment="Top" HorizontalAlignment="Right" Background="#FFAECFFF"/>
+        <Button Content="戻る" Command="{Binding BackCommand}" Height="30" Margin="342,73,0,1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="50" Background="#FFAECFFF" />
     </Grid>
 </UserControl>

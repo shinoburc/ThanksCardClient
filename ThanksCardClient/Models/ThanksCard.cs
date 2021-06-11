@@ -71,12 +71,6 @@ namespace ThanksCardClient.Models
             get { return _To; }
             set { SetProperty(ref _To, value); }
         }
-
-
-        internal Task<ThanksCard> DeleteThanksCardAsync(long id)
-        {
-            throw new NotImplementedException();
-        }
         #endregion
 
         #region CreatedDateTimeProperty
@@ -123,6 +117,13 @@ namespace ThanksCardClient.Models
             ThanksCard updatedThanksCard = await rest.PutThanksCardAsync(thanksCard);
             return updatedThanksCard;
         }
-        
+
+        public async Task<ThanksCard> DeleteThanksCardAsync(long Id)
+        {
+            IRestService rest = new RestService();
+            ThanksCard deletedThanksCard = await rest.DeleteThanksCardAsync(Id);
+            return deletedThanksCard;
+        }
+
     }
 }

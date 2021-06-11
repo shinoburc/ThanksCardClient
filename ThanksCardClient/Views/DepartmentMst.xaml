@@ -3,9 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:prism="http://prismlibrary.com/"             
              prism:ViewModelLocator.AutoWireViewModel="True">
+    <UserControl.Background>
+        <ImageBrush/>
+    </UserControl.Background>
     <Grid>
         <StackPanel>
-            <Button Content="+部署の新規作成" Command="{Binding DepartmentCreateCommand}" Width="100" HorizontalAlignment="Left"/>
+
+            <!-- ユーザ一覧(Departmentモデルのリスト)である MainWindowViewModel.Departments をグリッド表示する。-->
+            <Button Content="+部署の新規作成" Command="{Binding DepartmentCreateCommand}" Margin="0,0,49.256,0" Background="#FFAECFFF"/>
 
             <!-- ユーザ一覧(Departmentモデルのリスト)である MainWindowViewModel.Departments をグリッド表示する。-->
             <DataGrid ItemsSource="{Binding Departments}" AutoGenerateColumns="False" CanUserAddRows="False">
@@ -17,19 +22,20 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <!-- CommandParameter に {Binding} とだけ記述すると、MainWindowViewModel.Departments の要素、つまり Department モデルを指定したことになる。-->
-                                <Button Content="編集" Command="{Binding DataContext.DepartmentEditCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" />
+                                <Button Content="編集" Command="{Binding DataContext.DepartmentEditCommand, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" CommandParameter="{Binding}" />
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
                     <DataGridTemplateColumn Header="">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Content="削除" Command="{Binding DataContext.DepartmentDeleteCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" />
+                                <Button Content="削除" Command="{Binding DataContext.DepartmentDeleteCommand, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" CommandParameter="{Binding}" />
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>
+        <Button Content="戻る" Command="{Binding BackCommand}" HorizontalAlignment="Right" Height="20" Width="50" VerticalAlignment="Top" Background="#FFAECFFF"/>
     </Grid>
 </UserControl>

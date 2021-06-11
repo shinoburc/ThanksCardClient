@@ -18,9 +18,9 @@
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center"><Run Text="管理者権限"/><Run Text="："/></TextBlock>
                 <CheckBox IsChecked="{Binding User.IsAdmin}" RenderTransformOrigin="0.48,0.85" VerticalAlignment="Center"/>
                 <TextBlock VerticalAlignment="Center" Width="71.493" TextAlignment="Center" HorizontalAlignment="Center"><Run Text="課"/><Run Text=":"/></TextBlock>
-                <ComboBox SelectedItem="{Binding User}" ItemsSource="{Binding DepartmentChildrens}" DisplayMemberPath="Name" SelectedValue="{Binding User.DepartmentChildren.Id}" SelectedValuePath="Id" Margin="-20,0,0,0" Foreground="#FF0E0D0D" Width="73.333" Height="20.627" HorizontalAlignment="Center" SelectionChanged="ComboBox_SelectionChanged"/>
+                <ComboBox SelectedItem="{Binding User.DepartmentChildren}" ItemsSource="{Binding DepartmentChildrens}" DisplayMemberPath="Name" SelectedValue="{Binding User.DepartmentChildrenId}" SelectedValuePath="Id" Margin="-20,0,0,0" Foreground="#FF0E0D0D" Width="73.333" Height="20.627" HorizontalAlignment="Center" SelectionChanged="ComboBox_SelectionChanged"/>
             </StackPanel>
-            <Button Content="変更" Command="{Binding SubmitCommand}" Margin="252.5,0,272.667,0" Width="94.666" Height="23.96" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <Button Content="変更" Command="{Binding SubmitCommand}" Margin="252.5,0,272.667,0" Width="94.666" Height="23.96" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#FFAECFFF"/>
         </StackPanel>
     </Grid>
 </UserControl>

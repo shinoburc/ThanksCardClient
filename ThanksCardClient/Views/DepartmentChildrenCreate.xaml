@@ -9,7 +9,7 @@
             <TextBox Text="{Binding DepartmentChildren.Name}"/>
             <TextBlock Text="所属部署:"/>
             <ComboBox ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValue="{Binding Department.Department.Id}" SelectedValuePath="Id"/>
-            <Button Content="登録" Command="{Binding SubmitCommand}"/>
+            <Button Content="登録" Command="{Binding SubmitCommand}" Background="#FFAECFFF"/>
         </StackPanel>
     </Grid>
 </UserControl>

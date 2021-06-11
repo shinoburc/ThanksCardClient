@@ -68,6 +68,25 @@ namespace ThanksCardClient.Services
             return responseUsers;
         }
 
+        public async Task<List<User>> GetDepartmentChildrenUsersAsync(long? DepartmentChildrenId)
+        {
+            List<User> responseUsers = null;
+            try
+            {
+                var response = await Client.GetAsync(this.BaseUrl + "/api/DepartmentUsers/" + DepartmentChildrenId);
+                if (response.IsSuccessStatusCode)
+                {
+                    var responseContent = await response.Content.ReadAsStringAsync();
+                    responseUsers = JsonConvert.DeserializeObject<List<User>>(responseContent);
+                }
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine("Exception in RestService.GetUsersAsync: " + e);
+            }
+            return responseUsers;
+        }
+
         public async Task<List<User>> GetUsersAsync()
         {
             List<User> responseUsers = null;
@@ -509,19 +528,28 @@ namespace ThanksCardClient.Services
             throw new NotImplementedException();
         }
 
-        public Task<List<User>> GetDepartmentChildrenUsersAsync(long? DepartmentChildrenId)
-        {
-            throw new NotImplementedException();
-        }
-
         public Task<List<DepartmentChildren>> GetDepartmentDepartmentChildrensAsync(long? departmentChildrenId)
         {
             throw new NotImplementedException();
         }
 
-        public Task<ThanksCard> DeleteThanksCardAsync(long Id)
+        public async Task<ThanksCard> DeleteThanksCardAsync(long Id)
         {
-            throw new NotImplementedException();
+            ThanksCard responseThanksCard = null;
+            try
+            {
+                var response = await Client.DeleteAsync(this.BaseUrl + "/api/ThanksCard/" + Id);
+                if (response.IsSuccessStatusCode)
+                {
+                    var responseContent = await response.Content.ReadAsStringAsync();
+                    responseThanksCard = JsonConvert.DeserializeObject<ThanksCard>(responseContent);
+                }
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine("Exception in RestService.DeleteThanksCardAsync: " + e);
+            }
+            return responseThanksCard;
         }
     }
 }

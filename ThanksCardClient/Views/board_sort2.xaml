@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="ThanksCardClient.Views.board_sort2"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <UserControl.Background>
+        <ImageBrush ImageSource="IMG_1154.JPG" Opacity="0.5"/>
+    </UserControl.Background>
+    <Grid Margin="0,28,0,10">
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Height="40.033" Margin="38,47,0,0" TextWrapping="Wrap" Text="カテゴリ" VerticalAlignment="Top" Width="74.324" FontSize="22" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="1.456"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0.716"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <ComboBox HorizontalAlignment="Left" Height="56.343" Margin="150.494,42.257,0,0" VerticalAlignment="Top" Width="146.788"/>
+        <TextBlock HorizontalAlignment="Left" Height="57.826" Margin="40.774,136,0,0" TextWrapping="Wrap" Text="部署" VerticalAlignment="Top" Width="109.72" FontSize="22"/>
+        <ComboBox HorizontalAlignment="Left" Height="62.826" Margin="155.494,117.632,0,0" VerticalAlignment="Top" Width="146.788"/>
+        <TextBlock HorizontalAlignment="Left" Height="62.274" Margin="40.774,226,0,0" TextWrapping="Wrap" Text="課" VerticalAlignment="Top" Width="90.445" FontSize="22"/>
+        <ComboBox HorizontalAlignment="Left" Height="62.274" Margin="155.494,204,0,0" VerticalAlignment="Top" Width="146.788"/>
+        <TextBlock HorizontalAlignment="Left" Height="61.722" Margin="40.774,290.342,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="109.72" FontSize="24"><Run Text="D"/><Run Text="ate"/></TextBlock>
+        <ComboBox HorizontalAlignment="Left" Height="60.79" Margin="155.494,291.274,0,0" VerticalAlignment="Top" Width="146.788"/>
+        <TextBlock HorizontalAlignment="Left" Height="56.343" Margin="398.106,41,0,0" TextWrapping="Wrap" Text="Fromカード枚数" VerticalAlignment="Top" Width="145.304" FontSize="22"/>
+        <ComboBox HorizontalAlignment="Left" Height="61.343" Margin="568.616,30,0,0" VerticalAlignment="Top" Width="158.649"/>
+        <TextBlock HorizontalAlignment="Left" Margin="398.106,136,0,0" TextWrapping="Wrap" Text="To" VerticalAlignment="Top" Height="40.458" Width="62.533" FontSize="22" RenderTransformOrigin="0.704,0.28"/>
+        <ComboBox HorizontalAlignment="Left" Height="62.826" Margin="568.616,117.632,0,0" VerticalAlignment="Top" Width="158.649"/>
+        <TextBlock HorizontalAlignment="Left" Height="44" Margin="400,211,0,0" TextWrapping="Wrap" Text="From" VerticalAlignment="Top" Width="105.41" FontSize="24"/>
+        <ComboBox HorizontalAlignment="Left" Height="55.274" Margin="571,208,0,0" VerticalAlignment="Top" Width="158.649"/>
+        <Button Content="絞り込み" HorizontalAlignment="Left" Height="40" Margin="631,366,4,0" VerticalAlignment="Top" Width="150" FontSize="24" Background="#FFAECFFF"/>
+        <Button Content="戻る" Command="{Binding BackCommand}" HorizontalAlignment="Left" Height="41.333" Margin="460.639,368,0,0" VerticalAlignment="Top" Width="144.694" FontSize="24" Background="#FFAECFFF"/>
+    </Grid>
+</UserControl>

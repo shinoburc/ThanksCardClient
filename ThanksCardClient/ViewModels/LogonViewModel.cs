@@ -7,13 +7,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using ThanksCardClient.Models;
 using ThanksCardClient.Services;
-
 namespace ThanksCardClient.ViewModels
 {
     public class LogonViewModel : BindableBase
     {
         private IRegionManager regionManager;
-
         #region UserProperty
         private User _User;
         public User User
@@ -22,7 +20,6 @@ namespace ThanksCardClient.ViewModels
             set { SetProperty(ref _User, value); }
         }
         #endregion
-
         #region ErrorMessage
         private string _ErrorMessage;
         public string ErrorMessage
@@ -31,26 +28,21 @@ namespace ThanksCardClient.ViewModels
             set { SetProperty(ref _ErrorMessage, value); }
         }
         #endregion
-
         public LogonViewModel(IRegionManager regionManager)
         {
             this.regionManager = regionManager;
-
             // 開発中のみアカウントを admin/admin でセットしておく。
             this.User = new User();
             this.User.Name = "admin";
             this.User.Password = "admin";
         }
-
         #region LogonCommand
         private DelegateCommand _LogonCommand;
         public DelegateCommand LogonCommand =>
             _LogonCommand ?? (_LogonCommand = new DelegateCommand(ExecuteLogonCommandAsync));
-
         async void ExecuteLogonCommandAsync()
         {
             User authorizedUser = await this.User.LogonAsync();
-
             // authorizedUser が null でなければログオンに成功している。
             if (authorizedUser != null)
             {

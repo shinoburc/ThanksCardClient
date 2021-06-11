@@ -7,10 +7,8 @@
     <Grid>
         <StackPanel>
             <ContentControl prism:RegionManager.RegionName="HeaderRegion" />
-            <Border Background="AliceBlue" Height="15"/>
             <ContentControl prism:RegionManager.RegionName="ContentRegion" />
-            <Border Background="AliceBlue" Height="15"/>
-            <ContentControl prism:RegionManager.RegionName="FooterRegion" />
+         
         </StackPanel>
     </Grid>
 </Window>

@@ -32,12 +32,17 @@ namespace ThanksCardClient
             containerRegistry.RegisterForNavigation<TagMst>();
             containerRegistry.RegisterForNavigation<TagCreate>();
             containerRegistry.RegisterForNavigation<TagEdit>();
-            containerRegistry.RegisterForNavigation<Home>();
-            containerRegistry.RegisterForNavigation<Setting>();
-            containerRegistry.RegisterForNavigation <board_sort2> (); 
             containerRegistry.RegisterForNavigation<DepartmentChildrenMst>();
             containerRegistry.RegisterForNavigation<DepartmentChildrenCreate>();
-            containerRegistry.RegisterForNavigation<DepartmentChildrenEdit>();
+
+            containerRegistry.RegisterForNavigation<Home>();
+            containerRegistry.RegisterForNavigation<Setting>();
+            containerRegistry.RegisterForNavigation<board_sort2>();
+            containerRegistry.RegisterForNavigation<UserMst>();
+            containerRegistry.RegisterForNavigation<DepartmentMst>();
+            containerRegistry.RegisterForNavigation<DepartmentChildrenMst>();
+            containerRegistry.RegisterForNavigation<TagMst>();
+
         }
     }
 }

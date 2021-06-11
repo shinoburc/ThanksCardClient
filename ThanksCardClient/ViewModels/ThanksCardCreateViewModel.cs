@@ -7,13 +7,11 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using ThanksCardClient.Models;
 using ThanksCardClient.Services;
-
 namespace ThanksCardClient.ViewModels
 {
     public class ThanksCardCreateViewModel : BindableBase, INavigationAware
     {
         private readonly IRegionManager regionManager;
-
         #region ThanksCardProperty
         private ThanksCard _ThanksCard;
         public ThanksCard ThanksCard
@@ -41,12 +39,12 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
-        #region DepartmentChildrensProperty
-        private List<DepartmentChildren> _DepartmentChildrens;
-        public List<DepartmentChildren> DepartmentChildrens
+        #region DepartmentsProperty
+        private List<Department> _Departments;
+        public List<Department> Departments
         {
-            get { return _DepartmentChildrens; }
-            set { SetProperty(ref _DepartmentChildrens, value); }
+            get { return _Departments; }
+            set { SetProperty(ref _Departments, value); }
         }
         #endregion
 
@@ -59,71 +57,73 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
+        #region DepartmentChildrensProperty
+        private List<DepartmentChildren> _DepartmentChildrens;
+        public List<DepartmentChildren> DepartmentChildrens
+        {
+            get { return _DepartmentChildrens; }
+            set { SetProperty(ref _DepartmentChildrens, value); }
+        }
+        #endregion
+
         public ThanksCardCreateViewModel(IRegionManager regionManager)
         {
             this.regionManager = regionManager;
         }
-
         // この画面に遷移し終わったときに呼ばれる。
         // それを利用し、画面表示に必要なプロパティを初期化している。
         public async void OnNavigatedTo(NavigationContext navigationContext)
         {
             this.ThanksCard = new ThanksCard();
-            
             if (SessionService.Instance.AuthorizedUser != null)
             {
                 this.FromUsers = await SessionService.Instance.AuthorizedUser.GetUsersAsync();
                 this.ToUsers = this.FromUsers;
             }
-
             var tag = new Tag();
             this.Tags = await tag.GetTagsAsync();
-
-            var dept = new DepartmentChildren();
-            this.DepartmentChildrens = await dept.GetDepartmentChildrensAsync();
+            var dept = new Department();
+            this.Departments = await dept.GetDepartmentsAsync();
         }
-
         public bool IsNavigationTarget(NavigationContext navigationContext)
         {
             return true;
         }
-
         public void OnNavigatedFrom(NavigationContext navigationContext)
         {
             //throw new NotImplementedException();
         }
-
-        #region FromDepartmentChildrensChangedCommand
-        private DelegateCommand<long?> _FromDepartmentChildrensChangedCommand;
-        public DelegateCommand<long?> FromDepartmentChildrensChangedCommand =>
-            _FromDepartmentChildrensChangedCommand ?? (_FromDepartmentChildrensChangedCommand = new DelegateCommand<long?>(ExecuteFromDepartmentChildrensChangedCommand));
-
-        async void ExecuteFromDepartmentChildrensChangedCommand(long? FromDepartmentChildrenId)
+        #region FromDepartmentsChangedCommand
+        private DelegateCommand<long?> _FromDepartmentsChangedCommand;
+        public DelegateCommand<long?> FromDepartmentsChangedCommand =>
+            _FromDepartmentsChangedCommand ?? (_FromDepartmentsChangedCommand = new DelegateCommand<long?>(ExecuteFromDepartmentsChangedCommand));
+        async void ExecuteFromDepartmentsChangedCommand(long? FromDepartmentId)
         {
-            this.FromUsers = await SessionService.Instance.AuthorizedUser.GetDepartmentUsersAsync(FromDepartmentChildrenId);
+           this.FromUsers = await SessionService.Instance.AuthorizedUser.GetDepartmentUsersAsync(FromDepartmentId);
         }
         #endregion
 
-        #region ToDepartmentChildrensChangedCommand
-        private DelegateCommand<long?> _ToDepartmentChildrensChangedCommand;
-        public DelegateCommand<long?> ToDepartmentChildrensChangedCommand =>
-            _ToDepartmentChildrensChangedCommand ?? (_ToDepartmentChildrensChangedCommand = new DelegateCommand<long?>(ExecuteToDepartmentChildrensChangedCommand));
+        
 
-        async void ExecuteToDepartmentChildrensChangedCommand(long? ToDepartmentChildrenId)
+        #region ToDepartmentsChangedCommand
+        private DelegateCommand<long?> _ToDepartmentsChangedCommand;
+        public DelegateCommand<long?> ToDepartmentsChangedCommand =>
+            _ToDepartmentsChangedCommand ?? (_ToDepartmentsChangedCommand = new DelegateCommand<long?>(ExecuteToDepartmentsChangedCommand));
+        async void ExecuteToDepartmentsChangedCommand(long? ToDepartmentId)
         {
-            this.ToUsers = await SessionService.Instance.AuthorizedUser.GetDepartmentUsersAsync(ToDepartmentChildrenId);
+            this.ToUsers = await SessionService.Instance.AuthorizedUser.GetDepartmentUsersAsync(ToDepartmentId);
         }
         #endregion
+
+        
 
         #region SubmitCommand
         private DelegateCommand _SubmitCommand;
         public DelegateCommand SubmitCommand =>
             _SubmitCommand ?? (_SubmitCommand = new DelegateCommand(ExecuteSubmitCommand));
-
         async void ExecuteSubmitCommand()
         {
             System.Diagnostics.Debug.WriteLine(this.Tags);
-
             //選択された Tag を取得し、ThanksCard.ThanksCardTags にセットする。
             List<ThanksCardTag> ThanksCardTags = new List<ThanksCardTag>();
             foreach (var tag in this.Tags.Where(t => t.Selected))
@@ -133,12 +133,9 @@ namespace ThanksCardClient.ViewModels
                 ThanksCardTags.Add(thanksCardTag);
             }
             this.ThanksCard.ThanksCardTags = ThanksCardTags;
-
             ThanksCard createdThanksCard = await ThanksCard.PostThanksCardAsync(this.ThanksCard);
-
             //TODO: Error handling
             this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardList));
-
         }
         #endregion
 
@@ -146,16 +143,29 @@ namespace ThanksCardClient.ViewModels
         private DelegateCommand _BackCommand;
         public DelegateCommand BackCommand =>
             _BackCommand ?? (_BackCommand = new DelegateCommand(ExecuteBackCommand));
-
         void ExecuteBackCommand()
         {
             SessionService.Instance.AuthorizedUser = null;
             SessionService.Instance.IsAuthorized = false;
-
             // HeaderRegion, FooterRegion を破棄して、ContentRegion をログオン画面に遷移させる。
             this.regionManager.Regions["HeaderRegion"].RemoveAll();
             this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Home));
-            this.regionManager.Regions["FooterRegion"].RemoveAll();
+            
+        }
+        #endregion
+
+        #region ClearCommand
+        private DelegateCommand _ClearCommand;
+        public DelegateCommand ClearCommand =>
+            _ClearCommand ?? (_ClearCommand = new DelegateCommand(ExecuteClearCommand));
+        void ExecuteClearCommand()
+        {
+            SessionService.Instance.AuthorizedUser = null;
+            SessionService.Instance.IsAuthorized = false;
+            // HeaderRegion, FooterRegion を破棄して、ContentRegion をログオン画面に遷移させる。
+            this.regionManager.Regions["HeaderRegion"].RemoveAll();
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardCreate));
+
         }
         #endregion
     }
