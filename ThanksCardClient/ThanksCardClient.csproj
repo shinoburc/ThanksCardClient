@@ -8,8 +8,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Views\Thank Card Done %2813%29.png" />
+    <None Remove="Views\Thank Card Done %2817%29.png" />
+    <None Remove="Views\Thank Card Done %2818%29.png" />
+    <None Remove="Views\Thank Card Done %2819%29.png" />
+    <None Remove="Views\Thank Card Done %2820%29.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Prism.Core" Version="8.1.97" />
     <PackageReference Include="Prism.Unity" Version="8.1.97" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Views\Thank Card Done (13).png" />
+    <Resource Include="Views\Thank Card Done (17).png" />
+    <Resource Include="Views\Thank Card Done (18).png" />
+    <Resource Include="Views\Thank Card Done (19).png" />
+    <Resource Include="Views\Thank Card Done (20).png" />
   </ItemGroup>
 
 </Project>
