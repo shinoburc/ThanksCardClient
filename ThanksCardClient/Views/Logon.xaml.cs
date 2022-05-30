@@ -11,5 +11,15 @@ namespace ThanksCardClient.Views
         {
             InitializeComponent();
         }
+
+        private void None(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+
+        }
+
+        private void Button_Click()
+        {
+
+        }
     }
 }
