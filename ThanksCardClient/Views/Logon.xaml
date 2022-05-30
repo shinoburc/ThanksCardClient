@@ -12,7 +12,7 @@
         <Grid.Background>
             <ImageBrush ImageSource="/Views/Thank Card Done (22).png" Stretch="Uniform"/>
         </Grid.Background>
-        <TextBox Text="{Binding User.Name}" Margin="228,0,188,206" AutomationProperties.Name="User Name" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" SelectionBrush="{x:Null}" Height="54" VerticalAlignment="Bottom" SelectionTextBrush="{x:Null}" Width="384" UndoLimit="94" FontSize="20" TextAlignment="Justify" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+        <TextBox Text="{Binding User.Name}" Margin="228,0,188,202" AutomationProperties.Name="User Name" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" SelectionBrush="{x:Null}" Height="56" VerticalAlignment="Bottom" SelectionTextBrush="{x:Null}" Width="384" UndoLimit="94" FontSize="20" TextAlignment="Justify" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
         <TextBox Text="{Binding User.Password}" Margin="228,248,188,148" RenderTransformOrigin="0.5,0.5" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" SelectionBrush="{x:Null}" Width="384" Height="54" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="20">
 
             <TextBox.RenderTransform>
@@ -25,6 +25,11 @@
             </TextBox.RenderTransform>
         </TextBox>
         <Button Content="Button" Command="{Binding LogonCommand}" HorizontalAlignment="Center" Height="38" Margin="0,325,0,0" VerticalAlignment="Top" Width="115" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Opacity="0"/>
+        <Image HorizontalAlignment="Left" Height="45" Margin="243,56,0,0" VerticalAlignment="Top" Width="69">
+            <Image.OpacityMask>
+                <ImageBrush ImageSource="/Views/Thiết kế chưa có tên (6).png"/>
+            </Image.OpacityMask>
+        </Image>
 
     </Grid>
 </UserControl>

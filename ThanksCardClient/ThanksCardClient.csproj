@@ -19,6 +19,7 @@
     <None Remove="Views\Thank Card Done %2822%29.png" />
     <None Remove="Views\Thank Card Done %2823%29.png" />
     <None Remove="Views\Thank Card Done %2825%29.png" />
+    <None Remove="Views\Thiết kế chưa có tên %286%29.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -38,6 +39,7 @@
     <Resource Include="Views\Thank Card Done (22).png" />
     <Resource Include="Views\Thank Card Done (23).png" />
     <Resource Include="Views\Thank Card Done (25).png" />
+    <Resource Include="Views\Thiết kế chưa có tên (6).png" />
   </ItemGroup>
 
 </Project>
