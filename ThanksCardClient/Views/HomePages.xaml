@@ -10,7 +10,11 @@
         <Grid.Background>
             <ImageBrush ImageSource="/Views/Thank Card Done (13).png"/>
         </Grid.Background>
-        <Button Content="ホームボタン" Command="{Binding HomeCommand}" HorizontalAlignment="Left" Margin="360,362,0,0" VerticalAlignment="Top" Height="48" Width="92"/>
+        <Button Content="ホームボタン" Command="{Binding HomeCommand}" HorizontalAlignment="Center" Margin="0,362,0,0" VerticalAlignment="Top" Height="35" Width="92" BorderBrush="{x:Null}" Foreground="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="/Views/Mask group.png"/>
+            </Button.Background>
+        </Button>
 
 
     </Grid>
