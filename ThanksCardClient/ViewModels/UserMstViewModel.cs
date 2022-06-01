@@ -35,7 +35,6 @@ namespace ThanksCardClient.ViewModels
             this.UpdateUsers();
         }
 
-        //ユーザー登録画面
         private async void UpdateUsers()
         {
             if (SessionService.Instance.AuthorizedUser != null)

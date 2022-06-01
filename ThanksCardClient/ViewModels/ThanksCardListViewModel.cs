@@ -28,6 +28,7 @@ namespace ThanksCardClient.ViewModels
         }
 
 
+
         public async void OnNavigatedTo(NavigationContext navigationContext)
         {
             ThanksCard thanksCard = new ThanksCard();

@@ -17,7 +17,7 @@ namespace ThanksCardClient.Services
         private HttpClient Client;
         private string BaseUrl;
 
-        //サンクスカードリスト作成
+
         public RestService()
         {
             // Setting: "Do not use proxy"
