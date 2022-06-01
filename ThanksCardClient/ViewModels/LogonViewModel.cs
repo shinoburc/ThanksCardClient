@@ -67,6 +67,8 @@ namespace ThanksCardClient.ViewModels
                 this.ErrorMessage = "ログオンに失敗しました。";
             }
         }
-        #endregion
+        #endregion 
+
     }
+
 }

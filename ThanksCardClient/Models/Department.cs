@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using ThanksCardClient.Services;
 
 namespace ThanksCardClient.Models
-{
+{ 
     public class Department : BindableBase
     {
         #region IdProperty

@@ -21,5 +21,7 @@ namespace ThanksCardClient.ViewModels
         {
             this.AuthorizedUser = SessionService.Instance.AuthorizedUser;
         }
+
     }
+
 }

@@ -3,6 +3,7 @@ using Prism.Regions;
 
 namespace ThanksCardClient.ViewModels
 {
+
     public class MainWindowViewModel : BindableBase
     {
         private string _title = "Prism Application";
@@ -20,4 +21,6 @@ namespace ThanksCardClient.ViewModels
             this.regionManager.RegisterViewWithRegion("ContentRegion", typeof(Views.Logon));
         }
     }
+
+
 }

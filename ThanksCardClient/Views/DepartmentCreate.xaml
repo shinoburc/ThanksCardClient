@@ -17,8 +17,7 @@
             <TextBox Text="{Binding Department.Name}"/>
             <TextBlock Text="Parent:"/>
             <ComboBox SelectedItem="{Binding Department.Parent}" ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValue="{Binding Department.Parent}"/>
-
-            <Button Content="Submit" Command="{Binding SubmitCommand}"/>
+            <Button Content="Submit" Command="{Binding SubmitCommand}" Height="67" Width="537"/>
         </StackPanel>
     </Grid>
 </UserControl>
