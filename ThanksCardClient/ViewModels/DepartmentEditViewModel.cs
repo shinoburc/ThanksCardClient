@@ -70,6 +70,19 @@ namespace ThanksCardClient.ViewModels
             this.Departments = await dept.GetDepartmentsAsync();
         }
 
+        #region  BackCommand
+        private DelegateCommand _BackCommand;
+
+
+        public DelegateCommand BackCommand =>
+            _BackCommand ?? (_BackCommand = new DelegateCommand(ExecuteBackCommand));
+
+        void ExecuteBackCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.DepartmentMst));
+        }
+        #endregion
+
         #region SubmitCommand
         private DelegateCommand _SubmitCommand;
         public DelegateCommand SubmitCommand =>

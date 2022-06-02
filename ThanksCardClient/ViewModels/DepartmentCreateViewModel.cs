@@ -68,6 +68,32 @@ namespace ThanksCardClient.ViewModels
             //throw new NotImplementedException();
         }
 
+        #region  ThanksCardCommand
+        private DelegateCommand _ThanksCardCommand;
+
+
+        public DelegateCommand ThanksCardCommand =>
+            _ThanksCardCommand ?? (_ThanksCardCommand = new DelegateCommand(ExecuteThanksCardCommand));
+
+        void ExecuteThanksCardCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardCreate));
+        }
+        #endregion
+
+        #region  BackCommand
+        private DelegateCommand _BackCommand;
+
+
+        public DelegateCommand BackCommand =>
+            _BackCommand ?? (_BackCommand = new DelegateCommand(ExecuteBackCommand));
+
+        void ExecuteBackCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.DepartmentMst));
+        }
+        #endregion
+
         #region SubmitCommand
         private DelegateCommand _SubmitCommand;
         public DelegateCommand SubmitCommand =>
@@ -75,6 +101,7 @@ namespace ThanksCardClient.ViewModels
 
         async void ExecuteSubmitCommand()
         {
+            
             Department createdDepartment = await Department.PostDepartmentAsync(this.Department);
 
             this.regionManager.RequestNavigate("ContentRegion", nameof(Views.DepartmentMst));

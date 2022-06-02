@@ -1,4 +1,3 @@
-﻿using Prism.Commands;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Regions;
@@ -9,7 +8,7 @@ using ThanksCardClient.Models;
 
 namespace ThanksCardClient.ViewModels
 {
-    public class HitViewModel : BindableBase
+    public class HitViewModel
     {
         private readonly IRegionManager regionManager;
 
@@ -17,8 +16,6 @@ namespace ThanksCardClient.ViewModels
         {
             this.regionManager = regionManager;
         }
-
-        
 
         #region  BackCommand
         private DelegateCommand _BackCommand;
@@ -29,6 +26,7 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteBackCommand()
         {
+
             this.regionManager.RequestNavigate("ContentRegion", nameof(Views.MenuUser));
         }
         #endregion
@@ -55,9 +53,11 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteThankCardListCommand()
         {
+
             this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardList));
         }
         #endregion
+
 
         #region  MenuUserCommand
         private DelegateCommand _MenuUserCommand;
@@ -74,8 +74,6 @@ namespace ThanksCardClient.ViewModels
 
 
 
+
     }
 }
-
-
-
