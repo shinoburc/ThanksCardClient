@@ -142,41 +142,82 @@ namespace ThanksCardClient.ViewModels
 
         }
         #endregion
-
-        #region SendBoxHintCommand
-        private DelegateCommand _SendBoxHintCommand;
-        public DelegateCommand SendBoxHintCommand =>
-            _SendBoxHintCommand ?? (_SendBoxHintCommand = new DelegateCommand(ExecuteSendBoxHintCommand));
-
-        void ExecuteSendBoxHintCommand()
-        {
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.SendBoxHint));
-        }
-        #endregion
-
        
-        #region HomePagesCommand
-        private DelegateCommand _HomePagesCommand;
-        public DelegateCommand HomePagesCommand =>
-            _HomePagesCommand ?? (_HomePagesCommand = new DelegateCommand(ExecuteHomePagesCommand));
+        #region HomeCommand
+        private DelegateCommand _HomeCommand;
+        public DelegateCommand HomeCommand =>
+            _HomeCommand ?? (_HomeCommand = new DelegateCommand(ExecuteHomeCommand));
 
-        void ExecuteHomePagesCommand()
+        void ExecuteHomeCommand()
         {
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.HomePages));
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.MenuUser));
         }
         #endregion
 
-        #region  SendBoxCommand
-        private DelegateCommand _SendBoxCommand;
+        #region HitCommand
+        private DelegateCommand _HitCommand;
+        public DelegateCommand HitCommand =>
+            _HitCommand ?? (_HitCommand = new DelegateCommand(ExecuteHitCommand));
+
+        void ExecuteHitCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Hit));
+        }
+        #endregion
+
+        #region  ThanksCradCreateCommand
+        private DelegateCommand _ThanksCradCreateCommand;
 
 
-        public DelegateCommand SendBoxCommand =>
-            _SendBoxCommand ?? (_SendBoxCommand = new DelegateCommand(ExecuteSendBoxCommand));
+        public DelegateCommand ThanksCradCreateCommand =>
+            _ThanksCradCreateCommand ?? (_ThanksCradCreateCommand = new DelegateCommand(ExecuteThanksCradCreateCommand));
 
-        void ExecuteSendBoxCommand()
+        void ExecuteThanksCradCreateCommand()
         {
             this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardCreate));
         }
         #endregion
+
+        #region  MenuUserCommand
+        private DelegateCommand _MenuUserCommand;
+
+
+        public DelegateCommand MenuUserCommand =>
+            _MenuUserCommand ?? (_MenuUserCommand = new DelegateCommand(ExecuteMenuUserCommand));
+
+        void ExecuteMenuUserCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.MenuUser));
+        }
+        #endregion
+
+        #region  MenuUser1Command
+        private DelegateCommand _MenuUser1Command;
+
+
+        public DelegateCommand MenuUser1Command =>
+            _MenuUser1Command ?? (_MenuUser1Command = new DelegateCommand(ExecuteMenuUser1Command));
+
+        void ExecuteMenuUser1Command()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.MenuUser));
+        }
+        #endregion
+
+        #region  ThanksCradListCommand
+        private DelegateCommand _ThanksCradListCommand;
+
+
+        public DelegateCommand ThanksCradListCommand =>
+            _ThanksCradListCommand ?? (_MenuUserCommand = new DelegateCommand(ExecuteThanksCradListCommand));
+
+        void ExecuteThanksCradListCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardList));
+        }
+        #endregion
+
+
+
     }
 }
