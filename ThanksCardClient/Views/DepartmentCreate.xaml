@@ -8,17 +8,22 @@
       xmlns:local="clr-namespace:ThanksCardClient.Views"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <StackPanel>
-            <TextBlock Text="{Binding ErrorMessage}" Foreground="Red"/>
-            <TextBlock Text="Code:"/>
-            <TextBox Text="{Binding Department.Code}"/>
-            <TextBlock Text="Name:"/>
-            <TextBox Text="{Binding Department.Name}"/>
-            <TextBlock Text="Parent:"/>
-            <ComboBox SelectedItem="{Binding Department.Parent}" ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValue="{Binding Department.Parent}"/>
-
-            <Button Content="Submit" Command="{Binding SubmitCommand}"/>
-        </StackPanel>
+    <Grid HorizontalAlignment="Center" Height="450" VerticalAlignment="Center" Width="800">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Views/2.png" Stretch="None"/>
+        </Grid.Background>
+        <Button Content="戻る" HorizontalAlignment="Left" Height="45" Margin="-1,2,0,0" VerticalAlignment="Top" Width="144" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-3240.261"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <ComboBox HorizontalAlignment="Center" Height="34" Margin="0,260,0,0" VerticalAlignment="Top" Width="335"/>
+        <TextBlock HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="親部署" VerticalAlignment="Top" Width="141" Margin="232,242,0,0"/>
     </Grid>
+
 </UserControl>
