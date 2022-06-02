@@ -8,6 +8,7 @@ using System.Linq;
 using ThanksCardClient.Models;
 using ThanksCardClient.Services;
 
+
 namespace ThanksCardClient.ViewModels
 {
     public class FooterViewModel : BindableBase
@@ -25,7 +26,9 @@ namespace ThanksCardClient.ViewModels
         {
             this.regionManager = regionManager;
             this.AuthorizedUser = SessionService.Instance.AuthorizedUser;
+
         }
+
 
         #region ShowThanksCardCreateCommand
         private DelegateCommand _ShowThanksCardCreateCommand;
@@ -98,5 +101,28 @@ namespace ThanksCardClient.ViewModels
             this.regionManager.Regions["FooterRegion"].RemoveAll();
         }
         #endregion
+
+        #region ShowgusikenCommand
+        private DelegateCommand _ShowgusikenCommand;
+        public DelegateCommand ShowgusikenCommand =>
+            _ShowgusikenCommand ?? (_ShowgusikenCommand = new DelegateCommand(ExecuteShowgusikenCommand));
+        void ExecuteShowgusikenCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Syukei));
+        }
+        #endregion
+
+        #region ShowTemplateCommand
+        private DelegateCommand _ShowTemplateCommand;
+        public DelegateCommand ShowTemplateCommand =>
+            _ShowTemplateCommand ?? (_ShowTemplateCommand = new DelegateCommand(ExecuteShowTemplateCommand));
+        void ExecuteShowTemplateCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Template));
+        }
+        #endregion
+
+
     }
+
 }

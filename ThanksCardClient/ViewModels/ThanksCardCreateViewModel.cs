@@ -94,6 +94,7 @@ namespace ThanksCardClient.ViewModels
             //throw new NotImplementedException();
         }
 
+
         #region FromDepartmentsChangedCommand
         private DelegateCommand<long?> _FromDepartmentsChangedCommand;
         public DelegateCommand<long?> FromDepartmentsChangedCommand =>
