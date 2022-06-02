@@ -8,7 +8,7 @@
       xmlns:local="clr-namespace:ThanksCardClient.Views"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800">
-    <Grid HorizontalAlignment="Center" Width="800" Height="450" VerticalAlignment="Top">
+    <Grid HorizontalAlignment="Center" Width="800" Height="450" VerticalAlignment="Top" Cursor="Hand">
         <Grid.Background>
             <ImageBrush ImageSource="/Views/Outbox1.png" Stretch="Uniform"/>
 
@@ -32,7 +32,7 @@
         </ComboBox>
         <ComboBox ItemsSource="{Binding FromUsers}" DisplayMemberPath="Name" SelectedValue="{Binding ThanksCard.FromId}" SelectedValuePath="Id" HorizontalAlignment="Left" Height="25" Margin="477,151,0,0" VerticalAlignment="Top" Width="248"/>
         <TextBox HorizontalAlignment="Left" Height="51" Margin="213,292,0,0" TextWrapping="Wrap" Text="{Binding ThanksCard.Body}" VerticalAlignment="Top" Width="512" Background="#FFE5E5E5" BorderBrush="#FFBDBDBD" Foreground="Black"/>
-        <Button Command="{Binding SubmitCommand}" Margin="213,374,510,50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Opacity="0"/>
+        <Button Content="送信" Command="{Binding SubmitCommand}" Margin="213,374,510,50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Opacity="0"/>
         <DatePicker SelectedDate="{Binding ThanksCard.CreatedDateTime}" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="114" Margin="210,343,0,0" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="Black"/>
         <ComboBox x:Name="ToDepartments" ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValuePath="Id" HorizontalAlignment="Left" Height="25" Margin="213,192,0,0" VerticalAlignment="Top" Width="248">
             <!-- Deparment が選択されたら ToDepartmentsChangedCommand を発行する -->
@@ -42,6 +42,20 @@
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </ComboBox>
-        <ComboBox ItemsSource="{Binding ToUsers}" DisplayMemberPath="Name" SelectedValue="{Binding ThanksCard.ToId}" SelectedValuePath="Id" HorizontalAlignment="Left" Height="25" Margin="477,192,0,0" VerticalAlignment="Top" Width="248"/>
+        <ComboBox ItemsSource="{Binding ToUsers}" DisplayMemberPath="Name" SelectedValue="{Binding ThanksCard.ToId}" SelectedValuePath="Id" HorizontalAlignment="Left" Height="25" Margin="477,190,0,0" VerticalAlignment="Top" Width="248"/>
+        <Button Content="ヒント" Command="{Binding HitCommand}" Margin="24,172,742,252" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Opacity="0" Cursor="Hand"/>
+        <Button Content="送信箱" Command="{Binding ThanksCardCreateCommand}" Margin="24,129,742,301" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Opacity="0" Click="Button_Click" Cursor="Hand"/>
+        <Button Content="メニュー" Command="{Binding MenuUserCommand}" Margin="27,46,735,376" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" RenderTransformOrigin="0.5,0.5" Opacity="0" Cursor="Hand">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="358.922"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button Content="全体閲覧表" Command="{Binding ThanksCradListCommand}" Margin="24,229,742,195" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Opacity="0" Cursor="Hand"/>
+        <Button Content="戻る" Command="{Binding MenuUser1Command}" HorizontalAlignment="Left" Margin="411,374,0,0" VerticalAlignment="Top" Width="69" Height="26" Cursor="Hand" Opacity="0"/>
     </Grid>
 </UserControl>
