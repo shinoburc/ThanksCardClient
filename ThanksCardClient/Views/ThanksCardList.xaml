@@ -23,5 +23,17 @@
 
             </DataGrid.Columns>
         </DataGrid>
+        <Button Content="Button" Command="{Binding ThanksCardCommand}" HorizontalAlignment="Left" Height="31" Margin="27,121,0,0" VerticalAlignment="Top" Width="28" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" RenderTransformOrigin="0.5,0.5" Opacity="0" Cursor="Hand">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-0.409"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.118"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button Content="Button" Command="{Binding HitCommand}"  HorizontalAlignment="Left" Height="38" Margin="25,165,0,0" VerticalAlignment="Top" Width="32" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Opacity="0"/>
+        <Button Content="Button" Command="{Binding Command}" HorizontalAlignment="Left" Height="48" Margin="14,214,0,0" VerticalAlignment="Top" Width="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Opacity="0"/>
     </Grid>
 </UserControl>

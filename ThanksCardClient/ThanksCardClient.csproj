@@ -10,7 +10,9 @@
   <ItemGroup>
     <None Remove="Views\DEPARTMENT EDIT.png" />
     <None Remove="Views\DepartmentCreate.png" />
+    <None Remove="Views\hit.png" />
     <None Remove="Views\Homes.png" />
+    <None Remove="Views\Homesss.png" />
     <None Remove="Views\Login 1.png" />
     <None Remove="Views\LoginButton.png" />
     <None Remove="Views\LoginPg.png" />
@@ -41,7 +43,9 @@
   <ItemGroup>
     <Resource Include="Views\DEPARTMENT EDIT.png" />
     <Resource Include="Views\DepartmentCreate.png" />
+    <Resource Include="Views\hit.png" />
     <Resource Include="Views\Homes.png" />
+    <Resource Include="Views\Homesss.png" />
     <Resource Include="Views\Login 1.png" />
     <Resource Include="Views\LoginButton.png" />
     <Resource Include="Views\LoginPg.png" />
