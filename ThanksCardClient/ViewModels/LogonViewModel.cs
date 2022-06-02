@@ -69,6 +69,20 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion 
 
+        #region Cleacommand 
+        private DelegateCommand _Cleacommand;
+        public DelegateCommand Cleacommand =>
+            _Cleacommand ?? (_Cleacommand = new DelegateCommand(ExecutCleacommand));
+        void ExecutCleacommand()
+        {    
+                this.regionManager = regionManager;
+
+                // テキストボックスをクリアする
+                this.User.Name = "";
+                this.User.Password = "";
+            
+        }
+        #endregion
     }
 
 }

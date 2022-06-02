@@ -40,6 +40,8 @@ namespace ThanksCardClient
             containerRegistry.RegisterForNavigation<TagCreate>();
             containerRegistry.RegisterForNavigation<TagEdit>();
             containerRegistry.RegisterForNavigation<Gusiken>();
+            containerRegistry.RegisterForNavigation<Syukei>();
+            containerRegistry.RegisterForNavigation<Template>();
         }
     }
 }

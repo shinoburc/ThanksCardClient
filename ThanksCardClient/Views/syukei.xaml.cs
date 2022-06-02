@@ -16,16 +16,13 @@ using System.Windows.Shapes;
 namespace ThanksCardClient.Views
 {
     /// <summary>
-    /// Page1.xaml の相互作用ロジック
+    /// Syukei.xaml の相互作用ロジック
     /// </summary>
-    public partial class Page1 : Page
+    public partial class Syukei : UserControl
     {
-        public Page1()
+        public Syukei()
         {
             InitializeComponent();
-
-            Uri uri = new Uri("/Page1.xaml", UriKind.Relative);
-            
         }
     }
 }

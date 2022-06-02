@@ -105,16 +105,22 @@ namespace ThanksCardClient.ViewModels
         #region ShowgusikenCommand
         private DelegateCommand _ShowgusikenCommand;
         public DelegateCommand ShowgusikenCommand =>
-            _ShowgusikenCommand ?? (_ShowTagMstCommand = new DelegateCommand(ExecuteShowgusikenCommand));
+            _ShowgusikenCommand ?? (_ShowgusikenCommand = new DelegateCommand(ExecuteShowgusikenCommand));
         void ExecuteShowgusikenCommand()
         {
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Gusiken));
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Syukei));
         }
         #endregion
 
-
-
-
+        #region ShowTemplateCommand
+        private DelegateCommand _ShowTemplateCommand;
+        public DelegateCommand ShowTemplateCommand =>
+            _ShowTemplateCommand ?? (_ShowTemplateCommand = new DelegateCommand(ExecuteShowTemplateCommand));
+        void ExecuteShowTemplateCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Template));
+        }
+        #endregion
 
 
     }

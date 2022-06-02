@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ThanksCardClient.ViewModels
 {
-    internal class Gusiken
+    internal class Template
     {
     }
 }

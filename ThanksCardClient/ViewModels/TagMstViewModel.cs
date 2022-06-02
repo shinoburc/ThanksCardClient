@@ -57,7 +57,7 @@ namespace ThanksCardClient.ViewModels
         void ExecuteTagCreateCommand()
         {
             System.Diagnostics.Debug.WriteLine("TagCreate");
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.TagCreate));
+            //this.regionManager.RequestNavigate("ContentRegion", nameof(Views.TagCreate));
         }
         #endregion
 
