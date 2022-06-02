@@ -47,6 +47,13 @@ namespace ThanksCardClient.Models
         }
         #endregion
 
+        private bool _IsDelete;
+        public bool IsDelete
+        {
+            get { return _IsDelete; }
+            set { SetProperty(ref _IsDelete, value); }
+        }
+
         #region DepartmentIdProperty
         private long? _DepartmentId;
         public long? DepartmentId

@@ -142,5 +142,41 @@ namespace ThanksCardClient.ViewModels
 
         }
         #endregion
+
+        #region SendBoxHintCommand
+        private DelegateCommand _SendBoxHintCommand;
+        public DelegateCommand SendBoxHintCommand =>
+            _SendBoxHintCommand ?? (_SendBoxHintCommand = new DelegateCommand(ExecuteSendBoxHintCommand));
+
+        void ExecuteSendBoxHintCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.SendBoxHint));
+        }
+        #endregion
+
+       
+        #region HomePagesCommand
+        private DelegateCommand _HomePagesCommand;
+        public DelegateCommand HomePagesCommand =>
+            _HomePagesCommand ?? (_HomePagesCommand = new DelegateCommand(ExecuteHomePagesCommand));
+
+        void ExecuteHomePagesCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.HomePages));
+        }
+        #endregion
+
+        #region  SendBoxCommand
+        private DelegateCommand _SendBoxCommand;
+
+
+        public DelegateCommand SendBoxCommand =>
+            _SendBoxCommand ?? (_SendBoxCommand = new DelegateCommand(ExecuteSendBoxCommand));
+
+        void ExecuteSendBoxCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardCreate));
+        }
+        #endregion
     }
 }

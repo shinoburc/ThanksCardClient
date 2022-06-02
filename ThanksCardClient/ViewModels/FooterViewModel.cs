@@ -98,5 +98,16 @@ namespace ThanksCardClient.ViewModels
             this.regionManager.Regions["FooterRegion"].RemoveAll();
         }
         #endregion
+
+        #region HomeCommand
+        private DelegateCommand _HomeCommand;
+        public DelegateCommand HomeCommand =>
+            _HomeCommand ?? (_HomeCommand = new DelegateCommand(ExecuteHomeCommand));
+
+        void ExecuteHomeCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.HomePages));
+        }
+        #endregion
     }
 }
