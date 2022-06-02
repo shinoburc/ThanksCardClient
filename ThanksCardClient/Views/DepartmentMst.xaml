@@ -14,6 +14,9 @@
 
             <!-- ユーザ一覧(Departmentモデルのリスト)である MainWindowViewModel.Departments をグリッド表示する。-->
             <DataGrid ItemsSource="{Binding Departments}" AutoGenerateColumns="False" CanUserAddRows="False">
+                <DataGrid.Background>
+                    <ImageBrush/>
+                </DataGrid.Background>
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
                     <DataGridTextColumn Header="コード" Binding="{Binding Code}" />
