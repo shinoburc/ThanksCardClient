@@ -8,11 +8,11 @@ using ThanksCardClient.Models;
 
 namespace ThanksCardClient.ViewModels
 {
-    public class HitViewModels
+    public class HitViewModel
     {
         private readonly IRegionManager regionManager;
 
-        public HitViewModels(IRegionManager regionManager)
+        public HitViewModel(IRegionManager regionManager)
         {
             this.regionManager = regionManager;
         }
