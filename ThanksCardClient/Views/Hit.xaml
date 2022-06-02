@@ -11,7 +11,12 @@
             <Grid.Background>
                 <ImageBrush ImageSource="/Views/hit.png"/>
             </Grid.Background>
-            <Button Content="Button" Command="{Binding BackCommand}" HorizontalAlignment="Left" Height="28" Margin="650,125,0,0" VerticalAlignment="Top" Width="79" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Opacity="0"/>
+            <Button Content="戻る" Command="{Binding BackCommand}" HorizontalAlignment="Left" Height="28" Margin="650,125,0,0" VerticalAlignment="Top" Width="79" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Opacity="0"/>
+            
+            <Button Content="メニュー" Command="{Binding MenuUserCommand}" Margin="28,42,738,382" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Opacity="0" Cursor="Hand"/>
+            <Button Content="送信" Command="{Binding ThanksCardCreate}" Margin="28,126,738,298" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Opacity="0" Cursor="Hand"/>
+            <Button Content="全体閲覧表" Command="{Binding ThanksCardListCommand}" Margin="28,172,738,252" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Opacity="0" Cursor="Hand"/>
+
         </Grid>
 
     </Grid>
