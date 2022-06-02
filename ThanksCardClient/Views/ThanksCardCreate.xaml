@@ -43,7 +43,8 @@
             </i:Interaction.Triggers>
         </ComboBox>
         <ComboBox ItemsSource="{Binding ToUsers}" DisplayMemberPath="Name" SelectedValue="{Binding ThanksCard.ToId}" SelectedValuePath="Id" HorizontalAlignment="Left" Height="25" Margin="477,190,0,0" VerticalAlignment="Top" Width="248"/>
-        <Button Content="ヒント" Command="{Binding HintCommand}" Margin="24,172,742,252" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
+        <Button Content="ヒント" Command="{Binding SendBoxHintCommand}" Margin="24,172,742,252" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
+        <Button Content="送信箱" Command="{Binding SendBoxCommand}" Margin="24,129,742,301" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
         <Button Content="メニュー" Command="{Binding MenuCommand}" Margin="27,46,735,376" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" RenderTransformOrigin="0.5,0.5">
             <Button.RenderTransform>
                 <TransformGroup>

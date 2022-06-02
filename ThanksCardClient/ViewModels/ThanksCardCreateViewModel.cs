@@ -143,14 +143,14 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
-        #region HintCommand
-        private DelegateCommand _HintCommand;
-        public DelegateCommand HintCommand =>
-            _HintCommand ?? (_HintCommand = new DelegateCommand(ExecuteHintCommand));
+        #region SendBoxHintCommand
+        private DelegateCommand _SendBoxHintCommand;
+        public DelegateCommand SendBoxHintCommand =>
+            _SendBoxHintCommand ?? (_SendBoxHintCommand = new DelegateCommand(ExecuteSendBoxHintCommand));
 
-        void ExecuteHintCommand()
+        void ExecuteSendBoxHintCommand()
         {
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Hint));
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.SendBoxHint));
         }
         #endregion
 
@@ -163,6 +163,19 @@ namespace ThanksCardClient.ViewModels
         void ExecuteHomePagesCommand()
         {
             this.regionManager.RequestNavigate("ContentRegion", nameof(Views.HomePages));
+        }
+        #endregion
+
+        #region  SendBoxCommand
+        private DelegateCommand _SendBoxCommand;
+
+
+        public DelegateCommand SendBoxCommand =>
+            _SendBoxCommand ?? (_SendBoxCommand = new DelegateCommand(ExecuteSendBoxCommand));
+
+        void ExecuteSendBoxCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardCreate));
         }
         #endregion
     }

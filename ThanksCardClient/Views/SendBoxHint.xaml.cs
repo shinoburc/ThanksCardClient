@@ -16,13 +16,18 @@ using System.Windows.Shapes;
 namespace ThanksCardClient.Views
 {
     /// <summary>
-    /// Hint.xaml の相互作用ロジック
+    /// SendBoxHint.xaml の相互作用ロジック
     /// </summary>
-    public partial class Hint : UserControl
+    public partial class SendBoxHint : UserControl
     {
-        public Hint()
+        public SendBoxHint()
         {
             InitializeComponent();
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
