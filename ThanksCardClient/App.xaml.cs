@@ -39,8 +39,9 @@ namespace ThanksCardClient
             containerRegistry.RegisterForNavigation<TagMst>();
             containerRegistry.RegisterForNavigation<TagCreate>();
             containerRegistry.RegisterForNavigation<TagEdit>();
-            containerRegistry.RegisterForNavigation<HomePages>();
-            containerRegistry.RegisterForNavigation<SendBoxHint>();
+            containerRegistry.RegisterForNavigation<Home>();
+            containerRegistry.RegisterForNavigation<Hit>();
+
         }
     }
 }

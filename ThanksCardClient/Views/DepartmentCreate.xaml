@@ -8,17 +8,11 @@
       xmlns:local="clr-namespace:ThanksCardClient.Views"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <StackPanel>
-            <TextBlock Text="{Binding ErrorMessage}" Foreground="Red"/>
-            <TextBlock Text="Code:"/>
-            <TextBox Text="{Binding Department.Code}"/>
-            <TextBlock Text="Name:"/>
-            <TextBox Text="{Binding Department.Name}"/>
-            <TextBlock Text="Parent:"/>
-            <ComboBox SelectedItem="{Binding Department.Parent}" ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValue="{Binding Department.Parent}"/>
-
-            <Button Content="Submit" Command="{Binding SubmitCommand}"/>
-        </StackPanel>
+    <Grid Margin="2,0,0,0" Width="798" Height="450">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Views/DepartmentCreate.png" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <TextBox Text="{Binding Department.Name}" Margin="0,0,180,207" TextWrapping="Wrap" VerticalContentAlignment="Center" FontSize="20" Foreground="#FF7D7D7D" Height="58" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="384"/>
+        <Button Content="Button" Command="{Binding SubmitCommand}" HorizontalAlignment="Left" Height="29" Margin="234,252,0,0" VerticalAlignment="Top" Width="86" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Opacity="0"/>
     </Grid>
 </UserControl>

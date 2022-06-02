@@ -10,10 +10,10 @@
       d:DesignHeight="450" d:DesignWidth="800">
     <Grid Height="450" VerticalAlignment="Center">
         <Grid.Background>
-            <ImageBrush ImageSource="/Views/Thank Card Done (22).png" Stretch="Uniform"/>
+            <ImageBrush ImageSource="/Views/LoginPg.png" Stretch="Uniform"/>
         </Grid.Background>
-        <TextBox Text="{Binding User.Name}" Margin="228,0,188,202" AutomationProperties.Name="User Name" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" SelectionBrush="{x:Null}" Height="56" VerticalAlignment="Bottom" SelectionTextBrush="{x:Null}" Width="384" UndoLimit="94" FontSize="20" TextAlignment="Justify" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
-        <TextBox Text="{Binding User.Password}" Margin="228,248,188,148" RenderTransformOrigin="0.5,0.5" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" SelectionBrush="{x:Null}" Width="384" Height="54" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="20">
+        <TextBox Text="{Binding User.Name}" Margin="186,192,186,0" AutomationProperties.Name="User Name" Background="White" BorderBrush="{x:Null}" Foreground="Black" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" UndoLimit="94" FontSize="20" TextAlignment="Justify" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Height="54" VerticalAlignment="Top" Width="428"/>
+        <TextBox Text="{Binding User.Password}" Margin="186,250,186,146" RenderTransformOrigin="0.5,0.5" Background="White" BorderBrush="{x:Null}" Foreground="Black" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="20" Width="428" Height="54">
 
             <TextBox.RenderTransform>
                 <TransformGroup>
@@ -24,7 +24,11 @@
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
-        <Button Content="Button" Command="{Binding LogonCommand}" HorizontalAlignment="Center" Height="38" Margin="0,325,0,0" VerticalAlignment="Top" Width="115" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Opacity="0"/>
+        <Button Content="Button" Command="{Binding LogonCommand}" HorizontalAlignment="Center" Height="38" Margin="0,325,0,0" VerticalAlignment="Top" Width="115" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Opacity="0">
+            <Button.Background>
+                <ImageBrush ImageSource="/Views/LoginButton.png"/>
+            </Button.Background>
+        </Button>
         <Image HorizontalAlignment="Left" Height="45" Margin="243,56,0,0" VerticalAlignment="Top" Width="69">
             <Image.OpacityMask>
                 <ImageBrush ImageSource="/Views/Thiết kế chưa có tên (6).png"/>
