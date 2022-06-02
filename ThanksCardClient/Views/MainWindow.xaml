@@ -11,7 +11,7 @@
             <ContentControl prism:RegionManager.RegionName="FooterRegion" />
             <Border Background="AliceBlue" Height="15"/>
             <ContentControl prism:RegionManager.RegionName="ContentRegion" />
-            <Border Background="AliceBlue" Height="15"/>
+            <Border Background="AliceBlue" Height="0"/>
             <ContentControl prism:RegionManager.RegionName="HeaderRegion" />
         </StackPanel>
     </Grid>

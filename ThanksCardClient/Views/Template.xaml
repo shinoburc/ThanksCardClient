@@ -7,6 +7,25 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <StackPanel>
+            <StackPanel Orientation=" Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <TextBlock Text="テンプレート:" Height="68" Width="65"/>
+            <ComboBox Height="71" Width="87" >
+                <ComboBoxItem>
+
+                </ComboBoxItem>
+                <ComboBoxItem>
+                </ComboBoxItem>
+                <ComboBoxItem></ComboBoxItem>
+                <ComboBoxItem></ComboBoxItem>
+            </ComboBox>
+            <Button Content="新規作成" Height="70"  Width="100"/>
+            <Button Content="保存" Height="70"  Width="100"/>
+            <Button Content="削除" Height="70"  Width="100"/>
+        </StackPanel>
+            <StackPanel HorizontalAlignment="Center">
+            <TextBox Height="200" Width="600"/>
+        </StackPanel>
+        </StackPanel>
     </Grid>
 </UserControl>

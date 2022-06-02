@@ -8,7 +8,7 @@
       xmlns:local="clr-namespace:ThanksCardClient.Views"
       mc:Ignorable="d" Height="67" Width="1080">
 
-    <Grid Margin="-20,-62,0,0" HorizontalAlignment="Left" Width="994" Height="129" VerticalAlignment="Top">
+    <Grid Margin="0,-62,106,0" HorizontalAlignment="Right" Width="964" Height="129" VerticalAlignment="Top">
 
 
         <StackPanel Orientation=" Horizontal" Margin="0,61,105,0" Height="68" VerticalAlignment="Top" HorizontalAlignment="Right" Width="858">
@@ -16,16 +16,16 @@
             <Button Content="集計" Height="75" Width="100" Command="{Binding ShowgusikenCommand}"/>
             <ComboBox Height="75" Width="100" Text="ユーザー作成">
                 <ComboBoxItem>
-                    <Button Content="社員" Command="{Binding ShowUserMstCommand}" IsEnabled="{Binding AuthorizedUser.IsAdmin}" Height="70"  Width="100"/>
+                    <Button Content="社員" Command="{Binding ShowUserCreateCommand}" IsEnabled="{Binding AuthorizedUser.IsAdmin}" Height="70"  Width="100"/>
                 </ComboBoxItem>
                 <ComboBoxItem>
-                    <Button Content="部署" Command="{Binding ShowDepartmentMstCommand}" IsEnabled="{Binding AuthorizedUser.IsAdmin}" Height="70"  Width="100"/>
+                    <Button Content="部署" Command="{Binding ShowDepartmentCreateCommand}" IsEnabled="{Binding AuthorizedUser.IsAdmin}" Height="70"  Width="100"/>
                 </ComboBoxItem>
                 <ComboBoxItem>
-                    <Button Content="ユーザー削除" Command="{Binding ShowUserMstCommand}" IsEnabled="{Binding AuthorizedUser.IsAdmin}" Height="70"  Width="100"/>
+                    <Button Content="部署課移動" Command="{Binding ShowDepartmentEditCommand}" IsEnabled="{Binding AuthorizedUser.IsAdmin}" Height="70"  Width="100"/>
                 </ComboBoxItem>
                 <ComboBoxItem>
-                    <Button Content="ユーザー一覧"  Command="{Binding ShowThanksCardCreateCommand}" Height="70" Width="100"/>
+                    <Button Content="ユーザー一覧"  Command="{Binding ShowUserMstCommand}" Height="70" Width="100"/>
                 </ComboBoxItem>
             </ComboBox>
 

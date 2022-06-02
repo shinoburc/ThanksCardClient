@@ -42,6 +42,7 @@ namespace ThanksCardClient
             containerRegistry.RegisterForNavigation<Gusiken>();
             containerRegistry.RegisterForNavigation<Syukei>();
             containerRegistry.RegisterForNavigation<Template>();
+            containerRegistry.RegisterForNavigation<Userlist>();
         }
     }
 }

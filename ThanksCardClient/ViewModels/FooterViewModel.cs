@@ -52,25 +52,25 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
-        #region ShowUserMstCommand
-        private DelegateCommand _ShowUserMstCommand;
-        public DelegateCommand ShowUserMstCommand =>
-            _ShowUserMstCommand ?? (_ShowUserMstCommand = new DelegateCommand(ExecuteShowUserMstCommand));
+        #region ShowUserCreateCommand
+        private DelegateCommand _ShowUserCreateCommand;
+        public DelegateCommand ShowUserCreateCommand =>
+            _ShowUserCreateCommand ?? (_ShowUserCreateCommand = new DelegateCommand(ExecuteShowUserCreateCommandCommand));
 
-        void ExecuteShowUserMstCommand()
+        void ExecuteShowUserCreateCommandCommand()
         {
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.UserMst));
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.UserCreate));
         }
         #endregion
 
-        #region ShowDepartmentMstCommand
-        private DelegateCommand _ShowDepartmentMstCommand;
-        public DelegateCommand ShowDepartmentMstCommand =>
-            _ShowDepartmentMstCommand ?? (_ShowDepartmentMstCommand = new DelegateCommand(ExecuteShowDepartmentMstCommand));
+        #region ShowDepartmentCreateCommand
+        private DelegateCommand _ShowDepartmentCreateCommand;
+        public DelegateCommand ShowDepartmentCreateCommand =>
+            _ShowDepartmentCreateCommand ?? (_ShowDepartmentCreateCommand = new DelegateCommand(ExecuteShowDepartmentCreateCommand));
 
-        void ExecuteShowDepartmentMstCommand()
+        void ExecuteShowDepartmentCreateCommand()
         {
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.DepartmentMst));
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.DepartmentCreate));
         }
         #endregion
 
@@ -122,7 +122,25 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
+        #region ShowUserMstCommand
+        private DelegateCommand _ShowUserMstCommand;
+        public DelegateCommand ShowUserMstCommand =>
+            _ShowUserMstCommand ?? (_ShowUserMstCommand = new DelegateCommand(ExecuteShowUserMstCommand));
+        void ExecuteShowUserMstCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.UserMst));
+        }
+        # endregion
 
+        #region ShowDepartmentEditCommand
+        private DelegateCommand _ShowDepartmentEditCommand;
+        public DelegateCommand ShowDepartmentEditCommand =>
+            _ShowDepartmentEditCommand ?? (_ShowDepartmentEditCommand = new DelegateCommand(ExecuteShowDepartmentEditCommand));
+        void ExecuteShowDepartmentEditCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.DepartmentEdit));
+        }
+        # endregion
     }
 
 }
