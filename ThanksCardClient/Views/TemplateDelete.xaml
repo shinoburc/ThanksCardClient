@@ -7,6 +7,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Views/2.png"/>
+        </Grid.Background>
         <Button Content="戻る" HorizontalAlignment="Left" Height="68" VerticalAlignment="Top" Width="201" FontSize="24"/>
         <ComboBox HorizontalAlignment="Center" Height="62" VerticalAlignment="Center" Width="446"/>
         <TextBlock HorizontalAlignment="Left" Height="46" TextWrapping="Wrap" Text="既存のテンプレート" VerticalAlignment="Top" Width="189" Margin="177,148,0,0" FontSize="22"/>
