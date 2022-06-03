@@ -8,35 +8,44 @@
       xmlns:local="clr-namespace:ThanksCardClient.Views"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <StackPanel>
-            <Button Content="+ユーザの新規作成" Command="{Binding UserCreateCommand}" Width="100" HorizontalAlignment="Left"/>
-
-            <!-- ユーザ一覧(Userモデルのリスト)である MainWindowViewModel.Users をグリッド表示する。-->
-            <DataGrid ItemsSource="{Binding Users}" AutoGenerateColumns="False" CanUserAddRows="False">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
-                    <DataGridTextColumn Header="名前" Binding="{Binding Name}" />
-                    <DataGridTextColumn Header="パスワード" Binding="{Binding Password}" />
-                    <DataGridTextColumn Header="管理者" Binding="{Binding IsAdmin}" />
-                    <DataGridTextColumn Header="部署" Binding="{Binding Department.Name}" />
-                    <DataGridTemplateColumn Header="">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <!-- CommandParameter に {Binding} とだけ記述すると、UserMstViewModel.Users の要素、つまり User モデルを指定したことになる。-->
-                                <Button Content="編集" Command="{Binding DataContext.UserEditCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" />
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-                    <DataGridTemplateColumn Header="">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <Button Content="削除" Command="{Binding DataContext.UserDeleteCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" />
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-                </DataGrid.Columns>
-            </DataGrid>
-        </StackPanel>
+    <Grid HorizontalAlignment="Center" Height="450" VerticalAlignment="Center" Width="800">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Views/UserMaster.png"/>
+        </Grid.Background>
+        <DataGrid ItemsSource="{Binding Users}" AutoGenerateColumns="False" CanUserAddRows="False" Background="{x:Null}" Margin="99,160,70,56" Foreground="#FF0A0A0A" BorderBrush="{x:Null}" Cursor="Hand">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="50" >
+                    <DataGridTextColumn.Foreground>
+                        <ImageBrush/>
+                    </DataGridTextColumn.Foreground>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="名前" Binding="{Binding Name}" Width="100" />
+                <DataGridTextColumn Header="パスワード" Binding="{Binding Password}" Width="100" />
+                <DataGridTextColumn Header="部署名" Binding="{Binding Department.Name}" Width="206" />
+                <DataGridTextColumn Header="管理者" Binding="{Binding IsAdmin}" Width="100" />
+                <DataGridTemplateColumn Header="編集">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <!-- CommandParameter に {Binding} とだけ記述すると、UserMstViewModel.Users の要素、つまり User モデルを指定したことになる。-->
+                            <Button Content="編集" Command="{Binding DataContext.UserEditCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="削除">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="削除" Command="{Binding DataContext.UserDeleteCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Button" Command="{Binding BackCommand}" HorizontalAlignment="Left" Height="27" Margin="652,125,0,0" VerticalAlignment="Top" Width="78" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Opacity="0" Cursor="Hand"/>
+        <Button Content="Button" Command="{Binding UserCreateCommand}" HorizontalAlignment="Left" Height="29" Margin="558,125,0,0" VerticalAlignment="Top" Width="80" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Opacity="0" Cursor="Hand"/>
+        <Button Content="メニュー" Command="{Binding MenuAdminCommand}" HorizontalAlignment="Left" Height="38" Margin="22,44,0,0" VerticalAlignment="Top" Width="42" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Opacity="0"/>
+        <Button Content="送信箱" Command="{Binding ThanksCradCreateCommand}" HorizontalAlignment="Left" Height="38" Margin="22,115,0,0" VerticalAlignment="Top" Width="42" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Opacity="0"/>
+        <Button Content="ヒント" Command="{Binding HitAdminCommand}" HorizontalAlignment="Left" Height="38" Margin="22,160,0,0" VerticalAlignment="Top" Width="42" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Opacity="0"/>
+        <Button Content="全体閲覧表" Command="{Binding ThanksCradListCommand}" HorizontalAlignment="Left" Height="38" Margin="22,225,0,0" VerticalAlignment="Top" Width="42" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Opacity="0"/>
+        <Button Content="集計" Command="{Binding BackCommand}" HorizontalAlignment="Left" Height="42" Margin="22,268,0,0" VerticalAlignment="Top" Width="42" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Opacity="0.01"/>
     </Grid>
 </UserControl>

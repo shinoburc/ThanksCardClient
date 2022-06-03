@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using ThanksCardClient.Models;
+using ThanksCardClient.Services;
 
 namespace ThanksCardClient.ViewModels
 {
@@ -22,9 +23,21 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
+        #region roginuser
+        private User _AuthorizedUser;
+        public User AuthorizedUser
+        {
+            get { return _AuthorizedUser; }
+            set { SetProperty(ref _AuthorizedUser, value); }
+        }
+        #endregion
+
         public ThanksCardListViewModel(IRegionManager regionManager)
         {
             this.regionManager = regionManager;
+            //this.AuthorizedUser = SessionService.Instance.AuthorizedUser;
+            //this._SearchWord = this.AuthorizedUser.Name;
+            //追加したらログインしたユーザーが自動生成される
         }
 
         #region SearchWordProperty
@@ -53,7 +66,10 @@ namespace ThanksCardClient.ViewModels
         {
             ThanksCard thanksCard = new ThanksCard();
             this.ThanksCards = await thanksCard.GetThanksCardsAsync();
-
+            //this.SearchThanksCard = new SearchThanksCard();
+            //this.SearchThanksCard.SearchWord = this.AuthorizedUser.Name;
+            //ThanksCards = await thanksCard.PostSearchThanksCardsAsync(SearchThanksCard);
+            //追加したらログインしたユーザーが自動生成される
         }
 
         public bool IsNavigationTarget(NavigationContext navigationContext)
@@ -77,6 +93,71 @@ namespace ThanksCardClient.ViewModels
             this.SearchThanksCard = new SearchThanksCard();
             this.SearchThanksCard.SearchWord = parameter;
             ThanksCards = await thanksCard.PostSearchThanksCardsAsync(SearchThanksCard);
+        }
+        #endregion
+
+        #region  ThanksCardCommand
+        private DelegateCommand _ThanksCardCommand;
+
+
+        public DelegateCommand ThanksCardCommand =>
+            _ThanksCardCommand ?? (_ThanksCardCommand = new DelegateCommand(ExecuteThanksCardCommand));
+
+        void ExecuteThanksCardCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardCreate));
+        }
+        #endregion
+
+        #region  HitCommand
+        private DelegateCommand _HitCommand;
+
+
+        public DelegateCommand HitCommand =>
+            _HitCommand ?? (_HitCommand = new DelegateCommand(ExecuteHitCommand));
+
+        void ExecuteHitCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Hit));
+        }
+        #endregion
+
+        #region  ThankCardListCommand
+        private DelegateCommand _ThankCardListCommand;
+
+
+        public DelegateCommand ThankCardListCommand =>
+            _ThankCardListCommand ?? (_ThankCardListCommand = new DelegateCommand(ExecuteThankCardListCommand));
+
+        void ExecuteThankCardListCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardList));
+        }
+        #endregion
+
+        #region  MenuUserCommand
+        private DelegateCommand _MenuUserCommand;
+
+
+        public DelegateCommand MenuUserCommand =>
+            _MenuUserCommand ?? (_MenuUserCommand = new DelegateCommand(ExecuteMenuUserCommand));
+
+        void ExecuteMenuUserCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.MenuUser));
+        }
+        #endregion
+
+        #region DeleteThankCardCommand
+        private DelegateCommand<ThanksCard> _DeleteThankCardCommand;
+        public DelegateCommand<ThanksCard> DeleteThankCardCommand =>
+            _DeleteThankCardCommand ?? (_DeleteThankCardCommand = new DelegateCommand<ThanksCard>(ExcuteDeleteThankCardCommand));
+
+        async void ExcuteDeleteThankCardCommand(ThanksCard SelectedThanksCard)
+        {
+            ThanksCard thanksCard = await SelectedThanksCard.DeleteThanksCardAsync(SelectedThanksCard.Id);
+            //this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardList));
+            
         }
         #endregion
     }

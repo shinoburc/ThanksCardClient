@@ -5,37 +5,40 @@
       prism:ViewModelLocator.AutoWireViewModel="True" 
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:ThanksCardClient.Views"
-      mc:Ignorable="d" 
+      xmlns:local="clr-namespace:ThanksCardClient.Views" xmlns:viewmodels="clr-namespace:ThanksCardClient.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:DepartmentMstViewModel}"
+             mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <StackPanel>
-            <Button Content="+部署の新規作成" Command="{Binding DepartmentCreateCommand}" Width="100" HorizontalAlignment="Left"/>
-
-            <!-- ユーザ一覧(Departmentモデルのリスト)である MainWindowViewModel.Departments をグリッド表示する。-->
-            <DataGrid ItemsSource="{Binding Departments}" AutoGenerateColumns="False" CanUserAddRows="False">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
-                    <DataGridTextColumn Header="コード" Binding="{Binding Code}" />
-                    <DataGridTextColumn Header="名前" Binding="{Binding Name}" />
-                    <DataGridTextColumn Header="親部署" Binding="{Binding Parent.Name}" />
-                    <DataGridTemplateColumn Header="">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <!-- CommandParameter に {Binding} とだけ記述すると、MainWindowViewModel.Departments の要素、つまり Department モデルを指定したことになる。-->
-                                <Button Content="編集" Command="{Binding DataContext.DepartmentEditCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" />
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-                    <DataGridTemplateColumn Header="">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <Button Content="削除" Command="{Binding DataContext.DepartmentDeleteCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" />
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-                </DataGrid.Columns>
-            </DataGrid>
-        </StackPanel>
+    <Grid Height="450" VerticalAlignment="Top" HorizontalAlignment="Center" Width="800">
+        <Grid.Background>
+            <ImageBrush Stretch="Uniform" ImageSource="/Views/Department_Master.png"/>
+        </Grid.Background>
+        <DataGrid ItemsSource="{Binding Departments}" AutoGenerateColumns="False" CanUserAddRows="False" Background="{x:Null}" Margin="95,166,61,64">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="100" />
+                <DataGridTextColumn Header="部署名" Binding="{Binding Name}" Width="468" />
+                <DataGridTemplateColumn Header="編集">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <!-- CommandParameter に {Binding} とだけ記述すると、MainWindowViewModel.Departments の要素、つまり Department モデルを指定したことになる。-->
+                            <Button Content="編集" Command="{Binding DataContext.DepartmentEditCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="削除">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="削除" Command="{Binding DataContext.DepartmentDeleteCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Button" Command="{Binding BackCommand}" HorizontalAlignment="Left" Height="27" Margin="651,125,0,0" VerticalAlignment="Top" Width="79" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Opacity="0" Cursor="Hand"/>
+        <Button Content="Button" Command="{Binding DepartmentCreateCommand}" HorizontalAlignment="Left" Height="28" Margin="559,126,0,0" VerticalAlignment="Top" Width="78" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Opacity="0" Cursor="Hand"/>
+        <Button Content="メニュー" Command="{Binding MenuUserCommand}" HorizontalAlignment="Left" Margin="20,43,0,0" VerticalAlignment="Top" Height="33" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Opacity="0"/>
+        <Button Content="送信箱" Command="{Binding ThanksCradCreateCommand}" HorizontalAlignment="Left" Margin="20,120,0,0" VerticalAlignment="Top" Height="33" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Opacity="0"/>
+        <Button Content="ヒント" Command="{Binding HitAdminCommand}" HorizontalAlignment="Left" Margin="24,164,0,0" VerticalAlignment="Top" Height="33" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Opacity="0"/>
+        <Button Content="全体閲覧表" Command="{Binding ThanksCradListCommand}" HorizontalAlignment="Left" Margin="20,222,0,0" VerticalAlignment="Top" Height="33" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Width="40" Opacity="0"/>
+        <Button Content="集計" Command="{Binding MenuUserCommand}" HorizontalAlignment="Left" Margin="20,275,0,0" VerticalAlignment="Top" Height="33" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Width="40" Opacity="0"/>
     </Grid>
 </UserControl>

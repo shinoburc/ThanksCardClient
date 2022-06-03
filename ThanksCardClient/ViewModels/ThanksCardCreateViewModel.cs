@@ -42,6 +42,15 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
+        #region SearchThanksCardProperty
+        private SearchThanksCard _SearchThanksCard;
+        public SearchThanksCard SearchThanksCard
+        {
+            get { return _SearchThanksCard; }
+            set { SetProperty(ref _SearchThanksCard, value); }
+        }
+        #endregion
+
         #region DepartmentsProperty
         private List<Department> _Departments;
         public List<Department> Departments
@@ -142,5 +151,82 @@ namespace ThanksCardClient.ViewModels
 
         }
         #endregion
+       
+        #region HomeCommand
+        private DelegateCommand _HomeCommand;
+        public DelegateCommand HomeCommand =>
+            _HomeCommand ?? (_HomeCommand = new DelegateCommand(ExecuteHomeCommand));
+
+        void ExecuteHomeCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.MenuUser));
+        }
+        #endregion
+
+        #region HitCommand
+        private DelegateCommand _HitCommand;
+        public DelegateCommand HitCommand =>
+            _HitCommand ?? (_HitCommand = new DelegateCommand(ExecuteHitCommand));
+
+        void ExecuteHitCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Hit));
+        }
+        #endregion
+
+        #region  ThanksCradCreateCommand
+        private DelegateCommand _ThanksCradCreateCommand;
+
+
+        public DelegateCommand ThanksCradCreateCommand =>
+            _ThanksCradCreateCommand ?? (_ThanksCradCreateCommand = new DelegateCommand(ExecuteThanksCradCreateCommand));
+
+        void ExecuteThanksCradCreateCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardCreate));
+        }
+        #endregion
+
+        #region  MenuUserCommand
+        private DelegateCommand _MenuUserCommand;
+
+
+        public DelegateCommand MenuUserCommand =>
+            _MenuUserCommand ?? (_MenuUserCommand = new DelegateCommand(ExecuteMenuUserCommand));
+
+        void ExecuteMenuUserCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.MenuUser));
+        }
+        #endregion
+
+        #region  MenuUser1Command
+        private DelegateCommand _MenuUser1Command;
+
+
+        public DelegateCommand MenuUser1Command =>
+            _MenuUser1Command ?? (_MenuUser1Command = new DelegateCommand(ExecuteMenuUser1Command));
+
+        void ExecuteMenuUser1Command()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.MenuUser));
+        }
+        #endregion
+
+        #region  ThanksCradListCommand
+        private DelegateCommand _ThanksCradListCommand;
+
+
+        public DelegateCommand ThanksCradListCommand =>
+            _ThanksCradListCommand ?? (_MenuUserCommand = new DelegateCommand(ExecuteThanksCradListCommand));
+
+        void ExecuteThanksCradListCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardList));
+        }
+        #endregion
+
+
+
     }
 }
