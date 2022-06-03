@@ -9,16 +9,17 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <StackPanel>
-            <TextBlock Text="{Binding ErrorMessage}" Foreground="Red"/>
-            <TextBlock Text="Code:"/>
-            <TextBox Text="{Binding Department.Code}"/>
-            <TextBlock Text="Name:"/>
-            <TextBox Text="{Binding Department.Name}"/>
-            <TextBlock Text="Parent:"/>
-            <ComboBox SelectedItem="{Binding Department.Parent}" ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValue="{Binding Department.Parent}"/>
-
-            <Button Content="Submit" Command="{Binding SubmitCommand}"/>
-        </StackPanel>
+        <Grid HorizontalAlignment="Center" Height="450" VerticalAlignment="Center" Width="800" Background="White" RenderTransformOrigin="0.506,0.508">
+            <Button Content="登録" HorizontalAlignment="Left" Height="114" Margin="0,336,0,0" VerticalAlignment="Top" Width="250" FontSize="48" Background="#FF7BF0FF"/>
+            <Button Content="更新" HorizontalAlignment="Left" Height="114" Margin="250,336,0,0" VerticalAlignment="Top" Width="305" FontSize="48" Background="#FF59ECFF"/>
+            <Button Content="削除" HorizontalAlignment="Left" Height="114" Margin="555,336,0,0" VerticalAlignment="Top" Width="245" FontSize="48" Background="#FF12E4FF"/>
+            <ComboBox HorizontalAlignment="Left" Height="28" Margin="600,36,0,0" VerticalAlignment="Top" Width="190"/>
+            <TextBlock HorizontalAlignment="Center" Height="34" Margin="0,244,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" Foreground="White" Background="#FFE4E4E4"/>
+            <TextBlock HorizontalAlignment="Left" Height="22" Margin="276,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Text="部署コード" FontSize="20" RenderTransformOrigin="0.476,1.193"/>
+            <Button Content="戻る" HorizontalAlignment="Left" Height="71" VerticalAlignment="Top" Width="202" FontSize="36"/>
+        </Grid>
+        <TextBlock HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" Text="親部署名" VerticalAlignment="Top" Width="152" Margin="602,10,0,0" FontSize="16"/>
+        <TextBlock HorizontalAlignment="Left" Height="22" Margin="276,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Text="部署名" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Center" Height="34" Margin="0,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" Foreground="White" Background="#FFE4E4E4"/>
     </Grid>
 </UserControl>

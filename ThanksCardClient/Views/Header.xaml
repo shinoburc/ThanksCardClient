@@ -9,6 +9,10 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <TextBlock Text="{Binding AuthorizedUser.Name, StringFormat=ログオン中のユーザ: {0} }" HorizontalAlignment="Right"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="67*"/>
+            <ColumnDefinition Width="13*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="{Binding AuthorizedUser.Name, StringFormat=ログオン中のユーザ: {0} }" HorizontalAlignment="Left" Grid.Column="1" Margin="130,0,0,0"/>
     </Grid>
 </UserControl>
