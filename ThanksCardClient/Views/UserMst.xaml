@@ -9,34 +9,39 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <StackPanel>
-            <Button Content="+ユーザの新規作成" Command="{Binding UserCreateCommand}" Width="100" HorizontalAlignment="Left"/>
 
-            <!-- ユーザ一覧(Userモデルのリスト)である MainWindowViewModel.Users をグリッド表示する。-->
-            <DataGrid ItemsSource="{Binding Users}" AutoGenerateColumns="False" CanUserAddRows="False">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
-                    <DataGridTextColumn Header="名前" Binding="{Binding Name}" />
-                    <DataGridTextColumn Header="パスワード" Binding="{Binding Password}" />
-                    <DataGridTextColumn Header="管理者" Binding="{Binding IsAdmin}" />
-                    <DataGridTextColumn Header="部署" Binding="{Binding Department.Name}" />
-                    <DataGridTemplateColumn Header="">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <!-- CommandParameter に {Binding} とだけ記述すると、UserMstViewModel.Users の要素、つまり User モデルを指定したことになる。-->
-                                <Button Content="編集" Command="{Binding DataContext.UserEditCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" />
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-                    <DataGridTemplateColumn Header="">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <Button Content="削除" Command="{Binding DataContext.UserDeleteCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" />
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-                </DataGrid.Columns>
-            </DataGrid>
-        </StackPanel>
+        <!--<Grid.Background>
+            <ImageBrush ImageSource="/Views/2.png"/>
+        </Grid.Background>-->
+        <Button Content="戻る" HorizontalAlignment="Left" Height="50" Margin="10,10,0,0" VerticalAlignment="Top" Width="97"  FontSize="30"/>
+        <Label Content="課　ID　社員名" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="235" Margin="10,68,0,0" FontSize="30"/>
+        <Label Content="企画部" HorizontalAlignment="Left" Height="74" VerticalAlignment="Top" Width="280" Margin="299,0,0,0" FontSize="50"/>
+        <Label Content="企画課　1　山村昭彦" HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="210" Margin="25,125,0,0" FontSize="20"/>
+        <Label Content="企画課　2　村上晴彦" HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="210" Margin="25,165,0,0" FontSize="20"/>
+        <Label Content="企画課　3　小池陽子" HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="210" Margin="25,205,0,0" FontSize="20"/>
+        <Label Content="企画課　4　金子 勝弘" HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="210" Margin="25,245,0,0" FontSize="20"/>
+        <Label Content="企画課　5　新谷 護" HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="210" Margin="25,285,0,0" FontSize="20"/>
+        <Label Content="企画課　6　黒沢 信也" HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="210" Margin="25,325,0,0" FontSize="20"/>
+        <Label Content="企画課　7　川崎 純太" HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="210" Margin="25,363,0,0" FontSize="20"/>
+        <Label Content="企画課　8　金田 彦好" HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="210" Margin="25,403,0,0" FontSize="20"/>
+        <Label Content="送信件数" HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="100" Margin="275,78,0,0" FontSize="20"/>
+        <Label Content="受信件数" HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="105" Margin="439,78,0,0" FontSize="20"/>
+        <Label Content="1" HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="100" Margin="475,125,0,0" FontSize="20"/>
+        <Label Content="5" HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="100" Margin="314,165,0,0" FontSize="20"/>
+        <Label Content="2" HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="100" Margin="314,205,0,0" FontSize="20"/>
+        <Label Content="4" HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="100" Margin="314,245,0,0" FontSize="20"/>
+        <Label Content="6" HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="100" Margin="314,285,0,0" FontSize="20"/>
+        <Label Content="8" HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="100" Margin="314,325,0,0" FontSize="20"/>
+        <Label Content="2" HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="100" Margin="314,365,0,0" FontSize="20"/>
+        <Label Content="4" HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="100" Margin="314,405,0,0" FontSize="20"/>
+        <Label Content="5" HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="100" Margin="475,165,0,0" FontSize="20"/>
+        <Label Content="1" HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="100" Margin="475,205,0,0" FontSize="20"/>
+        <Label Content="0" HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="100" Margin="475,245,0,0" FontSize="20"/>
+        <Label Content="4" HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="100" Margin="475,285,0,0" FontSize="20"/>
+        <Label Content="9" HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="100" Margin="475,325,0,0" FontSize="20"/>
+        <Label Content="1" HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="100" Margin="475,365,0,0" FontSize="20"/>
+        <Label Content="4" HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="100" Margin="314,125,0,0" FontSize="20"/>
+        <Label Content="1" HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="100" Margin="475,405,0,0" FontSize="20"/>
+
     </Grid>
 </UserControl>
