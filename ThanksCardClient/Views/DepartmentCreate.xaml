@@ -9,7 +9,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Grid HorizontalAlignment="Center" Height="450" VerticalAlignment="Center" Width="800" Background="White" RenderTransformOrigin="0.506,0.508">
+        <Grid HorizontalAlignment="Center" Height="450" VerticalAlignment="Center" Width="800" RenderTransformOrigin="0.506,0.508">
             <Button Content="登録" HorizontalAlignment="Left" Height="114" Margin="0,336,0,0" VerticalAlignment="Top" Width="250" FontSize="48" Background="#FF7BF0FF"/>
             <Button Content="更新" HorizontalAlignment="Left" Height="114" Margin="250,336,0,0" VerticalAlignment="Top" Width="305" FontSize="48" Background="#FF59ECFF"/>
             <Button Content="削除" HorizontalAlignment="Left" Height="114" Margin="555,336,0,0" VerticalAlignment="Top" Width="245" FontSize="48" Background="#FF12E4FF"/>
