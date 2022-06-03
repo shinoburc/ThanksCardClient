@@ -16,6 +16,8 @@
             <Button Content="部署のマスタメンテ画面を開く" Command="{Binding ShowDepartmentMstCommand}" IsEnabled="{Binding AuthorizedUser.IsAdmin}"/>
             <Button Content="タグのマスタメンテ画面を開く" Command="{Binding ShowTagMstCommand}" IsEnabled="{Binding AuthorizedUser.IsAdmin}"/>
             <Button Content="ログオフ" Command="{Binding LogoffCommand}"/>
+           
+
         </StackPanel>
     </Grid>
 </UserControl>

@@ -53,6 +53,19 @@ namespace ThanksCardClient.ViewModels
             //throw new NotImplementedException();
         }
 
+        #region  BackCommand
+        private DelegateCommand _BackCommand;
+
+
+        public DelegateCommand BackCommand =>
+            _BackCommand ?? (_BackCommand = new DelegateCommand(ExecuteBackCommand));
+
+        void ExecuteBackCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.MenuUser));
+        }
+        #endregion
+
         #region UserCreateCommand
         private DelegateCommand _UserCreateCommand;
         public DelegateCommand UserCreateCommand =>
