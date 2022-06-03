@@ -108,16 +108,16 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
-        #region  MenuUserCommand
-        private DelegateCommand _MenuUserCommand;
+        #region  MenuAdminCommand
+        private DelegateCommand _MenuAdminCommand;
 
 
-        public DelegateCommand MenuUserCommand =>
-            _MenuUserCommand ?? (_MenuUserCommand = new DelegateCommand(ExecuteMenuUserCommand));
+        public DelegateCommand MenuAdminCommand =>
+            _MenuAdminCommand ?? (_MenuAdminCommand = new DelegateCommand(ExecuteMenuAdminCommand));
 
-        void ExecuteMenuUserCommand()
+        void ExecuteMenuAdminCommand()
         {
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.MenuUser));
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.MenuAdmin));
         }
         #endregion
 
@@ -139,7 +139,7 @@ namespace ThanksCardClient.ViewModels
 
 
         public DelegateCommand ThanksCradListCommand =>
-            _ThanksCradListCommand ?? (_MenuUserCommand = new DelegateCommand(ExecuteThanksCradListCommand));
+            _ThanksCradListCommand ?? (_ThanksCradListCommand = new DelegateCommand(ExecuteThanksCradListCommand));
 
         void ExecuteThanksCradListCommand()
         {
@@ -152,12 +152,14 @@ namespace ThanksCardClient.ViewModels
 
 
         public DelegateCommand HitAdminCommand =>
-            _HitAdminCommand ?? (_MenuUserCommand = new DelegateCommand(ExecuteHitAdminCommand));
+            _HitAdminCommand ?? (_HitAdminCommand = new DelegateCommand(ExecuteHitAdminCommand));
 
         void ExecuteHitAdminCommand()
         {
             this.regionManager.RequestNavigate("ContentRegion", nameof(Views.HitAdmin));
         }
         #endregion
+
+        
     }
 }

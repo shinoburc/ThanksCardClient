@@ -106,5 +106,59 @@ namespace ThanksCardClient.ViewModels
             this.UpdateUsers();
         }
         #endregion
+
+        #region  ThanksCardCommand
+        private DelegateCommand _ThanksCardCommand;
+
+
+        public DelegateCommand ThanksCardCommand =>
+            _ThanksCardCommand ?? (_ThanksCardCommand = new DelegateCommand(ExecuteThanksCardCommand));
+
+        void ExecuteThanksCardCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardCreate));
+        }
+        #endregion
+
+        #region  HitAdminCommand
+        private DelegateCommand _HitAdminCommand;
+
+
+        public DelegateCommand HitAdminCommand =>
+            _HitAdminCommand ?? (_HitAdminCommand = new DelegateCommand(ExecuteHitAdminCommand));
+
+        void ExecuteHitAdminCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.HitAdmin));
+        }
+        #endregion
+
+        #region  ThankCardListCommand
+        private DelegateCommand _ThankCardListCommand;
+
+
+        public DelegateCommand ThankCardListCommand =>
+            _ThankCardListCommand ?? (_ThankCardListCommand = new DelegateCommand(ExecuteThankCardListCommand));
+
+        void ExecuteThankCardListCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardList));
+        }
+        #endregion
+
+        #region  MenuAdminCommand
+        private DelegateCommand _MenuAdminCommand;
+
+
+        public DelegateCommand MenuAdminCommand =>
+            _MenuAdminCommand ?? (_MenuAdminCommand = new DelegateCommand(ExecuteMenuAdminCommand));
+
+        void ExecuteMenuAdminCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.MenuAdmin));
+        }
+        #endregion
+
+       
     }
 }
