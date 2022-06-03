@@ -53,19 +53,6 @@ namespace ThanksCardClient.ViewModels
             //throw new NotImplementedException();
         }
 
-        #region  BackCommand
-        private DelegateCommand _BackCommand;
-
-
-        public DelegateCommand BackCommand =>
-            _BackCommand ?? (_BackCommand = new DelegateCommand(ExecuteBackCommand));
-
-        void ExecuteBackCommand()
-        {
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.MenuUser));
-        }
-        #endregion
-
         #region UserCreateCommand
         private DelegateCommand _UserCreateCommand;
         public DelegateCommand UserCreateCommand =>
@@ -106,17 +93,43 @@ namespace ThanksCardClient.ViewModels
             this.UpdateUsers();
         }
         #endregion
+        
+        #region  BackCommand
+        private DelegateCommand _BackCommand;
 
-        #region  ThanksCardCommand
-        private DelegateCommand _ThanksCardCommand;
+
+        public DelegateCommand BackCommand =>
+            _BackCommand ?? (_BackCommand = new DelegateCommand(ExecuteBackCommand));
+
+        void ExecuteBackCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.MenuUser));
+        }
+        #endregion
+
+        #region  ThanksCradCreateCommand
+        private DelegateCommand _ThanksCradCreateCommand;
 
 
-        public DelegateCommand ThanksCardCommand =>
-            _ThanksCardCommand ?? (_ThanksCardCommand = new DelegateCommand(ExecuteThanksCardCommand));
+        public DelegateCommand ThanksCradCreateCommand =>
+            _ThanksCradCreateCommand ?? (_ThanksCradCreateCommand = new DelegateCommand(ExecuteThanksCradCreateCommand));
 
-        void ExecuteThanksCardCommand()
+        void ExecuteThanksCradCreateCommand()
         {
             this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardCreate));
+        }
+        #endregion
+
+        #region  ThanksCradListCommand
+        private DelegateCommand _ThanksCradListCommand;
+
+
+        public DelegateCommand ThanksCradListCommand =>
+            _ThanksCradListCommand ?? (_ThanksCradListCommand = new DelegateCommand(ExecuteThanksCradListCommand));
+
+        void ExecuteThanksCradListCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardList));
         }
         #endregion
 
@@ -160,5 +173,30 @@ namespace ThanksCardClient.ViewModels
         #endregion
 
        
+        #region  MenuUserCommand
+        private DelegateCommand _MenuUserCommand;
+
+
+        public DelegateCommand MenuUserCommand =>
+            _MenuUserCommand ?? (_MenuUserCommand = new DelegateCommand(ExecuteMenuUserCommand));
+
+        void ExecuteMenuUserCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.MenuUser));
+        }
+        #endregion
+
+        #region  UserUpdateCommand
+        private DelegateCommand _UserUpdateCommand;
+
+
+        public DelegateCommand UserUpdateCommand =>
+            _MenuUserCommand ?? (_UserUpdateCommand = new DelegateCommand(ExecuteUserUpdateCommand));
+
+        void ExecuteUserUpdateCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.UserCreate));
+        }
+        #endregion
     }
 }

@@ -12,7 +12,7 @@
         <Grid.Background>
             <ImageBrush Stretch="Uniform" ImageSource="/Views/ThankcardList.png"/>
         </Grid.Background>
-        <DataGrid ItemsSource="{Binding ThanksCards}" AutoGenerateColumns="False" CanUserAddRows="False" SelectionChanged="DataGrid_SelectionChanged" Margin="94,182,65,68" Background="{x:Null}">
+        <DataGrid ItemsSource="{Binding ThanksCards}" AutoGenerateColumns="False" CanUserAddRows="False" SelectionChanged="DataGrid_SelectionChanged" Margin="94,182,65,68" Background="{x:Null}" HorizontalScrollBarVisibility="Hidden">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="送信者" Binding="{Binding From.Name}" Width="120" />
                 <DataGridTextColumn Header="受信者" Binding="{Binding To.Name}" Width="120" />
@@ -51,7 +51,7 @@
             </Button.RenderTransform>
         </Button>
         <TextBox Text="{Binding SearchWord}" HorizontalAlignment="Left" Height="21" Margin="503,132,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="175"/>
-        <Button Content="検索" Command="{Binding SubmitSearchCommand}" HorizontalAlignment="Left" Height="20" Margin="683,133,0,0" VerticalAlignment="Top" Width="49"/>
+        <Button Content="検索" Command="{Binding SubmitSearchCommand}" CommandParameter="{Binding SearchWord}" HorizontalAlignment="Left" Height="20" Margin="683,133,0,0" VerticalAlignment="Top" Width="49"/>
 
     </Grid>
 </UserControl>

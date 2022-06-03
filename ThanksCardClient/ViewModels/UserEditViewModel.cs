@@ -68,6 +68,7 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
+
         #region  ThanksCardCommand
         private DelegateCommand _ThanksCardCommand;
 
@@ -117,6 +118,18 @@ namespace ThanksCardClient.ViewModels
         void ExecuteMenuAdminCommand()
         {
             this.regionManager.RequestNavigate("ContentRegion", nameof(Views.MenuAdmin));
+
+        #region  BackCommand
+        private DelegateCommand _BackCommand;
+
+
+        public DelegateCommand BackCommand =>
+            _BackCommand ?? (_BackCommand = new DelegateCommand(ExecuteBackCommand));
+
+        void ExecuteBackCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.UserMst));
+
         }
         #endregion
     }
