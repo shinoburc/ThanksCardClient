@@ -1,10 +1,11 @@
-﻿using Prism.Commands;
+using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Regions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using ThanksCardClient.Models;
+using ThanksCardClient.Services;
 
 namespace ThanksCardClient.ViewModels
 {
@@ -26,7 +27,7 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteThanksCradCreateCommand()
         {
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Logon));
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardCreate));
         }
         #endregion
 
@@ -43,31 +44,61 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
-        #region  HitAdminCommand
-        private DelegateCommand _HitAdminCommand;
+        #region  ThanksCardCommand
+        private DelegateCommand _ThanksCardCommand;
 
 
-        public DelegateCommand HitAdminCommand =>
-            _HitAdminCommand ?? (_HitAdminCommand = new DelegateCommand(ExecuteHitAdminCommand));
+        public DelegateCommand ThanksCardCommand =>
+            _ThanksCardCommand ?? (_ThanksCardCommand = new DelegateCommand(ExecuteThanksCardCommand));
 
-        void ExecuteHitAdminCommand()
+        void ExecuteThanksCardCommand()
         {
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.HitAdmin));
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardCreate));
         }
         #endregion
 
-        #region  MenuAdminCommand
-        private DelegateCommand _MenuAdminCommand;
+        #region  HitCommand
+        private DelegateCommand _HitCommand;
 
 
-        public DelegateCommand MenuAdminrCommand =>
-            _MenuAdminCommand ?? (_MenuAdminCommand = new DelegateCommand(ExecuteMenuAdminCommand));
+        public DelegateCommand HitCommand =>
+            _HitCommand ?? (_HitCommand = new DelegateCommand(ExecuteHitCommand));
 
-        void ExecuteMenuAdminCommand()
+        void ExecuteHitCommand()
         {
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.MenuAdmin));
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Hit));
         }
         #endregion
 
+
+        #region  MenuUserCommand
+        private DelegateCommand _MenuUserCommand;
+
+
+        public DelegateCommand MenuUserCommand =>
+            _MenuUserCommand ?? (_MenuUserCommand = new DelegateCommand(ExecuteMenuUserCommand));
+
+        void ExecuteMenuUserCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.MenuUser));
+        }
+        #endregion
+
+        #region LogoffCommand
+        private DelegateCommand _logoffCommand;
+        public DelegateCommand LogoffCommand =>
+            _logoffCommand ?? (_logoffCommand = new DelegateCommand(ExecuteLogoffCommand));
+
+        void ExecuteLogoffCommand()
+        {
+            SessionService.Instance.AuthorizedUser = null;
+            SessionService.Instance.IsAuthorized = false;
+
+            // HeaderRegion, FooterRegion を破棄して、ContentRegion をログオン画面に遷移させる。
+            this.regionManager.Regions["HeaderRegion"].RemoveAll();
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Logon));
+            this.regionManager.Regions["FooterRegion"].RemoveAll();
+        }
+        #endregion
     }
 }
