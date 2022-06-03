@@ -52,7 +52,7 @@ namespace ThanksCardClient.ViewModels
         {
             User authorizedUser = await this.User.LogonAsync();
 
-            // authorizedUser が null でなければログオンに成功している。
+            // authorizedUser が null でなければログオンに成功している。かつDeleteがfalseだったら
             if (authorizedUser != null && authorizedUser.IsDelete == false)　
             {
                 SessionService.Instance.IsAuthorized = true;
@@ -62,6 +62,17 @@ namespace ThanksCardClient.ViewModels
                 this.regionManager.RequestNavigate("ContentRegion", nameof(Views.MenuUser));
                 this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Footer));
             }
+            //ログインしたらアドミン有無で反応して管理者画面に飛ぶ
+            else if(authorizedUser != null && authorizedUser.IsDelete == false && authorizedUser.IsAdmin != false)
+            {
+                SessionService.Instance.IsAuthorized = true;
+                SessionService.Instance.AuthorizedUser = authorizedUser;
+                this.ErrorMessage = "";
+                this.regionManager.RequestNavigate("HeaderRegion", nameof(Views.Header));
+                this.regionManager.RequestNavigate("ContentRegion", nameof(Views.MenuAdmin));
+                this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Footer));
+            }
+            
             else
             {
                 this.ErrorMessage = "ログオンに失敗しました。";

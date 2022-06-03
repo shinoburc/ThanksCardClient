@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace ThanksCardClient.Views
 {
     /// <summary>
-    /// HomePages.xaml の相互作用ロジック
+    /// MenuAdmin.xaml の相互作用ロジック
     /// </summary>
-    public partial class HomePages : UserControl
+    public partial class MenuAdmin : UserControl
     {
-        public HomePages()
+        public MenuAdmin()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

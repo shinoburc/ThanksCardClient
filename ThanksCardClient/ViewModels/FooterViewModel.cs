@@ -106,7 +106,7 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteHomeCommand()
         {
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.HomePages));
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Home));
         }
         #endregion
     }
