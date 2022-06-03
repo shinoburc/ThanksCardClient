@@ -24,6 +24,29 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
+        #region SearchUserNameProperty
+        private string _SearchUserName;
+
+        public string SearchUserName
+        {
+            get { return _SearchUserName; }
+            set
+            {
+                SetProperty(ref _SearchUserName, value);
+                System.Diagnostics.Debug.WriteLine("SearchUserName: " + this.SearchUserName); //動作確認用。本来はこの行は必要ありません。
+            }
+        }
+        #endregion
+
+        #region SearchUserProperty
+        private String _SearchUserProperty;
+        public String SearchUserProperty
+        {
+            get { return _SearchUserName; }
+            set { SetProperty(ref _SearchUserName, value); }
+        }
+        #endregion
+
 
         public UserMstViewModel(IRegionManager regionManager)
         {
@@ -93,5 +116,19 @@ namespace ThanksCardClient.ViewModels
             this.UpdateUsers();
         }
         #endregion
+
+        /*#region UserSearchCommand
+        private DelegateCommand<string> _UserSearchCommand;
+        public DelegateCommand<string> UserSearchCommand =>
+            _UserSearchCommand ?? (_UserSearchCommand = new DelegateCommand<string>(ExecuteUserSearchCommand));
+
+        async void ExecuteUserSearchCommand(string parameter)
+        {
+            User U = new User();
+            this.SearchUser = new UserSearch();
+            this.SearchUser.SearchUserName = parameter;
+            Users = await User.PostSearchUsersAsync(SearchUsrs);
+        }
+        #endregion*/
     }
 }

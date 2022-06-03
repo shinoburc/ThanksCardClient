@@ -67,5 +67,7 @@ namespace ThanksCardClient.ViewModels
             this.regionManager.RequestNavigate("ContentRegion", nameof(Views.UserMst));
         }
         #endregion
+
+
     }
 }

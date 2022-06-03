@@ -11,12 +11,15 @@
     <Grid>
         <StackPanel>
             <TextBlock Text="{Binding ErrorMessage}" Foreground="Red"/>
-            <TextBlock Text="Name:"/>
+            <TextBlock Text="Name:" />
             <TextBox Text="{Binding User.Name}"/>
             <TextBlock Text="Password:"/>
             <TextBox Text="{Binding User.Password}"/>
             <Button Content="ログイン" Command="{Binding LogonCommand}" Click="Button_Click"/>
             <Button Content="クリア" Command="{Binding Cleacommand}"/>
+            <PasswordBox x:Name="passwordBox" Width="300" PasswordChar="#"/>
+           
         </StackPanel>
+        
     </Grid>
 </UserControl>
