@@ -10,6 +10,9 @@
       d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid HorizontalAlignment="Center" Height="450" VerticalAlignment="Center" Width="800">
+            <Grid.Background>
+                <ImageBrush ImageSource="/Views/2.png"/>
+            </Grid.Background>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="0*"/>
                 <ColumnDefinition/>
