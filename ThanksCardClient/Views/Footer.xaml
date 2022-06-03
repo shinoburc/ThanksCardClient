@@ -14,7 +14,7 @@
         <StackPanel Orientation=" Horizontal" Margin="0,61,105,0" Height="68" VerticalAlignment="Top" HorizontalAlignment="Right" Width="858">
             <Button Content="作成"  Command="{Binding ShowThanksCardCreateCommand}" Height="70" Width="100"/>
             <Button Content="集計" Height="75" Width="100" Command="{Binding ShowgusikenCommand}"/>
-            <ComboBox Height="75" Width="100" Text="ユーザー作成">
+            <ComboBox Height="75" Width="100" Text="ユーザー作成" IsEnabled="{Binding AuthorizedUser.IsAdmin}">
                 <ComboBoxItem>
                     <Button Content="社員" Command="{Binding ShowUserCreateCommand}" IsEnabled="{Binding AuthorizedUser.IsAdmin}" Height="70"  Width="100"/>
                 </ComboBoxItem>

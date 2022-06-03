@@ -75,8 +75,6 @@ namespace ThanksCardClient.ViewModels
             _Cleacommand ?? (_Cleacommand = new DelegateCommand(ExecutCleacommand));
         void ExecutCleacommand()
         {    
-                this.regionManager = regionManager;
-
                 // テキストボックスをクリアする
                 this.User.Name = "";
                 this.User.Password = "";

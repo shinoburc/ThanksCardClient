@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace ThanksCardClient.Models
 {
-    public class SearchThanksCard
+    public class SearchUser
     {
-        public String SearchWord { get; set; }
+        public string SearchUserName { get; set; }
     }
 }

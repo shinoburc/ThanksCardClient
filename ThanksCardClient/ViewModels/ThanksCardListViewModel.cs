@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using ThanksCardClient.Models;
+using ThanksCardClient.Services;
 
 namespace ThanksCardClient.ViewModels
 {
@@ -21,10 +22,21 @@ namespace ThanksCardClient.ViewModels
             set { SetProperty(ref _ThanksCards, value); }
         }
         #endregion
+        #region roginuser
+        private User _AuthorizedUser;
+        public User AuthorizedUser
+        {
+            get { return _AuthorizedUser; }
+            set { SetProperty(ref _AuthorizedUser, value); }
+        }
+        #endregion
 
         public ThanksCardListViewModel(IRegionManager regionManager)
         {
+
             this.regionManager = regionManager;
+            this.AuthorizedUser = SessionService.Instance.AuthorizedUser;
+            this._SearchWord = this.AuthorizedUser.Name;
         }
 
         #region SearchWordProperty
@@ -37,6 +49,7 @@ namespace ThanksCardClient.ViewModels
                 SetProperty(ref _SearchWord, value);
                 System.Diagnostics.Debug.WriteLine("SearchWord: " + this.SearchWord); //動作確認用。本来はこの行は必要ありません。
             }
+            
         }
         #endregion
 
@@ -54,6 +67,9 @@ namespace ThanksCardClient.ViewModels
             ThanksCard thanksCard = new ThanksCard();
             this.ThanksCards = await thanksCard.GetThanksCardsAsync();
 
+            this.SearchThanksCard = new SearchThanksCard();
+            this.SearchThanksCard.SearchWord = this.AuthorizedUser.Name;
+            ThanksCards = await thanksCard.PostSearchThanksCardsAsync(SearchThanksCard);
         }
 
         public bool IsNavigationTarget(NavigationContext navigationContext)

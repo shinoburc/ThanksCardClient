@@ -9,6 +9,8 @@ using System.Runtime.CompilerServices;
 using ThanksCardClient.Models;
 using ThanksCardClient.Services;
 
+
+
 namespace ThanksCardClient.ViewModels
 {
     public class UserMstViewModel : BindableBase, INavigationAware
@@ -38,14 +40,14 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
-        #region SearchUserProperty
+        /*#region SearchUserProperty
         private String _SearchUserProperty;
         public String SearchUserProperty
         {
             get { return _SearchUserName; }
             set { SetProperty(ref _SearchUserName, value); }
         }
-        #endregion
+        #endregion*/
 
 
         public UserMstViewModel(IRegionManager regionManager)
@@ -124,10 +126,10 @@ namespace ThanksCardClient.ViewModels
 
         async void ExecuteUserSearchCommand(string parameter)
         {
-            User U = new User();
-            this.SearchUser = new UserSearch();
+            User users = new User();
+            this. = new SearchUser();
             this.SearchUser.SearchUserName = parameter;
-            Users = await User.PostSearchUsersAsync(SearchUsrs);
+            Users = await User.PostSearchUsersAsync(UserName);
         }
         #endregion*/
     }
