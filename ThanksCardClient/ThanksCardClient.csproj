@@ -11,6 +11,7 @@
     <None Remove="Views\DEPARTMENT EDIT.png" />
     <None Remove="Views\DepartmentCreate.png" />
     <None Remove="Views\Department_2.png" />
+    <None Remove="Views\Department_Master.png" />
     <None Remove="Views\hit.png" />
     <None Remove="Views\Homes.png" />
     <None Remove="Views\Homesss.png" />
@@ -35,6 +36,8 @@
     <None Remove="Views\Thank Card Done %2825%29.png" />
     <None Remove="Views\ThankcardList.png" />
     <None Remove="Views\Thiết kế chưa có tên %286%29.png" />
+    <None Remove="Views\UserMaster.png" />
+    <None Remove="Views\User_Master.png" />
     <None Remove="Views\ViewListCard.png" />
   </ItemGroup>
 
@@ -47,6 +50,7 @@
     <Resource Include="Views\DEPARTMENT EDIT.png" />
     <Resource Include="Views\DepartmentCreate.png" />
     <Resource Include="Views\Department_2.png" />
+    <Resource Include="Views\Department_Master.png" />
     <Resource Include="Views\hit.png" />
     <Resource Include="Views\Homes.png" />
     <Resource Include="Views\Homesss.png" />
@@ -71,6 +75,8 @@
     <Resource Include="Views\Thank Card Done (25).png" />
     <Resource Include="Views\ThankcardList.png" />
     <Resource Include="Views\Thiết kế chưa có tên (6).png" />
+    <Resource Include="Views\UserMaster.png" />
+    <Resource Include="Views\User_Master.png" />
     <Resource Include="Views\ViewListCard.png" />
   </ItemGroup>
 
