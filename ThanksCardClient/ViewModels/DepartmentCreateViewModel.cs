@@ -159,5 +159,18 @@ namespace ThanksCardClient.ViewModels
             this.regionManager.RequestNavigate("ContentRegion", nameof(Views.HitAdmin));
         }
         #endregion
+
+        #region  MenuAdminCommand
+        private DelegateCommand _MenuAdminCommand;
+
+
+        public DelegateCommand MenuAdminrCommand =>
+            _MenuAdminCommand ?? (_MenuAdminCommand = new DelegateCommand(ExecuteMenuAdminCommand));
+
+        void ExecuteMenuAdminCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.MenuAdmin));
+        }
+        #endregion
     }
 }

@@ -1,4 +1,4 @@
-﻿using Prism.Commands;
+using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Regions;
 using System;
@@ -100,7 +100,5 @@ namespace ThanksCardClient.ViewModels
             this.regionManager.Regions["FooterRegion"].RemoveAll();
         }
         #endregion
-
-
     }
 }

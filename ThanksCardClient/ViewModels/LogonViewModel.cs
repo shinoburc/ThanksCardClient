@@ -62,6 +62,7 @@ namespace ThanksCardClient.ViewModels
                 this.regionManager.RequestNavigate("ContentRegion", nameof(Views.MenuUser));
                 this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Footer));
             }
+
             //ログインしたらアドミン有無で反応して管理者画面に飛ぶ
             else if(authorizedUser != null && authorizedUser.IsDelete == false) 
             {
@@ -72,7 +73,6 @@ namespace ThanksCardClient.ViewModels
                 this.regionManager.RequestNavigate("ContentRegion", nameof(Views.MenuAdmin));
                 this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Footer));
             }
-            
             else
             {
                 this.ErrorMessage = "ログオンに失敗しました。";
