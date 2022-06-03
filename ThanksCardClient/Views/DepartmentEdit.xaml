@@ -11,11 +11,11 @@
     <Grid>
         <StackPanel>
             <TextBlock Text="{Binding ErrorMessage}" Foreground="Red"/>
-            <TextBlock Text="Code:"/>
+            <TextBlock Text="変更したい所属CD:"/>
             <TextBox Text="{Binding Department.Code}"/>
-            <TextBlock Text="Name:"/>
+            <TextBlock Text="変更後所属名:"/>
             <TextBox Text="{Binding Department.Name}"/>
-            <TextBlock Text="Parent:"/>
+            <TextBlock Text="所属元:"/>
             <ComboBox SelectedItem="{Binding Department.Parent}" ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValue="{Binding Department.ParentId}" SelectedValuePath="Id" BorderBrush="#FFCE2020">
                 <ComboBox.Background>
                     <LinearGradientBrush EndPoint="0,1">

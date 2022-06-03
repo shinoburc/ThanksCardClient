@@ -59,6 +59,16 @@ namespace ThanksCardClient.ViewModels
             set { SetProperty(ref _Tags, value); }
         }
         #endregion
+        
+
+                                        #region roginuser
+                    private User _AuthorizedUser;
+                    public User AuthorizedUser
+                    {
+                        get { return _AuthorizedUser; }
+                        set { SetProperty(ref _AuthorizedUser, value); }
+                    }
+                    #endregion
 
         public ThanksCardCreateViewModel(IRegionManager regionManager)
         {
@@ -143,5 +153,6 @@ namespace ThanksCardClient.ViewModels
 
         }
         #endregion
+
     }
 }

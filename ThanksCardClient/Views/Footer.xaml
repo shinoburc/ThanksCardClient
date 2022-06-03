@@ -27,11 +27,17 @@
                 <ComboBoxItem>
                     <Button Content="ユーザー一覧"  Command="{Binding ShowUserMstCommand}" Height="70" Width="100"/>
                 </ComboBoxItem>
+                <ComboBoxItem>
+                    <Button Content="部署一覧"  Command="{Binding ShowDepartmentMstCommand}" Height="70" Width="100"/>
+                </ComboBoxItem>
+                <ComboBoxItem>
+                <Button Content="タグのマスタメンテ画面を開く" Command="{Binding ShowTagMstCommand}" IsEnabled="{Binding AuthorizedUser.IsAdmin}"  Width="100"/>
+                </ComboBoxItem>
             </ComboBox>
 
             <Button Content="テンプレート" Width="100" Command="{Binding ShowTemplateCommand}"/>
             <Button Content="掲示板" Command="{Binding ShowThanksCardListCommand}" Width="100"/>
-            <Button Content="タグのマスタメンテ画面を開く" Command="{Binding ShowTagMstCommand}" IsEnabled="{Binding AuthorizedUser.IsAdmin}"  Width="100"/>
+            
             <Button Content="ログオフ" Command="{Binding LogoffCommand}"  Width="100"/>
         </StackPanel>
     </Grid>

@@ -11,7 +11,7 @@
             <StackPanel Orientation=" Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center">
             <TextBlock Text="テンプレート:" Height="68" Width="65"/>
             <ComboBox Height="71" Width="87" >
-                <ComboBoxItem>
+                    <ComboBoxItem>
 
                 </ComboBoxItem>
                 <ComboBoxItem>

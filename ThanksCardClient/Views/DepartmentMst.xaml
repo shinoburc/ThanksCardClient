@@ -10,7 +10,7 @@
       d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <StackPanel>
-            <Button Content="+部署の新規作成" Command="{Binding DepartmentCreateCommand}" Width="100" HorizontalAlignment="Left"/>
+            <!--<Button Content="+部署の新規作成" Command="{Binding DepartmentCreateCommand}" Width="100" HorizontalAlignment="Left"/>-->
 
             <!-- ユーザ一覧(Departmentモデルのリスト)である MainWindowViewModel.Departments をグリッド表示する。-->
             <DataGrid ItemsSource="{Binding Departments}" AutoGenerateColumns="False" CanUserAddRows="False">

@@ -11,13 +11,13 @@
     <Grid>
         <StackPanel>
             <TextBlock Text="{Binding ErrorMessage}" Foreground="Red"/>
-            <TextBlock Text="Code:"/>
+            <TextBlock Text="所属CD:"/>
             <TextBox Text="{Binding Department.Code}"/>
-            <TextBlock Text="Name:"/>
+            <TextBlock Text="所属名:"/>
             <TextBox Text="{Binding Department.Name}"/>
-            <TextBlock Text="Parent:"/>
+            <TextBlock Text="所属元:"/>
             <ComboBox SelectedItem="{Binding Department.Parent}" ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValue="{Binding Department.Parent}"/>
-            <Button Content="Submit" Command="{Binding SubmitCommand}" Height="67" Width="537"/>
+            <Button Content="作成" Command="{Binding SubmitCommand}" Height="67" Width="537"/>
         </StackPanel>
     </Grid>
 </UserControl>

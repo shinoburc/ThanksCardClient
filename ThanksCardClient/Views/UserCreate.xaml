@@ -11,13 +11,13 @@
     <Grid>
         <StackPanel>
             <TextBlock Text="{Binding ErrorMessage}" Foreground="Red"/>
-            <TextBlock Text="Name:"/>
+            <TextBlock Text="社員名:"/>
             <TextBox Text="{Binding User.Name}"/>
             <TextBlock Text="Password:"/>
             <TextBox Text="{Binding User.Password}"/>
             <TextBlock Text="IsAdmin:"/>
             <CheckBox IsChecked="{Binding User.IsAdmin}"/>
-            <TextBlock Text="Department:"/>
+            <TextBlock Text="所属:"/>
             <ComboBox ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValue="{Binding User.DepartmentId}" SelectedValuePath="Id"/>
             <Button Content="Submit" Command="{Binding SubmitCommand}"/>
         </StackPanel>
