@@ -9,47 +9,58 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <StackPanel>
-            <TextBlock Text="タイトル:"/>
-            <TextBox Text="{Binding ThanksCard.Title}"/>
-            <TextBlock Text="感謝の言葉:"/>
-            <TextBox Text="{Binding ThanksCard.Body}"/>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="部署:"/>
-                <ComboBox x:Name="FromDepartments" ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValuePath="Id">
-                    <!-- Deparment が選択されたら FromDepartmentsChangedCommand を発行する -->
-                    <i:Interaction.Triggers>
-                        <i:EventTrigger EventName="SelectionChanged">
-                            <i:InvokeCommandAction Command="{Binding FromDepartmentsChangedCommand}" CommandParameter="{Binding ElementName=FromDepartments, Path=SelectedValue}"/>
-                        </i:EventTrigger>
-                    </i:Interaction.Triggers>
-                </ComboBox>
-                <TextBlock Text="From:"/>
-                <ComboBox ItemsSource="{Binding FromUsers}" DisplayMemberPath="Name" SelectedValue="{Binding ThanksCard.FromId}" SelectedValuePath="Id"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="部署:"/>
-                <ComboBox x:Name="ToDepartments" ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValuePath="Id">
-                    <!-- Deparment が選択されたら ToDepartmentsChangedCommand を発行する -->
-                    <i:Interaction.Triggers>
-                        <i:EventTrigger EventName="SelectionChanged">
-                            <i:InvokeCommandAction Command="{Binding ToDepartmentsChangedCommand}" CommandParameter="{Binding ElementName=ToDepartments, Path=SelectedValue}"/>
-                        </i:EventTrigger>
-                    </i:Interaction.Triggers>
-                </ComboBox>
-                <TextBlock Text="To:"/>
-                <ComboBox ItemsSource="{Binding ToUsers}" DisplayMemberPath="Name" SelectedValue="{Binding ThanksCard.ToId}" SelectedValuePath="Id"/>
-            </StackPanel>
-            <TextBlock Text="作成日:"/>
-            <DatePicker SelectedDate="{Binding ThanksCard.CreatedDateTime}"/>
-            <ListBox ItemsSource="{Binding Tags}" IsSynchronizedWithCurrentItem="True" SelectionMode="Multiple" DisplayMemberPath="Name">
-                <ListBox.ItemContainerStyle>
-                    <Style TargetType="ListBoxItem">
-                        <Setter Property="IsSelected" Value="{Binding Selected}" />
-                    </Style>
-                </ListBox.ItemContainerStyle>
-            </ListBox>
-            <Button Content="作成" Command="{Binding SubmitCommand}"/>
-        </StackPanel>    
+        <Grid HorizontalAlignment="Center" Height="450" VerticalAlignment="Center" Width="800">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Content="戻る" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="58" VerticalAlignment="Top" Width="190" FontSize="36"/>
+            <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="48" TextWrapping="Wrap" Text="宛先" VerticalAlignment="Top" Width="78" Margin="56,75,0,0" FontSize="36"/>
+            <ComboBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="27" Margin="168,102,0,0" VerticalAlignment="Top" Width="188"/>
+            <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" Text="部署" VerticalAlignment="Top" Width="126" Margin="168,73,0,0" FontSize="22"/>
+            <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" Text="名前" VerticalAlignment="Top" Width="170" Margin="381,67,0,0" FontSize="24"/>
+            <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="46" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" Margin="16,137,0,0" FontSize="36" RenderTransformOrigin="0.5,0.5" Text="タイトル">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.467"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBox HorizontalAlignment="Left" Height="33" Margin="168,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="410" Background="Gainsboro" Grid.Column="1"/>
+            <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="46" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Margin="48,325,0,0" FontSize="36" RenderTransformOrigin="0.5,0.5" Text="本文">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.467"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBox HorizontalAlignment="Left" Height="120" Margin="156,320,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="422" Grid.Column="1"/>
+            <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="34" TextWrapping="Wrap" VerticalAlignment="Top" Width="114" Margin="28,269,0,0" FontSize="24" RenderTransformOrigin="0.5,0.5" Text="テンプレート">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.467"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="40" TextWrapping="Wrap" Text="日付" VerticalAlignment="Top" Width="78" Margin="56,201,0,0" FontSize="36"/>
+            <ComboBox HorizontalAlignment="Left" Height="31" Margin="168,264,0,0" VerticalAlignment="Top" Width="410" Grid.Column="1"/>
+            <ComboBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="27" Margin="381,100,0,0" VerticalAlignment="Top" Width="188"/>
+            <Button Content="送信" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="48" Margin="626,392,0,0" VerticalAlignment="Top" Width="140" FontSize="24"/>
+            <Button Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="34" Margin="626,346,0,0" VerticalAlignment="Top" Width="140" FontSize="24" Content="出力レビュー"/>
+            <Button Content="テンプレート作成" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="58" VerticalAlignment="Top" Width="190" FontSize="22" Margin="610,0,0,0"/>
+            <Button Content="テンプレート編集" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="58" VerticalAlignment="Top" Width="190" FontSize="22" Margin="610,58,0,0"/>
+            <Button Content="テンプレート削除" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="58" VerticalAlignment="Top" Width="190" FontSize="22" Margin="610,114,0,0"/>
+        </Grid>
+        <CalendarDayButton Content="CalendarDayButton" HorizontalAlignment="Left" Height="32" VerticalAlignment="Center" Width="414" Background="Gainsboro" Margin="163,0,0,0"/>
+
     </Grid>
 </UserControl>
