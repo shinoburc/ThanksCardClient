@@ -99,8 +99,8 @@ namespace ThanksCardClient.ViewModels
         {
             this.regionManager.RequestNavigate("ContentRegion", nameof(Views.MenuUser));
         }
+        
         #endregion
-
         async void ExecuteIsAdminCheck()
         {
             User authorizedUser = SessionService.Instance.AuthorizedUser;
@@ -112,5 +112,22 @@ namespace ThanksCardClient.ViewModels
                 this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Footer));
             }
         }
+        
+        #region LogoffCommand
+        private DelegateCommand _logoffCommand;
+        public DelegateCommand LogoffCommand =>
+            _logoffCommand ?? (_logoffCommand = new DelegateCommand(ExecuteLogoffCommand));
+
+        void ExecuteLogoffCommand()
+        {
+            SessionService.Instance.AuthorizedUser = null;
+            SessionService.Instance.IsAuthorized = false;
+
+            // HeaderRegion, FooterRegion を破棄して、ContentRegion をログオン画面に遷移させる。
+            this.regionManager.Regions["HeaderRegion"].RemoveAll();
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Logon));
+            this.regionManager.Regions["FooterRegion"].RemoveAll();
+        }
+        #endregion
     }
 }
