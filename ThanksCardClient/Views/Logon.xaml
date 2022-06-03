@@ -8,5 +8,5 @@
       xmlns:local="clr-namespace:ThanksCardClient.Views"
       mc:Ignorable="d" 
       d:DesignHeight="400" d:DesignWidth="500">
-    <Image Source="1.png" Stretch="Fill"/>
+    
 </UserControl>
