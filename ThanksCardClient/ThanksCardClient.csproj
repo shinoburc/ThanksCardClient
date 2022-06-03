@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Views\1.png" />
     <None Remove="Views\2.png" />
   </ItemGroup>
 
@@ -17,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Views\1.png" />
     <Resource Include="Views\2.png" />
   </ItemGroup>
 
