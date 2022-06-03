@@ -31,6 +31,7 @@
     <None Remove="Views\Outbox.png" />
     <None Remove="Views\Outbox1.png" />
     <None Remove="Views\Rectangle 1.png" />
+    <None Remove="Views\Thank Card Done %281%29.png" />
     <None Remove="Views\Thank Card Done %2813%29.png" />
     <None Remove="Views\Thank Card Done %2817%29.png" />
     <None Remove="Views\Thank Card Done %2818%29.png" />
@@ -40,6 +41,7 @@
     <None Remove="Views\Thank Card Done %2822%29.png" />
     <None Remove="Views\Thank Card Done %2823%29.png" />
     <None Remove="Views\Thank Card Done %2825%29.png" />
+    <None Remove="Views\Thank Card Done.png" />
     <None Remove="Views\ThankcardList.png" />
     <None Remove="Views\Thiết kế chưa có tên %286%29.png" />
     <None Remove="Views\UserCreate.png" />
@@ -49,6 +51,9 @@
     <None Remove="Views\User_Create.png" />
     <None Remove="Views\User_Master.png" />
     <None Remove="Views\ViewListCard.png" />
+    <None Remove="Views\感謝カード作成.png" />
+    <None Remove="Views\部署更新.png" />
+    <None Remove="Views\部署登録.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -80,6 +85,7 @@
     <Resource Include="Views\Outbox.png" />
     <Resource Include="Views\Outbox1.png" />
     <Resource Include="Views\Rectangle 1.png" />
+    <Resource Include="Views\Thank Card Done (1).png" />
     <Resource Include="Views\Thank Card Done (13).png" />
     <Resource Include="Views\Thank Card Done (17).png" />
     <Resource Include="Views\Thank Card Done (18).png" />
@@ -89,6 +95,7 @@
     <Resource Include="Views\Thank Card Done (22).png" />
     <Resource Include="Views\Thank Card Done (23).png" />
     <Resource Include="Views\Thank Card Done (25).png" />
+    <Resource Include="Views\Thank Card Done.png" />
     <Resource Include="Views\ThankcardList.png" />
     <Resource Include="Views\Thiết kế chưa có tên (6).png" />
     <Resource Include="Views\UserCreate.png" />
@@ -98,6 +105,9 @@
     <Resource Include="Views\User_Create.png" />
     <Resource Include="Views\User_Master.png" />
     <Resource Include="Views\ViewListCard.png" />
+    <Resource Include="Views\感謝カード作成.png" />
+    <Resource Include="Views\部署更新.png" />
+    <Resource Include="Views\部署登録.png" />
   </ItemGroup>
 
   <ItemGroup>

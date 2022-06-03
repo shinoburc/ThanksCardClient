@@ -10,7 +10,7 @@
       d:DesignHeight="450" d:DesignWidth="800">
     <Grid HorizontalAlignment="Center" Width="800" Height="450" VerticalAlignment="Top" Cursor="Hand">
         <Grid.Background>
-            <ImageBrush ImageSource="/Views/Outbox1.png" Stretch="Uniform"/>
+            <ImageBrush ImageSource="/Views/感謝カード作成.png" Stretch="Uniform"/>
 
         </Grid.Background>
         <!-- Deparment が選択されたら FromDepartmentsChangedCommand を発行する -->
@@ -45,7 +45,7 @@
         <ComboBox ItemsSource="{Binding ToUsers}" DisplayMemberPath="Name" SelectedValue="{Binding ThanksCard.ToId}" SelectedValuePath="Id" HorizontalAlignment="Left" Height="25" Margin="477,190,0,0" VerticalAlignment="Top" Width="248"/>
         <Button Content="ヒント" Command="{Binding HitCommand}" Margin="24,172,742,252" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Opacity="0" Cursor="Hand"/>
         <Button Content="送信箱" Command="{Binding ThanksCardCreateCommand}" Margin="24,129,742,301" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Opacity="0" Click="Button_Click" Cursor="Hand"/>
-        <Button Content="メニュー" Command="{Binding MenuUserCommand}" Margin="27,46,735,376" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" RenderTransformOrigin="0.5,0.5" Opacity="0" Cursor="Hand">
+        <Button Content="メニュー" Command="{Binding MenuUserCommand}" Margin="19,46,735,376" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" RenderTransformOrigin="0.5,0.5" Opacity="0" Cursor="Hand">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="-1"/>

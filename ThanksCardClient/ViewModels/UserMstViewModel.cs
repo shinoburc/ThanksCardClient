@@ -93,7 +93,7 @@ namespace ThanksCardClient.ViewModels
             this.UpdateUsers();
         }
         #endregion
-
+        
         #region  BackCommand
         private DelegateCommand _BackCommand;
 
@@ -146,6 +146,33 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
+        #region  ThankCardListCommand
+        private DelegateCommand _ThankCardListCommand;
+
+
+        public DelegateCommand ThankCardListCommand =>
+            _ThankCardListCommand ?? (_ThankCardListCommand = new DelegateCommand(ExecuteThankCardListCommand));
+
+        void ExecuteThankCardListCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardList));
+        }
+        #endregion
+
+        #region  MenuAdminCommand
+        private DelegateCommand _MenuAdminCommand;
+
+
+        public DelegateCommand MenuAdminCommand =>
+            _MenuAdminCommand ?? (_MenuAdminCommand = new DelegateCommand(ExecuteMenuAdminCommand));
+
+        void ExecuteMenuAdminCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.MenuAdmin));
+        }
+        #endregion
+
+       
         #region  MenuUserCommand
         private DelegateCommand _MenuUserCommand;
 
