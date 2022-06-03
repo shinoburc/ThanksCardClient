@@ -9,33 +9,33 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <StackPanel>
-            <Button Content="+部署の新規作成" Command="{Binding DepartmentCreateCommand}" Width="100" HorizontalAlignment="Left"/>
 
-            <!-- ユーザ一覧(Departmentモデルのリスト)である MainWindowViewModel.Departments をグリッド表示する。-->
-            <DataGrid ItemsSource="{Binding Departments}" AutoGenerateColumns="False" CanUserAddRows="False">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
-                    <DataGridTextColumn Header="コード" Binding="{Binding Code}" />
-                    <DataGridTextColumn Header="名前" Binding="{Binding Name}" />
-                    <DataGridTextColumn Header="親部署" Binding="{Binding Parent.Name}" />
-                    <DataGridTemplateColumn Header="">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <!-- CommandParameter に {Binding} とだけ記述すると、MainWindowViewModel.Departments の要素、つまり Department モデルを指定したことになる。-->
-                                <Button Content="編集" Command="{Binding DataContext.DepartmentEditCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" />
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-                    <DataGridTemplateColumn Header="">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <Button Content="削除" Command="{Binding DataContext.DepartmentDeleteCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" />
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-                </DataGrid.Columns>
-            </DataGrid>
-        </StackPanel>
+        <!--<Grid.Background>
+            <ImageBrush ImageSource="/Views/2.png"/>
+        </Grid.Background>-->
+        <Label Content="&#xD;&#xA;" HorizontalAlignment="Left" Height="372" VerticalAlignment="Top" Width="747" Background="White" Margin="22,63,0,0"/>
+        <Label Content="経理部" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="132" Margin="14,85,0,0" FontSize="30"/>
+        <Label Content="管理部" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="132" Margin="14,185,0,0" FontSize="30"/>
+        <Label Content="営業部" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="132" Margin="14,285,0,0" FontSize="30"/>
+        <Label Content="企画部" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="132" Margin="14,385,0,0" FontSize="30"/>
+        <Label Content="送信件数" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="132" Margin="124,28,0,0" FontSize="25"/>
+        <Label Content="受信件数" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="132" Margin="318,28,0,0" FontSize="25"/>
+        <Label Content="8" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="132" Margin="171,85,0,0" FontSize="25"/>
+        <Label Content="2" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="132" Margin="368,85,0,0" FontSize="25"/>
+        <Label Content="5" HorizontalAlignment="Left" Height="50" VerticalAlignment="Center" Width="132" Margin="171,0,0,0" FontSize="25"/>
+        <Label Content="5" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="132" Margin="171,296,0,0" FontSize="25"/>
+        <Label Content="4" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="132" Margin="368,398,0,0" FontSize="25"/>
+        <Label Content="7" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="132" Margin="171,398,0,0" FontSize="25"/>
+        <Label Content="6" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="132" Margin="368,296,0,0" FontSize="25"/>
+        <Label Content="3" HorizontalAlignment="Left" Height="50" VerticalAlignment="Center" Width="132" Margin="368,0,0,0" FontSize="25"/>
+        <Label Content="関わっている部署:" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="203" Margin="434,81,0,0" FontSize="25"/>
+        <Label Content="関わっている部署:" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="187" Margin="434,181,0,0" FontSize="25"/>
+        <Label Content="関わっている部署:" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="197" Margin="440,280,0,0" FontSize="25"/>
+        <Label Content="関わっている部署:" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="190" Margin="447,385,0,0" FontSize="25"/>
+        <Label Content="経理部" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="132" Margin="652,381,0,0" FontSize="25" RenderTransformOrigin="1.614,0.4"/>
+        <Label Content="管理部" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="132" Margin="637,282,0,0" FontSize="25"/>
+        <Label Content="営業部" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="132" Margin="637,185,0,0" FontSize="25" RenderTransformOrigin="1.485,-1.8"/>
+        <Label Content="企画部" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="132" Margin="637,81,0,0" FontSize="25" RenderTransformOrigin="1.485,-1.12"/>
+        <Button Content="戻る" HorizontalAlignment="Left" Height="50" Margin="22,28,0,0" VerticalAlignment="Top" Width="97"  FontSize="30"/>
     </Grid>
 </UserControl>
