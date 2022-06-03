@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="ViewModels\2.png" />
+    <None Remove="Views\2.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,9 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Page Update="Views\keijiban.xaml">
-      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
-    </Page>
+    <Resource Include="Views\2.png" />
   </ItemGroup>
 
 </Project>
