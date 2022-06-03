@@ -9,7 +9,7 @@
     <Grid>
         <Grid HorizontalAlignment="Center" Height="450" VerticalAlignment="Center" Width="800">
             <Grid.Background>
-                <ImageBrush ImageSource="/Views/hit.png" Stretch="Uniform"/>
+                <ImageBrush ImageSource="/Views/Thank Card Done.png" Stretch="Uniform"/>
             </Grid.Background>
             <Button Content="戻る" Command="{Binding BackCommand}" HorizontalAlignment="Left" Height="28" Margin="650,125,0,0" VerticalAlignment="Top" Width="79" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Opacity="0"/>
 
