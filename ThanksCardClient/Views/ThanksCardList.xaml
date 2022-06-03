@@ -46,7 +46,7 @@
             </Button.RenderTransform>
         </Button>
         <TextBox Text="{Binding SearchWord}" HorizontalAlignment="Left" Height="21" Margin="503,132,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="175"/>
-        <Button Content="検索" Command="{Binding SubmitSearchCommand}" HorizontalAlignment="Left" Height="20" Margin="683,133,0,0" VerticalAlignment="Top" Width="49"/>
+        <Button Content="検索" Command="{Binding SubmitSearchCommand}" CommandParameter="{Binding SearchWord}" HorizontalAlignment="Left" Height="20" Margin="683,133,0,0" VerticalAlignment="Top" Width="49"/>
 
     </Grid>
 </UserControl>
