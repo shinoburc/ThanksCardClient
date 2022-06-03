@@ -42,6 +42,15 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
+        #region SearchThanksCardProperty
+        private SearchThanksCard _SearchThanksCard;
+        public SearchThanksCard SearchThanksCard
+        {
+            get { return _SearchThanksCard; }
+            set { SetProperty(ref _SearchThanksCard, value); }
+        }
+        #endregion
+
         #region DepartmentsProperty
         private List<Department> _Departments;
         public List<Department> Departments
