@@ -132,7 +132,17 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
+        #region DeleteThankCardCommand
+        private DelegateCommand<ThanksCard> _DeleteThankCardCommand;
+        public DelegateCommand<ThanksCard> DeleteThankCardCommand =>
+            _DeleteThankCardCommand ?? (_DeleteThankCardCommand = new DelegateCommand<ThanksCard>(ExcuteDeleteThankCardCommand));
 
+        async void ExcuteDeleteThankCardCommand(ThanksCard SelectedThanksCard)
+        {
+            ThanksCard thanksCard = await SelectedThanksCard.DeleteThanksCardAsync(SelectedThanksCard.Id);
+            //this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardList));
+        }
+        #endregion
 
     }
 }
