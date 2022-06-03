@@ -7,11 +7,11 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ThanksCardClient.Views"
       mc:Ignorable="d" 
-      d:DesignHeight="556" d:DesignWidth="1016">
+      d:DesignHeight="800" d:DesignWidth="1016">
     <Grid Margin="0,0,0,0">
-        <Grid.Background>
+        <!--<Grid.Background>
             <ImageBrush ImageSource="/Views/2.png"/>
-        </Grid.Background>
+        </Grid.Background>-->
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -19,7 +19,7 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
         </Grid.RowDefinitions>
-        <Button Content="部署" HorizontalAlignment="Left" Height="102" Margin="56,229,0,0" VerticalAlignment="Top" Width="258" FontSize="30"/>
+        <Button Content="部署" HorizontalAlignment="Left" Height="102" Margin="56,229,0,0" VerticalAlignment="Top" Width="258" FontSize="30"  Command="{Binding ShowDepartmentMstCommand}"/>
         <Button Content="サンクスカード" HorizontalAlignment="Left" Height="102" Margin="389,229,0,0" VerticalAlignment="Top" Width="243" FontSize="30"/>
         <Button Content="掲示板" HorizontalAlignment="Left" Height="96" Margin="728,411,0,0" VerticalAlignment="Top" Width="243" FontSize="30"/>
         <Button Content="ログアウト" HorizontalAlignment="Left" Height="96" Margin="56,411,0,0" VerticalAlignment="Top" Width="258" FontSize="30"/>

@@ -17,7 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Views\2.png" />
+    <Page Update="Views\keijiban.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
   </ItemGroup>
 
 </Project>
