@@ -159,7 +159,7 @@ namespace ThanksCardClient.ViewModels
             this.regionManager.RequestNavigate("ContentRegion", nameof(Views.HitAdmin));
         }
         #endregion
-
+        
         #region  RankCommand
         private DelegateCommand _RankCommand;
 

@@ -73,7 +73,6 @@ namespace ThanksCardClient.ViewModels
         #region  RankCommand
         private DelegateCommand _RankCommand;
 
-
         public DelegateCommand RankCommand =>
             _RankCommand ?? (_RankCommand = new DelegateCommand(ExecuteRankCommand));
 
@@ -82,6 +81,7 @@ namespace ThanksCardClient.ViewModels
             this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Rank));
         }
         #endregion
+
 
         #region  MenuUserCommand
         private DelegateCommand _MenuUserCommand;
@@ -136,6 +136,30 @@ namespace ThanksCardClient.ViewModels
             this.regionManager.Regions["HeaderRegion"].RemoveAll();
             this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Logon));
             this.regionManager.Regions["FooterRegion"].RemoveAll();
+        }
+        #endregion
+ 
+        #region UserListCommand
+
+        private DelegateCommand _UserListCommand;
+        public DelegateCommand UserListCommand =>
+            _UserListCommand ?? (_UserListCommand = new DelegateCommand(ExecuteUserListCommand));
+
+        void ExecuteUserListCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.UserMst));
+        }
+        #endregion
+
+        #region UserListCommand
+
+        private DelegateCommand _DepartmentListCommand;
+        public DelegateCommand DepartmentListCommand =>
+            _DepartmentListCommand ?? (_DepartmentListCommand = new DelegateCommand(ExecuteDepartmentListCommand));
+
+        void ExecuteDepartmentListCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.DepartmentMst));
         }
         #endregion
     }
