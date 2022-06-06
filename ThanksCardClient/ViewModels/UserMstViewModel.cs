@@ -172,7 +172,19 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
-       
+        #region  RankCommand
+        private DelegateCommand _RankCommand;
+
+
+        public DelegateCommand RankCommand =>
+            _RankCommand ?? (_RankCommand = new DelegateCommand(ExecuteRankCommand));
+
+        void ExecuteRankCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Rank));
+        }
+        #endregion
+
         #region  MenuUserCommand
         private DelegateCommand _MenuUserCommand;
 

@@ -22,6 +22,6 @@
         <Button Content="送信箱" Command="{Binding ThanksCradCreateCommand}" HorizontalAlignment="Left" Margin="20,120,0,0" VerticalAlignment="Top" Height="33" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Opacity="0"/>
         <Button Content="ヒント" Command="{Binding HitAdminCommand}" HorizontalAlignment="Left" Margin="24,164,0,0" VerticalAlignment="Top" Height="33" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Opacity="0"/>
         <Button Content="全体閲覧表" Command="{Binding ThanksCradListCommand}" HorizontalAlignment="Left" Margin="20,222,0,0" VerticalAlignment="Top" Height="33" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Width="40" Opacity="0"/>
-        <Button Content="集計" Command="{Binding MenuUserCommand}" HorizontalAlignment="Left" Margin="20,275,0,0" VerticalAlignment="Top" Height="33" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Width="40" Opacity="0"/>
+        <Button Content="集計" Command="{Binding RankCommand}" HorizontalAlignment="Left" Margin="20,275,0,0" VerticalAlignment="Top" Height="33" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Width="40" Opacity="0"/>
     </Grid>
 </UserControl>

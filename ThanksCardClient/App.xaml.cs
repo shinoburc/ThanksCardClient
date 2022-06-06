@@ -44,6 +44,8 @@ namespace ThanksCardClient
             containerRegistry.RegisterForNavigation<MenuUser>();
             containerRegistry.RegisterForNavigation<MenuAdmin>();
             containerRegistry.RegisterForNavigation<HitAdmin>();
+            containerRegistry.RegisterForNavigation<ThanksCradBrowsing>();
+            containerRegistry.RegisterForNavigation<Rank>();
            
 
         }
