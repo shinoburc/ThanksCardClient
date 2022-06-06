@@ -56,6 +56,6 @@
             </Button.RenderTransform>
         </Button>
         <Button Content="全体閲覧表" Command="{Binding ThanksCradListCommand}" Margin="24,229,742,195" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Opacity="0" Cursor="Hand"/>
-        <Button Content="戻る" Command="{Binding MenuUser1Command}" HorizontalAlignment="Left" Margin="411,374,0,0" VerticalAlignment="Top" Width="69" Height="26" Cursor="Hand" Opacity="0"/>
+        <Button Content="戻る" Command="{Binding MenuUser1Command}" HorizontalAlignment="Left" Margin="309,374,0,0" VerticalAlignment="Top" Width="69" Height="26" Cursor="Hand" Opacity="0"/>
     </Grid>
 </UserControl>
