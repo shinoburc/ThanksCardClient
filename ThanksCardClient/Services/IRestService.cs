@@ -39,5 +39,8 @@ namespace ThanksCardClient.Services
         Task<Tag> PostTagAsync(Tag tag);
         Task<Tag> PutTagAsync(Tag tag);
         Task<Tag> DeleteTagAsync(long Id);
+
+        // Rank REST API Client
+        Task<List<Rank>> GetRanksAsync();
     }
 }
