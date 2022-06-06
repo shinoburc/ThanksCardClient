@@ -5,9 +5,9 @@ namespace ThanksCardClient.Views
     /// <summary>
     /// Interaction logic for DepartmentMst
     /// </summary>
-    public partial class  ThanksCardReceive: UserControl
+    public partial class ThanksCardSend : UserControl
     {
-        public ThanksCardReceive()
+        public ThanksCardSend()
         {
             InitializeComponent();
         }
