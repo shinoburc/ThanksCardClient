@@ -352,5 +352,24 @@ namespace ThanksCardClient.Services
             }
             return responseTag;
         }
+
+        public async Task<List<Rank>> GetRanksAsync()
+        {
+            List<Rank> responseRank = null;
+            try
+            {
+                var response = await Client.GetAsync(this.BaseUrl + "/api/Rank/");
+                if (response.IsSuccessStatusCode)
+                {
+                    responseRank = await response.Content.ReadFromJsonAsync<List<Rank>>();
+                }
+            }
+
+            catch(Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine("Exception in RestService.DeleteTagAsync: " + e);
+            }
+            return responseRank;
+        }
     }
 }
