@@ -18,9 +18,9 @@ namespace ThanksCardClient.Views
     /// <summary>
     /// manual.xaml の相互作用ロジック
     /// </summary>
-    public partial class manual : UserControl
+    public partial class Manual : UserControl
     {
-        public manual()
+        public Manual()
         {
             InitializeComponent();
         }

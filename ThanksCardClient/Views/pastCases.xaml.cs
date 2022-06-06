@@ -18,9 +18,9 @@ namespace ThanksCardClient.Views
     /// <summary>
     /// past_Cases.xaml の相互作用ロジック
     /// </summary>
-    public partial class past_Cases : UserControl
+    public partial class PastCases : UserControl
     {
-        public past_Cases()
+        public PastCases()
         {
             InitializeComponent();
         }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ThanksCardClient.ViewModels
 {
-    internal class past_Cases
+    internal class PastCases
     {
 
     }

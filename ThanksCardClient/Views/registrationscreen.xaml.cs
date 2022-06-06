@@ -18,9 +18,9 @@ namespace ThanksCardClient.Views
     /// <summary>
     /// registrationscreen.xaml の相互作用ロジック
     /// </summary>
-    public partial class registrationscreen : UserControl
+    public partial class RegistrationScreen : UserControl
     {
-        public registrationscreen()
+        public RegistrationScreen()
         {
             InitializeComponent();
         }

@@ -18,9 +18,9 @@ namespace ThanksCardClient.Views
     /// <summary>
     /// numberofreceptions.xaml の相互作用ロジック
     /// </summary>
-    public partial class numberofreceptions : UserControl
+    public partial class NumberOfrecePtions : UserControl
     {
-        public numberofreceptions()
+        public NumberOfrecePtions()
         {
             InitializeComponent();
         }

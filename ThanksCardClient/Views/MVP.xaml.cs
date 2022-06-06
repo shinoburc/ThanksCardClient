@@ -18,9 +18,9 @@ namespace ThanksCardClient.Views
     /// <summary>
     /// MVP.xaml の相互作用ロジック
     /// </summary>
-    public partial class MVP : UserControl
+    public partial class Mvp : UserControl
     {
-        public MVP()
+        public Mvp()
         {
             InitializeComponent();
         }
