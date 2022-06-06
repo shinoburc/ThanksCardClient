@@ -10,10 +10,10 @@
       d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
 
-        <!--<Grid.Background>
+        <Grid.Background>
             <ImageBrush ImageSource="/Views/2.png"/>
-        </Grid.Background>-->
-        <Button Content="戻る" HorizontalAlignment="Left" Height="50" Margin="10,10,0,0" VerticalAlignment="Top" Width="97"  FontSize="30"/>
+        </Grid.Background>
+        <Button Content="戻る" Command="{Binding ShowDepartmentMstCommand}" HorizontalAlignment="Left" Height="50" Margin="10,10,0,0" VerticalAlignment="Top" Width="97"  FontSize="30"/>
         <Label Content="課　ID　社員名" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="235" Margin="10,68,0,0" FontSize="30"/>
         <Label Content="企画部" HorizontalAlignment="Left" Height="74" VerticalAlignment="Top" Width="280" Margin="299,0,0,0" FontSize="50"/>
         <Label Content="企画課　1　山村昭彦" HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="210" Margin="25,125,0,0" FontSize="20"/>
