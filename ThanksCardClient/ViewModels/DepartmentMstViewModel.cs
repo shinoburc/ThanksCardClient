@@ -87,5 +87,28 @@ namespace ThanksCardClient.ViewModels
             this.UpdateDepartments();
         }
         #endregion
+
+        #region ShowUserMstCommand
+        private DelegateCommand _ShowUserMstCommand;
+        public DelegateCommand ShowUserMstCommand =>
+            _ShowUserMstCommand ?? (_ShowUserMstCommand = new DelegateCommand(ExecuteShowUserMstCommand));
+
+        void ExecuteShowUserMstCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.UserMst));
+        }
+        #endregion
+
+        #region ShowFooterCommand
+        private DelegateCommand _ShowFooterCommand;
+        public DelegateCommand ShowFooterCommand =>
+            _ShowFooterCommand ?? (_ShowFooterCommand = new DelegateCommand(ExecuteShowFooterCommand));
+
+        void ExecuteShowFooterCommand()
+        {
+
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Footer));
+        }
+        #endregion
     }
 }
