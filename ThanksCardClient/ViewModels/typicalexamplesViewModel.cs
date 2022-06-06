@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace ThanksCardClient.ViewModels
 {
-    internal class typical_examples
+    internal class TypicalExamples
     {
-
     }
 }

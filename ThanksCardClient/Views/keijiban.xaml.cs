@@ -5,9 +5,9 @@ namespace ThanksCardClient.Views
     /// <summary>
     /// Interaction logic for 
     /// </summary>
-    public partial class keijiban : UserControl
+    public partial class Keijiban : UserControl
     {
-        public keijiban()
+        public Keijiban()
         {
             InitializeComponent();
         }

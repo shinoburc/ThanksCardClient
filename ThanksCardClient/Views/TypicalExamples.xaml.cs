@@ -18,9 +18,9 @@ namespace ThanksCardClient.Views
     /// <summary>
     /// typical_examples.xaml の相互作用ロジック
     /// </summary>
-    public partial class typical_examples : UserControl
+    public partial class TypicalExamples : UserControl
     {
-        public typical_examples()
+        public TypicalExamples()
         {
             InitializeComponent();
         }
