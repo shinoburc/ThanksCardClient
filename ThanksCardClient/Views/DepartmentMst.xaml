@@ -14,10 +14,10 @@
             <ImageBrush ImageSource="2.png"/>
         </Grid.Background>
         <Label Content="&#xD;&#xA;" HorizontalAlignment="Left" Height="372" VerticalAlignment="Top" Width="747" Background="White" Margin="22,63,0,0"/>
-        <Label Content="経理部" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="132" Margin="14,85,0,0" FontSize="30"/>
-        <Label Content="管理部" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="132" Margin="14,185,0,0" FontSize="30"/>
-        <Label Content="営業部" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="132" Margin="14,285,0,0" FontSize="30"/>
-        <Label Content="企画部" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="132" Margin="14,385,0,0" FontSize="30"/>
+        <Button Content="経理部" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="132" Margin="14,85,0,0" FontSize="30" />
+        <Button Content="管理部" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="132" Margin="14,185,0,0" FontSize="30"/>
+        <Button Content="営業部" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="132" Margin="14,285,0,0" FontSize="30"/>
+        <Button Content="企画部" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="132" Margin="14,385,0,0" FontSize="30"/>
         <Label Content="送信件数" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="132" Margin="124,28,0,0" FontSize="25"/>
         <Label Content="受信件数" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="132" Margin="318,28,0,0" FontSize="25"/>
         <Label Content="8" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="132" Margin="171,85,0,0" FontSize="25"/>

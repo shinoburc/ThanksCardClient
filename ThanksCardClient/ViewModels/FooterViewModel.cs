@@ -49,16 +49,6 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
-        #region ShowUserMstCommand
-        private DelegateCommand _ShowUserMstCommand;
-        public DelegateCommand ShowUserMstCommand =>
-            _ShowUserMstCommand ?? (_ShowUserMstCommand = new DelegateCommand(ExecuteShowUserMstCommand));
-
-        void ExecuteShowUserMstCommand()
-        {
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.UserMst));
-        }
-        #endregion
 
         #region ShowDepartmentMstCommand
         private DelegateCommand _ShowDepartmentMstCommand;
@@ -79,6 +69,17 @@ namespace ThanksCardClient.ViewModels
         void ExecuteShowTagMstCommand()
         {
             this.regionManager.RequestNavigate("ContentRegion", nameof(Views.TagMst));
+        }
+        #endregion
+
+        #region ShowkeijibanCommand
+        private DelegateCommand _ShowkeijibanCommand;
+        public DelegateCommand ShowkeijibanCommand =>
+            _ShowThanksCardCreateCommand ?? (_ShowThanksCardCreateCommand = new DelegateCommand(ExecuteShowkeijibanCommand));
+
+        void ExecuteShowkeijibanCommand()
+        {
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.keijiban));
         }
         #endregion
 
