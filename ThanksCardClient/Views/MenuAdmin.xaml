@@ -15,6 +15,8 @@
             <Button Content="送信箱" Command="{Binding ThanksCradCreateCommand}" HorizontalAlignment="Left" Height="29" Margin="24,123,0,0" VerticalAlignment="Top" Width="36" Opacity="0" Cursor="Hand"/>
             <Button Content="ヒント" Command="{Binding HitAdminCommand}" HorizontalAlignment="Left" Height="29" Margin="24,171,0,0" VerticalAlignment="Top" Width="36" Opacity="0" Cursor="Hand"/>
             <Button Content="全体閲覧表" Command="{Binding ThanksCradListCommand}" HorizontalAlignment="Left" Height="29" Margin="24,231,0,0" VerticalAlignment="Top" Width="36" Opacity="0" Cursor="Hand"/>
+            <Button Content="ユーザ管理画面" Command="{Binding UserListCommand}" HorizontalAlignment="Left" Height="42" Margin="168,174,0,0" VerticalAlignment="Top" Width="492" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Opacity="0"/>
+            <Button Content="部署管理画面" Command="{Binding DepartmentListCommand}" HorizontalAlignment="Left" Height="42" Margin="168,236,0,0" VerticalAlignment="Top" Width="492" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Opacity="0"/>
 
 
 
