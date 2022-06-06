@@ -152,6 +152,7 @@ namespace ThanksCardClient.ViewModels
         //}
         //#endregion
 
+        #region MenuAdminCommand
         private DelegateCommand _MenuAdminCommand;
         public DelegateCommand MenuAdminCommand =>
             _MenuAdminCommand ?? (_MenuAdminCommand = new DelegateCommand(ExecuteCommandName));
