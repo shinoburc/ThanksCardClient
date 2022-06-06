@@ -79,7 +79,7 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteShowkeijibanCommand()
         {
-            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.keijiban));
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Keijiban));
         }
         #endregion
 
