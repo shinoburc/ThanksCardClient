@@ -30,7 +30,7 @@ namespace ThanksCardClient.ViewModels
             //throw new NotImplementedException();
         }
 
-        public async void OnNavigatedTo(NavigationContext navigationContext)
+        public void OnNavigatedTo(NavigationContext navigationContext)
         {
             ExecuteIsAdminCheck();
         }
@@ -101,7 +101,7 @@ namespace ThanksCardClient.ViewModels
         }
         
         #endregion
-        async void ExecuteIsAdminCheck()
+        void ExecuteIsAdminCheck()
         {
             User authorizedUser = SessionService.Instance.AuthorizedUser;
 
