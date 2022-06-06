@@ -9,11 +9,11 @@ using ThanksCardClient.Models;
 
 namespace ThanksCardClient.ViewModels
 {
-    public class keijibanViewModel : BindableBase
+    public class KeijibanViewModel : BindableBase
     {
         private readonly IRegionManager regionManager;
 
-        public keijibanViewModel(IRegionManager regionManager)
+        public KeijibanViewModel(IRegionManager regionManager)
         {
             this.regionManager = regionManager;
         }
@@ -28,7 +28,7 @@ namespace ThanksCardClient.ViewModels
             this.regionManager.Regions["HeaderRegion"].RemoveAll();
             this.regionManager.Regions["ContentRegion"].RemoveAll();
             this.regionManager.Regions["FooterRegion"].RemoveAll();
-            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Footer));
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Footer));
 
         }
         #endregion
@@ -43,7 +43,7 @@ namespace ThanksCardClient.ViewModels
             this.regionManager.Regions["HeaderRegion"].RemoveAll();
             this.regionManager.Regions["ContentRegion"].RemoveAll();
             this.regionManager.Regions["FooterRegion"].RemoveAll();
-            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.PastCases));
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.PastCases));
 
         }
         #endregion
