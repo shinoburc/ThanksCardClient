@@ -87,5 +87,80 @@ namespace ThanksCardClient.ViewModels
             this.UpdateDepartments();
         }
         #endregion
+
+        #region  BackCommand
+        private DelegateCommand _BackCommand;
+
+
+        public DelegateCommand BackCommand =>
+            _BackCommand ?? (_BackCommand = new DelegateCommand(ExecuteBackCommand));
+
+        void ExecuteBackCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.MenuUser));
+        }
+        #endregion
+
+        #region  ThanksCradCreateCommand
+        private DelegateCommand _ThanksCradCreateCommand;
+
+
+        public DelegateCommand ThanksCradCreateCommand =>
+            _ThanksCradCreateCommand ?? (_ThanksCradCreateCommand = new DelegateCommand(ExecuteThanksCradCreateCommand));
+
+        void ExecuteThanksCradCreateCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardCreate));
+        }
+        #endregion
+
+        #region  ThanksCradListCommand
+        private DelegateCommand _ThanksCradListCommand;
+
+
+        public DelegateCommand ThanksCradListCommand =>
+            _ThanksCradListCommand ?? (_ThanksCradListCommand = new DelegateCommand(ExecuteThanksCradListCommand));
+
+        void ExecuteThanksCradListCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardList));
+        }
+        #endregion
+
+        #region  HitAdminCommand
+        private DelegateCommand _HitAdminCommand;
+
+
+        public DelegateCommand HitAdminCommand =>
+            _HitAdminCommand ?? (_HitAdminCommand = new DelegateCommand(ExecuteHitAdminCommand));
+
+        void ExecuteHitAdminCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.HitAdmin));
+        }
+        #endregion
+
+        //#region  MenuAdminCommand
+        //private DelegateCommand _MenuAdminCommand;
+
+        //public DelegateCommand MenuAdminrCommand =>
+        //    _MenuAdminCommand ?? (_MenuAdminCommand = new DelegateCommand(ExecuteMenuAdminCommand));
+
+        //void ExecuteMenuAdminCommand()
+        //{
+        //    this.regionManager.RequestNavigate("ContentRegion", nameof(Views.MenuAdmin));
+        //}
+        //#endregion
+
+        private DelegateCommand _MenuAdminCommand;
+        public DelegateCommand MenuAdminCommand =>
+            _MenuAdminCommand ?? (_MenuAdminCommand = new DelegateCommand(ExecuteCommandName));
+
+        void ExecuteCommandName()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.MenuAdmin));
+        }
+
+
     }
 }

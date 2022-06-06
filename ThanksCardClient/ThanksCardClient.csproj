@@ -8,8 +8,110 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Views\DEPARTMENT EDIT.png" />
+    <None Remove="Views\DepartmentCreate.png" />
+    <None Remove="Views\Department_2.png" />
+    <None Remove="Views\Department_Master.png" />
+    <None Remove="Views\hit.png" />
+    <None Remove="Views\HitAdmin.png" />
+    <None Remove="Views\HitHit.png" />
+    <None Remove="Views\Homes.png" />
+    <None Remove="Views\Homesss.png" />
+    <None Remove="Views\Login 1.png" />
+    <None Remove="Views\LoginButton.png" />
+    <None Remove="Views\LoginPg.png" />
+    <None Remove="Views\logout.png" />
+    <None Remove="Views\Mask group.png" />
+    <None Remove="Views\Menu Admin  %282%29.png" />
+    <None Remove="Views\Menu Admin .png" />
+    <None Remove="Views\MenuAdmin.png" />
+    <None Remove="Views\MenuMember.png" />
+    <None Remove="Views\MenuUser.png" />
+    <None Remove="Views\NewHit.png" />
+    <None Remove="Views\Outbox.png" />
+    <None Remove="Views\Outbox1.png" />
+    <None Remove="Views\Rectangle 1.png" />
+    <None Remove="Views\Thank Card Done %281%29.png" />
+    <None Remove="Views\Thank Card Done %2813%29.png" />
+    <None Remove="Views\Thank Card Done %2817%29.png" />
+    <None Remove="Views\Thank Card Done %2818%29.png" />
+    <None Remove="Views\Thank Card Done %2819%29.png" />
+    <None Remove="Views\Thank Card Done %2820%29.png" />
+    <None Remove="Views\Thank Card Done %2821%29.png" />
+    <None Remove="Views\Thank Card Done %2822%29.png" />
+    <None Remove="Views\Thank Card Done %2823%29.png" />
+    <None Remove="Views\Thank Card Done %2825%29.png" />
+    <None Remove="Views\Thank Card Done.png" />
+    <None Remove="Views\ThankcardList.png" />
+    <None Remove="Views\Thiết kế chưa có tên %286%29.png" />
+    <None Remove="Views\UserCreate.png" />
+    <None Remove="Views\UserMaster.png" />
+    <None Remove="Views\UserRegister.png" />
+    <None Remove="Views\UserUpdates.png" />
+    <None Remove="Views\User_Create.png" />
+    <None Remove="Views\User_Master.png" />
+    <None Remove="Views\ViewListCard.png" />
+    <None Remove="Views\感謝カード作成.png" />
+    <None Remove="Views\部署更新.png" />
+    <None Remove="Views\部署登録.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Prism.Core" Version="8.1.97" />
     <PackageReference Include="Prism.Unity" Version="8.1.97" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Views\DEPARTMENT EDIT.png" />
+    <Resource Include="Views\DepartmentCreate.png" />
+    <Resource Include="Views\Department_2.png" />
+    <Resource Include="Views\Department_Master.png" />
+    <Resource Include="Views\hit.png" />
+    <Resource Include="Views\HitAdmin.png" />
+    <Resource Include="Views\HitHit.png" />
+    <Resource Include="Views\Homes.png" />
+    <Resource Include="Views\Homesss.png" />
+    <Resource Include="Views\Login 1.png" />
+    <Resource Include="Views\LoginButton.png" />
+    <Resource Include="Views\LoginPg.png" />
+    <Resource Include="Views\logout.png" />
+    <Resource Include="Views\Mask group.png" />
+    <Resource Include="Views\Menu Admin  (2).png" />
+    <Resource Include="Views\Menu Admin .png" />
+    <Resource Include="Views\MenuAdmin.png" />
+    <Resource Include="Views\MenuMember.png" />
+    <Resource Include="Views\MenuUser.png" />
+    <Resource Include="Views\NewHit.png" />
+    <Resource Include="Views\Outbox.png" />
+    <Resource Include="Views\Outbox1.png" />
+    <Resource Include="Views\Rectangle 1.png" />
+    <Resource Include="Views\Thank Card Done (1).png" />
+    <Resource Include="Views\Thank Card Done (13).png" />
+    <Resource Include="Views\Thank Card Done (17).png" />
+    <Resource Include="Views\Thank Card Done (18).png" />
+    <Resource Include="Views\Thank Card Done (19).png" />
+    <Resource Include="Views\Thank Card Done (20).png" />
+    <Resource Include="Views\Thank Card Done (21).png" />
+    <Resource Include="Views\Thank Card Done (22).png" />
+    <Resource Include="Views\Thank Card Done (23).png" />
+    <Resource Include="Views\Thank Card Done (25).png" />
+    <Resource Include="Views\Thank Card Done.png" />
+    <Resource Include="Views\ThankcardList.png" />
+    <Resource Include="Views\Thiết kế chưa có tên (6).png" />
+    <Resource Include="Views\UserCreate.png" />
+    <Resource Include="Views\UserMaster.png" />
+    <Resource Include="Views\UserRegister.png" />
+    <Resource Include="Views\UserUpdates.png" />
+    <Resource Include="Views\User_Create.png" />
+    <Resource Include="Views\User_Master.png" />
+    <Resource Include="Views\ViewListCard.png" />
+    <Resource Include="Views\感謝カード作成.png" />
+    <Resource Include="Views\部署更新.png" />
+    <Resource Include="Views\部署登録.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Images\" />
   </ItemGroup>
 
 </Project>
