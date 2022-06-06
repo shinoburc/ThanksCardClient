@@ -66,7 +66,7 @@ namespace ThanksCardClient.ViewModels
         {
             ThanksCard thanksCard = new ThanksCard();
             this.ThanksCards = await thanksCard.GetThanksCardsAsync();
-            //this.SearchThanksCard = new SearchThanksCard();
+            this.SearchThanksCard = new SearchThanksCard();
             //this.SearchThanksCard.SearchWord = this.AuthorizedUser.Name;
             //ThanksCards = await thanksCard.PostSearchThanksCardsAsync(SearchThanksCard);
             //追加したらログインしたユーザーが自動生成される
@@ -147,6 +147,23 @@ namespace ThanksCardClient.ViewModels
             this.regionManager.RequestNavigate("ContentRegion", nameof(Views.MenuUser));
         }
         #endregion
+
+        #region  ThanksCradBrowsingCommand
+        private DelegateCommand<ThanksCard > _ThanksCradBrowsingCommand;
+        public DelegateCommand<ThanksCard> ThanksCradBrowsingCommand =>
+            _ThanksCradBrowsingCommand ?? (_ThanksCradBrowsingCommand = new DelegateCommand<ThanksCard>(ExecuteThanksCradBrowsingCommand));
+
+        void ExecuteThanksCradBrowsingCommand(ThanksCard SelectedThanksCard)
+        {
+            // 対象のSelectedThanksCardをパラメーターとして画面遷移先に渡す。
+            var parameters = new NavigationParameters();
+            parameters.Add("SelectedThanksCard", SelectedThanksCard);
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCradBrowsing), parameters);
+        }
+        #endregion
+
+
+        
 
         #region DeleteThankCardCommand
         private DelegateCommand<ThanksCard> _DeleteThankCardCommand;

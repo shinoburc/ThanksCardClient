@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace ThanksCardClient.Views
 {
     /// <summary>
-    /// HitAdmin.xaml の相互作用ロジック
+    /// Rank.xaml の相互作用ロジック
     /// </summary>
-    public partial class HitAdmin : UserControl
+    public partial class Rank : UserControl
     {
-        public HitAdmin()
+        public Rank()
         {
             InitializeComponent();
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }

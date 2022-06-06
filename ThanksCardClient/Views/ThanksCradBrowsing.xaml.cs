@@ -16,16 +16,21 @@ using System.Windows.Shapes;
 namespace ThanksCardClient.Views
 {
     /// <summary>
-    /// HitAdmin.xaml の相互作用ロジック
+    /// ThanksCradBrowsing.xaml の相互作用ロジック
     /// </summary>
-    public partial class HitAdmin : UserControl
+    public partial class ThanksCradBrowsing : UserControl
     {
-        public HitAdmin()
+        public ThanksCradBrowsing()
         {
             InitializeComponent();
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
         {
 
         }

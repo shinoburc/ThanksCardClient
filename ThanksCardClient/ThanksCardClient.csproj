@@ -24,6 +24,7 @@
     <None Remove="Views\Mask group.png" />
     <None Remove="Views\Menu Admin  %282%29.png" />
     <None Remove="Views\Menu Admin .png" />
+    <None Remove="Views\MenuAdmin %282%29.png" />
     <None Remove="Views\MenuAdmin.png" />
     <None Remove="Views\MenuMember.png" />
     <None Remove="Views\MenuUser.png" />
@@ -43,6 +44,9 @@
     <None Remove="Views\Thank Card Done %2825%29.png" />
     <None Remove="Views\Thank Card Done.png" />
     <None Remove="Views\ThankcardList.png" />
+    <None Remove="Views\ThanksCount.png" />
+    <None Remove="Views\ThanksCradBrowsing.png" />
+    <None Remove="Views\ThanksCradCount.png" />
     <None Remove="Views\Thiết kế chưa có tên %286%29.png" />
     <None Remove="Views\UserCreate.png" />
     <None Remove="Views\UserMaster.png" />
@@ -54,6 +58,7 @@
     <None Remove="Views\感謝カード作成.png" />
     <None Remove="Views\部署更新.png" />
     <None Remove="Views\部署登録.png" />
+    <None Remove="Views\集計画面.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -78,6 +83,7 @@
     <Resource Include="Views\Mask group.png" />
     <Resource Include="Views\Menu Admin  (2).png" />
     <Resource Include="Views\Menu Admin .png" />
+    <Resource Include="Views\MenuAdmin (2).png" />
     <Resource Include="Views\MenuAdmin.png" />
     <Resource Include="Views\MenuMember.png" />
     <Resource Include="Views\MenuUser.png" />
@@ -97,6 +103,9 @@
     <Resource Include="Views\Thank Card Done (25).png" />
     <Resource Include="Views\Thank Card Done.png" />
     <Resource Include="Views\ThankcardList.png" />
+    <Resource Include="Views\ThanksCount.png" />
+    <Resource Include="Views\ThanksCradBrowsing.png" />
+    <Resource Include="Views\ThanksCradCount.png" />
     <Resource Include="Views\Thiết kế chưa có tên (6).png" />
     <Resource Include="Views\UserCreate.png" />
     <Resource Include="Views\UserMaster.png" />
@@ -108,6 +117,7 @@
     <Resource Include="Views\感謝カード作成.png" />
     <Resource Include="Views\部署更新.png" />
     <Resource Include="Views\部署登録.png" />
+    <Resource Include="Views\集計画面.png" />
   </ItemGroup>
 
   <ItemGroup>

@@ -69,7 +69,19 @@ namespace ThanksCardClient.ViewModels
             this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Hit));
         }
         #endregion
+               
+        #region  RankCommand
+        private DelegateCommand _RankCommand;
 
+
+        public DelegateCommand RankCommand =>
+            _RankCommand ?? (_RankCommand = new DelegateCommand(ExecuteRankCommand));
+
+        void ExecuteRankCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Rank));
+        }
+        #endregion
 
         #region  MenuUserCommand
         private DelegateCommand _MenuUserCommand;
@@ -81,6 +93,32 @@ namespace ThanksCardClient.ViewModels
         void ExecuteMenuUserCommand()
         {
             this.regionManager.RequestNavigate("ContentRegion", nameof(Views.MenuUser));
+        }
+        #endregion
+
+        #region  UserMstCommand
+        private DelegateCommand _UserMstCommand;
+
+
+        public DelegateCommand UserMstCommand =>
+            _UserMstCommand ?? (_UserMstCommand = new DelegateCommand(ExecuteUserMstCommand));
+
+        void ExecuteUserMstCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.UserMst));
+        }
+        #endregion
+
+        #region  DepartmentMstCommand
+        private DelegateCommand _DepartmentMstCommand;
+
+
+        public DelegateCommand DepartmentMstCommand =>
+            _DepartmentMstCommand ?? (_DepartmentMstCommand = new DelegateCommand(ExecuteDepartmentMstCommand));
+
+        void ExecuteDepartmentMstCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.DepartmentMst));
         }
         #endregion
 

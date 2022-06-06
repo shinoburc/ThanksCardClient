@@ -9,12 +9,15 @@
     <Grid>
         <Grid HorizontalAlignment="Center" Height="450" VerticalAlignment="Center" Width="800">
             <Grid.Background>
-                <ImageBrush ImageSource="/Views/MenuAdmin.png" Stretch="Uniform"/>
+                <ImageBrush Stretch="Uniform" ImageSource="/Views/MenuAdmin (2).png"/>
             </Grid.Background>
             <Button Content="メニュー" Command="{Binding MenuAdminCommand}" HorizontalAlignment="Left" Height="36" Margin="19,42,0,0" VerticalAlignment="Top" Width="46" Opacity="0" Cursor="Hand"/>
             <Button Content="送信箱" Command="{Binding ThanksCradCreateCommand}" HorizontalAlignment="Left" Height="29" Margin="24,123,0,0" VerticalAlignment="Top" Width="36" Opacity="0" Cursor="Hand"/>
             <Button Content="ヒント" Command="{Binding HitAdminCommand}" HorizontalAlignment="Left" Height="29" Margin="24,171,0,0" VerticalAlignment="Top" Width="36" Opacity="0" Cursor="Hand"/>
             <Button Content="全体閲覧表" Command="{Binding ThanksCradListCommand}" HorizontalAlignment="Left" Height="29" Margin="24,231,0,0" VerticalAlignment="Top" Width="36" Opacity="0" Cursor="Hand"/>
+            <Button Content="ユーザ管理" Command="{Binding UserMstCommand}" HorizontalAlignment="Left" Height="46" Margin="164,171,0,0" VerticalAlignment="Top" Width="500" Opacity="0" Cursor="Hand"/>
+            <Button Content="部署管理" Command="{Binding DepartmentMstCommand}" HorizontalAlignment="Left" Height="46" Margin="164,236,0,0" VerticalAlignment="Top" Width="500" Opacity="0" Cursor="Hand"/>
+            <Button Content="集計" Command="{Binding RankCommand}" HorizontalAlignment="Left" Height="29" Margin="24,275,0,0" VerticalAlignment="Top" Width="36" Opacity="0" Cursor="Hand"/>
 
 
 

@@ -12,12 +12,13 @@
                 <ImageBrush Stretch="Uniform" ImageSource="/Views/HitAdmin.png"/>
             </Grid.OpacityMask>
         </Grid>
-        <Grid>
+        <Grid Margin="10,0,0,5">
             <Grid.Background>
                 <ImageBrush ImageSource="/Views/HitAdmin.png" Stretch="Uniform"/>
             </Grid.Background>
-            <Button Content="戻る" Command="{Binding BackAdminCommand}" HorizontalAlignment="Left" Height="28" Margin="650,125,0,0" VerticalAlignment="Top" Width="79" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Opacity="0"/>
-            <Button Content="メニュー" Command="{Binding MenuAdminCommand}" HorizontalAlignment="Left" Height="38" Margin="21,42,0,0" VerticalAlignment="Top" Width="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand"/>
+            <Button Content="戻る" Command="{Binding BackAdminCommand}" HorizontalAlignment="Left" Height="28" Margin="642,123,0,0" VerticalAlignment="Top" Width="79" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Opacity="0"/>
+            <Button Content="メニュー" Command="{Binding MenuAdminCommand}" HorizontalAlignment="Left" Height="28" Margin="22,45,0,0" VerticalAlignment="Top" Width="37" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand"/>
+            <TextBox HorizontalAlignment="Center" Height="218" TextWrapping="Wrap" Text="ヒントを記入する場所" VerticalAlignment="Top" Width="616" Margin="0,177,0,0" TextChanged="TextBox_TextChanged"/>
         </Grid>
 
     </Grid>

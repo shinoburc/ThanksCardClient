@@ -16,13 +16,21 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="送信者" Binding="{Binding From.Name}" Width="120" />
                 <DataGridTextColumn Header="受信者" Binding="{Binding To.Name}" Width="120" />
-                <DataGridTextColumn Header="タイトル" Binding="{Binding Title}" Width="150" />
+                <DataGridTextColumn Header="タイトル" Binding="{Binding Title}" Width="120" />
                 <DataGridTextColumn Header="日付" Binding="{Binding CreatedDateTime}" Width="100" />
                 <DataGridTextColumn Header="コメント" Binding="{Binding CreatedDateTime}" Width="90" />
+                <DataGridTemplateColumn Header="詳細">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <!-- CommandParameter に {Binding} とだけ記述すると、MainWindowViewModel.Departments の要素、つまり Department モデルを指定したことになる。-->
+                            <Button Content="詳細" Command="{Binding DataContext.ThanksCradBrowsingCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="削除">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="削除" Command="{Binding DataContext.DeleteThankCardCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" />
+                            <Button Content="削除" Command="{Binding DataContext.UserDeleteCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
