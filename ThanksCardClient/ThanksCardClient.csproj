@@ -44,6 +44,7 @@
     <None Remove="Views\Thank Card Done %2825%29.png" />
     <None Remove="Views\Thank Card Done.png" />
     <None Remove="Views\ThankcardList.png" />
+    <None Remove="Views\ThanksCardSearch.png" />
     <None Remove="Views\ThanksCount.png" />
     <None Remove="Views\ThanksCradBrowsing.png" />
     <None Remove="Views\ThanksCradCount.png" />
@@ -103,6 +104,7 @@
     <Resource Include="Views\Thank Card Done (25).png" />
     <Resource Include="Views\Thank Card Done.png" />
     <Resource Include="Views\ThankcardList.png" />
+    <Resource Include="Views\ThanksCardSearch.png" />
     <Resource Include="Views\ThanksCount.png" />
     <Resource Include="Views\ThanksCradBrowsing.png" />
     <Resource Include="Views\ThanksCradCount.png" />
