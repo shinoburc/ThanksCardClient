@@ -8,5 +8,6 @@ namespace ThanksCardClient.ViewModels
 {
     internal class RegistrationsScreenViewModel
     {
+       
     }
 }
