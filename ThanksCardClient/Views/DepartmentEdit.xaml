@@ -10,7 +10,7 @@
       d:DesignHeight="450" d:DesignWidth="800">
     <Grid HorizontalAlignment="Center" Height="450" VerticalAlignment="Center" Width="800">
         <Grid.Background>
-            <ImageBrush ImageSource="/Views/部署更新.png"/>
+            <ImageBrush ImageSource="/Images/部署更新.png"/>
         </Grid.Background>
         <Grid.OpacityMask>
             <ImageBrush ImageSource="/Views/Department_2.png"/>

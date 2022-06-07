@@ -10,7 +10,7 @@
       d:DesignHeight="450" d:DesignWidth="800">
     <Grid Height="450" VerticalAlignment="Center">
         <Grid.Background>
-            <ImageBrush ImageSource="/Views/LoginPg.png" Stretch="Uniform"/>
+            <ImageBrush ImageSource="/Images/LoginPg.png" Stretch="Uniform"/>
         </Grid.Background>
         <TextBox Text="{Binding User.Name}" Margin="186,192,186,0" AutomationProperties.Name="User Name" Background="White" BorderBrush="{x:Null}" Foreground="Black" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" UndoLimit="94" FontSize="20" TextAlignment="Justify" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Height="54" VerticalAlignment="Top" Width="428"/>
         <TextBox Text="{Binding User.Password}" Margin="186,250,186,146" RenderTransformOrigin="0.5,0.5" Background="White" BorderBrush="{x:Null}" Foreground="Black" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="20" Width="428" Height="54">

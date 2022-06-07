@@ -9,7 +9,7 @@
     <Grid>
         <Grid HorizontalAlignment="Center" Height="450" VerticalAlignment="Center" Width="800">
             <Grid.Background>
-                <ImageBrush ImageSource="/Views/集計画面.png"/>
+                <ImageBrush ImageSource="/Images/集計画面.png"/>
             </Grid.Background>
             <Button Content="メニュー" Command="{Binding MenuAdminCommand}" HorizontalAlignment="Left" Margin="21,44,0,0" VerticalAlignment="Top" Height="32" Opacity="0" Cursor="Hand" Background="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}"/>
             <Button Content="戻る" Command="{Binding BackCommand}" HorizontalAlignment="Left" Margin="652,124,0,0" VerticalAlignment="Top" Height="29" Opacity="0" Cursor="Hand" Background="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}" Width="74"/>

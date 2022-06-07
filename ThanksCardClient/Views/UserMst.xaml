@@ -10,7 +10,7 @@
       d:DesignHeight="450" d:DesignWidth="800">
     <Grid Height="450" VerticalAlignment="Top" HorizontalAlignment="Center" Width="800">
         <Grid.Background>
-            <ImageBrush ImageSource="/Views/UserMaster.png"/>
+            <ImageBrush ImageSource="/Images/UserMaster.png"/>
         </Grid.Background>
         <DataGrid ItemsSource="{Binding Users}" AutoGenerateColumns="False" CanUserAddRows="False" Background="{x:Null}" Margin="99,160,70,56" Foreground="#FF0A0A0A" BorderBrush="#FF4D92C7" Cursor="Hand" ScrollViewer.HorizontalScrollBarVisibility="Hidden">
             <DataGrid.Columns>

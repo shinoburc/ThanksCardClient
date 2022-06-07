@@ -11,7 +11,7 @@
     <Grid>
         <Grid HorizontalAlignment="Center" Height="450" VerticalAlignment="Center" Width="800">
             <Grid.Background>
-                <ImageBrush ImageSource="/Views/ThanksCradBrowsing.png" Stretch="Uniform"/>
+                <ImageBrush ImageSource="/Images/ThanksCradBrowsing.png" Stretch="Uniform"/>
             </Grid.Background>
             <Grid.RowDefinitions>
                 <RowDefinition Height="109*"/>
