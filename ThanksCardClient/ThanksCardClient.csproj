@@ -8,8 +8,44 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="ViewModels\ホーム画面.png" />
+    <None Remove="Views\パスワード.png" />
+    <None Remove="Views\ホーム画面.png" />
+    <None Remove="Views\マニュアル画面.png" />
+    <None Remove="Views\ログイン画面.png" />
+    <None Remove="Views\分類管理画面.png" />
+    <None Remove="Views\受信BOX画面 %281%29.png" />
+    <None Remove="Views\感謝カード作成画面 .png" />
+    <None Remove="Views\社員コード.png" />
+    <None Remove="Views\社員管理画面.png" />
+    <None Remove="Views\組織変更画面.png" />
+    <None Remove="Views\組織登録画面.png" />
+    <None Remove="Views\組織管理画面.png" />
+    <None Remove="Views\表示画面.png" />
+    <None Remove="Views\送信BOX画面.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Prism.Core" Version="8.1.97" />
     <PackageReference Include="Prism.Unity" Version="8.1.97" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="ViewModels\ホーム画面.png" />
+    <Resource Include="Views\パスワード.png" />
+    <Resource Include="Views\ホーム画面.png" />
+    <Resource Include="Views\マニュアル画面.png" />
+    <Resource Include="Views\ログイン画面.png" />
+    <Resource Include="Views\分類管理画面.png" />
+    <Resource Include="Views\受信BOX画面 (1).png" />
+    <Resource Include="Views\感謝カード作成画面 .png" />
+    <Resource Include="Views\社員コード.png" />
+    <Resource Include="Views\社員管理画面.png" />
+    <Resource Include="Views\組織変更画面.png" />
+    <Resource Include="Views\組織登録画面.png" />
+    <Resource Include="Views\組織管理画面.png" />
+    <Resource Include="Views\表示画面.png" />
+    <Resource Include="Views\送信BOX画面.png" />
   </ItemGroup>
 
 </Project>

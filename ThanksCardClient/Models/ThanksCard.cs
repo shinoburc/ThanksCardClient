@@ -30,11 +30,11 @@ namespace ThanksCardClient.Models
         #endregion
 
         #region BodyProperty
-        private string _Body;
-        public string Body
+        private string _Contents;
+        public string Contents
         {
-            get { return _Body; }
-            set { SetProperty(ref _Body, value); }
+            get { return _Contents; }
+            set { SetProperty(ref _Contents, value); }
         }
         #endregion
 
@@ -48,8 +48,8 @@ namespace ThanksCardClient.Models
         #endregion
 
         #region FromProperty
-        private User _From;
-        public User From
+        private Employee _From;
+        public Employee From
         {
             get { return _From; }
             set { SetProperty(ref _From, value); }
@@ -66,36 +66,36 @@ namespace ThanksCardClient.Models
         #endregion
 
         #region ToProperty
-        private User _To;
-        public User To
+        private Employee _To;
+        public Employee To
         {
             get { return _To; }
             set { SetProperty(ref _To, value); }
         }
         #endregion
 
-        #region CreatedDateTimeProperty
-        private DateTime _CreatedDateTime;
-        public DateTime CreatedDateTime
+        #region DateProperty
+        private DateTime _Date;
+        public DateTime Date
         {
-            get { return _CreatedDateTime; }
-            set { SetProperty(ref _CreatedDateTime, value); }
+            get { return _Date; }
+            set { SetProperty(ref _Date, value); }
         }
         #endregion
 
         #region ThanksCardTagsProperty
-        private List<ThanksCardTag> _ThanksCardTags;
-        public List<ThanksCardTag> ThanksCardTags
+        private List<ThanksCardClassification> _ThanksCardClassifications;
+        public List<ThanksCardClassification> ThanksCardClassifications
         {
-            get { return _ThanksCardTags; }
-            set { SetProperty(ref _ThanksCardTags, value); }
+            get { return _ThanksCardClassifications; }
+            set { SetProperty(ref _ThanksCardClassifications, value); }
         }
         #endregion
 
 
         public ThanksCard()
         {
-            this.CreatedDateTime = DateTime.Now;
+            this.Date = DateTime.Now;
         }
 
         public async Task<List<ThanksCard>> GetThanksCardsAsync()

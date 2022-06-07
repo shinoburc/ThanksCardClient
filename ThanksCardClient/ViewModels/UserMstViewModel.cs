@@ -1,4 +1,5 @@
-﻿#nullable disable
+﻿/*
+#nullable disable
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Regions;
@@ -16,11 +17,11 @@ namespace ThanksCardClient.ViewModels
         private readonly IRegionManager regionManager;
 
         #region UsersProperty
-        private List<User> _Users;
-        public List<User> Users
+        private List<Employee> _Employees;
+        public List<Employee> Employees
         {
-            get { return _Users; }
-            set { SetProperty(ref _Users, value); }
+            get { return _Employees; }
+            set { SetProperty(ref _Employees, value); }
         }
         #endregion
 
@@ -32,14 +33,14 @@ namespace ThanksCardClient.ViewModels
 
         public void OnNavigatedTo(NavigationContext navigationContext)
         {
-            this.UpdateUsers();
+            this.UpdateEmployees();
         }
 
-        private async void UpdateUsers()
+        private async void UpdateEmployees()
         {
-            if (SessionService.Instance.AuthorizedUser != null)
+            if (SessionService.Instance.AuthorizedEmployee != null)
             {
-                this.Users = await SessionService.Instance.AuthorizedUser.GetUsersAsync();
+                this.Employees = await SessionService.Instance.AuthorizedEmployee.GetEmployeesAsync();
             }
         }
 
@@ -95,3 +96,4 @@ namespace ThanksCardClient.ViewModels
         #endregion
     }
 }
+*/
