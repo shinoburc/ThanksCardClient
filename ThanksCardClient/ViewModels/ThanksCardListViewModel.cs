@@ -186,7 +186,8 @@ namespace ThanksCardClient.ViewModels
         {
             ThanksCard thanksCard = await SelectedThanksCard.DeleteThanksCardAsync(SelectedThanksCard.Id);
             //this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardList));
-            
+
+            //this.ThanksCards = await thanksCard.GetThanksCardsAsync();
         }
         #endregion
 
