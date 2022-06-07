@@ -1,3 +1,4 @@
+#nullable disable
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Regions;
@@ -13,7 +14,8 @@ namespace ThanksCardClient.ViewModels
     {
         private readonly IRegionManager regionManager;
 
-        public MenuAdminViewModel(IRegionManager regionManager)
+        public 
+           MenuAdminViewModel(IRegionManager regionManager)
         {
             this.regionManager = regionManager;
         }
