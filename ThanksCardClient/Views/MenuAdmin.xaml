@@ -9,7 +9,7 @@
     <Grid>
         <Grid HorizontalAlignment="Center" Height="450" VerticalAlignment="Center" Width="800">
             <Grid.Background>
-                <ImageBrush Stretch="Uniform" ImageSource="/Views/MenuAdmin (2).png"/>
+                <ImageBrush Stretch="Uniform" ImageSource="/Images/MenuAdmin (2).png"/>
             </Grid.Background>
             <Button Content="メニュー" Command="{Binding MenuAdminCommand}" HorizontalAlignment="Left" Height="36" Margin="19,42,0,0" VerticalAlignment="Top" Width="46" Opacity="0" Cursor="Hand"/>
             <Button Content="送信箱" Command="{Binding ThanksCradCreateCommand}" HorizontalAlignment="Left" Height="29" Margin="24,123,0,0" VerticalAlignment="Top" Width="36" Opacity="0" Cursor="Hand"/>

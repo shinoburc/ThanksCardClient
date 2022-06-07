@@ -10,7 +10,7 @@
       d:DesignHeight="450" d:DesignWidth="800">
     <Grid HorizontalAlignment="Center" Width="800" Height="450" VerticalAlignment="Top" Cursor="Hand">
         <Grid.Background>
-            <ImageBrush ImageSource="/Views/感謝カード作成.png" Stretch="Uniform"/>
+            <ImageBrush ImageSource="/Images/感謝カード作成.png" Stretch="Uniform"/>
 
         </Grid.Background>
         <!-- Deparment が選択されたら FromDepartmentsChangedCommand を発行する -->

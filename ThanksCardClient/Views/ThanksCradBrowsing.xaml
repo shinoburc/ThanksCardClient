@@ -8,10 +8,10 @@
              xmlns:local="clr-namespace:ThanksCardClient.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-
+   
     <Grid HorizontalAlignment="Center" Height="450" VerticalAlignment="Center" Width="800">
         <Grid.Background>
-            <ImageBrush Stretch="Uniform" ImageSource="/Views/ThanksCardComment.png"/>
+            <ImageBrush Stretch="Uniform" ImageSource="/Images/ThanksCardComment.png"/>
         </Grid.Background>
         <TextBox Text="{Binding ThanksCard.Title}" HorizontalAlignment="Left" Height="21" Margin="155,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="384" TextChanged="TextBox_TextChanged_1" VerticalContentAlignment="Bottom" FontSize="16" Foreground="#FF3B435F" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" IsReadOnly="True"/>
         <TextBox Text="{Binding ThanksCard.To.Name}" HorizontalAlignment="Left" Height="23" Margin="155,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" TextChanged="TextBox_TextChanged_1" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF3B435F" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" FontSize="14" VerticalContentAlignment="Bottom" IsReadOnly="True"/>

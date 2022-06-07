@@ -10,7 +10,7 @@
       d:DesignHeight="450" d:DesignWidth="800">
     <Grid HorizontalAlignment="Center" Height="450" VerticalAlignment="Center" Width="800">
         <Grid.Background>
-            <ImageBrush Stretch="Uniform" ImageSource="/Views/ThanksCardSearch.png"/>
+            <ImageBrush Stretch="Uniform" ImageSource="/Images/ThanksCardSearch.png"/>
         </Grid.Background>
         <DataGrid ItemsSource="{Binding ThanksCards}" AutoGenerateColumns="False" CanUserAddRows="False" SelectionChanged="DataGrid_SelectionChanged" Margin="94,182,65,68" Background="{x:Null}" HorizontalScrollBarVisibility="Hidden">
             <DataGrid.Columns>
@@ -30,7 +30,7 @@
                 <DataGridTemplateColumn Header="削除">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="削除" Command="{Binding DataContext.UserDeleteCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}"/>
+                            <Button Content="削除" Command="{Binding DataContext.DeleteThankCardCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

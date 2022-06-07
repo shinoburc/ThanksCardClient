@@ -9,6 +9,11 @@
 
   <ItemGroup>
     <None Remove="Images\Thank Card Done.png" />
+    <None Remove="Images\ThanksCardSearch.png" />
+    <None Remove="Images\ThanksCradBrowsing.png" />
+    <None Remove="Images\UserMaster.png" />
+    <None Remove="Images\UserRegister.png" />
+    <None Remove="Images\UserUpdates.png" />
     <None Remove="Views\DEPARTMENT EDIT.png" />
     <None Remove="Views\DepartmentCreate.png" />
     <None Remove="Views\Department_2.png" />
@@ -50,8 +55,6 @@
     <None Remove="Views\ThanksCradCount.png" />
     <None Remove="Views\Thiết kế chưa có tên %286%29.png" />
     <None Remove="Views\UserCreate.png" />
-    <None Remove="Views\UserMaster.png" />
-    <None Remove="Views\UserRegister.png" />
     <None Remove="Views\UserUpdates.png" />
     <None Remove="Views\User_Create.png" />
     <None Remove="Views\User_Master.png" />
@@ -69,25 +72,30 @@
 
   <ItemGroup>
     <Resource Include="Images\Thank Card Done.png" />
+    <Resource Include="Images\ThanksCardSearch.png" />
+    <Resource Include="Images\ThanksCradBrowsing.png" />
+    <Resource Include="Images\UserMaster.png" />
+    <Resource Include="Images\UserRegister.png" />
+    <Resource Include="Images\UserUpdates.png" />
     <Resource Include="Views\DEPARTMENT EDIT.png" />
     <Resource Include="Views\DepartmentCreate.png" />
     <Resource Include="Views\Department_2.png" />
-    <Resource Include="Views\Department_Master.png" />
+    <Resource Include="Images\Department_Master.png" />
     <Resource Include="Views\hit.png" />
-    <Resource Include="Views\HitAdmin.png" />
+    <Resource Include="Images\HitAdmin.png" />
     <Resource Include="Views\HitHit.png" />
     <Resource Include="Views\Homes.png" />
-    <Resource Include="Views\Homesss.png" />
+    <Resource Include="Images\Homesss.png" />
     <Resource Include="Views\Login 1.png" />
     <Resource Include="Views\LoginButton.png" />
-    <Resource Include="Views\LoginPg.png" />
+    <Resource Include="Images\LoginPg.png" />
     <Resource Include="Views\logout.png" />
     <Resource Include="Views\Mask group.png" />
     <Resource Include="Views\Menu Admin  (2).png" />
     <Resource Include="Views\Menu Admin .png" />
-    <Resource Include="Views\MenuAdmin (2).png" />
+    <Resource Include="Images\MenuAdmin %282%29.png" />
     <Resource Include="Views\MenuAdmin.png" />
-    <Resource Include="Views\MenuMember.png" />
+    <Resource Include="Images\MenuMember.png" />
     <Resource Include="Views\MenuUser.png" />
     <Resource Include="Views\NewHit.png" />
     <Resource Include="Views\Outbox.png" />
@@ -110,16 +118,14 @@
     <Resource Include="Views\ThanksCradCount.png" />
     <Resource Include="Views\Thiết kế chưa có tên (6).png" />
     <Resource Include="Views\UserCreate.png" />
-    <Resource Include="Views\UserMaster.png" />
-    <Resource Include="Views\UserRegister.png" />
     <Resource Include="Views\UserUpdates.png" />
     <Resource Include="Views\User_Create.png" />
     <Resource Include="Views\User_Master.png" />
     <Resource Include="Views\ViewListCard.png" />
-    <Resource Include="Views\感謝カード作成.png" />
-    <Resource Include="Views\部署更新.png" />
-    <Resource Include="Views\部署登録.png" />
-    <Resource Include="Views\集計画面.png" />
+    <Resource Include="Images\感謝カード作成.png" />
+    <Resource Include="Images\部署更新.png" />
+    <Resource Include="Images\部署登録.png" />
+    <Resource Include="Images\集計画面.png" />
   </ItemGroup>
 
 </Project>

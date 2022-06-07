@@ -10,7 +10,7 @@
       d:DesignHeight="450" d:DesignWidth="800">
     <Grid Height="450" VerticalAlignment="Top" HorizontalAlignment="Center" Width="800">
         <Grid.Background>
-            <ImageBrush Stretch="Uniform" ImageSource="/Views/Department_Master.png"/>
+            <ImageBrush Stretch="Uniform" ImageSource="/Images/Department_Master.png"/>
         </Grid.Background>
         <DataGrid ItemsSource="{Binding Departments}" AutoGenerateColumns="False" CanUserAddRows="False" Background="{x:Null}" Margin="95,166,61,64" SelectionChanged="DataGrid_SelectionChanged">
             <DataGrid.Columns>
