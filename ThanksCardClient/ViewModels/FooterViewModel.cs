@@ -142,5 +142,19 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
+        #region ShowregistrationscreenCommand
+        private DelegateCommand _ShowregistrationscreenCommand;
+        public DelegateCommand ShowregistrationscreenCommand =>
+            _ShowregistrationscreenCommand ?? (_ShowregistrationscreenCommand = new DelegateCommand(ExecuteShowregistrationscreenCommand));
+
+        void ExecuteShowregistrationscreenCommand()
+        {
+            this.regionManager.Regions["HeaderRegion"].RemoveAll();
+            this.regionManager.Regions["ContentRegion"].RemoveAll();
+            this.regionManager.Regions["FooterRegion"].RemoveAll();
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.RegistrationScreen));
+        }
+        #endregion
+
     }
 }
