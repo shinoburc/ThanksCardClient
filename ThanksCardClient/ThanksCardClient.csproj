@@ -118,7 +118,7 @@
     <Resource Include="Views\User_Create.png" />
     <Resource Include="Views\User_Master.png" />
     <Resource Include="Views\ViewListCard.png" />
-    <Resource Include="Views\感謝カード作成.png" />
+    <Resource Include="Images\感謝カード作成.png" />
     <Resource Include="Views\部署更新.png" />
     <Resource Include="Views\部署登録.png" />
     <Resource Include="Views\集計画面.png" />
