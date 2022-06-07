@@ -25,10 +25,8 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteShowFooterCommand()
         {
-            this.regionManager.Regions["HeaderRegion"].RemoveAll();
-            this.regionManager.Regions["ContentRegion"].RemoveAll();
             this.regionManager.Regions["FooterRegion"].RemoveAll();
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Footer));
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Footer));
 
         }
         #endregion
@@ -40,10 +38,8 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteShowpastCasesCommand()
         {
-            this.regionManager.Regions["HeaderRegion"].RemoveAll();
-            this.regionManager.Regions["ContentRegion"].RemoveAll();
             this.regionManager.Regions["FooterRegion"].RemoveAll();
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.PastCases));
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.PastCases));
 
         }
         #endregion
@@ -55,10 +51,8 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteShowTypicalExamplesCommand()
         {
-            this.regionManager.Regions["HeaderRegion"].RemoveAll();
-            this.regionManager.Regions["ContentRegion"].RemoveAll();
             this.regionManager.Regions["FooterRegion"].RemoveAll();
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.TypicalExamples));
+            this.regionManager.RequestNavigate("FooterRegionRegion", nameof(Views.TypicalExamples));
 
         }
         #endregion
