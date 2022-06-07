@@ -86,7 +86,7 @@
     <Resource Include="Views\Homesss.png" />
     <Resource Include="Views\Login 1.png" />
     <Resource Include="Views\LoginButton.png" />
-    <Resource Include="Views\LoginPg.png" />
+    <Resource Include="Images\LoginPg.png" />
     <Resource Include="Views\logout.png" />
     <Resource Include="Views\Mask group.png" />
     <Resource Include="Views\Menu Admin  (2).png" />
