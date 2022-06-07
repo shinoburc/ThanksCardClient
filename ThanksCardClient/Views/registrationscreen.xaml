@@ -19,12 +19,11 @@
             <Button Content="戻る" HorizontalAlignment="Left" Height="71" VerticalAlignment="Top" Width="202" FontSize="36" Command="{Binding ShowFooterCommand}"/>
             <TextBlock HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" Text="部署名" VerticalAlignment="Top" Width="105" Margin="253,22,0,0" FontSize="16"/>
             <ComboBox HorizontalAlignment="Left" Height="28" Margin="405,43,0,0" VerticalAlignment="Top" Width="150"/>
-            <TextBlock HorizontalAlignment="Left" Height="31" Margin="540,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="208" FontSize="20" RenderTransformOrigin="0.476,1.193" Background="White"><Run Language="ja-jp" Text="権限"/><LineBreak/><Run Language="ja-jp"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Height="31" Margin="594,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" FontSize="20" RenderTransformOrigin="0.476,1.193" Background="White" Text="管理者権限"/>
             <TextBlock HorizontalAlignment="Left" Height="31" Margin="540,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" FontSize="20" RenderTransformOrigin="0.476,1.193" Foreground="Black" Background="White"><Run Language="ja-jp" Text="社員名"/><LineBreak/><Run Language="ja-jp"/><LineBreak/><Run Language="ja-jp"/><LineBreak/><Run Language="ja-jp"/><LineBreak/><Run Language="ja-jp"/></TextBlock>
             <TextBlock HorizontalAlignment="Left" Height="31" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Text="部署コード" FontSize="20" RenderTransformOrigin="0.476,1.193" Margin="42,215,0,0"/>
             <TextBlock HorizontalAlignment="Center" Height="31" Margin="0,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" FontSize="20" RenderTransformOrigin="0.476,1.193"><Run Language="ja-jp" Text="PassWord"/></TextBlock>
             <TextBlock HorizontalAlignment="Left" Height="34" Margin="33,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Foreground="White" Background="#FFE4E4E4"/>
-            <TextBlock HorizontalAlignment="Left" Height="34" Margin="540,257,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Foreground="White" Background="#FFE4E4E4"/>
             <TextBlock HorizontalAlignment="Left" Height="34" Margin="540,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Foreground="White" Background="#FFE4E4E4"/>
             <TextBlock HorizontalAlignment="Center" Height="34" Margin="0,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Foreground="White" Background="#FFE4E4E4"/>
             <TextBlock HorizontalAlignment="Left" Height="34" Margin="34,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Foreground="White" Background="#FFE4E4E4"/>
@@ -33,5 +32,6 @@
         <TextBlock HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="105" Margin="408,21,0,0" FontSize="16"><Run Language="ja-jp" Text="名前"/><LineBreak/><Run Language="ja-jp"/></TextBlock>
         <TextBlock HorizontalAlignment="Center" Height="27" TextWrapping="Wrap" VerticalAlignment="Center" Width="208" Text="部署名" FontSize="20"/>
         <TextBlock HorizontalAlignment="Center" Height="34" Margin="0,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Foreground="White" Background="#FFE4E4E4"/>
+        <CheckBox Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="644,269,0,0" Height="20" Width="45"/>
     </Grid>
 </UserControl>
