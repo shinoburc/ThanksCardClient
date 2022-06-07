@@ -10,6 +10,7 @@
   <ItemGroup>
     <None Remove="Images\Thank Card Done.png" />
     <None Remove="Images\UserMaster.png" />
+    <None Remove="Images\UserRegister.png" />
     <None Remove="Images\UserUpdates.png" />
     <None Remove="Views\DEPARTMENT EDIT.png" />
     <None Remove="Views\DepartmentCreate.png" />
@@ -52,7 +53,6 @@
     <None Remove="Views\ThanksCradCount.png" />
     <None Remove="Views\Thiết kế chưa có tên %286%29.png" />
     <None Remove="Views\UserCreate.png" />
-    <None Remove="Views\UserRegister.png" />
     <None Remove="Views\UserUpdates.png" />
     <None Remove="Views\User_Create.png" />
     <None Remove="Views\User_Master.png" />
@@ -71,6 +71,7 @@
   <ItemGroup>
     <Resource Include="Images\Thank Card Done.png" />
     <Resource Include="Images\UserMaster.png" />
+    <Resource Include="Images\UserRegister.png" />
     <Resource Include="Images\UserUpdates.png" />
     <Resource Include="Views\DEPARTMENT EDIT.png" />
     <Resource Include="Views\DepartmentCreate.png" />
@@ -113,7 +114,6 @@
     <Resource Include="Views\ThanksCradCount.png" />
     <Resource Include="Views\Thiết kế chưa có tên (6).png" />
     <Resource Include="Views\UserCreate.png" />
-    <Resource Include="Views\UserRegister.png" />
     <Resource Include="Views\UserUpdates.png" />
     <Resource Include="Views\User_Create.png" />
     <Resource Include="Views\User_Master.png" />
