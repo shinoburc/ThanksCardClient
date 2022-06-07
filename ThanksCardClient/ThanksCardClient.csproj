@@ -121,7 +121,7 @@
     <Resource Include="Images\感謝カード作成.png" />
     <Resource Include="Views\部署更新.png" />
     <Resource Include="Views\部署登録.png" />
-    <Resource Include="Views\集計画面.png" />
+    <Resource Include="Images\集計画面.png" />
   </ItemGroup>
 
 </Project>
