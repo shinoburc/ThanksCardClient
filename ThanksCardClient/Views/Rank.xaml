@@ -14,7 +14,7 @@
             <Button Content="メニュー" Command="{Binding MenuAdminCommand}" HorizontalAlignment="Left" Margin="21,44,0,0" VerticalAlignment="Top" Height="32" Opacity="0" Cursor="Hand" Background="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}"/>
             <Button Content="戻る" Command="{Binding BackCommand}" HorizontalAlignment="Left" Margin="652,124,0,0" VerticalAlignment="Top" Height="29" Opacity="0" Cursor="Hand" Background="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}" Width="74"/>
             <Button Content="送信箱" Command="{Binding ThanksCradCreateCommand}" HorizontalAlignment="Left" Margin="24,123,0,0" VerticalAlignment="Top" Height="31" Opacity="0" Cursor="Hand" Background="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}" Width="30"/>
-            <Button Content="ヒント" Command="{Binding HitAdminCreateCommand}" HorizontalAlignment="Left" Margin="24,165,0,0" VerticalAlignment="Top" Height="36" Opacity="0" Cursor="Hand" Background="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}" Width="34"/>
+            <Button Content="ヒント" Command="{Binding HitAdminCommand}" HorizontalAlignment="Left" Margin="24,165,0,0" VerticalAlignment="Top" Height="36" Opacity="0" Cursor="Hand" Background="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}" Width="34"/>
             <Button Content="全体閲覧表" Command="{Binding ThanksCradListCommand}" HorizontalAlignment="Left" Margin="24,225,0,0" VerticalAlignment="Top" Height="31" Opacity="0" Cursor="Hand" Background="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}" Width="30"/>
         </Grid>
 

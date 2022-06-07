@@ -49,6 +49,8 @@
     <None Remove="Views\Thank Card Done %2823%29.png" />
     <None Remove="Views\Thank Card Done %2825%29.png" />
     <None Remove="Views\ThankcardList.png" />
+    <None Remove="Views\ThanksCardComment.png" />
+    <None Remove="Views\ThanksCardSearch.png" />
     <None Remove="Views\ThanksCount.png" />
     <None Remove="Views\ThanksCradCount.png" />
     <None Remove="Views\Thiết kế chưa có tên %286%29.png" />
@@ -110,6 +112,8 @@
     <Resource Include="Views\Thank Card Done (23).png" />
     <Resource Include="Views\Thank Card Done (25).png" />
     <Resource Include="Views\ThankcardList.png" />
+    <Resource Include="Views\ThanksCardComment.png" />
+    <Resource Include="Views\ThanksCardSearch.png" />
     <Resource Include="Views\ThanksCount.png" />
     <Resource Include="Views\ThanksCradCount.png" />
     <Resource Include="Views\Thiết kế chưa có tên (6).png" />

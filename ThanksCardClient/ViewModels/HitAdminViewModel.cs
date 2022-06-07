@@ -12,22 +12,12 @@ namespace ThanksCardClient.ViewModels
     {
         private readonly IRegionManager regionManager;
 
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         public HitAdminViewModel(IRegionManager regionManager)
+
         {
             this.regionManager = regionManager;
         }
-        #region  MenuAdmin1Command
-        private DelegateCommand _MenuAdmin1Command;
-
-
-        public DelegateCommand MenuAdmin1Command =>
-            _MenuAdmin1Command ?? (_MenuAdmin1Command = new DelegateCommand(ExecuteMenuAdmin1Command));
-
-        void ExecuteMenuAdmin1Command()
-        {
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.MenuAdmin));
-        }
-        #endregion
 
         #region  BackAdminCommand
         private DelegateCommand _BackAdminCommand;
