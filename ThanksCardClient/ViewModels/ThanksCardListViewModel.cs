@@ -76,10 +76,9 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
-        public async void OnNavigatedTo(NavigationContext navigationContext)
+        public void OnNavigatedTo(NavigationContext navigationContext)
         {
-            ThanksCard thanksCard = new ThanksCard();
-            this.ThanksCards = await thanksCard.GetThanksCardsAsync();
+            this.UpdateThanksCard();
             this.SearchThanksCard = new SearchThanksCard();
             //this.SearchThanksCard.SearchWord = this.AuthorizedUser.Name;
             //ThanksCards = await thanksCard.PostSearchThanksCardsAsync(SearchThanksCard);
@@ -94,6 +93,12 @@ namespace ThanksCardClient.ViewModels
         public void OnNavigatedFrom(NavigationContext navigationContext)
         {
             //throw new NotImplementedException();
+        }
+
+        async void UpdateThanksCard()
+        {
+            ThanksCard thanksCard = new ThanksCard();
+            this.ThanksCards = await thanksCard.GetThanksCardsAsync();
         }
 
         #region SubmitSearchCommand
@@ -185,8 +190,8 @@ namespace ThanksCardClient.ViewModels
         async void ExcuteDeleteThankCardCommand(ThanksCard SelectedThanksCard)
         {
             ThanksCard thanksCard = await SelectedThanksCard.DeleteThanksCardAsync(SelectedThanksCard.Id);
-            //this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardList));
 
+            this.UpdateThanksCard();
             //this.ThanksCards = await thanksCard.GetThanksCardsAsync();
         }
         #endregion
