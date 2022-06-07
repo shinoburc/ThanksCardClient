@@ -8,27 +8,60 @@
       xmlns:local="clr-namespace:ThanksCardClient.Views"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <StackPanel>
-            <TextBox Text="{Binding SearchWord}"/>
-            <Button Content="検索" Command="{Binding SubmitSearchCommand}" CommandParameter="{Binding SearchWord}" Width="126"/>
-            <DataGrid ItemsSource="{Binding ThanksCards}" AutoGenerateColumns="False" CanUserAddRows="False" SelectionChanged="DataGrid_SelectionChanged" Margin="0,0,0,0">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
-                    <DataGridTextColumn Header="タイトル" Binding="{Binding Title}" />
-                    <DataGridTextColumn Header="感謝の言葉" Binding="{Binding Body}" />
-                    <DataGridTextColumn Header="From" Binding="{Binding From.Name}" />
-                    <DataGridTextColumn Header="To" Binding="{Binding To.Name}" />
-                    <DataGridTextColumn Header="作成日時" Binding="{Binding CreatedDateTime}" />
-                    <DataGridTemplateColumn IsReadOnly="True" Header="タグ">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <ListBox ItemsSource="{Binding ThanksCardTags}" DisplayMemberPath="Tag.Name"/>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-                </DataGrid.Columns>
-            </DataGrid>
-        </StackPanel>
+    <Grid HorizontalAlignment="Center" Height="450" VerticalAlignment="Center" Width="800">
+        <Grid.Background>
+            <ImageBrush Stretch="Uniform" ImageSource="/Views/ThanksCardSearch.png"/>
+        </Grid.Background>
+        <DataGrid ItemsSource="{Binding ThanksCards}" AutoGenerateColumns="False" CanUserAddRows="False" SelectionChanged="DataGrid_SelectionChanged" Margin="94,182,65,68" Background="{x:Null}" HorizontalScrollBarVisibility="Hidden">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="送信者" Binding="{Binding From.Name}" Width="120" />
+                <DataGridTextColumn Header="受信者" Binding="{Binding To.Name}" Width="120" />
+                <DataGridTextColumn Header="タイトル" Binding="{Binding Title}" Width="120" />
+                <DataGridTextColumn Header="日付" Binding="{Binding CreatedDateTime}" Width="100" />
+                <DataGridTextColumn Header="コメント" Binding="{Binding CreatedDateTime}" Width="90" />
+                <DataGridTemplateColumn Header="詳細">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <!-- CommandParameter に {Binding} とだけ記述すると、MainWindowViewModel.Departments の要素、つまり Department モデルを指定したことになる。-->
+                            <Button Content="詳細" Command="{Binding DataContext.ThanksCradBrowsingCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="削除">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="削除" Command="{Binding DataContext.UserDeleteCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Button" Command="{Binding ThanksCardCommand}" HorizontalAlignment="Left" Height="31" Margin="27,121,0,0" VerticalAlignment="Top" Width="28" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" RenderTransformOrigin="0.5,0.5" Opacity="0" Cursor="Hand">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-0.409"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.118"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button Content="ヒントボタン" Command="{Binding HitCommand}"  HorizontalAlignment="Left" Height="38" Margin="25,165,0,0" VerticalAlignment="Top" Width="32" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Opacity="0"/>
+        <Button Content="全体閲覧表ボタン" Command="{Binding ThanksCradListCommand}" HorizontalAlignment="Left" Height="48" Margin="14,214,0,0" VerticalAlignment="Top" Width="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Opacity="0"/>
+        <Button Content="メニュー" Command="{Binding MenuUserCommand}" HorizontalAlignment="Left" Height="31" Margin="28,45,0,0" VerticalAlignment="Top" Width="28" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" RenderTransformOrigin="0.5,0.5" Opacity="0" Cursor="Hand">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-0.409"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.118"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <TextBox Text="{Binding SearchWord}" HorizontalAlignment="Left" Height="25" Margin="226,128,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="219" BorderBrush="#FFB5BBCC"/>
+        <Button Content="検索" Command="{Binding SubmitSearchCommand}" CommandParameter="{Binding SearchWord}" HorizontalAlignment="Left" Height="27" Margin="461,127,0,0" VerticalAlignment="Top" Width="78" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Opacity="0" Cursor="Hand"/>
+        <Button Content="BackButton" Command="{Binding BackCommand}" HorizontalAlignment="Left" Height="28" Margin="651,128,0,0" VerticalAlignment="Top" Width="78" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Opacity="0" Cursor="Hand"/>
+        <TextBlock Text="{Binding LoginUser}" HorizontalAlignment="Left" Height="25" Margin="67,50,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="131" Background="#FFFDF9F9"/>
+
     </Grid>
 </UserControl>

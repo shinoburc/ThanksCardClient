@@ -263,6 +263,24 @@ namespace ThanksCardClient.Services
             return responseThanksCard;
         }
 
+        public async Task<ThanksCard> DeleteThanksCardAsync(long Id)
+        {
+            ThanksCard responseThanksCard = null;
+            try
+            {
+                var response = await Client.DeleteAsync(this.BaseUrl + "/api/ThanksCards/" + Id);
+                if (response.IsSuccessStatusCode)
+                {
+                    responseThanksCard = await response.Content.ReadFromJsonAsync<ThanksCard>();
+                }
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine("Exception in RestService.DeleteUserAsync: " + e);
+            }
+            return responseThanksCard;
+        }
+
         public async Task<List<Tag>> GetTagsAsync()
         {
             List<Tag> responseTags = null;
@@ -333,6 +351,25 @@ namespace ThanksCardClient.Services
                 System.Diagnostics.Debug.WriteLine("Exception in RestService.DeleteTagAsync: " + e);
             }
             return responseTag;
+        }
+
+        public async Task<List<Rank>> GetRanksAsync()
+        {
+            List<Rank> responseRank = null;
+            try
+            {
+                var response = await Client.GetAsync(this.BaseUrl + "/api/Rank/");
+                if (response.IsSuccessStatusCode)
+                {
+                    responseRank = await response.Content.ReadFromJsonAsync<List<Rank>>();
+                }
+            }
+
+            catch(Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine("Exception in RestService.DeleteTagAsync: " + e);
+            }
+            return responseRank;
         }
     }
 }

@@ -32,11 +32,15 @@ namespace ThanksCardClient.Services
         Task<List<ThanksCard>> GetThanksCardsAsync();
         Task<List<ThanksCard>> PostSearchThanksCardsAsync(SearchThanksCard searchThanksCard);
         Task<ThanksCard> PostThanksCardAsync(ThanksCard thanksCard);
+        Task<ThanksCard> DeleteThanksCardAsync(long Id);
 
         // Tag REST API Client
         Task<List<Tag>> GetTagsAsync();
         Task<Tag> PostTagAsync(Tag tag);
         Task<Tag> PutTagAsync(Tag tag);
         Task<Tag> DeleteTagAsync(long Id);
+
+        // Rank REST API Client
+        Task<List<Rank>> GetRanksAsync();
     }
 }
