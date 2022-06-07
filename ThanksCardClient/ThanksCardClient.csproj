@@ -93,7 +93,7 @@
     <Resource Include="Views\Menu Admin .png" />
     <Resource Include="Views\MenuAdmin (2).png" />
     <Resource Include="Views\MenuAdmin.png" />
-    <Resource Include="Views\MenuMember.png" />
+    <Resource Include="Images\MenuMember.png" />
     <Resource Include="Views\MenuUser.png" />
     <Resource Include="Views\NewHit.png" />
     <Resource Include="Views\Outbox.png" />
