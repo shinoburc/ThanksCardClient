@@ -1,6 +1,8 @@
 ﻿<UserControl x:Class="ThanksCardClient.Views.ThanksCradBrowsing"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True" 
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ThanksCardClient.Views"
@@ -15,12 +17,10 @@
                 <RowDefinition Height="109*"/>
                 <RowDefinition Height="111*"/>
             </Grid.RowDefinitions>
-            <TextBox Text="{Binding ThanksCrads.Title}" HorizontalAlignment="Left" Height="30" Margin="159,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="384" TextChanged="TextBox_TextChanged_1"/>
-            <TextBox Text="{Binding ThanksCrads.Title}" HorizontalAlignment="Left" Height="30" Margin="128,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" TextChanged="TextBox_TextChanged_1"/>
-            <TextBox Text="{Binding ThanksCrads.Title}" HorizontalAlignment="Left" Height="30" Margin="385,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" TextChanged="TextBox_TextChanged_1"/>
-            <TextBox Text="{Binding ThanksCrads.Title}" HorizontalAlignment="Left" Height="41" Margin="128,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="498" TextChanged="TextBox_TextChanged_1" Grid.RowSpan="2"/>
-
+            <TextBox Text="{Binding ThanksCard.Title}" HorizontalAlignment="Left" Height="30" Margin="159,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="384" TextChanged="TextBox_TextChanged_1"/>
+            <TextBox Text="{Binding ThanksCard.To.Name}" HorizontalAlignment="Left" Height="30" Margin="128,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" TextChanged="TextBox_TextChanged_1"/>
+            <TextBox Text="{Binding ThanksCard.CreatedDateTime}" HorizontalAlignment="Left" Height="30" Margin="385,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" TextChanged="TextBox_TextChanged_1"/>
+            <TextBox Text="{Binding ThanksCard.Body}" HorizontalAlignment="Left" Height="41" Margin="128,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="498" TextChanged="TextBox_TextChanged_1" Grid.RowSpan="2" IsReadOnly="True" Background="{x:Null}" BorderBrush="{x:Null}"/>
         </Grid>
-
     </Grid>
 </UserControl>

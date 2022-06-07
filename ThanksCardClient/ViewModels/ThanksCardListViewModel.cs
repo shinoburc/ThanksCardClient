@@ -158,6 +158,7 @@ namespace ThanksCardClient.ViewModels
             // 対象のSelectedThanksCardをパラメーターとして画面遷移先に渡す。
             var parameters = new NavigationParameters();
             parameters.Add("SelectedThanksCard", SelectedThanksCard);
+
             this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCradBrowsing), parameters);
         }
         #endregion

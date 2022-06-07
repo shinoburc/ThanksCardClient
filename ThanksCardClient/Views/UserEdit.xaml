@@ -13,6 +13,7 @@
             <ImageBrush ImageSource="/Views/UserUpdates.png"/>
         </Grid.Background>
         <TextBox Text="{Binding User.Name}" HorizontalAlignment="Left" Height="38" Margin="215,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="384"/>
+        <TextBox Text="{Binding User.Password}" HorizontalAlignment="Left" Height="38" Margin="215,245,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="384"/>
         <ComboBox SelectedItem="{Binding User.Department}" ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValue="{Binding User.DepartmentId}" SelectedValuePath="Id" HorizontalAlignment="Left" Height="33" Margin="215,307,0,0" VerticalAlignment="Top" Width="384" BorderBrush="#FFDADADA">
             <ComboBox.Background>
                 <LinearGradientBrush EndPoint="0,1">
@@ -21,7 +22,6 @@
                 </LinearGradientBrush>
             </ComboBox.Background>
         </ComboBox>
-        <TextBox Text="{Binding User.Password}" HorizontalAlignment="Left" Height="38" Margin="215,245,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="384"/>
         <CheckBox Content="CheckBox" IsChecked="{Binding User.IsAdmin}" HorizontalAlignment="Left" Height="15" Margin="322,356,0,0" VerticalAlignment="Top" Width="17"/>
         <Button Content="更新" Command="{Binding SubmitCommand}" HorizontalAlignment="Left" Height="30" Margin="211,349,0,0" VerticalAlignment="Top" Width="85" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Opacity="0" Cursor="Hand"/>
         <Button Content="戻る" Command="{Binding BackCommand}" HorizontalAlignment="Left" Height="27" Margin="651,125,0,0" VerticalAlignment="Top" Width="78" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Opacity="0" Cursor="Hand"/>

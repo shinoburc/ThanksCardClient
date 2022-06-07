@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\Thank Card Done.png" />
     <None Remove="Views\DEPARTMENT EDIT.png" />
     <None Remove="Views\DepartmentCreate.png" />
     <None Remove="Views\Department_2.png" />
@@ -42,7 +43,6 @@
     <None Remove="Views\Thank Card Done %2822%29.png" />
     <None Remove="Views\Thank Card Done %2823%29.png" />
     <None Remove="Views\Thank Card Done %2825%29.png" />
-    <None Remove="Views\Thank Card Done.png" />
     <None Remove="Views\ThankcardList.png" />
     <None Remove="Views\ThanksCardSearch.png" />
     <None Remove="Views\ThanksCount.png" />
@@ -68,6 +68,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\Thank Card Done.png" />
     <Resource Include="Views\DEPARTMENT EDIT.png" />
     <Resource Include="Views\DepartmentCreate.png" />
     <Resource Include="Views\Department_2.png" />
@@ -102,7 +103,6 @@
     <Resource Include="Views\Thank Card Done (22).png" />
     <Resource Include="Views\Thank Card Done (23).png" />
     <Resource Include="Views\Thank Card Done (25).png" />
-    <Resource Include="Views\Thank Card Done.png" />
     <Resource Include="Views\ThankcardList.png" />
     <Resource Include="Views\ThanksCardSearch.png" />
     <Resource Include="Views\ThanksCount.png" />
@@ -120,10 +120,6 @@
     <Resource Include="Views\部署更新.png" />
     <Resource Include="Views\部署登録.png" />
     <Resource Include="Views\集計画面.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Images\" />
   </ItemGroup>
 
 </Project>
