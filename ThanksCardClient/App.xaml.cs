@@ -41,6 +41,11 @@ namespace ThanksCardClient
             containerRegistry.RegisterForNavigation<TagEdit>();
             containerRegistry.RegisterForNavigation<Keijiban>();
             containerRegistry.RegisterForNavigation<PastCases>();
+            containerRegistry.RegisterForNavigation<TypicalExamples>();
+            containerRegistry.RegisterForNavigation<Mvp>();
+            containerRegistry.RegisterForNavigation<Manual>();
+            containerRegistry.RegisterForNavigation<ThanksCardSend>();
+            containerRegistry.RegisterForNavigation<NumberOfrecePtions>();
         }
     }
 }

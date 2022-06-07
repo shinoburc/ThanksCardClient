@@ -12,7 +12,7 @@
             <ColumnDefinition Width="151*"/>
         </Grid.ColumnDefinitions>
         <ListBox Margin="0,60,0,0" Grid.ColumnSpan="2"/>
-        <Button Content="戻る" HorizontalAlignment="Left" Height="58" Margin="0,2,0,0" VerticalAlignment="Top" Width="157" FontSize="36"/>
+        <Button Content="戻る" HorizontalAlignment="Left" Height="58" Margin="0,2,0,0" VerticalAlignment="Top" Width="157" FontSize="36" Command="{Binding ShowFooterCommand}"/>
         <Label Content="マニュアル" HorizontalAlignment="Left" Height="58" VerticalAlignment="Top" Width="473" Margin="206,2,0,0" FontSize="36" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
 
     </Grid>

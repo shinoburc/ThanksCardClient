@@ -9,11 +9,11 @@ using ThanksCardClient.Models;
 
 namespace ThanksCardClient.ViewModels
 {
-    public class KeijibanViewModel : BindableBase
+    public class ThanksCardsendViewModel : BindableBase
     {
         private readonly IRegionManager regionManager;
 
-        public KeijibanViewModel(IRegionManager regionManager)
+        public ThanksCardsendViewModel(IRegionManager regionManager)
         {
             this.regionManager = regionManager;
         }
@@ -33,34 +33,35 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
-        #region ShowpastCasesCommand
-        private DelegateCommand _ShowpastCasesCommand;
-        public DelegateCommand ShowpastCasesCommand =>
-            _ShowpastCasesCommand ?? (_ShowpastCasesCommand = new DelegateCommand(ExecuteShowpastCasesCommand));
+        #region ShowThanksCardReceiveCommand
+        private DelegateCommand _ShowThanksCardReceiveCommand;
+        public DelegateCommand ShowThanksCardReceiveCommand =>
+            _ShowThanksCardReceiveCommand ?? (_ShowThanksCardReceiveCommand = new DelegateCommand(ExecuteShowThanksCardReceiveCommand));
 
-        void ExecuteShowpastCasesCommand()
+        void ExecuteShowThanksCardReceiveCommand()
         {
             this.regionManager.Regions["HeaderRegion"].RemoveAll();
             this.regionManager.Regions["ContentRegion"].RemoveAll();
             this.regionManager.Regions["FooterRegion"].RemoveAll();
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.PastCases));
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardReceive));
 
         }
         #endregion
 
-        #region ShowTypicalExamplesCommand
-        private DelegateCommand _ShowTypicalExamplesCommand;
-        public DelegateCommand ShowTypicalExamplesCommand =>
-            _ShowTypicalExamplesCommand ?? (_ShowpastCasesCommand = new DelegateCommand(ExecuteShowTypicalExamplesCommand));
+        #region ShowThanksCardCreateCommand
+        private DelegateCommand _ShowThanksCardCreateCommand;
+        public DelegateCommand ShowThanksCardCreateCommand =>
+            _ShowThanksCardCreateCommand ?? (_ShowThanksCardCreateCommand = new DelegateCommand(ExecuteShowThanksCardCreateCommand));
 
-        void ExecuteShowTypicalExamplesCommand()
+        void ExecuteShowThanksCardCreateCommand()
         {
             this.regionManager.Regions["HeaderRegion"].RemoveAll();
             this.regionManager.Regions["ContentRegion"].RemoveAll();
             this.regionManager.Regions["FooterRegion"].RemoveAll();
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.TypicalExamples));
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardReceive));
 
         }
         #endregion
+
     }
 }
