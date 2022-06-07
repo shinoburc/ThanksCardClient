@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="ThanksCardClient.Views.RegistrationScreen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ThanksCardClient.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid HorizontalAlignment="Center" Height="450" VerticalAlignment="Center" Width="800">
+        <Grid HorizontalAlignment="Center" Height="450" VerticalAlignment="Center" Width="800" RenderTransformOrigin="0.506,0.508">
+            <Grid.Background>
+                <ImageBrush ImageSource="/Views/2.png"/>
+            </Grid.Background>
+            <Button Content="登録" HorizontalAlignment="Left" Height="114" Margin="0,336,0,0" VerticalAlignment="Top" Width="250" FontSize="48" Background="#FF7BF0FF"/>
+            <Button Content="更新" HorizontalAlignment="Left" Height="114" Margin="250,336,0,0" VerticalAlignment="Top" Width="305" FontSize="48" Background="#FF59ECFF"/>
+            <Button Content="削除" HorizontalAlignment="Left" Height="114" Margin="555,336,0,0" VerticalAlignment="Top" Width="245" FontSize="48" Background="#FF12E4FF"/>
+            <ComboBox HorizontalAlignment="Left" Height="28" Margin="250,43,0,0" VerticalAlignment="Top" Width="111"/>
+            <TextBlock HorizontalAlignment="Left" Height="31" Margin="33,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" FontSize="20" RenderTransformOrigin="0.476,1.193"><Run Language="ja-jp" Text="社員"/><LineBreak/><Run Language="ja-jp"/><Run Text="コード"/></TextBlock>
+            <Button Content="戻る" HorizontalAlignment="Left" Height="71" VerticalAlignment="Top" Width="202" FontSize="36"/>
+            <TextBlock HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" Text="部署名" VerticalAlignment="Top" Width="105" Margin="253,22,0,0" FontSize="16"/>
+            <ComboBox HorizontalAlignment="Left" Height="28" Margin="405,43,0,0" VerticalAlignment="Top" Width="150"/>
+            <TextBlock HorizontalAlignment="Left" Height="31" Margin="540,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="208" FontSize="20" RenderTransformOrigin="0.476,1.193" Background="White"><Run Language="ja-jp" Text="権限"/><LineBreak/><Run Language="ja-jp"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Height="31" Margin="540,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" FontSize="20" RenderTransformOrigin="0.476,1.193" Foreground="Black" Background="White"><Run Language="ja-jp" Text="社員名"/><LineBreak/><Run Language="ja-jp"/><LineBreak/><Run Language="ja-jp"/><LineBreak/><Run Language="ja-jp"/><LineBreak/><Run Language="ja-jp"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Height="31" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Text="部署コード" FontSize="20" RenderTransformOrigin="0.476,1.193" Margin="42,215,0,0"/>
+            <TextBlock HorizontalAlignment="Center" Height="31" Margin="0,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" FontSize="20" RenderTransformOrigin="0.476,1.193"><Run Language="ja-jp" Text="PassWord"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Height="34" Margin="33,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Foreground="White" Background="#FFE4E4E4"/>
+            <TextBlock HorizontalAlignment="Left" Height="34" Margin="540,257,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Foreground="White" Background="#FFE4E4E4"/>
+            <TextBlock HorizontalAlignment="Left" Height="34" Margin="540,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Foreground="White" Background="#FFE4E4E4"/>
+            <TextBlock HorizontalAlignment="Center" Height="34" Margin="0,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Foreground="White" Background="#FFE4E4E4"/>
+            <TextBlock HorizontalAlignment="Left" Height="34" Margin="34,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Foreground="White" Background="#FFE4E4E4"/>
+            <Button Content="部署" HorizontalAlignment="Left" Height="71" Margin="606,0,0,0" VerticalAlignment="Top" Width="194" FontSize="36"/>
+        </Grid>
+        <TextBlock HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="105" Margin="408,21,0,0" FontSize="16"><Run Language="ja-jp" Text="名前"/><LineBreak/><Run Language="ja-jp"/></TextBlock>
+        <TextBlock HorizontalAlignment="Center" Height="27" TextWrapping="Wrap" VerticalAlignment="Center" Width="208" Text="部署名" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Center" Height="34" Margin="0,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Foreground="White" Background="#FFE4E4E4"/>
+    </Grid>
+</UserControl>

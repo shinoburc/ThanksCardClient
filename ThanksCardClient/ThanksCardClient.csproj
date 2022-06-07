@@ -8,8 +8,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+
+    <None Remove="Views\1.png" />
+    <None Remove="Views\2.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Prism.Core" Version="8.1.97" />
     <PackageReference Include="Prism.Unity" Version="8.1.97" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Views\1.png" />
+    <Resource Include="Views\2.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Views\Keijiban.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
   </ItemGroup>
 
 </Project>

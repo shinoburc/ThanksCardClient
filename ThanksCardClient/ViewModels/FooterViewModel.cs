@@ -5,6 +5,7 @@ using Prism.Regions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using ThanksCardClient.Models;
 using ThanksCardClient.Services;
 
@@ -34,7 +35,8 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteShowThanksCardCreateCommand()
         {
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardCreate));
+            this.regionManager.Regions["FooterRegion"].RemoveAll();
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.ThanksCardCreate));
         }
         #endregion
 
@@ -45,18 +47,8 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteShowThanksCardListCommand()
         {
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardList));
-        }
-        #endregion
-
-        #region ShowUserMstCommand
-        private DelegateCommand _ShowUserMstCommand;
-        public DelegateCommand ShowUserMstCommand =>
-            _ShowUserMstCommand ?? (_ShowUserMstCommand = new DelegateCommand(ExecuteShowUserMstCommand));
-
-        void ExecuteShowUserMstCommand()
-        {
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.UserMst));
+            this.regionManager.Regions["FooterRegion"].RemoveAll();
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.ThanksCardList));
         }
         #endregion
 
@@ -67,7 +59,8 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteShowDepartmentMstCommand()
         {
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.DepartmentMst));
+            this.regionManager.Regions["FooterRegion"].RemoveAll();
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.DepartmentMst));
         }
         #endregion
 
@@ -78,7 +71,20 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteShowTagMstCommand()
         {
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.TagMst));
+            this.regionManager.Regions["FooterRegion"].RemoveAll();
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.TagMst));
+        }
+        #endregion
+
+        #region ShowkeijibanCommand
+        private DelegateCommand _ShowkeijibanCommand;
+        public DelegateCommand ShowkeijibanCommand =>
+            _ShowkeijibanCommand ?? (_ShowkeijibanCommand = new DelegateCommand(ExecuteShowkeijibanCommand));
+
+        void ExecuteShowkeijibanCommand()
+        {
+            this.regionManager.Regions["FooterRegion"].RemoveAll();
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Keijiban));
         }
         #endregion
 
@@ -92,11 +98,47 @@ namespace ThanksCardClient.ViewModels
             SessionService.Instance.AuthorizedUser = null;
             SessionService.Instance.IsAuthorized = false;
 
-            // HeaderRegion, FooterRegion を破棄して、ContentRegion をログオン画面に遷移させる。
-            this.regionManager.Regions["HeaderRegion"].RemoveAll();
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Logon));
+            // HeaderRegion, FooterRegion を破棄して、FooterRegion をログオン画面に遷移させる。
             this.regionManager.Regions["FooterRegion"].RemoveAll();
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Logon));
         }
         #endregion
+
+        #region ShowMVPCommand
+        private DelegateCommand _ShowMVPCommand;
+        public DelegateCommand ShowMVPCommand =>
+            _ShowMVPCommand ?? (_ShowMVPCommand = new DelegateCommand(ExecuteShowMVPCommand));
+
+        void ExecuteShowMVPCommand()
+        {
+            this.regionManager.Regions["FooterRegion"].RemoveAll();
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Mvp));
+        }
+        #endregion
+
+        #region ShowmanualCommand
+        private DelegateCommand _ShowmanualCommand;
+        public DelegateCommand ShowmanualCommand =>
+            _ShowmanualCommand ?? (_ShowmanualCommand = new DelegateCommand(ExecuteShowmanualCommand));
+
+        void ExecuteShowmanualCommand()
+        {
+            this.regionManager.Regions["FooterRegion"].RemoveAll();
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Manual));
+        }
+        #endregion
+
+        #region ShowregistrationscreenCommand
+        private DelegateCommand _ShowregistrationscreenCommand;
+        public DelegateCommand ShowregistrationscreenCommand =>
+            _ShowregistrationscreenCommand ?? (_ShowregistrationscreenCommand = new DelegateCommand(ExecuteShowregistrationscreenCommand));
+
+        void ExecuteShowregistrationscreenCommand()
+        {
+            this.regionManager.Regions["FooterRegion"].RemoveAll();
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.RegistrationScreen));
+        }
+        #endregion
+
     }
 }

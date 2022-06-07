@@ -25,7 +25,6 @@ namespace ThanksCardClient
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<MainWindow>();
-            containerRegistry.RegisterForNavigation<Header>();
             containerRegistry.RegisterForNavigation<Logon>();
             containerRegistry.RegisterForNavigation<Footer>();
             containerRegistry.RegisterForNavigation<ThanksCardCreate>();
@@ -39,6 +38,15 @@ namespace ThanksCardClient
             containerRegistry.RegisterForNavigation<TagMst>();
             containerRegistry.RegisterForNavigation<TagCreate>();
             containerRegistry.RegisterForNavigation<TagEdit>();
+            containerRegistry.RegisterForNavigation<Keijiban>();
+            containerRegistry.RegisterForNavigation<PastCases>();
+            containerRegistry.RegisterForNavigation<TypicalExamples>();
+            containerRegistry.RegisterForNavigation<Mvp>();
+            containerRegistry.RegisterForNavigation<Manual>();
+            containerRegistry.RegisterForNavigation<ThanksCardSend>();
+            containerRegistry.RegisterForNavigation<NumberOfrecePtions>();
+            containerRegistry.RegisterForNavigation<RegistrationScreen>();
+
         }
     }
 }
