@@ -53,6 +53,20 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
+        //
+        #region LoginUserProperty
+        private string _LoginUser;
+        public string LoginUser
+        {
+            get { return _LoginUser; }
+            set
+            {
+                SetProperty(ref _LoginUser, value);
+            //    System.Diagnostics.Debug.WriteLine("SearchWord: " + this.SearchWord); //動作確認用。本来はこの行は必要ありません。
+            }
+        }
+        #endregion
+
         #region SearchThanksCardProperty
         private SearchThanksCard _SearchThanksCard;
         public SearchThanksCard SearchThanksCard

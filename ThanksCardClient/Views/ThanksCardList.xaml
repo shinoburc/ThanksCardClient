@@ -61,6 +61,7 @@
         <TextBox Text="{Binding SearchWord}" HorizontalAlignment="Left" Height="25" Margin="226,128,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="219" BorderBrush="#FFB5BBCC"/>
         <Button Content="検索" Command="{Binding SubmitSearchCommand}" CommandParameter="{Binding SearchWord}" HorizontalAlignment="Left" Height="27" Margin="461,127,0,0" VerticalAlignment="Top" Width="78" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Opacity="0" Cursor="Hand"/>
         <Button Content="BackButton" Command="{Binding BackCommand}" HorizontalAlignment="Left" Height="28" Margin="651,128,0,0" VerticalAlignment="Top" Width="78" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Opacity="0" Cursor="Hand"/>
+        <TextBlock Text="{Binding LoginUser}" HorizontalAlignment="Left" Height="25" Margin="67,50,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="131" Background="#FFFDF9F9"/>
 
     </Grid>
 </UserControl>
