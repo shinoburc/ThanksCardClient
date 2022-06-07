@@ -14,6 +14,7 @@
     <None Remove="Images\UserMaster.png" />
     <None Remove="Images\UserRegister.png" />
     <None Remove="Images\UserUpdates.png" />
+    <None Remove="Views\AdminMenu.png" />
     <None Remove="Views\DEPARTMENT EDIT.png" />
     <None Remove="Views\DepartmentCreate.png" />
     <None Remove="Views\Department_2.png" />
@@ -49,7 +50,7 @@
     <None Remove="Views\Thank Card Done %2823%29.png" />
     <None Remove="Views\Thank Card Done %2825%29.png" />
     <None Remove="Views\ThankcardList.png" />
-    <None Remove="Views\ThanksCardComment.png" />
+    <None Remove="Views\ThanksCardComments.png" />
     <None Remove="Views\ThanksCardSearch.png" />
     <None Remove="Views\ThanksCount.png" />
     <None Remove="Views\ThanksCradCount.png" />
@@ -77,6 +78,7 @@
     <Resource Include="Images\UserMaster.png" />
     <Resource Include="Images\UserRegister.png" />
     <Resource Include="Images\UserUpdates.png" />
+    <Resource Include="Views\AdminMenu.png" />
     <Resource Include="Views\DEPARTMENT EDIT.png" />
     <Resource Include="Views\DepartmentCreate.png" />
     <Resource Include="Views\Department_2.png" />
