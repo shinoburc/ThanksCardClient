@@ -83,6 +83,15 @@ namespace ThanksCardClient.Models
         }
         #endregion
 
+        #region IsSentProperty
+        private bool _IsSent;
+        public bool IsSent
+        {
+            get { return _IsSent; }
+            set { SetProperty(ref _IsSent, value); }
+        }
+        #endregion
+
         #region ThanksCardTagsProperty
         private List<ThanksCardTag> _ThanksCardTags;
         public List<ThanksCardTag> ThanksCardTags
