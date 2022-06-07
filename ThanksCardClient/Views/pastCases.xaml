@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:ThanksCardClient.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+    <Grid Height="450" Width="800">
         <Button Content="戻る" HorizontalAlignment="Left" Height="79" Margin="19,16,0,0" VerticalAlignment="Top" Width="172" FontSize="36" Command="{Binding pastCases}"/>
         <Viewbox Margin="40,205,24,43"/>
         <DataGrid ItemsSource="{Binding Member}" Margin="0,140,0,0"/>

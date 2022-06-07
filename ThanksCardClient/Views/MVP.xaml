@@ -7,7 +7,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+    <Grid Height="450" Width="800">
         <StackPanel Margin="3,3,0,0" Height="447" VerticalAlignment="Top">
             <TextBox Height="109" TextWrapping="NoWrap" Text="MVP" Width="567" FontSize="72" TextAlignment="Center"/>
             <Button Content="戻る" Height="99" Width="154" Margin="-642,-111,-11,0" FontSize="36" Command="{Binding ShowFooterCommand}"/>

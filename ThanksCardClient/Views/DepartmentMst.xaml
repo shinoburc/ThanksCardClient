@@ -7,8 +7,8 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ThanksCardClient.Views"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="900">
-    <Grid>
+      d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Height="450" Width="800">
 
         <Grid.Background>
             <ImageBrush ImageSource="2.png"/>
