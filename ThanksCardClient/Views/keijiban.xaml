@@ -15,7 +15,7 @@
         <Label Content="" HorizontalAlignment="Left" Height="181" VerticalAlignment="Top" Width="530" BorderThickness="7" BorderBrush="#000000" Margin="112,279,0,0" Background="#ffffff"/>
         <Label Content="" HorizontalAlignment="Left" Height="181" VerticalAlignment="Top" Width="530" BorderThickness="7" BorderBrush="#000000" Margin="112,104,0,0" Background="#ffffff"/>
         <Button Content="戻る" HorizontalAlignment="Left" Height="50" Margin="10,21,0,0" VerticalAlignment="Top" Width="97"  FontSize="30" Command="{Binding ShowFooterCommand}"/>
-        <Button Content="代表的な事例" HorizontalAlignment="Left" Height="64" Margin="668,21,0,0" VerticalAlignment="Top" Width="122" FontSize="20"/>
+        <Button Content="代表的な事例" HorizontalAlignment="Left" Height="64" Margin="668,21,0,0" VerticalAlignment="Top" Width="122" FontSize="20" Command="{Binding ShowTypicalExamplesCommand}"/>
         <Button Content="削除" HorizontalAlignment="Left" Height="49" Margin="123,22,0,0" VerticalAlignment="Top" Width="97" FontSize="30"/>
         <TextBlock HorizontalAlignment="Left" Height="127" Margin="248,-18,0,340" TextWrapping="Wrap" Text="掲示板"  Width="276" FontSize="90"/>
         <Button Content="過去の事例" HorizontalAlignment="Left" Height="64" Margin="529,21,0,0" VerticalAlignment="Top" Width="122" FontSize="20" Command="{Binding ShowpastCasesCommand}"/>

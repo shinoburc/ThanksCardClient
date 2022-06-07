@@ -34,6 +34,9 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteShowThanksCardCreateCommand()
         {
+            this.regionManager.Regions["HeaderRegion"].RemoveAll();
+            this.regionManager.Regions["ContentRegion"].RemoveAll();
+            this.regionManager.Regions["FooterRegion"].RemoveAll();
             this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardCreate));
         }
         #endregion
@@ -45,10 +48,12 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteShowThanksCardListCommand()
         {
+            this.regionManager.Regions["HeaderRegion"].RemoveAll();
+            this.regionManager.Regions["ContentRegion"].RemoveAll();
+            this.regionManager.Regions["FooterRegion"].RemoveAll();
             this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardList));
         }
         #endregion
-
 
         #region ShowDepartmentMstCommand
         private DelegateCommand _ShowDepartmentMstCommand;
@@ -57,6 +62,9 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteShowDepartmentMstCommand()
         {
+            this.regionManager.Regions["HeaderRegion"].RemoveAll();
+            this.regionManager.Regions["ContentRegion"].RemoveAll();
+            this.regionManager.Regions["FooterRegion"].RemoveAll();
             this.regionManager.RequestNavigate("ContentRegion", nameof(Views.DepartmentMst));
         }
         #endregion
@@ -68,6 +76,9 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteShowTagMstCommand()
         {
+            this.regionManager.Regions["HeaderRegion"].RemoveAll();
+            this.regionManager.Regions["ContentRegion"].RemoveAll();
+            this.regionManager.Regions["FooterRegion"].RemoveAll();
             this.regionManager.RequestNavigate("ContentRegion", nameof(Views.TagMst));
         }
         #endregion
@@ -79,6 +90,9 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteShowkeijibanCommand()
         {
+            this.regionManager.Regions["HeaderRegion"].RemoveAll();
+            this.regionManager.Regions["ContentRegion"].RemoveAll();
+            this.regionManager.Regions["FooterRegion"].RemoveAll();
             this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Keijiban));
         }
         #endregion
@@ -99,5 +113,34 @@ namespace ThanksCardClient.ViewModels
             this.regionManager.Regions["FooterRegion"].RemoveAll();
         }
         #endregion
+
+        #region ShowMVPCommand
+        private DelegateCommand _ShowMVPCommand;
+        public DelegateCommand ShowMVPCommand =>
+            _ShowMVPCommand ?? (_ShowMVPCommand = new DelegateCommand(ExecuteShowMVPCommand));
+
+        void ExecuteShowMVPCommand()
+        {
+            this.regionManager.Regions["HeaderRegion"].RemoveAll();
+            this.regionManager.Regions["ContentRegion"].RemoveAll();
+            this.regionManager.Regions["FooterRegion"].RemoveAll();
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Mvp));
+        }
+        #endregion
+
+        #region ShowmanualCommand
+        private DelegateCommand _ShowmanualCommand;
+        public DelegateCommand ShowmanualCommand =>
+            _ShowmanualCommand ?? (_ShowmanualCommand = new DelegateCommand(ExecuteShowmanualCommand));
+
+        void ExecuteShowmanualCommand()
+        {
+            this.regionManager.Regions["HeaderRegion"].RemoveAll();
+            this.regionManager.Regions["ContentRegion"].RemoveAll();
+            this.regionManager.Regions["FooterRegion"].RemoveAll();
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Manual));
+        }
+        #endregion
+
     }
 }
