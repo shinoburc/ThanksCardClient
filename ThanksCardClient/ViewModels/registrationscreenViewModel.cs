@@ -8,11 +8,11 @@ using System.Linq;
 using ThanksCardClient.Models;
 namespace ThanksCardClient.ViewModels
 {
-    public class registrationscreenViewModel : BindableBase
+    public class RegistrationScreenViewModel : BindableBase
     {
         private readonly IRegionManager regionManager;
 
-        public registrationscreenViewModel(IRegionManager regionManager)
+        public RegistrationScreenViewModel(IRegionManager regionManager)
         {
             this.regionManager = regionManager;
         }
@@ -26,6 +26,18 @@ namespace ThanksCardClient.ViewModels
             this.regionManager.Regions["FooterRegion"].RemoveAll();
             this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Footer));
 
+        }
+        #endregion
+
+        #region DepartmentCreateCommand
+        private DelegateCommand _DepartmentCreateCommand;
+        public DelegateCommand DepartmentCreateCommand =>
+            _DepartmentCreateCommand ?? (_DepartmentCreateCommand = new DelegateCommand(ExecuteDepartmentCreateCommand));
+
+        void ExecuteDepartmentCreateCommand()
+        {
+            this.regionManager.Regions["FooterRegion"].RemoveAll();
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.DepartmentCreate));
         }
         #endregion
     }

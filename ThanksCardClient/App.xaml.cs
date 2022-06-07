@@ -42,7 +42,7 @@ namespace ThanksCardClient
             containerRegistry.RegisterForNavigation<PastCases>();
             containerRegistry.RegisterForNavigation<TypicalExamples>();
             containerRegistry.RegisterForNavigation<Mvp>();
-            containerRegistry.RegisterForNavigation<Manual>();
+           // containerRegistry.RegisterForNavigation<Manual>();
             containerRegistry.RegisterForNavigation<ThanksCardSend>();
             containerRegistry.RegisterForNavigation<NumberOfrecePtions>();
             containerRegistry.RegisterForNavigation<RegistrationScreen>();
