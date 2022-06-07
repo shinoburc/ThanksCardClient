@@ -6,28 +6,32 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using ThanksCardClient.Models;
+
 namespace ThanksCardClient.ViewModels
 {
-    public class pastCasesViewModel : BindableBase
+    public class MvpViewModel : BindableBase
     {
         private readonly IRegionManager regionManager;
 
-        public pastCasesViewModel(IRegionManager regionManager)
+        public MvpViewModel(IRegionManager regionManager)
         {
             this.regionManager = regionManager;
         }
-        #region ShowkeijibanCommand
-        private DelegateCommand _ShowkeijibanCommand;
-        public DelegateCommand ShowkeijibanCommand =>
-            _ShowkeijibanCommand ?? (_ShowkeijibanCommand = new DelegateCommand(ExecuteShowkeijibanCommand));
 
-        void ExecuteShowkeijibanCommand()
+        #region ShowFooterCommand
+        private DelegateCommand _ShowFooterCommand;
+        public DelegateCommand ShowFooterCommand =>
+            _ShowFooterCommand ?? (_ShowFooterCommand = new DelegateCommand(ExecuteShowFooterCommand));
+
+        void ExecuteShowFooterCommand()
         {
             this.regionManager.Regions["HeaderRegion"].RemoveAll();
             this.regionManager.Regions["ContentRegion"].RemoveAll();
             this.regionManager.Regions["FooterRegion"].RemoveAll();
-            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Keijiban));
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Footer));
+
         }
         #endregion
+
     }
 }

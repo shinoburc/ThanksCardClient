@@ -10,7 +10,7 @@
     <Grid>
         <StackPanel Margin="3,3,0,0" Height="447" VerticalAlignment="Top">
             <TextBox Height="109" TextWrapping="NoWrap" Text="MVP" Width="567" FontSize="72" TextAlignment="Center"/>
-            <Button Content="戻る" Height="99" Width="154" Margin="-642,-111,-11,0" FontSize="36"/>
+            <Button Content="戻る" Height="99" Width="154" Margin="-642,-111,-11,0" FontSize="36" Command="{Binding ShowFooterCommand}"/>
             <Label x:Name="ID" Content="ID：" Height="57" Width="79" Margin="-86,61,576,10" FontSize="36"/>
             <Label Content="" Height="64" Width="127" Background="White" Padding="17,5,5,5" Margin="-118,-86,365,-17"/>
             <Label Content="" Height="64" Width="186" Background="White" Margin="-8,-65,-55,-53" VerticalAlignment="Top" Padding="5,5,53,5"/>
