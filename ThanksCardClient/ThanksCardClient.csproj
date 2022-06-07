@@ -83,7 +83,7 @@
     <Resource Include="Views\HitAdmin.png" />
     <Resource Include="Views\HitHit.png" />
     <Resource Include="Views\Homes.png" />
-    <Resource Include="Views\Homesss.png" />
+    <Resource Include="Images\Homesss.png" />
     <Resource Include="Views\Login 1.png" />
     <Resource Include="Views\LoginButton.png" />
     <Resource Include="Images\LoginPg.png" />
