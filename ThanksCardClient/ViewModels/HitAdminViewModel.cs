@@ -16,29 +16,29 @@ namespace ThanksCardClient.ViewModels
         {
             this.regionManager = regionManager;
         }
-        #region  MenuAdminCommand
-        private DelegateCommand _MenuAdminCommand;
+        #region  MenuAdmin1Command
+        private DelegateCommand _MenuAdmin1Command;
 
 
-        public DelegateCommand MenuAdminCommand =>
-            _MenuAdminCommand ?? (_MenuAdminCommand = new DelegateCommand(ExecuteMenuAdminCommand));
+        public DelegateCommand MenuAdmin1Command =>
+            _MenuAdmin1Command ?? (_MenuAdmin1Command = new DelegateCommand(ExecuteMenuAdmin1Command));
 
-        void ExecuteMenuAdminCommand()
+        void ExecuteMenuAdmin1Command()
         {
             this.regionManager.RequestNavigate("ContentRegion", nameof(Views.MenuAdmin));
         }
         #endregion
 
-        #region  BackCommand
-        private DelegateCommand _BackCommand;
+        #region  BackAdminCommand
+        private DelegateCommand _BackAdminCommand;
 
 
-        public DelegateCommand BackCommand =>
-            _BackCommand ?? (_BackCommand = new DelegateCommand(ExecuteBackCommand));
+        public DelegateCommand BackAdminCommand =>
+            _BackAdminCommand ?? (_BackAdminCommand = new DelegateCommand(ExecuteBackAdminCommand));
 
-        void ExecuteBackCommand()
+        void ExecuteBackAdminCommand()
         {
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.MenuUser));
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.MenuAdmin));
         }
         #endregion
 
