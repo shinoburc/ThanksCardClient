@@ -8,11 +8,11 @@ using System.Linq;
 using ThanksCardClient.Models;
 namespace ThanksCardClient.ViewModels
 {
-    public class pastCasesViewModel : BindableBase
+    public class PastCasesViewModel : BindableBase
     {
         private readonly IRegionManager regionManager;
 
-        public pastCasesViewModel(IRegionManager regionManager)
+        public PastCasesViewModel(IRegionManager regionManager)
         {
             this.regionManager = regionManager;
         }

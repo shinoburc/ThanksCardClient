@@ -46,7 +46,8 @@ namespace ThanksCardClient
             containerRegistry.RegisterForNavigation<ThanksCardSend>();
             containerRegistry.RegisterForNavigation<NumberOfrecePtions>();
             containerRegistry.RegisterForNavigation<RegistrationScreen>();
-
+            containerRegistry.RegisterForNavigation<ThanksCardReceive>();
+            
         }
     }
 }

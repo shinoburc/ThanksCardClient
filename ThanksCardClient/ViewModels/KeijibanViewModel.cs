@@ -47,12 +47,12 @@ namespace ThanksCardClient.ViewModels
         #region ShowTypicalExamplesCommand
         private DelegateCommand _ShowTypicalExamplesCommand;
         public DelegateCommand ShowTypicalExamplesCommand =>
-            _ShowTypicalExamplesCommand ?? (_ShowpastCasesCommand = new DelegateCommand(ExecuteShowTypicalExamplesCommand));
+            _ShowTypicalExamplesCommand ?? (_ShowTypicalExamplesCommand = new DelegateCommand(ExecuteShowTypicalExamplesCommand));
 
         void ExecuteShowTypicalExamplesCommand()
         {
             this.regionManager.Regions["FooterRegion"].RemoveAll();
-            this.regionManager.RequestNavigate("FooterRegionRegion", nameof(Views.TypicalExamples));
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.TypicalExamples));
 
         }
         #endregion
