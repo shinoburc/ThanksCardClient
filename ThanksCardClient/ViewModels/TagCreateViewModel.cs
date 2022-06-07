@@ -47,7 +47,7 @@ namespace ThanksCardClient.ViewModels
         {
             Tag createdTag = await Tag.PostTagAsync(this.Tag);
 
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.TagMst));
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.TagMst));
         }
         #endregion
     }

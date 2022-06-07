@@ -57,7 +57,7 @@ namespace ThanksCardClient.ViewModels
         void ExecuteTagCreateCommand()
         {
             System.Diagnostics.Debug.WriteLine("TagCreate");
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.TagCreate));
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.TagCreate));
         }
         #endregion
 
@@ -72,7 +72,7 @@ namespace ThanksCardClient.ViewModels
             var parameters = new NavigationParameters();
             parameters.Add("SelectedTag", SelectedTag);
 
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.TagEdit), parameters);
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.TagEdit), parameters);
         }
         #endregion
 

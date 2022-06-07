@@ -64,7 +64,7 @@ namespace ThanksCardClient.ViewModels
         {
             User updatedUser = await User.PutUserAsync(this.User);
 
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.UserMst));
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.UserMst));
         }
         #endregion
     }

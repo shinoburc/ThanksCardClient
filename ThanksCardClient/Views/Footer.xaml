@@ -13,21 +13,15 @@
         <Grid.Background>
             <ImageBrush ImageSource="/Views/2.png"/>
         </Grid.Background>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="0*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-        </Grid.RowDefinitions>
-        <Button Content="部署" HorizontalAlignment="Left" Height="102" Margin="56,229,0,0" VerticalAlignment="Top" Width="258" FontSize="30"  Command="{Binding ShowDepartmentMstCommand}"/>
-        <Button Content="サンクスカード" HorizontalAlignment="Left" Height="102" Margin="389,229,0,0" VerticalAlignment="Top" Width="243" FontSize="30" Command="{Binding ShowThanksCardSendCommand}"/>
-        <Button Content="掲示板" HorizontalAlignment="Left" Height="96" Margin="728,411,0,0" VerticalAlignment="Top" Width="243" FontSize="30" Command="{Binding ShowkeijibanCommand}"/>
-        <Button Content="ログアウト" HorizontalAlignment="Left" Height="96" Margin="56,411,0,0" VerticalAlignment="Top" Width="258" FontSize="30" Command="{Binding LogoffCommand}"/>
-        <Button Content="社員登録" HorizontalAlignment="Left" Height="102" Margin="728,229,0,0" VerticalAlignment="Top" Width="243" FontSize="30" Command="{Binding registrationscreen}"/>
-        <Button Content="MVP" HorizontalAlignment="Left" Height="96" Margin="389,411,0,0" VerticalAlignment="Top" Width="243" FontSize="30" Command="{Binding ShowMVPCommand}"/>
-        <Button Content="マニュアル" HorizontalAlignment="Left" Height="96" Margin="728,58,0,0" VerticalAlignment="Top" Width="258" FontSize="30" Command="{Binding ShowmanualCommand}"/>
-        <TextBlock HorizontalAlignment="Left" Height="96" Margin="40,19,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Width="322" FontSize="30"/>
-        <TextBlock HorizontalAlignment="Left" Height="96" Margin="40,92,0,0" TextWrapping="Wrap" Text="社員名" VerticalAlignment="Top" Width="322" FontSize="30"/>
 
+        <Button Content="部署" HorizontalAlignment="Left" Height="60" Margin="40,238,0,0" VerticalAlignment="Top" Width="196" FontSize="30"  Command="{Binding ShowDepartmentMstCommand}"/>
+        <Button Content="サンクスカード" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="196" FontSize="30" Command="{Binding ShowThanksCardSendCommand}" Margin="304,238,0,0"/>
+        <Button Content="掲示板" HorizontalAlignment="Left" Height="60" Margin="576,350,0,0" VerticalAlignment="Top" Width="196" FontSize="30" Command="{Binding ShowkeijibanCommand}" RenderTransformOrigin="0.668,0.9"/>
+        <Button Content="ログアウト" HorizontalAlignment="Left" Height="60" Margin="40,350,0,0" VerticalAlignment="Top" Width="196" FontSize="30" Command="{Binding LogoffCommand}"/>
+        <Button Content="社員登録" HorizontalAlignment="Left" Height="60" Margin="576,238,0,0" VerticalAlignment="Top" Width="196" FontSize="30" Command="{Binding registrationscreen}"/>
+        <Button Content="MVP" HorizontalAlignment="Left" Height="60" Margin="304,350,0,0" VerticalAlignment="Top" Width="196" FontSize="30" Command="{Binding ShowMVPCommand}"/>
+        <Button Content="マニュアル" HorizontalAlignment="Left" Height="60" Margin="576,87,0,0" VerticalAlignment="Top" Width="196" FontSize="30" Command="{Binding ShowmanualCommand}"/>
+        <TextBlock HorizontalAlignment="Left" Height="50" Margin="40,51,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Width="49" FontSize="30" RenderTransformOrigin="0.347,1.03"/>
+        <TextBlock HorizontalAlignment="Left" Height="46" Margin="40,106,0,0" TextWrapping="Wrap" Text="社員名" VerticalAlignment="Top" Width="98" FontSize="30"/>
     </Grid>
 </UserControl>

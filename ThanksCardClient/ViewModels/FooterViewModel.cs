@@ -98,7 +98,7 @@ namespace ThanksCardClient.ViewModels
             SessionService.Instance.AuthorizedUser = null;
             SessionService.Instance.IsAuthorized = false;
 
-            // HeaderRegion, FooterRegion を破棄して、ContentRegion をログオン画面に遷移させる。
+            // HeaderRegion, FooterRegion を破棄して、FooterRegion をログオン画面に遷移させる。
             this.regionManager.Regions["FooterRegion"].RemoveAll();
             this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Logon));
         }
@@ -135,10 +135,8 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteShowregistrationscreenCommand()
         {
-            this.regionManager.Regions["HeaderRegion"].RemoveAll();
-            this.regionManager.Regions["ContentRegion"].RemoveAll();
             this.regionManager.Regions["FooterRegion"].RemoveAll();
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.RegistrationScreen));
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.RegistrationScreen));
         }
         #endregion
 
