@@ -8,19 +8,18 @@
              xmlns:local="clr-namespace:ThanksCardClient.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <Grid HorizontalAlignment="Center" Height="450" VerticalAlignment="Center" Width="800">
-            <Grid.Background>
-                <ImageBrush ImageSource="/Views/ThanksCradBrowsing.png" Stretch="Uniform"/>
-            </Grid.Background>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="109*"/>
-                <RowDefinition Height="111*"/>
-            </Grid.RowDefinitions>
-            <TextBox Text="{Binding ThanksCard.Title}" HorizontalAlignment="Left" Height="30" Margin="159,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="384" TextChanged="TextBox_TextChanged_1"/>
-            <TextBox Text="{Binding ThanksCard.To.Name}" HorizontalAlignment="Left" Height="30" Margin="128,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" TextChanged="TextBox_TextChanged_1"/>
-            <TextBox Text="{Binding ThanksCard.CreatedDateTime}" HorizontalAlignment="Left" Height="30" Margin="385,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" TextChanged="TextBox_TextChanged_1"/>
-            <TextBox Text="{Binding ThanksCard.Body}" HorizontalAlignment="Left" Height="41" Margin="128,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="498" TextChanged="TextBox_TextChanged_1" Grid.RowSpan="2" IsReadOnly="True" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        </Grid>
+
+    <Grid HorizontalAlignment="Center" Height="450" VerticalAlignment="Center" Width="800">
+        <Grid.Background>
+            <ImageBrush Stretch="Uniform" ImageSource="/Views/ThanksCardComment.png"/>
+        </Grid.Background>
+        <TextBox Text="{Binding ThanksCard.Title}" HorizontalAlignment="Left" Height="21" Margin="155,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="384" TextChanged="TextBox_TextChanged_1" VerticalContentAlignment="Bottom" FontSize="16" Foreground="#FF3B435F" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" IsReadOnly="True"/>
+        <TextBox Text="{Binding ThanksCard.To.Name}" HorizontalAlignment="Left" Height="23" Margin="155,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" TextChanged="TextBox_TextChanged_1" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF3B435F" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" FontSize="14" VerticalContentAlignment="Bottom" IsReadOnly="True"/>
+        <TextBox Text="{Binding ThanksCard.CreatedDateTime}" HorizontalAlignment="Left" Height="23" Margin="316,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" TextChanged="TextBox_TextChanged_1" Foreground="#FF3B435F" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" VerticalContentAlignment="Bottom" FontSize="14" IsReadOnly="True"/>
+        <TextBox Text="{Binding ThanksCard.Body}" HorizontalAlignment="Left" Height="38" Margin="124,0,0,190" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="545" TextChanged="TextBox_TextChanged_1" IsReadOnly="True" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Foreground="#FF3B435F" FontSize="16"/>
+        <TextBox Text="{Binding ThanksCard.From.Name}" HorizontalAlignment="Left" Height="24" Margin="153,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Foreground="#FF3B435F" VerticalContentAlignment="Bottom" FontSize="14"/>
+        <TextBox Text="{Binding ThanksCard.CreatedDateTime}" HorizontalAlignment="Left" Height="23" Margin="316,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Foreground="#FF3B435F" VerticalContentAlignment="Bottom" FontSize="14"/>
+        <Button Content="BackButton" Command="{Binding ListBackCommand}" HorizontalAlignment="Left" Height="27" Margin="651,125,0,0" VerticalAlignment="Top" Width="78" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Opacity="0" Cursor="Hand"/>
     </Grid>
+
 </UserControl>
