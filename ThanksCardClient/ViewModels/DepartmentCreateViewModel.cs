@@ -77,7 +77,7 @@ namespace ThanksCardClient.ViewModels
         {
             Department createdDepartment = await Department.PostDepartmentAsync(this.Department);
 
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.DepartmentMst));
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.DepartmentMst));
         }
         #endregion
 

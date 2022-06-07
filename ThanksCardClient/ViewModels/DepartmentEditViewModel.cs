@@ -79,7 +79,7 @@ namespace ThanksCardClient.ViewModels
         {
             Department updatedDepartment = await this.Department.PutDepartmentAsync(this.Department);
 
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.DepartmentMst));
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.DepartmentMst));
         }
         #endregion
 
