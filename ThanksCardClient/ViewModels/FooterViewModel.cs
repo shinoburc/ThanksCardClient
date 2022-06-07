@@ -34,10 +34,8 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteShowThanksCardCreateCommand()
         {
-            this.regionManager.Regions["HeaderRegion"].RemoveAll();
-            this.regionManager.Regions["ContentRegion"].RemoveAll();
             this.regionManager.Regions["FooterRegion"].RemoveAll();
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardCreate));
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.ThanksCardCreate));
         }
         #endregion
 
@@ -48,10 +46,8 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteShowThanksCardListCommand()
         {
-            this.regionManager.Regions["HeaderRegion"].RemoveAll();
-            this.regionManager.Regions["ContentRegion"].RemoveAll();
             this.regionManager.Regions["FooterRegion"].RemoveAll();
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardList));
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.ThanksCardList));
         }
         #endregion
 
@@ -62,10 +58,8 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteShowDepartmentMstCommand()
         {
-            this.regionManager.Regions["HeaderRegion"].RemoveAll();
-            this.regionManager.Regions["ContentRegion"].RemoveAll();
             this.regionManager.Regions["FooterRegion"].RemoveAll();
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.DepartmentMst));
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.DepartmentMst));
         }
         #endregion
 
@@ -76,10 +70,8 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteShowTagMstCommand()
         {
-            this.regionManager.Regions["HeaderRegion"].RemoveAll();
-            this.regionManager.Regions["ContentRegion"].RemoveAll();
             this.regionManager.Regions["FooterRegion"].RemoveAll();
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.TagMst));
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.TagMst));
         }
         #endregion
 
@@ -90,8 +82,6 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteShowkeijibanCommand()
         {
-            this.regionManager.Regions["HeaderRegion"].RemoveAll();
-            this.regionManager.Regions["ContentRegion"].RemoveAll();
             this.regionManager.Regions["FooterRegion"].RemoveAll();
             this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Keijiban));
         }
@@ -108,9 +98,8 @@ namespace ThanksCardClient.ViewModels
             SessionService.Instance.IsAuthorized = false;
 
             // HeaderRegion, FooterRegion を破棄して、ContentRegion をログオン画面に遷移させる。
-            this.regionManager.Regions["HeaderRegion"].RemoveAll();
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Logon));
             this.regionManager.Regions["FooterRegion"].RemoveAll();
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Logon));
         }
         #endregion
 
@@ -121,10 +110,8 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteShowMVPCommand()
         {
-            this.regionManager.Regions["HeaderRegion"].RemoveAll();
-            this.regionManager.Regions["ContentRegion"].RemoveAll();
             this.regionManager.Regions["FooterRegion"].RemoveAll();
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Mvp));
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Mvp));
         }
         #endregion
 
@@ -135,10 +122,8 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteShowmanualCommand()
         {
-            this.regionManager.Regions["HeaderRegion"].RemoveAll();
-            this.regionManager.Regions["ContentRegion"].RemoveAll();
             this.regionManager.Regions["FooterRegion"].RemoveAll();
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Manual));
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Manual));
         }
         #endregion
 
