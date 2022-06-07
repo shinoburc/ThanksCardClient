@@ -78,7 +78,7 @@
     <Resource Include="Views\DEPARTMENT EDIT.png" />
     <Resource Include="Views\DepartmentCreate.png" />
     <Resource Include="Views\Department_2.png" />
-    <Resource Include="Views\Department_Master.png" />
+    <Resource Include="Images\Department_Master.png" />
     <Resource Include="Views\hit.png" />
     <Resource Include="Images\HitAdmin.png" />
     <Resource Include="Views\HitHit.png" />
