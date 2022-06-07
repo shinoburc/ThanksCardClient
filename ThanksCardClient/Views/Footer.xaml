@@ -14,7 +14,7 @@
             <ImageBrush ImageSource="2.png"/>
         </Grid.Background>
         <Button Content="部署" HorizontalAlignment="Left" Height="60" Margin="40,238,0,0" VerticalAlignment="Top" Width="196" FontSize="30"  Command="{Binding ShowDepartmentMstCommand}"/>
-        <Button Content="サンクスカード" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="196" FontSize="30" Command="{Binding ShowThanksCardSendCommand}" Margin="304,238,0,0"/>
+        <Button Content="サンクスカード" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="196" FontSize="30" Command="{Binding ShowThanksCardReceiveCommand}" Margin="304,238,0,0"/>
         <Button Content="掲示板" HorizontalAlignment="Left" Height="60" Margin="576,350,0,0" VerticalAlignment="Top" Width="196" FontSize="30" Command="{Binding ShowkeijibanCommand}" RenderTransformOrigin="0.668,0.9"/>
         <Button Content="ログアウト" HorizontalAlignment="Left" Height="60" Margin="40,350,0,0" VerticalAlignment="Top" Width="196" FontSize="30" Command="{Binding LogoffCommand}"/>
         <Button Content="社員登録" HorizontalAlignment="Left" Height="60" Margin="576,238,0,0" VerticalAlignment="Top" Width="196" FontSize="30" Command="{Binding ShowregistrationscreenCommand}"/>
