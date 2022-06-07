@@ -5,6 +5,7 @@ using Prism.Regions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using ThanksCardClient.Models;
 using ThanksCardClient.Services;
 
@@ -86,7 +87,7 @@ namespace ThanksCardClient.ViewModels
         #region ShowkeijibanCommand
         private DelegateCommand _ShowkeijibanCommand;
         public DelegateCommand ShowkeijibanCommand =>
-            _ShowThanksCardCreateCommand ?? (_ShowThanksCardCreateCommand = new DelegateCommand(ExecuteShowkeijibanCommand));
+            _ShowkeijibanCommand ?? (_ShowkeijibanCommand = new DelegateCommand(ExecuteShowkeijibanCommand));
 
         void ExecuteShowkeijibanCommand()
         {
