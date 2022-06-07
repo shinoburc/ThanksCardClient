@@ -80,7 +80,7 @@
     <Resource Include="Views\Department_2.png" />
     <Resource Include="Views\Department_Master.png" />
     <Resource Include="Views\hit.png" />
-    <Resource Include="Views\HitAdmin.png" />
+    <Resource Include="Images\HitAdmin.png" />
     <Resource Include="Views\HitHit.png" />
     <Resource Include="Views\Homes.png" />
     <Resource Include="Images\Homesss.png" />
