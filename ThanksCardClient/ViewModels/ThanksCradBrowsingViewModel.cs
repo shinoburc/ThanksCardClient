@@ -67,18 +67,18 @@ namespace ThanksCardClient.ViewModels
             Department dept = new Department();
             this.Departments = await dept.GetDepartmentsAsync();
         }
+        #region  MenuUserCommand
+        private DelegateCommand _MenuUserCommand;
 
-        #region  ListBackCommand
-        private DelegateCommand _ListBackCommand;
 
+        public DelegateCommand MenuUserCommand =>
+            _MenuUserCommand ?? (_MenuUserCommand = new DelegateCommand(ExecuteMenuUserCommand));
 
-        public DelegateCommand ListBackCommand =>
-            _ListBackCommand ?? (_ListBackCommand = new DelegateCommand(ExecuteListBackCommand));
-
-        void ExecuteListBackCommand()
+        void ExecuteMenuUserCommand()
         {
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardList));
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.MenuUser));
         }
         #endregion
+
     }
 }
