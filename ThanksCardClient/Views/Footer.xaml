@@ -9,9 +9,9 @@
       mc:Ignorable="d" 
       d:DesignHeight="800" d:DesignWidth="1016">
     <Grid Margin="0,0,0,0">
-        <!--<Grid.Background>
-            <ImageBrush ImageSource="/Views/2.png"/>
-        </Grid.Background>-->
+        <Grid.Background>
+            <ImageBrush ImageSource="2.png"/>
+        </Grid.Background>
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -23,7 +23,7 @@
         <Button Content="サンクスカード" HorizontalAlignment="Left" Height="102" Margin="389,229,0,0" VerticalAlignment="Top" Width="243" FontSize="30" Command="{Binding ShowThanksCardSendCommand}"/>
         <Button Content="掲示板" HorizontalAlignment="Left" Height="96" Margin="728,411,0,0" VerticalAlignment="Top" Width="243" FontSize="30" Command="{Binding ShowkeijibanCommand}"/>
         <Button Content="ログアウト" HorizontalAlignment="Left" Height="96" Margin="56,411,0,0" VerticalAlignment="Top" Width="258" FontSize="30" Command="{Binding LogoffCommand}"/>
-        <Button Content="社員登録" HorizontalAlignment="Left" Height="102" Margin="728,229,0,0" VerticalAlignment="Top" Width="243" FontSize="30"/>
+        <Button Content="社員登録" HorizontalAlignment="Left" Height="102" Margin="728,229,0,0" VerticalAlignment="Top" Width="243" FontSize="30" Command="{Binding ShowThanksCardCreateCommand}"/>
         <Button Content="MVP" HorizontalAlignment="Left" Height="96" Margin="389,411,0,0" VerticalAlignment="Top" Width="243" FontSize="30" Command="{Binding ShowMVPCommand}"/>
         <Button Content="マニュアル" HorizontalAlignment="Left" Height="96" Margin="728,58,0,0" VerticalAlignment="Top" Width="258" FontSize="30" Command="{Binding ShowmanualCommand}"/>
         <TextBlock HorizontalAlignment="Left" Height="96" Margin="40,19,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Width="322" FontSize="30"/>
