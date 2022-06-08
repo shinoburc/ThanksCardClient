@@ -15,6 +15,7 @@
         <Grid.OpacityMask>
             <ImageBrush ImageSource="/Views/Department_2.png"/>
         </Grid.OpacityMask>
+        <TextBlock Text="{Binding AuthorizedUser.Name, StringFormat=Hello: {0}}" HorizontalAlignment="Left" Height="25" Margin="81,89,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="239" Foreground="White" FontSize="14"/>
         <TextBox Text="{Binding Department.Name}" HorizontalAlignment="Left" Height="58" Margin="236,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="384" VerticalContentAlignment="Center" Padding="8,0,0,0" FontSize="20"/>
         <Button Content="Button" Command="{Binding SubmitCommand}" HorizontalAlignment="Left" Height="30" Margin="233,251,0,0" VerticalAlignment="Top" Width="87" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Opacity="0" Cursor="Hand"/>
         <Button Content="Button" Command="{Binding BackCommand}" HorizontalAlignment="Left" Height="29" Margin="650,124,0,0" VerticalAlignment="Top" Width="79" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Opacity="0"/>

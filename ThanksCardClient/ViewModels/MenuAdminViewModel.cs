@@ -14,11 +14,37 @@ namespace ThanksCardClient.ViewModels
     {
         private readonly IRegionManager regionManager;
 
-        public 
-           MenuAdminViewModel(IRegionManager regionManager)
+
+        //Chỗ này dòng this thứ 2 và thứ 3 copy
+        public MenuAdminViewModel(IRegionManager regionManager)
+
         {
             this.regionManager = regionManager;
+            this.AuthorizedUser = SessionService.Instance.AuthorizedUser;
+            this._SearchWord = this.AuthorizedUser.Name;
         }
+        //Copy 2 phần này
+        #region roginuser
+        private User _AuthorizedUser;
+        public User AuthorizedUser
+        {
+            get { return _AuthorizedUser; }
+            set { SetProperty(ref _AuthorizedUser, value); }
+        }
+        #endregion
+        #region SearchWordProperty
+        private string _SearchWord;
+        public string SearchWord
+        {
+            get { return _SearchWord; }
+            set
+            {
+                SetProperty(ref _SearchWord, value);
+                System.Diagnostics.Debug.WriteLine("SearchWord: " + this.SearchWord); //動作確認用。本来はこの行は必要ありません。
+            }
+        }
+        #endregion
+        // Kết thúc 2 phần copy này
 
         #region  ThanksCradCreateCommand
         private DelegateCommand _ThanksCradCreateCommand;
@@ -136,8 +162,11 @@ namespace ThanksCardClient.ViewModels
 
             // HeaderRegion, FooterRegion を破棄して、ContentRegion をログオン画面に遷移させる。
             this.regionManager.Regions["HeaderRegion"].RemoveAll();
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Logon));
+            this.regionManager.Regions["ContentRegion"].RemoveAll();
             this.regionManager.Regions["FooterRegion"].RemoveAll();
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Logon));
+            
+           
         }
         #endregion
  

@@ -14,6 +14,7 @@
             <Grid.Background>
                 <ImageBrush Stretch="Uniform" ImageSource="/Views/AdminMenu.png"/>
             </Grid.Background>
+            <TextBlock Text="{Binding AuthorizedUser.Name, StringFormat=Hello: {0}}" HorizontalAlignment="Left" Height="25" Margin="81,89,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="239" Foreground="White" FontSize="14"/>
             <Button Content="メニュー" Command="{Binding MenuAdminCommand}" HorizontalAlignment="Left" Height="36" Margin="19,42,0,0" VerticalAlignment="Top" Width="46" Opacity="0" Cursor="Hand"/>
             <Button Content="送信箱" Command="{Binding ThanksCradCreateCommand}" HorizontalAlignment="Left" Height="29" Margin="24,123,0,0" VerticalAlignment="Top" Width="36" Opacity="0" Cursor="Hand"/>
             <Button Content="ヒント" Command="{Binding HitAdminCommand}" HorizontalAlignment="Left" Height="29" Margin="24,171,0,0" VerticalAlignment="Top" Width="36" Opacity="0" Cursor="Hand"/>

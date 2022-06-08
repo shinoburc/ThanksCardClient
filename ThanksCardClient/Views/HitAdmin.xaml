@@ -8,8 +8,10 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid HorizontalAlignment="Center" Height="450" VerticalAlignment="Center" Width="800">
         <Grid.Background>
-            <ImageBrush ImageSource="/Images/HitAdmin.png"/>
+            <ImageBrush ImageSource="/Views/Hit_Admin.png"/>
         </Grid.Background>
+
+        <TextBlock Text="{Binding AuthorizedUser.Name, StringFormat=Hello: {0}}" HorizontalAlignment="Left" Height="25" Margin="81,89,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="239" Foreground="White" FontSize="14"/>
         <Button Content="Button" Command="{Binding BackAdminCommand}" HorizontalAlignment="Left" Margin="652,125,0,0" VerticalAlignment="Top" Height="29" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Opacity="0" Cursor="Hand" Width="78"/>
         <Button Content="メニュー画面" Command="{Binding MenuAdminCommand}" HorizontalAlignment="Left" Margin="22,44,0,0" VerticalAlignment="Top" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Opacity="0" Cursor="Hand" Width="40"/>
     </Grid>

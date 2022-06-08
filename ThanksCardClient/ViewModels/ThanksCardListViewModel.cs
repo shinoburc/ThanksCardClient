@@ -11,9 +11,8 @@ using ThanksCardClient.Services;
 namespace ThanksCardClient.ViewModels
 {
     public class ThanksCardListViewModel : BindableBase, INavigationAware
-    {
+    {   
         private IRegionManager regionManager;
-
         #region ThanksCardsProperty
         private List<ThanksCard> _ThanksCards;
         public List<ThanksCard> ThanksCards
@@ -37,7 +36,9 @@ namespace ThanksCardClient.ViewModels
             this.regionManager = regionManager;
             this.AuthorizedUser = SessionService.Instance.AuthorizedUser;
             this._SearchWord = this.AuthorizedUser.Name;
-            //追加したらログインしたユーザーが自動生成される
+
+            //Chỗ này cần dùng
+
         }
 
         #region SearchWordProperty
