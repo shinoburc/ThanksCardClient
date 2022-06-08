@@ -7,8 +7,6 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:ThanksCardClient.Views"
              mc:Ignorable="d"
-
-
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid HorizontalAlignment="Center" Height="450" VerticalAlignment="Center" Width="800">
@@ -21,15 +19,15 @@
             <Button Content="送信箱" Command="{Binding ThanksCradCreateCommand}" HorizontalAlignment="Left" Margin="24,123,0,0" VerticalAlignment="Top" Height="31" Opacity="0" Cursor="Hand" Background="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}" Width="30"/>
             <Button Content="ヒント" Command="{Binding HitAdminCommand}" HorizontalAlignment="Left" Margin="24,165,0,0" VerticalAlignment="Top" Height="36" Opacity="0" Cursor="Hand" Background="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}" Width="34"/>
             <Button Content="全体閲覧表" Command="{Binding ThanksCradListCommand}" HorizontalAlignment="Left" Margin="24,225,0,0" VerticalAlignment="Top" Height="31" Opacity="0" Cursor="Hand" Background="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}" Width="30"/>
+            <DataGrid ItemsSource="{Binding Ranks}" Margin="94,165,74,84">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="受信者" Binding="{Binding Ranks.Name}" Width="120" />
+                    <DataGridTextColumn Header="受信数" Binding="{Binding Ranks.Count}" Width="120" />
+                </DataGrid.Columns>
+            </DataGrid>
+            <TextBox Text="{Binding SearchWord}" HorizontalAlignment="Left" Height="25" Margin="226,128,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="219" BorderBrush="#FFB5BBCC"/>
+            <Button Content="検索" Command="{Binding SubmitSearchCommand}" HorizontalAlignment="Left" Height="26" Margin="450,128,0,0" VerticalAlignment="Top" Width="60"/>
         </Grid>
-        <DataGrid ItemsSource="{Binding Ranks}" AutoGenerateColumns="False" CanUserAddRows="False" Background="{x:Null}" Margin="98,164,0,78" Foreground="#FF0A0A0A" BorderBrush="#FF4D92C7" Cursor="Hand" HorizontalAlignment="Left" Width="626">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="名前" Binding="{Binding Name}" Width="200" />
-                <DataGridTextColumn Header="受信数" Binding="{Binding Count}" Width="200" />
-
-
-            </DataGrid.Columns>
-        </DataGrid>
 
         <!--<Button Content="メニュー" Command="{Binding MenuAdminCommand}" HorizontalAlignment="Left" Margin="20,43,0,0" VerticalAlignment="Top" Height="33" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Opacity="0"/>
         <Button Content="戻る" Command="{Binding BackCommand}" HorizontalAlignment="Left" Margin="656,125,0,0" VerticalAlignment="Top" Height="28" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Opacity="0" Width="72"/>
