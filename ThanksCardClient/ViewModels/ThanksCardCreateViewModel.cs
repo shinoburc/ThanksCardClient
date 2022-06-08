@@ -142,5 +142,20 @@ namespace ThanksCardClient.ViewModels
 
         }
         #endregion
+
+        #region ShowThanksCardReceiveCommand
+        private DelegateCommand _ShowThanksCardReceiveCommand;
+        public DelegateCommand ShowThanksCardReceiveCommand =>
+            _ShowThanksCardReceiveCommand ?? (_ShowThanksCardReceiveCommand = new DelegateCommand(ExecuteShowThanksCardReceiveCommand));
+
+        void ExecuteShowThanksCardReceiveCommand()
+        {
+            this.regionManager.Regions["FooterRegion"].RemoveAll();
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.ThanksCardReceive));
+
+        }
+        #endregion
+
+
     }
 }
