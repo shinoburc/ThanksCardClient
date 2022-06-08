@@ -128,6 +128,13 @@ namespace ThanksCardClient.Models
             return thanksCards;
         }
 
+        public async Task<ThanksCard> DownloadfileAsync(long Id)
+        {
+            IRestService rest = new RestService();
+            ThanksCard downloadThanksCard = await rest.DownloadfileAsync(Id);
+            return downloadThanksCard;
+        }
+
         public async Task<ThanksCard> DeleteThanksCardAsync(long Id)
         {
             IRestService rest = new RestService();

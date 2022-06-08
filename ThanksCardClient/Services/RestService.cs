@@ -280,6 +280,23 @@ namespace ThanksCardClient.Services
             }
             return responseThanksCard;
         }
+        public async Task<ThanksCard> DownloadfileAsync(long Id)
+        {
+            ThanksCard responseThanksCard = null;
+            try
+            {
+                var response = await Client.GetAsync(this.BaseUrl + "/api/DownloadThanksCard/" + Id);
+                if (response.IsSuccessStatusCode)
+                {
+                    responseThanksCard = await response.Content.ReadFromJsonAsync<ThanksCard>();
+                }
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine("Exception in RestService.DeleteUserAsync: " + e);
+            }
+            return responseThanksCard;
+        }
 
         public async Task<List<Tag>> GetTagsAsync()
         {
