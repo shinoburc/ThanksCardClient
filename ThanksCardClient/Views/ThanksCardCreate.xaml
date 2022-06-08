@@ -9,23 +9,46 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <StackPanel Margin="0,0,10,0" RenderTransformOrigin="0.167,0.52" Height="450" VerticalAlignment="Center">
-            <DatePicker SelectedDate="{Binding ThanksCard.CreatedDateTime}" Height="29" Width="106" RenderTransformOrigin="0.498,1.119" HorizontalAlignment="left"/>
-
-            <StackPanel Orientation="Horizontal" Height="30" Width="581">
-                <TextBlock Text="部署:" Height="31" Width="39"/>
-                <ComboBox x:Name="ToDepartments" ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValuePath="Id">
-                    <!-- Deparment が選択されたら ToDepartmentsChangedCommand を発行する -->
-                    <i:Interaction.Triggers>
-                        <i:EventTrigger EventName="SelectionChanged">
-                            <i:InvokeCommandAction Command="{Binding ToDepartmentsChangedCommand}" CommandParameter="{Binding SelectedValue, ElementName=ToDepartments}"/>
-                        </i:EventTrigger>
-                    </i:Interaction.Triggers>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Views/wallpaper_00001.jpg"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="440*"/>
+            <ColumnDefinition Width="203*"/>
+            <ColumnDefinition Width="158*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel RenderTransformOrigin="0.167,0.52"  Grid.ColumnSpan="5" Width="790">
+            <StackPanel Orientation="Horizontal" Height="25" Width="581" HorizontalAlignment="Right">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <TextBlock Text="作成日:" Width="43" Height="17"/>
+                    <DatePicker SelectedDate="{Binding ThanksCard.CreatedDateTime}" Height="22" Width="96" RenderTransformOrigin="0.498,1.119"/>
+                    <StackPanel Orientation="Horizontal" Height="25" Width="99">
+                        <TextBlock Text="部署:" Height="15" Width="35"/>
+                        <ComboBox x:Name="ToDepartments" ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValuePath="Id" Width="56">
+                            <!-- Deparment が選択されたら ToDepartmentsChangedCommand を発行する -->
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="SelectionChanged">
+                                    <i:InvokeCommandAction Command="{Binding ToDepartmentsChangedCommand}" CommandParameter="{Binding SelectedValue, ElementName=ToDepartments}"/>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </ComboBox>
+                    </StackPanel>
+                </StackPanel>
+                <TextBlock Text="To:" Width="21" Height="19"/>
+                <ComboBox ItemsSource="{Binding ToUsers}" DisplayMemberPath="Name" SelectedValue="{Binding ThanksCard.ToId}" SelectedValuePath="Id" Width="54">
+                    <ComboBox.Background>
+                        <LinearGradientBrush EndPoint="0,1">
+                            <GradientStop Color="#FFF0F0F0"/>
+                            <GradientStop Color="#FFCBD0E0" Offset="1"/>
+                        </LinearGradientBrush>
+                    </ComboBox.Background>
                 </ComboBox>
-                <TextBlock Text="To:"/>
-                <ComboBox ItemsSource="{Binding ToUsers}" DisplayMemberPath="Name" SelectedValue="{Binding ThanksCard.ToId}" SelectedValuePath="Id"/>
-                <TextBlock Text="タイトル:" Width="39" Height="26"/>
-                <TextBox Text="{Binding ThanksCard.Title}" Height="23" RenderTransformOrigin="0.5,0.5" Width="314">
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="タイトル:" Width="248" Height="26" TextAlignment="Right"/>
+                <TextBox Text="{Binding ThanksCard.Title}" Height="30" RenderTransformOrigin="0.5,0.5" Width="267">
                     <TextBox.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform ScaleY="1"/>
@@ -36,11 +59,15 @@
                     </TextBox.RenderTransform>
                 </TextBox>
             </StackPanel>
-            <TextBlock Text="感謝カード:"/>
-            <TextBox Text="{Binding ThanksCard.Body}" Height="86" Width="789"/>
             <StackPanel Orientation="Horizontal">
-
-                <ComboBox x:Name="FromDepartments" ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValuePath="Id" Height="20" Width="77">
+                <TextBlock Text="部署:" Height="17" Width="249" TextAlignment="Right"/>
+                <ComboBox x:Name="FromDepartments" ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValuePath="Id" Height="20" Width="78">
+                    <ComboBox.Background>
+                        <LinearGradientBrush EndPoint="0,1">
+                            <GradientStop Color="#FFF0F0F0"/>
+                            <GradientStop Color="#FFCBD0E0" Offset="1"/>
+                        </LinearGradientBrush>
+                    </ComboBox.Background>
                     <!-- Deparment が選択されたら FromDepartmentsChangedCommand を発行する -->
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="SelectionChanged">
@@ -48,27 +75,32 @@
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </ComboBox>
-                <TextBlock Text="From:"/>
-                <ComboBox ItemsSource="{Binding FromUsers}" DisplayMemberPath="Name" SelectedValue="{Binding ThanksCard.FromId}" SelectedValuePath="Id"/>
+                <TextBlock Text="From:" Width="66" Height="18" TextAlignment="Right"/>
+                <ComboBox ItemsSource="{Binding FromUsers}" DisplayMemberPath="Name" SelectedValue="{Binding ThanksCard.FromId}" SelectedValuePath="Id" Width="114">
+                    <ComboBox.Background>
+                        <LinearGradientBrush EndPoint="0,1">
+                            <GradientStop Color="#FFF0F0F0"/>
+                            <GradientStop Color="#FFCBD0E0" Offset="1"/>
+                        </LinearGradientBrush>
+                    </ComboBox.Background>
+                </ComboBox>
             </StackPanel>
-            <TextBlock Text="作成日:"/>
-            <ListBox ItemsSource="{Binding Tags}" IsSynchronizedWithCurrentItem="True" SelectionMode="Multiple" DisplayMemberPath="Name" Height="70" Width="197">
-                <ListBox.ItemContainerStyle>
-                    <Style TargetType="{x:Type ListBoxItem}">
-                        <Setter Property="IsSelected" Value="{Binding Selected}" />
-                    </Style>
-                </ListBox.ItemContainerStyle>
-            </ListBox>
-            <Button Content="作成" Command="{Binding SubmitCommand}" Height="44" Width="129" RenderTransformOrigin="5.1,4.981">
-                <Button.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="-0.144"/>
-                        <TranslateTransform X="0.306" Y="-0.717"/>
-                    </TransformGroup>
-                </Button.RenderTransform>
-            </Button>
+
+            <TextBlock Text="感謝カード:"/>
+            <TextBox Text="{Binding ThanksCard.Body}" Height="146" Width="571"/>
+            <Canvas>
+                <Button Content="作成" Command="{Binding SubmitCommand}" Height="42" Width="103" RenderTransformOrigin="5.1,4.981" Background="#FFCBD0E0" Canvas.Left="634" Canvas.Top="23">
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-0.144"/>
+                            <TranslateTransform X="0.306" Y="-0.717"/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                </Button>
+            </Canvas>
         </StackPanel>
+
     </Grid>
 </UserControl>

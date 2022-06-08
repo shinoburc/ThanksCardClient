@@ -6,13 +6,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ThanksCardClient">
+    <Window.Background>
+        <ImageBrush ImageSource="/Views/wallpaper_00001.jpg"/>
+    </Window.Background>
     <Grid>
         <StackPanel>
             <ContentControl prism:RegionManager.RegionName="FooterRegion" />
-            <Border Background="AliceBlue" Height="15"/>
+            <Border Height="30">
+                <Border.Background>
+                    <ImageBrush ImageSource="/Views/wallpaper_00001.jpg"/>
+                </Border.Background>
+            </Border>
             <ContentControl prism:RegionManager.RegionName="ContentRegion" />
-            <Border Background="AliceBlue" Height="0"/>
-            <ContentControl prism:RegionManager.RegionName="HeaderRegion" />
         </StackPanel>
     </Grid>
 </Window>

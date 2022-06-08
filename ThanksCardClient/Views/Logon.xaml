@@ -10,16 +10,23 @@
       d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <StackPanel>
-            <TextBlock Text="{Binding ErrorMessage}" Foreground="Red"/>
-            <TextBlock Text="Name:" />
-            <TextBox Text="{Binding User.Name}"/>
-            <TextBlock Text="Password:"/>
-            <TextBox Text="{Binding User.Password}"/>
-            <Button Content="ログイン" Command="{Binding LogonCommand}" Click="Button_Click"/>
-            <Button Content="クリア" Command="{Binding Cleacommand}"/>
-            <PasswordBox x:Name="passwordBox" Width="300" PasswordChar="#"/>
-           
+            <StackPanel.Background>
+                <ImageBrush ImageSource="/Views/wallpaper_00001.jpg"/>
+            </StackPanel.Background>
+            <StackPanel>
+                <TextBlock Text="{Binding ErrorMessage}" Foreground="Red"/>
+                <TextBlock Text="Name:" Width="56"/>
+                <TextBox Text="{Binding User.Name}"  Width="239" Height="27"/>
+
+                <TextBlock Text="Password:" Height="19" Width="37" />
+                <TextBox Text="{Binding User.Password}" Width="240" Height="27"/>
+            </StackPanel>
+            <Canvas>
+                <Button Content="ログイン" Command="{Binding LogonCommand}" Canvas.Left="534" Click="Button_Click" Width="118" Canvas.Top="182"/>
+            </Canvas>
+            <Canvas>
+                <Button Content="クリア" Command="{Binding Cleacommand}" Width="122" Canvas.Left="532" Canvas.Top="213"/>
+            </Canvas>
         </StackPanel>
-        
     </Grid>
 </UserControl>

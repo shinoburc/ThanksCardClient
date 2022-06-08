@@ -10,9 +10,12 @@
       d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <StackPanel>
+            <StackPanel.Background>
+                <ImageBrush ImageSource="/Views/wallpaper_00001.jpg"/>
+            </StackPanel.Background>
             <TextBlock Text="{Binding ErrorMessage}" Foreground="Red"/>
             <TextBlock Text="変更したい所属CD:"/>
-            <TextBox Text="{Binding Department.Code}"/>
+            <TextBox Text="{Binding Department.Code}" Height="27" Width="468"/>
             <TextBlock Text="変更後所属名:"/>
             <TextBox Text="{Binding Department.Name}"/>
             <TextBlock Text="所属元:"/>

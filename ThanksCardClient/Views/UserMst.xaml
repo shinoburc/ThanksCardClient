@@ -9,8 +9,78 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
+        <StackPanel Orientation=" Horizontal" Margin="0,61,0,0" Height="68" VerticalAlignment="Top" HorizontalAlignment="Center" Width="800" RenderTransformOrigin="0.511,0.537">
+            <Button Content="作成"  Command="{Binding ShowThanksCardCreateCommand}" Height="70" Width="100"/>
+            <Button Content="集計" Height="75" Width="100" Command="{Binding ShowgusikenCommand}"/>
+
+            <Button Content="テンプレート" Width="100" Command="{Binding ShowTemplateCommand}"/>
+            <Button Content="掲示板" Command="{Binding ShowThanksCardListCommand}" Width="100"/>
+            <Button Content="タグのマスタメンテ画面を開く" Command="{Binding ShowTagMstCommand}" IsEnabled="{Binding AuthorizedUser.IsAdmin}"  Width="100"/>
+            <Button Content="ログオフ" Command="{Binding LogoffCommand}"  Width="100"/>
+        </StackPanel>
+
+        <ComboBox Text="ユーザー作成" Margin="38,185,676,249">
+            <ComboBoxItem>
+                <Button Content="日付" Height="70"  Width="100"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <Button Content="今月" Height="70"  Width="100"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <Button Content="半年" Height="70"  Width="100"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <Button Content="全件" Height="70"  Width="100"/>
+            </ComboBoxItem>
+        </ComboBox>
+
+        <ComboBox Text="受信先"  Margin="192,185,512,249">
+            <ComboBoxItem>
+                <Button Content="管理部" Height="70"  Width="100"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <Button Content="人事課" Height="70"  Width="100"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <Button Content="経理部" Height="70"  Width="100"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <Button Content="経理課" Height="70"  Width="100"/>
+            </ComboBoxItem>
+        </ComboBox>
+        <ComboBox Text="ユーザー作成"  Margin="380,185,318,249">
+            <ComboBoxItem>
+                <Button Content="経理課" Height="70"  Width="100"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <Button Content="経理課" Height="70"  Width="100"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <Button Content="経理課" Height="70"  Width="100"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <Button Content="経理課" Height="70"  Width="100"/>
+            </ComboBoxItem>
+        </ComboBox>
+        <ComboBox Text="ユーザー作成"  Margin="600,180,64,249">
+            <ComboBoxItem>
+                <Button Content="経理課" Height="70"  Width="100"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <Button Content="経理課" Height="70"  Width="100"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <Button Content="経理課" Height="70"  Width="100"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <Button Content="経理課" Height="70"  Width="100"/>
+            </ComboBoxItem>
+        </ComboBox>
         <ScrollViewer>
-        <StackPanel>
+            <ScrollViewer.Background>
+                <ImageBrush ImageSource="/Views/wallpaper_00001.jpg"/>
+            </ScrollViewer.Background>
+            <StackPanel>
             <!--<Button Content="+ユーザの新規作成" Command="{Binding UserCreateCommand}" Width="100" HorizontalAlignment="Left"/>-->
 
             <!-- ユーザ一覧(Userモデルのリスト)である MainWindowViewModel.Users をグリッド表示する。-->

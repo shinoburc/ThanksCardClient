@@ -9,7 +9,14 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <StackPanel>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="483*"/>
+            <ColumnDefinition Width="317*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.ColumnSpan="2">
+            <StackPanel.Background>
+                <ImageBrush ImageSource="/Views/wallpaper_00001.jpg"/>
+            </StackPanel.Background>
             <Button Content="+タグの新規作成" Command="{Binding TagCreateCommand}" Width="100" HorizontalAlignment="Left"/>
 
             <!-- タグ一覧(Tagモデルのリスト)である ViewModel の Tags をグリッド表示する。-->

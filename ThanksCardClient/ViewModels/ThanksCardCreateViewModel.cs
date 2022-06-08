@@ -73,6 +73,7 @@ namespace ThanksCardClient.ViewModels
         public ThanksCardCreateViewModel(IRegionManager regionManager)
         {
             this.regionManager = regionManager;
+            this.AuthorizedUser = SessionService.Instance.AuthorizedUser;
         }
 
         // この画面に遷移し終わったときに呼ばれる。

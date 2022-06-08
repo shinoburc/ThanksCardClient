@@ -13,16 +13,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace ThanksCardClient.Views
 {
-    /// <summary>
-    /// Syukei.xaml の相互作用ロジック
-    /// </summary>
     public partial class Syukei : UserControl
     {
-        public Syukei()
-        {
-            InitializeComponent();
-        }
     }
 }

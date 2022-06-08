@@ -10,6 +10,9 @@
       d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <StackPanel>
+            <StackPanel.Background>
+                <ImageBrush ImageSource="/Views/wallpaper_00001.jpg"/>
+            </StackPanel.Background>
             <!--<Button Content="+部署の新規作成" Command="{Binding DepartmentCreateCommand}" Width="100" HorizontalAlignment="Left"/>-->
 
             <!-- ユーザ一覧(Departmentモデルのリスト)である MainWindowViewModel.Departments をグリッド表示する。-->

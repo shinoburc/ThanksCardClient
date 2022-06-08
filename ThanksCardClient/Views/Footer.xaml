@@ -9,20 +9,28 @@
       mc:Ignorable="d" Height="67" Width="1080">
 
     <Grid Margin="0,-62,106,0" HorizontalAlignment="Right" Width="964" Height="129" VerticalAlignment="Top">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Views/wallpaper_00001.jpg"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="22*"/>
+            <RowDefinition Height="21*"/>
+            <RowDefinition Height="0*"/>
+        </Grid.RowDefinitions>
 
 
-        <StackPanel Orientation=" Horizontal" Margin="0,61,105,0" Height="68" VerticalAlignment="Top" HorizontalAlignment="Right" Width="858">
+        <StackPanel Orientation=" Horizontal" Margin="1,0,0,0" Height="64" VerticalAlignment="Center" HorizontalAlignment="Left" Width="603" Grid.Row="1">
             <Button Content="作成"  Command="{Binding ShowThanksCardCreateCommand}" Height="70" Width="100"/>
             <Button Content="集計" Height="75" Width="100" Command="{Binding ShowgusikenCommand}"/>
-            <ComboBox Height="75" Width="100" Text="ユーザー作成" IsEnabled="{Binding AuthorizedUser.IsAdmin}">
+            <ComboBox x:Name="FontsCombo" Height="75" Width="100" Text="ユーザー作成" IsEnabled="{Binding AuthorizedUser.IsEmployee}">
                 <ComboBoxItem>
-                    <Button Content="社員" Command="{Binding ShowUserCreateCommand}" IsEnabled="{Binding AuthorizedUser.IsAdmin}" Height="70"  Width="100"/>
+                    <Button Content="社員" Command="{Binding ShowUserCreateCommand}" IsEnabled="{Binding AuthorizedUser.IsEmployee}" Height="70"  Width="100"/>
                 </ComboBoxItem>
                 <ComboBoxItem>
-                    <Button Content="部署" Command="{Binding ShowDepartmentCreateCommand}" IsEnabled="{Binding AuthorizedUser.IsAdmin}" Height="70"  Width="100"/>
+                    <Button Content="部署" Command="{Binding ShowDepartmentCreateCommand}" IsEnabled="{Binding AuthorizedUser.IsEmployee}" Height="70"  Width="100"/>
                 </ComboBoxItem>
                 <ComboBoxItem>
-                    <Button Content="部署課移動" Command="{Binding ShowDepartmentEditCommand}" IsEnabled="{Binding AuthorizedUser.IsAdmin}" Height="70"  Width="100"/>
+                    <Button Content="部署課移動" Command="{Binding ShowDepartmentEditCommand}" IsEnabled="{Binding AuthorizedUser.IsEmployee}" Height="70"  Width="100"/>
                 </ComboBoxItem>
                 <ComboBoxItem>
                     <Button Content="ユーザー一覧"  Command="{Binding ShowUserMstCommand}" Height="70" Width="100"/>
@@ -31,13 +39,13 @@
                     <Button Content="部署一覧"  Command="{Binding ShowDepartmentMstCommand}" Height="70" Width="100"/>
                 </ComboBoxItem>
                 <ComboBoxItem>
-                <Button Content="タグのマスタメンテ画面を開く" Command="{Binding ShowTagMstCommand}" IsEnabled="{Binding AuthorizedUser.IsAdmin}"  Width="100"/>
+                    <Button Content="タグのマスタメンテ画面を開く" Command="{Binding ShowTagMstCommand}" IsEnabled="{Binding AuthorizedUser.IsEmployee}"  Width="100"/>
                 </ComboBoxItem>
             </ComboBox>
 
             <Button Content="テンプレート" Width="100" Command="{Binding ShowTemplateCommand}"/>
             <Button Content="掲示板" Command="{Binding ShowThanksCardListCommand}" Width="100"/>
-            
+
             <Button Content="ログオフ" Command="{Binding LogoffCommand}"  Width="100"/>
         </StackPanel>
     </Grid>

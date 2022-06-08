@@ -39,11 +39,11 @@ namespace ThanksCardClient.Models
         #endregion
 
         #region IsAdminProperty
-        private bool _IsAdmin;
-        public bool IsAdmin
+        private bool _IsEmployee;
+        public bool IsEmployee
         {
-            get { return _IsAdmin; }
-            set { SetProperty(ref _IsAdmin, value); }
+            get { return _IsEmployee; }
+            set { SetProperty(ref _IsEmployee, value); }
         }
         #endregion
 

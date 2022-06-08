@@ -96,7 +96,6 @@ namespace ThanksCardClient.ViewModels
             SessionService.Instance.IsAuthorized = false;
 
             // HeaderRegion, FooterRegion を破棄して、ContentRegion をログオン画面に遷移させる。
-            this.regionManager.Regions["HeaderRegion"].RemoveAll();
             this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Logon));
             this.regionManager.Regions["FooterRegion"].RemoveAll();
         }
@@ -142,6 +141,7 @@ namespace ThanksCardClient.ViewModels
             this.regionManager.RequestNavigate("ContentRegion", nameof(Views.DepartmentMst));
         }
         # endregion
+
         #region ShowDepartmentEditCommand
         private DelegateCommand _ShowDepartmentEditCommand;
         public DelegateCommand ShowDepartmentEditCommand =>

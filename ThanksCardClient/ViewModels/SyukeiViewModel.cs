@@ -1,33 +1,37 @@
 ﻿#nullable disable
-using Prism.Commands;
-using Prism.Mvvm;
-using Prism.Regions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using ThanksCardClient.Models;
-using ThanksCardClient.Services;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 
 
-namespace ThanksCardClient.ViewModels
+namespace ThanksCardClient.Views
 {
-    internal class SyukeiViewModel : BindableBase
+    public partial class Syukei : UserControl
     {
-        private readonly IRegionManager regionManager;
-
-        public SyukeiViewModel(IRegionManager regionManager)
+        public Syukei()
         {
-            this.regionManager = regionManager;
+            InitializeComponent();
         }
-
-        #region HomeCommand
-        private DelegateCommand _HomeCommand;
-        public DelegateCommand HomeCommand =>
-            _HomeCommand ?? (_HomeCommand = new DelegateCommand(ExecuteHomeCommand));
-        void ExecuteHomeCommand()
-        {
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardList));
-        }
-        #endregion
     }
+    /// <summary>
+    /// Syukei.xaml の相互作用ロジック
+    /// </summary>
+    public partial class PieChartExample : UserControl
+    {
+       
+        
+        
+    }
+
 }
