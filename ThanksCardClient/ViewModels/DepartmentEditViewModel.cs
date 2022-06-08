@@ -95,6 +95,5 @@ namespace ThanksCardClient.ViewModels
 
         }
         #endregion
-
     }
 }
