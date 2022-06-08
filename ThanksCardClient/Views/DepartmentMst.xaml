@@ -10,6 +10,8 @@
       d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <StackPanel>
+            <Button Content="戻る" HorizontalAlignment="Right" Height="44" Width="146" FontSize="36" Command="{Binding ShowFooterCommand}" Margin="0,-4,26,0" />
+
             <Button Content="+課所の新規作成" Command="{Binding DepartmentCreateCommand}" Width="133" HorizontalAlignment="Left" Height="24" FontSize="14"/>
 
             <!-- ユーザ一覧(Departmentモデルのリスト)である MainWindowViewModel.Departments をグリッド表示する。-->
