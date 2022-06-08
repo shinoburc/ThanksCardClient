@@ -280,6 +280,23 @@ namespace ThanksCardClient.Services
             }
             return responseThanksCard;
         }
+        public async Task<ThanksCard> DownloadfileAsync(long Id)
+        {
+            ThanksCard responseThanksCard = null;
+            try
+            {
+                var response = await Client.GetAsync(this.BaseUrl + "/api/DownloadThanksCard/" + Id);
+                if (response.IsSuccessStatusCode)
+                {
+                    responseThanksCard = await response.Content.ReadFromJsonAsync<ThanksCard>();
+                }
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine("Exception in RestService.DeleteUserAsync: " + e);
+            }
+            return responseThanksCard;
+        }
 
         public async Task<List<Tag>> GetTagsAsync()
         {
@@ -355,21 +372,41 @@ namespace ThanksCardClient.Services
 
         public async Task<List<Rank>> GetRanksAsync()
         {
-            List<Rank> responseRank = null;
+            List<Rank> responseRanks = null;
             try
             {
-                var response = await Client.GetAsync(this.BaseUrl + "/api/Rank/");
+                var response = await Client.GetAsync(this.BaseUrl + "/api/Rank");
                 if (response.IsSuccessStatusCode)
                 {
-                    responseRank = await response.Content.ReadFromJsonAsync<List<Rank>>();
+                    responseRanks = await response.Content.ReadFromJsonAsync<List<Rank>>();
                 }
             }
-
-            catch(Exception e)
+            catch (Exception e)
             {
-                System.Diagnostics.Debug.WriteLine("Exception in RestService.DeleteTagAsync: " + e);
+                System.Diagnostics.Debug.WriteLine("Exception in RestService.GetRanksAsync: " + e);
             }
-            return responseRank;
+            return responseRanks;
         }
+
+
+        //public async Task<List<Rank>> GetRanksAsync()
+        //{
+        //    List<Rank> responseRank = null;
+        //    try
+        //    {
+        //        var response = await Client.GetAsync(this.BaseUrl + "/api/Rank/");
+        //        if (response.IsSuccessStatusCode)
+        //        {
+        //            responseRank = await response.Content.ReadFromJsonAsync<List<Rank>>();
+        //        }
+        //    }
+
+        //    catch(Exception e)
+        //    {
+        //        System.Diagnostics.Debug.WriteLine("Exception in RestService.DeleteGetRankAsync: " + e);
+        //    }
+        //    return responseRank;
+        //｝
     }
 }
+

@@ -12,7 +12,7 @@
         <Grid.Background>
             <ImageBrush ImageSource="/Images/UserMaster.png"/>
         </Grid.Background>
-        <DataGrid ItemsSource="{Binding Users}" AutoGenerateColumns="False" CanUserAddRows="False" Background="{x:Null}" Margin="99,160,70,56" Foreground="#FF0A0A0A" BorderBrush="#FF4D92C7" Cursor="Hand" ScrollViewer.HorizontalScrollBarVisibility="Hidden">
+        <DataGrid ItemsSource="{Binding Users}" AutoGenerateColumns="False" CanUserAddRows="False" Background="{x:Null}" Margin="99,152,70,64" Foreground="#FF0A0A0A" BorderBrush="#FF4D92C7" Cursor="Hand" ScrollViewer.HorizontalScrollBarVisibility="Hidden">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="50" />
                 <DataGridTextColumn Header="名前" Binding="{Binding Name}" Width="100" />

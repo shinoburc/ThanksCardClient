@@ -9,7 +9,7 @@ using ThanksCardClient.Services;
 
 namespace ThanksCardClient.Models
 {
-    internal class Rank : BindableBase
+    public class Rank : BindableBase
     {
         #region NameProperty
         private string _Name;
@@ -29,6 +29,7 @@ namespace ThanksCardClient.Models
         }
         #endregion
 
+        
         public async Task<List<Rank>> GetRanksAsync()
         {
             IRestService rest = new RestService();

@@ -80,6 +80,22 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
+
+        #region ThanksCardsProperty
+        private List<ThanksCard> _ThanksCards;
+        public List<ThanksCard> ThanksCards
+        {
+            get { return _ThanksCards; }
+            set { SetProperty(ref _ThanksCards, value); }
+        }
+        #endregion
+
+        public ThanksCradBrowsingViewModel(RegionManager regionManager)
+        {
+            this.regionManager = regionManager;
+        }
+
+
         public bool IsNavigationTarget(NavigationContext navigationContext)
         {
             //throw new NotImplementedException();
@@ -106,6 +122,7 @@ namespace ThanksCardClient.ViewModels
             Department dept = new Department();
             this.Departments = await dept.GetDepartmentsAsync();
         }
+
         #region  MenuUserCommand
         private DelegateCommand _MenuUserCommand;
         public DelegateCommand MenuUserCommand =>
@@ -116,6 +133,7 @@ namespace ThanksCardClient.ViewModels
             this.regionManager.RequestNavigate("ContentRegion", nameof(Views.MenuUser));
         }
         #endregion
+
 
         #region  ThanksCardCommand
         private DelegateCommand _ThanksCardCommand;
@@ -167,6 +185,22 @@ namespace ThanksCardClient.ViewModels
         void ExecuteBackCommand()
         {
             this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardList));
+
+        #region DownloadfileCommand
+        private DelegateCommand<ThanksCard> _DownloadfileCommand;
+        public DelegateCommand<ThanksCard> DownloadfileCommand =>
+            _DownloadfileCommand ?? (_DownloadfileCommand = new DelegateCommand<ThanksCard>(ExecuteDownloadfileCommand));
+
+        async void ExecuteDownloadfileCommand(ThanksCard SelectedThanksCard)
+        {
+            ThanksCard thanksCard = await SelectedThanksCard.DownloadfileAsync(SelectedThanksCard.Id);
+            //    ThanksCard thanksCard = new ThanksCard();
+            //    this.ThanksCards = await thanksCard.GetThanksCardsAsync();
+
+            //    ThanksCards = this.ThanksCards.Where(x => x.Id == Id).ToList();
+
+            //    thanksCard = await ThanksCard.DownloadfileAsync(ThanksCard.Id);
+
         }
         #endregion
     }

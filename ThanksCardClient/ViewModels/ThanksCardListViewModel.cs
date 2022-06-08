@@ -36,7 +36,9 @@ namespace ThanksCardClient.ViewModels
             this.regionManager = regionManager;
             this.AuthorizedUser = SessionService.Instance.AuthorizedUser;
             this._SearchWord = this.AuthorizedUser.Name;
+
             //Chỗ này cần dùng
+
         }
 
         #region SearchWordProperty
@@ -52,7 +54,7 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
-        //
+        
         #region LoginUserProperty
         private string _LoginUser;
         public string LoginUser

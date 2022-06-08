@@ -1,3 +1,4 @@
+#nullable disable
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Regions;
@@ -16,6 +17,7 @@ namespace ThanksCardClient.ViewModels
 
         //Chỗ này dòng this thứ 2 và thứ 3 copy
         public MenuAdminViewModel(IRegionManager regionManager)
+
         {
             this.regionManager = regionManager;
             this.AuthorizedUser = SessionService.Instance.AuthorizedUser;
