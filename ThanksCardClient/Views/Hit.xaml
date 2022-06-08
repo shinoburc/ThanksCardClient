@@ -16,7 +16,7 @@
             <Button Content="戻る" Command="{Binding BackCommand}" HorizontalAlignment="Left" Height="28" Margin="650,125,0,0" VerticalAlignment="Top" Width="79" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Opacity="0"/>
 
             <Button Content="メニュー" Command="{Binding MenuUserCommand}" Margin="20,42,738,376" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Opacity="0" Cursor="Hand"/>
-            <TextBlock HorizontalAlignment="Left" Height="184" Margin="100,186,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="629" Background="White" Padding="10,5,0,0"><Run Text="ヒントをいれる"/><Run Language="ja-jp" Text="（ツールのテキストボックスを採用している）"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Height="211" Margin="100,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="629" Background="White" Padding="10,5,0,0"><Run FontSize="14" Text="送信箱"/><LineBreak FontSize="14"/><Run FontSize="14" Text="→感謝カードを作成する画面です。送りたい相手の情報と内容を記入して送信することができます"/><Run FontSize="14" Text="。"/><LineBreak FontSize="14"/><Run FontSize="14" Text="全体閲覧表"/><LineBreak FontSize="14"/><Run FontSize="14" Text="→全体の感謝カードを見ることができます。そこでは詳しく見ることができます"/><Run FontSize="14" Text="。"/><LineBreak/><Run FontSize="14" Text="全体閲覧表詳細"/><LineBreak/><Run FontSize="14" Text="→感謝カードを拡大表示させている画面です。"/><LineBreak FontSize="14"/><Run Text="ヒント"/><LineBreak FontSize="14"/><Run FontSize="14" Text="→"/><Run FontSize="14" Text="各画面の操作説明が載っています。"/><LineBreak/><Run FontSize="14" Language="ja-jp" Text="ログアウト"/><LineBreak/><Run FontSize="14" Language="ja-jp" Text="→作業を終えたい場合に使います。ログアウトしたら、書き上げた内容は削除されます。"/></TextBlock>
 
         </Grid>
 
