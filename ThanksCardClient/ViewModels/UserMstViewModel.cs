@@ -60,7 +60,7 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteUserCreateCommand()
         {
-            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.UserCreate));
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.RegistrationScreen));
         }
         #endregion
 
@@ -76,7 +76,7 @@ namespace ThanksCardClient.ViewModels
             var parameters = new NavigationParameters();
             parameters.Add("SelectedUser", SelectedUser);
 
-            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.UserEdit), parameters);
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.RegistrationScreen), parameters);
         }
         #endregion
 

@@ -6,40 +6,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using ThanksCardClient.Models;
+
 namespace ThanksCardClient.ViewModels
 {
     public class RegistrationScreenViewModel : BindableBase, INavigationAware
     {
         private readonly IRegionManager regionManager;
-
-        public RegistrationScreenViewModel(IRegionManager regionManager)
-        {
-            this.regionManager = regionManager;
-        }
-        #region ShowFooterCommand
-        private DelegateCommand _ShowFooterCommand;
-        public DelegateCommand ShowFooterCommand =>
-            _ShowFooterCommand ?? (_ShowFooterCommand = new DelegateCommand(ExecuteShowFooterCommand));
-
-        void ExecuteShowFooterCommand()
-        {
-            this.regionManager.Regions["FooterRegion"].RemoveAll();
-            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Footer));
-
-        }
-        #endregion
-
-        #region DepartmentCreateCommand
-        private DelegateCommand _DepartmentCreateCommand;
-        public DelegateCommand DepartmentCreateCommand =>
-            _DepartmentCreateCommand ?? (_DepartmentCreateCommand = new DelegateCommand(ExecuteDepartmentCreateCommand));
-
-        void ExecuteDepartmentCreateCommand()
-        {
-            this.regionManager.Regions["FooterRegion"].RemoveAll();
-            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.DepartmentCreate));
-        }
-        #endregion
 
         #region UserProperty
         private User _User;
@@ -58,6 +30,11 @@ namespace ThanksCardClient.ViewModels
             set { SetProperty(ref _Departments, value); }
         }
         #endregion
+
+        public RegistrationScreenViewModel(IRegionManager regionManager)
+        {
+            this.regionManager = regionManager;
+        }
 
         public async void OnNavigatedTo(NavigationContext navigationContext)
         {
@@ -89,6 +66,7 @@ namespace ThanksCardClient.ViewModels
             this.regionManager.RequestNavigate("FooterRegion", nameof(Views.UserMst));
         }
         #endregion
+
 
     }
 }

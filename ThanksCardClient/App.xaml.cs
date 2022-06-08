@@ -30,8 +30,6 @@ namespace ThanksCardClient
             containerRegistry.RegisterForNavigation<ThanksCardCreate>();
             containerRegistry.RegisterForNavigation<ThanksCardList>();
             containerRegistry.RegisterForNavigation<UserMst>();
-            containerRegistry.RegisterForNavigation<UserCreate>();
-            containerRegistry.RegisterForNavigation<UserEdit>();
             containerRegistry.RegisterForNavigation<DepartmentMst>();
             containerRegistry.RegisterForNavigation<DepartmentCreate>();
             containerRegistry.RegisterForNavigation<DepartmentEdit>();
