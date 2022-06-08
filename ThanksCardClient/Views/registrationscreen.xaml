@@ -7,31 +7,23 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid HorizontalAlignment="Center" Height="450" VerticalAlignment="Center" Width="800">
-        <Grid HorizontalAlignment="Center" Height="450" VerticalAlignment="Center" Width="800" RenderTransformOrigin="0.506,0.508">
-            <Grid.Background>
-                <ImageBrush ImageSource="/Views/2.png"/>
-            </Grid.Background>
-            <Button Content="登録" HorizontalAlignment="Left" Height="114" Margin="0,336,0,0" VerticalAlignment="Top" Width="250" FontSize="48" Background="#FF7BF0FF"/>
-            <Button Content="更新" HorizontalAlignment="Left" Height="114" Margin="250,336,0,0" VerticalAlignment="Top" Width="305" FontSize="48" Background="#FF59ECFF"/>
-            <Button Content="削除" HorizontalAlignment="Left" Height="114" Margin="555,336,0,0" VerticalAlignment="Top" Width="245" FontSize="48" Background="#FF12E4FF"/>
-            <ComboBox HorizontalAlignment="Left" Height="28" Margin="250,43,0,0" VerticalAlignment="Top" Width="111"/>
-            <TextBlock HorizontalAlignment="Left" Height="31" Margin="33,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" FontSize="20" RenderTransformOrigin="0.476,1.193"><Run Language="ja-jp" Text="社員"/><LineBreak/><Run Language="ja-jp"/><Run Text="コード"/></TextBlock>
-            <Button Content="戻る" HorizontalAlignment="Left" Height="71" VerticalAlignment="Top" Width="202" FontSize="36" Command="{Binding ShowFooterCommand}"/>
-            <TextBlock HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" Text="部署名" VerticalAlignment="Top" Width="105" Margin="253,22,0,0" FontSize="16"/>
-            <ComboBox HorizontalAlignment="Left" Height="28" Margin="405,43,0,0" VerticalAlignment="Top" Width="150"/>
-            <TextBlock HorizontalAlignment="Left" Height="31" Margin="594,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" FontSize="20" RenderTransformOrigin="0.476,1.193" Background="White" Text="管理者権限"/>
-            <TextBlock HorizontalAlignment="Left" Height="31" Margin="540,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" FontSize="20" RenderTransformOrigin="0.476,1.193" Foreground="Black" Background="White"><Run Language="ja-jp" Text="社員名"/><LineBreak/><Run Language="ja-jp"/><LineBreak/><Run Language="ja-jp"/><LineBreak/><Run Language="ja-jp"/><LineBreak/><Run Language="ja-jp"/></TextBlock>
-            <TextBlock HorizontalAlignment="Left" Height="31" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Text="部署コード" FontSize="20" RenderTransformOrigin="0.476,1.193" Margin="42,215,0,0"/>
-            <TextBlock HorizontalAlignment="Center" Height="31" Margin="0,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" FontSize="20" RenderTransformOrigin="0.476,1.193"><Run Language="ja-jp" Text="PassWord"/></TextBlock>
-            <TextBlock HorizontalAlignment="Left" Height="34" Margin="33,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Foreground="White" Background="#FFE4E4E4"/>
-            <TextBlock HorizontalAlignment="Left" Height="34" Margin="540,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Foreground="White" Background="#FFE4E4E4"/>
-            <TextBlock HorizontalAlignment="Center" Height="34" Margin="0,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Foreground="White" Background="#FFE4E4E4"/>
-            <TextBlock HorizontalAlignment="Left" Height="34" Margin="34,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Foreground="White" Background="#FFE4E4E4"/>
-            <Button Content="部署" HorizontalAlignment="Left" Height="71" Margin="606,0,0,0" VerticalAlignment="Top" Width="194" FontSize="36" Command="{Binding DepartmentCreateCommand}"/>
-        </Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Views/2.png"/>
+        </Grid.Background>
+        <Button Content="登録" HorizontalAlignment="Left" Height="114" Margin="0,336,0,0" VerticalAlignment="Top" Width="250" FontSize="48" Background="#FF7BF0FF"/>
+        <Button Content="更新" HorizontalAlignment="Left" Height="114" Margin="250,336,0,0" VerticalAlignment="Top" Width="305" FontSize="48" Background="#FF59ECFF"/>
+        <Button Content="削除" HorizontalAlignment="Left" Height="114" Margin="555,336,0,0" VerticalAlignment="Top" Width="245" FontSize="48" Background="#FF12E4FF"/>
+        <ComboBox HorizontalAlignment="Left" Height="28" Margin="35,264,0,0" VerticalAlignment="Top" Width="206" SelectionChanged="ComboBox_SelectionChanged"/>
+        <TextBlock HorizontalAlignment="Left" Height="31" Margin="33,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" FontSize="20" RenderTransformOrigin="0.476,1.193"><Run Language="ja-jp" Text="社員"/><LineBreak/><Run Language="ja-jp"/><Run Text="コード"/></TextBlock>
+        <Button Content="戻る" HorizontalAlignment="Left" Height="71" VerticalAlignment="Top" Width="202" FontSize="36" Command="{Binding ShowFooterCommand}"/>
+        <ComboBox ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValue="{Binding User.DepartmentId}" SelectedValuePath="Id" HorizontalAlignment="Left" Height="28" Margin="405,43,0,0" VerticalAlignment="Top" Width="150"/>
+        <TextBlock HorizontalAlignment="Left" Height="31" Margin="330,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" FontSize="20" RenderTransformOrigin="0.476,1.193" Background="White" Text="管理者権限"/>
+        <TextBlock HorizontalAlignment="Center" Height="31" Margin="0,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" FontSize="20" RenderTransformOrigin="0.476,1.193"><Run Language="ja-jp" Text="PassWord"/></TextBlock>
+        <TextBox Text="{Binding User.Password}" HorizontalAlignment="Center" Height="34" Margin="0,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Foreground="White" Background="#FFE4E4E4"/>
+        <TextBox  HorizontalAlignment="Left" Height="34" Margin="34,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Foreground="White" Background="#FFE4E4E4"/>
+        <Button Content="部署" HorizontalAlignment="Left" Height="71" Margin="606,0,0,0" VerticalAlignment="Top" Width="194" FontSize="36" Command="{Binding DepartmentCreateCommand}"/>
         <TextBlock HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="105" Margin="408,21,0,0" FontSize="16"><Run Language="ja-jp" Text="名前"/><LineBreak/><Run Language="ja-jp"/></TextBlock>
-        <TextBlock HorizontalAlignment="Center" Height="27" TextWrapping="Wrap" VerticalAlignment="Center" Width="208" Text="部署名" FontSize="20"/>
-        <TextBlock HorizontalAlignment="Center" Height="34" Margin="0,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Foreground="White" Background="#FFE4E4E4"/>
-        <CheckBox Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="644,269,0,0" Height="20" Width="45"/>
+        <TextBlock HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Text="部署名" FontSize="20" Margin="42,215,0,0"/>
+        <CheckBox IsChecked="{Binding User.IsAdmin}" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="378,268,0,0" Height="24" Width="22"/>
     </Grid>
 </UserControl>
