@@ -12,7 +12,7 @@
         <Grid.Background>
             <ImageBrush Stretch="Uniform" ImageSource="/Images/Department_Master.png"/>
         </Grid.Background>
-        <DataGrid ItemsSource="{Binding Departments}" AutoGenerateColumns="False" CanUserAddRows="False" Background="{x:Null}" Margin="95,166,61,64" SelectionChanged="DataGrid_SelectionChanged">
+        <DataGrid ItemsSource="{Binding Departments}" AutoGenerateColumns="False" CanUserAddRows="False" Background="{x:Null}" Margin="95,166,61,64" SelectionChanged="DataGrid_SelectionChanged" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="100" />
                 <DataGridTextColumn Header="部署名" Binding="{Binding Name}" Width="468" />
