@@ -3,11 +3,11 @@
 namespace ThanksCardClient.Views
 {
     /// <summary>
-    /// Interaction logic for UserEdit
+    /// Interaction logic for 
     /// </summary>
-    public partial class UserEdit : UserControl
+    public partial class TypicalExamples : UserControl
     {
-        public UserEdit()
+        public TypicalExamples()
         {
             InitializeComponent();
         }

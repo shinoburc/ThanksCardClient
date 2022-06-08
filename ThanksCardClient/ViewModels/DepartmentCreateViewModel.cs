@@ -77,7 +77,20 @@ namespace ThanksCardClient.ViewModels
         {
             Department createdDepartment = await Department.PostDepartmentAsync(this.Department);
 
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.DepartmentMst));
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.DepartmentMst));
+        }
+        #endregion
+
+        #region ShowFooterCommand
+        private DelegateCommand _ShowFooterCommand;
+        public DelegateCommand ShowFooterCommand =>
+            _ShowFooterCommand ?? (_ShowFooterCommand = new DelegateCommand(ExecuteShowFooterCommand));
+
+        void ExecuteShowFooterCommand()
+        {
+            this.regionManager.Regions["FooterRegion"].RemoveAll();
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Footer));
+
         }
         #endregion
 

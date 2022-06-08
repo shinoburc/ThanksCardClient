@@ -55,7 +55,7 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteDepartmentCreateCommand()
         {
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.DepartmentCreate));
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.DepartmentEdit));
         }
         #endregion
 
@@ -70,7 +70,7 @@ namespace ThanksCardClient.ViewModels
             var parameters = new NavigationParameters();
             parameters.Add("SelectedDepartment", SelectedDepartment);
 
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.DepartmentEdit), parameters);
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.DepartmentEdit), parameters);
         }
         #endregion
 
@@ -85,6 +85,29 @@ namespace ThanksCardClient.ViewModels
 
             // 一覧 Departments を更新する。
             this.UpdateDepartments();
+        }
+        #endregion
+
+        #region ShowUserMstCommand
+        private DelegateCommand _ShowUserMstCommand;
+        public DelegateCommand ShowUserMstCommand =>
+            _ShowUserMstCommand ?? (_ShowUserMstCommand = new DelegateCommand(ExecuteShowUserMstCommand));
+
+        void ExecuteShowUserMstCommand()
+        {
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.UserMst));
+        }
+        #endregion
+
+        #region ShowFooterCommand
+        private DelegateCommand _ShowFooterCommand;
+        public DelegateCommand ShowFooterCommand =>
+            _ShowFooterCommand ?? (_ShowFooterCommand = new DelegateCommand(ExecuteShowFooterCommand));
+
+        void ExecuteShowFooterCommand()
+        {
+
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Footer));
         }
         #endregion
     }

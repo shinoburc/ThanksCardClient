@@ -8,17 +8,18 @@
       xmlns:local="clr-namespace:ThanksCardClient.Views"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <StackPanel>
+    <Grid Height="450" Width="800">
+        <StackPanel Height="450" VerticalAlignment="Top">
+            <Button Content="戻る" HorizontalAlignment="Left" Height="73" Width="92" FontSize="36" Command="{Binding ShowFooterCommand}" Margin="0,1,0,25" />
             <TextBlock Text="{Binding ErrorMessage}" Foreground="Red"/>
-            <TextBlock Text="Code:"/>
-            <TextBox Text="{Binding Department.Code}"/>
-            <TextBlock Text="Name:"/>
-            <TextBox Text="{Binding Department.Name}"/>
-            <TextBlock Text="Parent:"/>
-            <ComboBox SelectedItem="{Binding Department.Parent}" ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValue="{Binding Department.ParentId}" SelectedValuePath="Id"/>
+            <TextBlock Text="Code:" FontSize="24"/>
+            <TextBox Text="{Binding Department.Code}" Height="29"/>
+            <TextBlock Text="Name:" FontSize="24"/>
+            <TextBox Text="{Binding Department.Name}" Height="31"/>
+            <TextBlock Text="Parent:" FontSize="24"/>
+            <ComboBox SelectedItem="{Binding Department.Id}" ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValue="{Binding Department.ParentId}" SelectedValuePath="Id" Height="37" Width="801"/>
 
-            <Button Content="Submit" Command="{Binding SubmitCommand}"/>
+            <Button Content="課所登録" Command="{Binding SubmitCommand}" Width="216" Height="84" Margin="0,72,0,7" FontSize="24"/>
         </StackPanel>
     </Grid>
 </UserControl>

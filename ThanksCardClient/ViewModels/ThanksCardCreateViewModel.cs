@@ -138,9 +138,24 @@ namespace ThanksCardClient.ViewModels
             ThanksCard createdThanksCard = await ThanksCard.PostThanksCardAsync(this.ThanksCard);
 
             //TODO: Error handling
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardList));
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.ThanksCardList));
 
         }
         #endregion
+
+        #region ShowThanksCardReceiveCommand
+        private DelegateCommand _ShowThanksCardReceiveCommand;
+        public DelegateCommand ShowThanksCardReceiveCommand =>
+            _ShowThanksCardReceiveCommand ?? (_ShowThanksCardReceiveCommand = new DelegateCommand(ExecuteShowThanksCardReceiveCommand));
+
+        void ExecuteShowThanksCardReceiveCommand()
+        {
+            this.regionManager.Regions["FooterRegion"].RemoveAll();
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.ThanksCardReceive));
+
+        }
+        #endregion
+
+
     }
 }

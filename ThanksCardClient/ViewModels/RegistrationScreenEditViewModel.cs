@@ -9,7 +9,7 @@ using ThanksCardClient.Models;
 
 namespace ThanksCardClient.ViewModels
 {
-    public class UserEditViewModel : BindableBase, INavigationAware
+    public class RegistrationScreenEditViewModel : BindableBase, INavigationAware
     {
         private readonly IRegionManager regionManager;
 
@@ -31,7 +31,7 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
-        public UserEditViewModel(IRegionManager regionManager)
+        public RegistrationScreenEditViewModel(IRegionManager regionManager)
         {
             this.regionManager = regionManager;
         }
@@ -64,7 +64,7 @@ namespace ThanksCardClient.ViewModels
         {
             User updatedUser = await User.PutUserAsync(this.User);
 
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.UserMst));
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.UserMst));
         }
         #endregion
     }

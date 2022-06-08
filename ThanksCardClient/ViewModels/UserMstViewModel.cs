@@ -60,7 +60,7 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteUserCreateCommand()
         {
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.UserCreate));
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.RegistrationScreen));
         }
         #endregion
 
@@ -76,7 +76,7 @@ namespace ThanksCardClient.ViewModels
             var parameters = new NavigationParameters();
             parameters.Add("SelectedUser", SelectedUser);
 
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.UserEdit), parameters);
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.RegistrationScreen), parameters);
         }
         #endregion
 
@@ -91,6 +91,17 @@ namespace ThanksCardClient.ViewModels
 
             // ユーザ一覧 Users を更新する。
             this.UpdateUsers();
+        }
+        #endregion
+
+        #region ShowDepartmentMstCommand
+        private DelegateCommand _ShowDepartmentMstCommand;
+        public DelegateCommand ShowDepartmentMstCommand =>
+            _ShowDepartmentMstCommand ?? (_ShowDepartmentMstCommand = new DelegateCommand(ExecuteShowDepartmentMstCommand));
+
+        void ExecuteShowDepartmentMstCommand()
+        {
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.DepartmentMst));
         }
         #endregion
     }

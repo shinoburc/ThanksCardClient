@@ -9,16 +9,16 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <StackPanel>
-            <TextBlock Text="{Binding ErrorMessage}" Foreground="Red"/>
-            <TextBlock Text="Code:"/>
-            <TextBox Text="{Binding Department.Code}"/>
-            <TextBlock Text="Name:"/>
-            <TextBox Text="{Binding Department.Name}"/>
-            <TextBlock Text="Parent:"/>
-            <ComboBox SelectedItem="{Binding Department.Parent}" ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValue="{Binding Department.Parent}"/>
-
-            <Button Content="Submit" Command="{Binding SubmitCommand}"/>
-        </StackPanel>
+        <Grid HorizontalAlignment="Center" Height="450" VerticalAlignment="Center" Width="800" RenderTransformOrigin="0.506,0.508">
+            <Grid.Background>
+                <ImageBrush ImageSource="/Views/2.png"/>
+            </Grid.Background>
+            <Button Command="{Binding SubmitCommand}" Content="登録" HorizontalAlignment="Center" Height="114" Margin="0,293,0,0" VerticalAlignment="Top" Width="250" FontSize="48" Background="#FF7BF0FF"/>
+            <TextBox Text="{Binding Department.Name}" HorizontalAlignment="Center" Height="34" Margin="0,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" Foreground="#FF111112" Background="#FFFCFCFC" BorderBrush="#FF111112" FontSize="24"/>
+            <TextBlock HorizontalAlignment="Left" Height="22" Margin="276,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Text="部署コード" FontSize="20" RenderTransformOrigin="0.476,1.193"/>
+            <Button Content="戻る" HorizontalAlignment="Left" Height="71" VerticalAlignment="Top" Width="202" FontSize="36" Command="{Binding ShowFooterCommand}" />
+        </Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="282,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Text="部署名" FontSize="20" d:LayoutOverrides="VerticalAlignment"/>
+        <TextBox Text="{Binding Department.Id}" HorizontalAlignment="Center" Height="34" Margin="0,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" Foreground="#FF100F0F" Background="White" BorderBrush="#FF18181A" FontSize="24"/>
     </Grid>
 </UserControl>

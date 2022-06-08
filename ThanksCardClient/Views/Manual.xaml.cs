@@ -3,11 +3,11 @@
 namespace ThanksCardClient.Views
 {
     /// <summary>
-    /// Interaction logic for Header
+    /// Interaction logic for 
     /// </summary>
-    public partial class Header : UserControl
+    public partial class Manual : UserControl
     {
-        public Header()
+        public Manual()
         {
             InitializeComponent();
         }
