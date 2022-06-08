@@ -17,7 +17,7 @@
         <TextBlock HorizontalAlignment="Left" Height="31" Margin="37,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" FontSize="20" RenderTransformOrigin="0.476,1.193" Background="White" Text="管理者権限"/>
         <TextBlock HorizontalAlignment="Center" Height="31" Margin="0,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" FontSize="20" RenderTransformOrigin="0.476,1.193"><Run Language="ja-jp" Text="PassWord"/></TextBlock>
         <TextBox Text="{Binding User.Password}" HorizontalAlignment="Center" Height="34" Margin="0,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Foreground="Black" Background="#FFE4E4E4" FontSize="20"/>
-        <TextBox  HorizontalAlignment="Left" Height="34" Margin="34,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Foreground="#FF060606" Background="#FFE4E4E4" SelectionTextBrush="White" FontSize="20" Text=""/>
+        <TextBox Text="{Binding User.Name}"  HorizontalAlignment="Left" Height="34" Margin="34,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Foreground="#FF060606" Background="#FFE4E4E4" SelectionTextBrush="White" FontSize="20"/>
         <Button Content="部署" HorizontalAlignment="Left" Height="71" Margin="606,0,0,0" VerticalAlignment="Top" Width="194" FontSize="36" Command="{Binding ShowDepartmentCreateCommand}"/>
         <TextBlock HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Text="部署名" FontSize="20" Margin="572,110,0,0" Background="White"/>
         <CheckBox IsChecked="{Binding User.IsAdmin}" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="202,256,0,0" Height="24" Width="22" RenderTransformOrigin="-0.364,0.333"/>

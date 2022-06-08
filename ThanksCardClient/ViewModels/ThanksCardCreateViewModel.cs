@@ -138,7 +138,7 @@ namespace ThanksCardClient.ViewModels
             ThanksCard createdThanksCard = await ThanksCard.PostThanksCardAsync(this.ThanksCard);
 
             //TODO: Error handling
-            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.ThanksCardList));
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardList));
 
         }
         #endregion
