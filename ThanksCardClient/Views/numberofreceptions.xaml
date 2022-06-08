@@ -9,7 +9,7 @@
     <Grid Height="450" Width="800">
         <ComboBox HorizontalAlignment="Left" Height="38" Margin="29,120,0,0" VerticalAlignment="Top" Width="723"/>
 
-        <Button Content="戻る" HorizontalAlignment="Left" Height="69" Margin="10,10,0,0" VerticalAlignment="Top" Width="114" FontSize="36"/>
+        <Button Content="戻る" HorizontalAlignment="Left" Height="69" Margin="10,10,0,0" VerticalAlignment="Top" Width="114" FontSize="36" Command="{Binding ShowThanksCardReceiveCommand}"/>
         <Label Content="受信件数一覧" HorizontalAlignment="Left" Height="64" VerticalAlignment="Top" Width="311" Margin="272,0,0,0" FontSize="48"/>
         <Label Content="部署名" HorizontalAlignment="Left" Height="52" VerticalAlignment="Top" Width="122" Margin="84,116,0,0" FontSize="24"/>
         <Label Content="名前" HorizontalAlignment="Center" Height="52" VerticalAlignment="Top" Width="88" Margin="0,116,0,0" FontSize="24"/>

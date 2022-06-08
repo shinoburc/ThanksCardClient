@@ -9,11 +9,11 @@ using ThanksCardClient.Models;
 
 namespace ThanksCardClient.ViewModels
 {
-    public class ThanksCardReceive : BindableBase
+    public class ThanksCardReceiveViewModel : BindableBase
     {
         private readonly IRegionManager regionManager;
 
-        public ThanksCardReceive(IRegionManager regionManager)
+        public ThanksCardReceiveViewModel(IRegionManager regionManager)
         {
             this.regionManager = regionManager;
         }
@@ -65,7 +65,7 @@ namespace ThanksCardClient.ViewModels
         void ExecuteShowThanksCardCreateCommand()
         {
             this.regionManager.Regions["FooterRegion"].RemoveAll();
-            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Footer));
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.ThanksCardCreate));
 
         }
         #endregion

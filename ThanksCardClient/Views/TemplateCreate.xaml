@@ -10,7 +10,7 @@
         <Grid HorizontalAlignment="Center" Height="450" VerticalAlignment="Center" Width="800">
             <Grid>
                 <Grid.Background>
-                    <ImageBrush ImageSource="/Views/2.png"/>
+                    <ImageBrush ImageSource="2.png"/>
                 </Grid.Background>
                 <Button Content="戻る" HorizontalAlignment="Left" Height="68" VerticalAlignment="Top" Width="201" FontSize="24"/>
                 <TextBlock HorizontalAlignment="Left" Height="46" TextWrapping="Wrap" Text="新規のテンプレート" VerticalAlignment="Top" Width="189" Margin="325,79,0,0" FontSize="22"/>

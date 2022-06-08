@@ -60,7 +60,7 @@ namespace ThanksCardClient.ViewModels
         void ExecuteShowThanksCardReceiveCommand()
         {
             this.regionManager.Regions["FooterRegion"].RemoveAll();
-            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.ThanksCardSend));
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.ThanksCardReceive));
         }
         #endregion
 
