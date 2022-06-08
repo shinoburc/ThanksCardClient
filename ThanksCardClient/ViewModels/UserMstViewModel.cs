@@ -76,7 +76,7 @@ namespace ThanksCardClient.ViewModels
             var parameters = new NavigationParameters();
             parameters.Add("SelectedUser", SelectedUser);
 
-            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.RegistrationScreen), parameters);
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.RegistrationScreenEdit), parameters);
         }
         #endregion
 
