@@ -32,7 +32,7 @@
                     </TransformGroup>
                 </TextBlock.RenderTransform>
             </TextBlock>
-            <TextBox HorizontalAlignment="Left" Height="33" Margin="168,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="410" Background="Gainsboro" Grid.Column="1"/>
+            <TextBox HorizontalAlignment="Left" Height="33" Margin="166,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="410" Background="Gainsboro" Grid.Column="1"/>
             <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="46" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Margin="48,325,0,0" FontSize="36" RenderTransformOrigin="0.5,0.5" Text="本文">
                 <TextBlock.RenderTransform>
                     <TransformGroup>
@@ -58,12 +58,11 @@
             <ComboBox HorizontalAlignment="Left" Height="31" Margin="168,264,0,0" VerticalAlignment="Top" Width="410" Grid.Column="1"/>
             <ComboBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="27" Margin="381,100,0,0" VerticalAlignment="Top" Width="188"/>
             <Button Content="送信" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="48" Margin="626,392,0,0" VerticalAlignment="Top" Width="140" FontSize="24"/>
-            <Button Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="34" Margin="626,346,0,0" VerticalAlignment="Top" Width="140" FontSize="24" Content="出力レビュー"/>
             <Button Content="テンプレート作成" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="58" VerticalAlignment="Top" Width="190" FontSize="22" Margin="610,0,0,0"/>
             <Button Content="テンプレート編集" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="58" VerticalAlignment="Top" Width="190" FontSize="22" Margin="610,58,0,0"/>
             <Button Content="テンプレート削除" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="58" VerticalAlignment="Top" Width="190" FontSize="22" Margin="610,114,0,0"/>
+            <DatePicker Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="34" VerticalAlignment="Top" Width="411" Margin="168,212,0,0"/>
         </Grid>
-        <CalendarDayButton Content="CalendarDayButton" HorizontalAlignment="Left" Height="32" VerticalAlignment="Center" Width="414" Background="Gainsboro" Margin="163,0,0,0"/>
 
     </Grid>
 </UserControl>
