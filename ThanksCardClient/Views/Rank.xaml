@@ -15,14 +15,14 @@
             <Grid.Background>
                 <ImageBrush ImageSource="/Images/集計画面.png"/>
             </Grid.Background>
-
+            <TextBlock Text="{Binding AuthorizedUser.Name, StringFormat=Hello: {0}}" HorizontalAlignment="Left" Height="25" Margin="81,89,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="239" Foreground="White" FontSize="14"/>
             <Button Content="メニュー" Command="{Binding MenuAdminCommand}" HorizontalAlignment="Left" Margin="21,44,0,0" VerticalAlignment="Top" Height="32" Opacity="0" Cursor="Hand" Background="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}"/>
             <Button Content="戻る" Command="{Binding BackCommand}" HorizontalAlignment="Left" Margin="652,124,0,0" VerticalAlignment="Top" Height="29" Opacity="0" Cursor="Hand" Background="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}" Width="74"/>
             <Button Content="送信箱" Command="{Binding ThanksCradCreateCommand}" HorizontalAlignment="Left" Margin="24,123,0,0" VerticalAlignment="Top" Height="31" Opacity="0" Cursor="Hand" Background="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}" Width="30"/>
             <Button Content="ヒント" Command="{Binding HitAdminCommand}" HorizontalAlignment="Left" Margin="24,165,0,0" VerticalAlignment="Top" Height="36" Opacity="0" Cursor="Hand" Background="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}" Width="34"/>
             <Button Content="全体閲覧表" Command="{Binding ThanksCradListCommand}" HorizontalAlignment="Left" Margin="24,225,0,0" VerticalAlignment="Top" Height="31" Opacity="0" Cursor="Hand" Background="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}" Width="30"/>
         </Grid>
-        <DataGrid ItemsSource="{Binding Ranks}" AutoGenerateColumns="False" CanUserAddRows="False" Background="{x:Null}" Margin="222,175,0,68" Foreground="#FF0A0A0A" BorderBrush="#FF4D92C7" Cursor="Hand" HorizontalAlignment="Left" Width="424">
+        <DataGrid ItemsSource="{Binding Ranks}" AutoGenerateColumns="False" CanUserAddRows="False" Background="{x:Null}" Margin="98,164,0,78" Foreground="#FF0A0A0A" BorderBrush="#FF4D92C7" Cursor="Hand" HorizontalAlignment="Left" Width="626">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="名前" Binding="{Binding Name}" Width="200" />
                 <DataGridTextColumn Header="受信数" Binding="{Binding Count}" Width="200" />

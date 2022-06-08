@@ -101,10 +101,6 @@ namespace ThanksCardClient.ViewModels
             //throw new NotImplementedException();
             return true;
         }
-        public ThanksCradBrowsingViewModel(RegionManager regionManager)
-        {
-            this.regionManager = regionManager;
-        }
 
         public void OnNavigatedFrom(NavigationContext navigationContext)
         {
@@ -185,7 +181,8 @@ namespace ThanksCardClient.ViewModels
         void ExecuteBackCommand()
         {
             this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardList));
-
+        }
+        #endregion
         #region DownloadfileCommand
         private DelegateCommand<ThanksCard> _DownloadfileCommand;
         public DelegateCommand<ThanksCard> DownloadfileCommand =>
