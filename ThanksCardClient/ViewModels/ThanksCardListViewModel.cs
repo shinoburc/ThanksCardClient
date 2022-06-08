@@ -35,8 +35,8 @@ namespace ThanksCardClient.ViewModels
         public ThanksCardListViewModel(IRegionManager regionManager)
         {
             this.regionManager = regionManager;
-            //this.AuthorizedUser = SessionService.Instance.AuthorizedUser;
-            //this._SearchWord = this.AuthorizedUser.Name;
+            this.AuthorizedUser = SessionService.Instance.AuthorizedUser;
+            this._SearchWord = this.AuthorizedUser.Name;
             //追加したらログインしたユーザーが自動生成される
         }
 
@@ -53,7 +53,7 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
-        //
+        
         #region LoginUserProperty
         private string _LoginUser;
         public string LoginUser

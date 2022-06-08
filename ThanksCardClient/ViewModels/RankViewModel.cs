@@ -9,9 +9,18 @@ using ThanksCardClient.Models;
 
 namespace ThanksCardClient.ViewModels
 {
-    public class RankViewModel : BindableBase
+    public class RankViewModel : BindableBase, INavigationAware
     {
         private readonly IRegionManager regionManager;
+
+        #region RanksProperty
+        private List<Rank> _Ranks;
+        public List<Rank> Ranks
+        {
+            get { return _Ranks; }
+            set { SetProperty(ref _Ranks, value); }
+        }
+        #endregion
 
         public RankViewModel(IRegionManager regionManager)
         {
@@ -83,6 +92,28 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
+        private async void UpdateRank()
+        {
+            Rank rank = new Rank();
+            this.Ranks = await rank.GetRanksAsync();
+        }
 
+
+        public void OnNavigatedTo(NavigationContext navigationContext)
+        {
+            UpdateRank();
+            //throw new NotImplementedException();
+        }
+
+        public bool IsNavigationTarget(NavigationContext navigationContext)
+        {
+            return true;
+            //throw new NotImplementedException();
+        }
+
+        public void OnNavigatedFrom(NavigationContext navigationContext)
+        {
+            //throw new NotImplementedException();
+        }
     }
 }
