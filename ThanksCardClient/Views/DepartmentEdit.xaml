@@ -8,17 +8,17 @@
       xmlns:local="clr-namespace:ThanksCardClient.Views"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Height="450" Width="800">
-        <StackPanel Height="450" VerticalAlignment="Top">
-            <Button Content="戻る" HorizontalAlignment="Left" Height="73" Width="92" FontSize="36" Command="{Binding ShowFooterCommand}" Margin="0,1,0,25" />
-            <TextBlock Text="{Binding ErrorMessage}" Foreground="Red"/>
-            <TextBlock Text="Code:" FontSize="24"/>
-            <TextBox Text="{Binding Department.Code}" Height="29"/>
-            <TextBlock Text="Name:" FontSize="24"/>
-            <TextBox Text="{Binding Department.Name}" Height="31"/>
-            <TextBlock Text="Parent:" FontSize="24"/>
-            <ComboBox SelectedItem="{Binding Department.Id}" ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValue="{Binding Department.ParentId}" SelectedValuePath="Id" Height="37" Width="801"/>
-            <Button Content="課所登録" Command="{Binding SubmitCommand}" Width="216" Height="84" Margin="0,72,0,7" FontSize="24"/>
-        </StackPanel>
-    </Grid>
+<Grid HorizontalAlignment="Center" Height="450" VerticalAlignment="Center" Width="800" RenderTransformOrigin="0.506,0.508">
+            <Grid.Background>
+                <ImageBrush ImageSource="/Views/2.png"/>
+            </Grid.Background>
+            <Button Command="{Binding SubmitCommand}" Content="更新" HorizontalAlignment="Center" Height="114" Margin="0,336,0,0" VerticalAlignment="Top" Width="800" FontSize="48" Background="#FF7BF0FF"/>
+            <TextBox  Text="{Binding Department.Name}" HorizontalAlignment="Center" Height="34" Margin="0,191,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" Foreground="#FF111112" Background="#FFFCFCFC" BorderBrush="#FF111112" FontSize="24"/>
+            <TextBlock HorizontalAlignment="Left" Height="26" Margin="276,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Text="部署コード" FontSize="20" RenderTransformOrigin="0.476,1.193"/>
+            <Button Content="戻る" HorizontalAlignment="Left" Height="71" VerticalAlignment="Top" Width="202" FontSize="36" Command="{Binding ShowFooterCommand}" />
+            <ComboBox SelectedItem="{Binding Department.Parent}" ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValue="{Binding Department.ParentId}" SelectedValuePath="Id" HorizontalAlignment="Left" Height="35" Margin="276,260,0,0" VerticalAlignment="Top" Width="252"/>
+            <TextBlock HorizontalAlignment="Left" Margin="276,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Text="部署名" FontSize="20"/>
+            <TextBlock HorizontalAlignment="Center" Margin="0,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" FontSize="20" Text="親部署名"/>
+            <TextBox Text="{Binding Department.Code}" HorizontalAlignment="Center" Height="34" Margin="0,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" Foreground="#FF100F0F" Background="White" BorderBrush="#FF18181A" FontSize="24" RenderTransformOrigin="0.5,-0.5"/>
+</Grid>
 </UserControl>

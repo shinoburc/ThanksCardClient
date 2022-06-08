@@ -122,7 +122,7 @@
         </DataGrid>
         <Button Content="戻る" HorizontalAlignment="Left" Height="50" Margin="21,21,0,0" VerticalAlignment="Top" Width="97"  FontSize="30" Command="{Binding ShowFooterCommand}"/>
         <Button Content="送信履歴" HorizontalAlignment="Left" Height="50" Margin="141,21,0,0" VerticalAlignment="Top" Width="126"  FontSize="30" Command="{Binding ShowThanksCardSendCommand}"/>
-        <Button Content="受信件数" HorizontalAlignment="Left" Height="50" Margin="503,21,0,0" VerticalAlignment="Top" Width="126"  FontSize="30" Command="{Binding ShownumberofreceptionsCommand}"/>
+        <!--<Button Content="受信件数" HorizontalAlignment="Left" Height="50" Margin="503,21,0,0" VerticalAlignment="Top" Width="126"  FontSize="30" Command="{Binding ShownumberofreceptionsCommand}"/>-->
         <Button Content="新規作成" HorizontalAlignment="Left" Height="50" Margin="664,21,0,0" VerticalAlignment="Top" Width="126"  FontSize="30" Command="{Binding ShowThanksCardCreateCommand}"/>
         <Label Content="受信一覧" HorizontalAlignment="Left" Height="62" VerticalAlignment="Top" Width="226" Margin="277,13,0,0" FontSize="45"/>
 

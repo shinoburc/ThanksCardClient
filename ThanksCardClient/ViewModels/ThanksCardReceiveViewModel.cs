@@ -44,19 +44,6 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
-        #region ShownumberofreceptionsCommand
-        private DelegateCommand _ShownumberofreceptionsCommand;
-        public DelegateCommand ShownumberofreceptionsCommand =>
-            _ShownumberofreceptionsCommand ?? (_ShownumberofreceptionsCommand = new DelegateCommand(ExecutenumberofreceptionsCommand));
-
-        void ExecutenumberofreceptionsCommand()
-        {
-            this.regionManager.Regions["FooterRegion"].RemoveAll();
-            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.NumberOfrecePtions));
-
-        }
-        #endregion
-
         #region ShowThanksCardCreateCommand
         private DelegateCommand _ShowThanksCardCreateCommand;
         public DelegateCommand ShowThanksCardCreateCommand =>

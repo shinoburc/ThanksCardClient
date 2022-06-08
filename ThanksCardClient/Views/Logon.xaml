@@ -10,6 +10,9 @@
       d:DesignHeight="400" d:DesignWidth="850">
     <Grid>
         <StackPanel>
+            <StackPanel.Background>
+                <ImageBrush ImageSource="/Views/2.png"/>
+            </StackPanel.Background>
             <TextBlock Text="{Binding ErrorMessage}" Foreground="Red"/>
             <TextBlock Text="Name:"/>
             <TextBox Text="{Binding User.Name}"/>
