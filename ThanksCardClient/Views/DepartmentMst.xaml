@@ -33,6 +33,7 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
+        <TextBlock Text="{Binding AuthorizedUser.Name, StringFormat=Hello: {0}}" HorizontalAlignment="Left" Height="25" Margin="81,89,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="239" Foreground="White" FontSize="14"/>
         <Button Content="戻る" Command="{Binding BackCommand}" HorizontalAlignment="Left" Height="27" Margin="651,125,0,0" VerticalAlignment="Top" Width="79" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Opacity="0" Cursor="Hand"/>
         <Button Content="登録" Command="{Binding DepartmentCreateCommand}" HorizontalAlignment="Left" Height="28" Margin="559,126,0,0" VerticalAlignment="Top" Width="78" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Opacity="0" Cursor="Hand"/>
         <Button Content="メニュー" Command="{Binding MenuAdminCommand}" HorizontalAlignment="Left" Margin="20,43,0,0" VerticalAlignment="Top" Height="33" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Opacity="0"/>

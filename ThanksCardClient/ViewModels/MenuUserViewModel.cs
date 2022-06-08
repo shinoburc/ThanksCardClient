@@ -17,8 +17,41 @@ namespace ThanksCardClient.ViewModels
         public MenuUserViewModel(IRegionManager regionManager)
         {
             this.regionManager = regionManager;
+            this.AuthorizedUser = SessionService.Instance.AuthorizedUser;
+            this._SearchWord = this.AuthorizedUser.Name;
         }
-
+        #region roginuser
+        private User _AuthorizedUser;
+        public User AuthorizedUser
+        {
+            get { return _AuthorizedUser; }
+            set { SetProperty(ref _AuthorizedUser, value); }
+        }
+        #endregion
+        #region SearchWordProperty
+        private string _SearchWord;
+        public string SearchWord
+        {
+            get { return _SearchWord; }
+            set
+            {
+                SetProperty(ref _SearchWord, value);
+                System.Diagnostics.Debug.WriteLine("SearchWord: " + this.SearchWord); //動作確認用。本来はこの行は必要ありません。
+            }
+        }
+        #endregion
+        #region LoginUserProperty
+        private string _LoginUser;
+        public string LoginUser
+        {
+            get { return _LoginUser; }
+            set
+            {
+                SetProperty(ref _LoginUser, value);
+                //    System.Diagnostics.Debug.WriteLine("SearchWord: " + this.SearchWord); //動作確認用。本来はこの行は必要ありません。
+            }
+        }
+        #endregion
         public bool IsNavigationTarget(NavigationContext navigationContext)
         {
             //throw new NotImplementedException();
@@ -125,8 +158,10 @@ namespace ThanksCardClient.ViewModels
 
             // HeaderRegion, FooterRegion を破棄して、ContentRegion をログオン画面に遷移させる。
             this.regionManager.Regions["HeaderRegion"].RemoveAll();
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Logon));
             this.regionManager.Regions["FooterRegion"].RemoveAll();
+            this.regionManager.Regions["ContentRegion"].RemoveAll();
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Logon));
+            
         }
         #endregion
     }

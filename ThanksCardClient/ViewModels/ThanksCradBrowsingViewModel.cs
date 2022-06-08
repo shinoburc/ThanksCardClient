@@ -6,12 +6,52 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using ThanksCardClient.Models;
+using ThanksCardClient.Services;
 
 namespace ThanksCardClient.ViewModels
 {
     public class ThanksCradBrowsingViewModel : BindableBase, INavigationAware
     {
         private readonly IRegionManager regionManager;
+
+        public ThanksCradBrowsingViewModel(IRegionManager regionManager)
+        {
+            this.regionManager = regionManager;
+            this.AuthorizedUser = SessionService.Instance.AuthorizedUser;
+            this._SearchWord = this.AuthorizedUser.Name;
+        }
+        #region roginuser
+        private User _AuthorizedUser;
+        public User AuthorizedUser
+        {
+            get { return _AuthorizedUser; }
+            set { SetProperty(ref _AuthorizedUser, value); }
+        }
+        #endregion
+        #region SearchWordProperty
+        private string _SearchWord;
+        public string SearchWord
+        {
+            get { return _SearchWord; }
+            set
+            {
+                SetProperty(ref _SearchWord, value);
+                System.Diagnostics.Debug.WriteLine("SearchWord: " + this.SearchWord); //動作確認用。本来はこの行は必要ありません。
+            }
+        }
+        #endregion
+        #region LoginUserProperty
+        private string _LoginUser;
+        public string LoginUser
+        {
+            get { return _LoginUser; }
+            set
+            {
+                SetProperty(ref _LoginUser, value);
+                //    System.Diagnostics.Debug.WriteLine("SearchWord: " + this.SearchWord); //動作確認用。本来はこの行は必要ありません。
+            }
+        }
+        #endregion
 
         #region UsersProperty
         private List<User> _Users;
@@ -40,15 +80,14 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
-        public ThanksCradBrowsingViewModel(RegionManager regionManager)
-        {
-            this.regionManager = regionManager;
-        }
-
         public bool IsNavigationTarget(NavigationContext navigationContext)
         {
             //throw new NotImplementedException();
             return true;
+        }
+        public ThanksCradBrowsingViewModel(RegionManager regionManager)
+        {
+            this.regionManager = regionManager;
         }
 
         public void OnNavigatedFrom(NavigationContext navigationContext)
@@ -69,8 +108,6 @@ namespace ThanksCardClient.ViewModels
         }
         #region  MenuUserCommand
         private DelegateCommand _MenuUserCommand;
-
-
         public DelegateCommand MenuUserCommand =>
             _MenuUserCommand ?? (_MenuUserCommand = new DelegateCommand(ExecuteMenuUserCommand));
 
@@ -80,5 +117,57 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
+        #region  ThanksCardCommand
+        private DelegateCommand _ThanksCardCommand;
+
+
+        public DelegateCommand ThanksCardCommand =>
+            _ThanksCardCommand ?? (_ThanksCardCommand = new DelegateCommand(ExecuteThanksCardCommand));
+
+        void ExecuteThanksCardCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardCreate));
+        }
+        #endregion
+
+        #region  HitCommand
+        private DelegateCommand _HitCommand;
+
+
+        public DelegateCommand HitCommand =>
+            _HitCommand ?? (_HitCommand = new DelegateCommand(ExecuteHitCommand));
+
+        void ExecuteHitCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.Hit));
+        }
+        #endregion
+
+        #region  ThankCardListCommand
+        private DelegateCommand _ThankCardListCommand;
+
+
+        public DelegateCommand ThankCardListCommand =>
+            _ThankCardListCommand ?? (_ThankCardListCommand = new DelegateCommand(ExecuteThankCardListCommand));
+
+        void ExecuteThankCardListCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardList));
+        }
+        #endregion
+
+
+        #region  BackCommand
+        private DelegateCommand _BackCommand;
+
+
+        public DelegateCommand BackCommand =>
+            _BackCommand ?? (_BackCommand = new DelegateCommand(ExecuteBackCommand));
+
+        void ExecuteBackCommand()
+        {
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardList));
+        }
+        #endregion
     }
 }

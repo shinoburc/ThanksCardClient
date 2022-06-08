@@ -12,6 +12,7 @@
         <Grid.Background>
             <ImageBrush ImageSource="/Images/UserRegister.png"/>
         </Grid.Background>
+        <TextBlock Text="{Binding AuthorizedUser.Name, StringFormat=Hello: {0}}" HorizontalAlignment="Left" Height="25" Margin="81,89,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="239" Foreground="White" FontSize="14"/>
         <TextBox Text="{Binding User.Name}" HorizontalAlignment="Left" Height="38" Margin="215,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="384"/>
         <ComboBox ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValue="{Binding User.DepartmentId}" SelectedValuePath="Id" HorizontalAlignment="Left" Height="33" Margin="215,307,0,0" VerticalAlignment="Top" Width="384" BorderBrush="#FFDADADA">
             <ComboBox.Background>

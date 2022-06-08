@@ -15,6 +15,7 @@
     <None Remove="Images\UserRegister.png" />
     <None Remove="Images\UserUpdates.png" />
     <None Remove="Views\AdminMenu.png" />
+    <None Remove="Views\CommentMonitor.png" />
     <None Remove="Views\DEPARTMENT EDIT.png" />
     <None Remove="Views\DepartmentCreate.png" />
     <None Remove="Views\Department_2.png" />
@@ -22,6 +23,7 @@
     <None Remove="Views\hit.png" />
     <None Remove="Views\HitAdmin.png" />
     <None Remove="Views\HitHit.png" />
+    <None Remove="Views\Hit_Admin.png" />
     <None Remove="Views\Homes.png" />
     <None Remove="Views\Homesss.png" />
     <None Remove="Views\Login 1.png" />
@@ -79,6 +81,7 @@
     <Resource Include="Images\UserRegister.png" />
     <Resource Include="Images\UserUpdates.png" />
     <Resource Include="Views\AdminMenu.png" />
+    <Resource Include="Views\CommentMonitor.png" />
     <Resource Include="Views\DEPARTMENT EDIT.png" />
     <Resource Include="Views\DepartmentCreate.png" />
     <Resource Include="Views\Department_2.png" />
@@ -86,6 +89,7 @@
     <Resource Include="Views\hit.png" />
     <Resource Include="Images\HitAdmin.png" />
     <Resource Include="Views\HitHit.png" />
+    <Resource Include="Views\Hit_Admin.png" />
     <Resource Include="Views\Homes.png" />
     <Resource Include="Images\Homesss.png" />
     <Resource Include="Views\Login 1.png" />

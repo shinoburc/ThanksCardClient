@@ -58,7 +58,7 @@ namespace ThanksCardClient.ViewModels
                 SessionService.Instance.IsAuthorized = true;
                 SessionService.Instance.AuthorizedUser = authorizedUser;
                 this.ErrorMessage = "";
-                this.regionManager.RequestNavigate("HeaderRegion", nameof(Views.Header));
+                /*this.regionManager.RequestNavigate("HeaderRegion", nameof(Views.Header));*/
                 this.regionManager.RequestNavigate("ContentRegion", nameof(Views.MenuUser));
                 this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Footer));
             }
@@ -69,7 +69,7 @@ namespace ThanksCardClient.ViewModels
                 SessionService.Instance.IsAuthorized = false;
                 SessionService.Instance.AuthorizedUser = authorizedUser;
                 this.ErrorMessage = "";
-                this.regionManager.RequestNavigate("HeaderRegion", nameof(Views.Header));
+                /*this.regionManager.RequestNavigate("HeaderRegion", nameof(Views.Header));*/
                 this.regionManager.RequestNavigate("ContentRegion", nameof(Views.MenuAdmin));
                 this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Footer));
             }

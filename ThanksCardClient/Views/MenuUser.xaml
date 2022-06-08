@@ -11,6 +11,8 @@
             <Grid.Background>
                 <ImageBrush Stretch="Uniform" ImageSource="/Images/MenuMember.png"/>
             </Grid.Background>
+
+            <TextBlock Text="{Binding AuthorizedUser.Name, StringFormat=Hello: {0}}" HorizontalAlignment="Left" Height="25" Margin="81,89,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="239" Foreground="#FF3B435F" FontSize="14"/>
             <Button Content="送信箱"  Command="{Binding ThanksCradCreateCommand}" HorizontalAlignment="Left" Margin="179,177,0,0" VerticalAlignment="Top" Height="34" Width="480" Cursor="Hand" Opacity="0"/>
             <Button Content="全体閲覧表"  Command="{Binding ThanksCradListCommand}" HorizontalAlignment="Left" Margin="179,239,0,0" VerticalAlignment="Top" Height="34" Width="480" Cursor="Hand" Opacity="0" Click="Button_Click_1"/>
 
