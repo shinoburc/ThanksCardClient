@@ -24,7 +24,7 @@ namespace ThanksCardClient.ViewModels
         void ExecuteShowkeijibanCommand()
         {
             this.regionManager.Regions["FooterRegion"].RemoveAll();
-            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Keijiban));
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.ThanksCardList));
         }
         #endregion
     }

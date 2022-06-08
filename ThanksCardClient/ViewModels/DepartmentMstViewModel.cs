@@ -48,8 +48,6 @@ namespace ThanksCardClient.ViewModels
             this.Departments = await dept.GetDepartmentsAsync();
         }
 
-
-
         #region DepartmentCreateCommand
         private DelegateCommand _DepartmentCreateCommand;
         public DelegateCommand DepartmentCreateCommand =>
@@ -57,7 +55,7 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteDepartmentCreateCommand()
         {
-            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.DepartmentEdit));
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.DepartmentCreate));
         }
         #endregion
 
@@ -72,7 +70,7 @@ namespace ThanksCardClient.ViewModels
             var parameters = new NavigationParameters();
             parameters.Add("SelectedDepartment", SelectedDepartment);
 
-            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.DepartmentEdit), parameters);
+            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.DepartmentEdit), parameters);
         }
         #endregion
 
@@ -110,19 +108,6 @@ namespace ThanksCardClient.ViewModels
         {
 
             this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Footer));
-        }
-        #endregion
-
-        #region SubmitCommand
-        private DelegateCommand _SubmitCommand;
-        public DelegateCommand SubmitCommand =>
-            _SubmitCommand ?? (_SubmitCommand = new DelegateCommand(ExecuteSubmitCommand));
-
-        async void ExecuteSubmitCommand()
-        {
-            Department createdDepartment = await Department.PostDepartmentAsync(this.Department);
-
-            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.DepartmentMst));
         }
         #endregion
     }

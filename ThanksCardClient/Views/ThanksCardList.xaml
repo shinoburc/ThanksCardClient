@@ -9,18 +9,19 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <StackPanel>
-            <TextBox Text="{Binding SearchWord}"/>
-            <Button Content="検索" Command="{Binding SubmitSearchCommand}" CommandParameter="{Binding SearchWord}" Width="126"/>
-            <DataGrid ItemsSource="{Binding ThanksCards}" AutoGenerateColumns="False" CanUserAddRows="False" SelectionChanged="DataGrid_SelectionChanged" Margin="0,0,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="/Views/2.png"/>
+            </Grid.Background>
+            <Button Content="戻る" HorizontalAlignment="Left" Height="92" VerticalAlignment="Top" Width="154"/>
+            <DataGrid ItemsSource="{Binding ThanksCards}" AutoGenerateColumns="False" CanUserAddRows="False" SelectionChanged="DataGrid_SelectionChanged" Margin="0,92,0,334">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
-                    <DataGridTextColumn Header="タイトル" Binding="{Binding Title}" />
-                    <DataGridTextColumn Header="感謝の言葉" Binding="{Binding Body}" />
-                    <DataGridTextColumn Header="From" Binding="{Binding From.Name}" />
-                    <DataGridTextColumn Header="To" Binding="{Binding To.Name}" />
-                    <DataGridTextColumn Header="作成日時" Binding="{Binding CreatedDateTime}" />
-                    <DataGridTemplateColumn IsReadOnly="True" Header="タグ">
+                    <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="100" />
+                    <DataGridTextColumn Header="タイトル" Binding="{Binding Title}" Width="100" />
+                    <DataGridTextColumn Header="感謝の言葉" Binding="{Binding Body}" Width="200" />
+                    <DataGridTextColumn Header="From" Binding="{Binding From.Name}" Width="100" />
+                    <DataGridTextColumn Header="To" Binding="{Binding To.Name}" Width="100" />
+                    <DataGridTextColumn Header="作成日時" Binding="{Binding CreatedDateTime}" Width="100" />
+                    <DataGridTemplateColumn IsReadOnly="True" Header="タグ" Width="100">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <ListBox ItemsSource="{Binding ThanksCardTags}" DisplayMemberPath="Tag.Name"/>
@@ -29,6 +30,6 @@
                     </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
-        </StackPanel>
-    </Grid>
+            <TextBlock HorizontalAlignment="Left" Height="62" TextWrapping="Wrap" Text="サンクスカード" VerticalAlignment="Top" Width="250" Margin="299,16,0,0" Background="White" FontSize="48"/>
+        </Grid>
 </UserControl>

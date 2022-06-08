@@ -40,12 +40,12 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
-        #region ShowThanksCardListCommand
-        private DelegateCommand _ShowThanksCardListCommand;
-        public DelegateCommand ShowThanksCardListCommand =>
-            _ShowThanksCardListCommand ?? (_ShowThanksCardListCommand = new DelegateCommand(ExecuteShowThanksCardListCommand));
+        #region ShowKeijibanCommand
+        private DelegateCommand _ShowKeijibanCommand;
+        public DelegateCommand ShowKeijibanCommand =>
+            _ShowKeijibanCommand ?? (_ShowKeijibanCommand = new DelegateCommand(ExecuteShowKeijibanCommand));
 
-        void ExecuteShowThanksCardListCommand()
+        void ExecuteShowKeijibanCommand()
         {
             this.regionManager.Regions["FooterRegion"].RemoveAll();
             this.regionManager.RequestNavigate("FooterRegion", nameof(Views.ThanksCardList));
@@ -96,7 +96,7 @@ namespace ThanksCardClient.ViewModels
         void ExecuteShowkeijibanCommand()
         {
             this.regionManager.Regions["FooterRegion"].RemoveAll();
-            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Keijiban));
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.ThanksCardList));
         }
         #endregion
 
@@ -116,17 +116,6 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
-        #region ShowMVPCommand
-        private DelegateCommand _ShowMVPCommand;
-        public DelegateCommand ShowMVPCommand =>
-            _ShowMVPCommand ?? (_ShowMVPCommand = new DelegateCommand(ExecuteShowMVPCommand));
-
-        void ExecuteShowMVPCommand()
-        {
-            this.regionManager.Regions["FooterRegion"].RemoveAll();
-            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Mvp));
-        }
-        #endregion
 
         #region ShowmanualCommand
         private DelegateCommand _ShowmanualCommand;
