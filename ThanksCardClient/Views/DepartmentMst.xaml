@@ -9,35 +9,38 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <StackPanel>
-            <StackPanel.Background>
-                <ImageBrush ImageSource="/Views/2.png"/>
-            </StackPanel.Background>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Views/2.png"/>
+        </Grid.Background>
 
-            <Button Content="戻る" Height="44" Width="146" FontSize="24" Command="{Binding ShowFooterCommand}" HorizontalAlignment="Left" />
-            <DataGrid ItemsSource="{Binding Departments}" AutoGenerateColumns="False" CanUserAddRows="False">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
-                    <DataGridTextColumn Header="コード" Binding="{Binding Code}" />
-                    <DataGridTextColumn Header="名前" Binding="{Binding Name}" />
-                    <DataGridTextColumn Header="親部署" Binding="{Binding Parent.Name}" />
-                    <DataGridTemplateColumn Header="">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <!-- CommandParameter に {Binding} とだけ記述すると、MainWindowViewModel.Departments の要素、つまり Department モデルを指定したことになる。-->
-                                <Button Content="編集" Command="{Binding DataContext.DepartmentEditCommand, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" CommandParameter="{Binding}" />
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-                    <DataGridTemplateColumn Header="">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <Button Content="削除" Command="{Binding DataContext.DepartmentDeleteCommand, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" CommandParameter="{Binding}" />
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-                </DataGrid.Columns>
-            </DataGrid>
-        </StackPanel>
+        <Button Content="戻る" Height="44" Width="146" FontSize="24" Command="{Binding ShowFooterCommand}" HorizontalAlignment="Left" Margin="0,0,0,406" />
+        <DataGrid ItemsSource="{Binding Departments}" AutoGenerateColumns="False" CanUserAddRows="False" Margin="0,44,0,0">
+            <DataGrid.Background>
+                <ImageBrush/>
+            </DataGrid.Background>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="100" />
+                <DataGridTextColumn Header="コード" Binding="{Binding Code}" Width="200" />
+                <DataGridTextColumn Header="名前" Binding="{Binding Name}" Width="200" />
+                <DataGridTextColumn Header="親部署" Binding="{Binding Parent.Name}" Width="200" />
+                <DataGridTemplateColumn Header="">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <!-- CommandParameter に {Binding} とだけ記述すると、MainWindowViewModel.Departments の要素、つまり Department モデルを指定したことになる。-->
+                            <Button Content="編集" Command="{Binding DataContext.DepartmentEditCommand, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" CommandParameter="{Binding}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="削除" Command="{Binding DataContext.DepartmentDeleteCommand, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" CommandParameter="{Binding}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="社員一覧" Width="146" FontSize="24" Command="{Binding UserMstCommand}" HorizontalAlignment="Left" Margin="654,0,0,406" />
+        <TextBlock HorizontalAlignment="Left" Height="44" TextWrapping="Wrap" Text="部署一覧" VerticalAlignment="Top" Width="152" Margin="318,0,0,0" FontSize="36"/>
     </Grid>
 </UserControl>

@@ -12,7 +12,7 @@
             <Grid.Background>
                 <ImageBrush ImageSource="/Views/2.png"/>
             </Grid.Background>
-            <Button Content="戻る" HorizontalAlignment="Left" Height="92" VerticalAlignment="Top" Width="154"/>
+        <Button Content="戻る" Command="{Binding ShowFooterCommand}" HorizontalAlignment="Left" Height="92" VerticalAlignment="Top" Width="154" FontSize="48"/>
             <DataGrid ItemsSource="{Binding ThanksCards}" AutoGenerateColumns="False" CanUserAddRows="False" SelectionChanged="DataGrid_SelectionChanged" Margin="0,92,0,0">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="100" />

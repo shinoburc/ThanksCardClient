@@ -104,5 +104,17 @@ namespace ThanksCardClient.ViewModels
             this.regionManager.RequestNavigate("FooterRegion", nameof(Views.DepartmentMst));
         }
         #endregion
+
+        #region ShowFooterCommand
+        private DelegateCommand _ShowFooterCommand;
+        public DelegateCommand ShowFooterCommand =>
+            _ShowFooterCommand ?? (_ShowFooterCommand = new DelegateCommand(ExecuteShowFooterCommand));
+
+        void ExecuteShowFooterCommand()
+        {
+
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Footer));
+        }
+        #endregion
     }
 }

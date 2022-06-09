@@ -24,22 +24,21 @@ namespace ThanksCardClient
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterForNavigation<MainWindow>();
-            containerRegistry.RegisterForNavigation<Logon>();
-            containerRegistry.RegisterForNavigation<Footer>();
-            containerRegistry.RegisterForNavigation<ThanksCardCreate>();
-            containerRegistry.RegisterForNavigation<UserMst>();
-            containerRegistry.RegisterForNavigation<DepartmentMst>();
             containerRegistry.RegisterForNavigation<DepartmentCreate>();
             containerRegistry.RegisterForNavigation<DepartmentEdit>();
-            containerRegistry.RegisterForNavigation<TagMst>();
+            containerRegistry.RegisterForNavigation<DepartmentMst>();
+            containerRegistry.RegisterForNavigation<Footer>();
+            containerRegistry.RegisterForNavigation<Logon>();
+            containerRegistry.RegisterForNavigation<MainWindow>();
+            containerRegistry.RegisterForNavigation<Manual>();
+            containerRegistry.RegisterForNavigation<RegistrationScreen>();
+            containerRegistry.RegisterForNavigation<RegistrationScreenEdit>();
             containerRegistry.RegisterForNavigation<TagCreate>();
             containerRegistry.RegisterForNavigation<TagEdit>();
-            containerRegistry.RegisterForNavigation<Manual>();
-            containerRegistry.RegisterForNavigation<ThanksCardSend>();
-            containerRegistry.RegisterForNavigation<RegistrationScreen>();
-            containerRegistry.RegisterForNavigation<ThanksCardReceive>();
+            containerRegistry.RegisterForNavigation<TagMst>();
+            containerRegistry.RegisterForNavigation<ThanksCardCreate>();
             containerRegistry.RegisterForNavigation<ThanksCardList>();
+            containerRegistry.RegisterForNavigation<UserMst>();
         }
     }
 }

@@ -95,5 +95,17 @@ namespace ThanksCardClient.ViewModels
 
         }
         #endregion
+
+        #region ShowDepartmentMstCommand
+        private DelegateCommand _ShowDepartmentMstCommand;
+        public DelegateCommand ShowDepartmentMstCommand =>
+            _ShowDepartmentMstCommand ?? (_ShowDepartmentMstCommand = new DelegateCommand(ExecuteShowDepartmentMstCommand));
+
+        void ExecuteShowDepartmentMstCommand()
+        {
+            this.regionManager.Regions["FooterRegion"].RemoveAll();
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.DepartmentMst));
+        }
+        #endregion
     }
 }
