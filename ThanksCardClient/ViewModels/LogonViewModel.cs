@@ -53,7 +53,7 @@ namespace ThanksCardClient.ViewModels
             User authorizedUser = await this.User.LogonAsync();
 
             // authorizedUser が null でなければログオンに成功している。かつDeleteがfalseだったら
-            if (authorizedUser != null && authorizedUser.IsAdmin != true)
+            if (authorizedUser != null)
             {
                 SessionService.Instance.IsAuthorized = true;
                 SessionService.Instance.AuthorizedUser = authorizedUser;
