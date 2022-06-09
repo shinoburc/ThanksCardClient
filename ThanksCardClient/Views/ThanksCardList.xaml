@@ -13,7 +13,7 @@
                 <ImageBrush ImageSource="/Views/2.png"/>
             </Grid.Background>
             <Button Content="戻る" HorizontalAlignment="Left" Height="92" VerticalAlignment="Top" Width="154"/>
-            <DataGrid ItemsSource="{Binding ThanksCards}" AutoGenerateColumns="False" CanUserAddRows="False" SelectionChanged="DataGrid_SelectionChanged" Margin="0,92,0,334">
+            <DataGrid ItemsSource="{Binding ThanksCards}" AutoGenerateColumns="False" CanUserAddRows="False" SelectionChanged="DataGrid_SelectionChanged" Margin="0,92,0,0">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="100" />
                     <DataGridTextColumn Header="タイトル" Binding="{Binding Title}" Width="100" />
@@ -30,6 +30,6 @@
                     </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
-            <TextBlock HorizontalAlignment="Left" Height="62" TextWrapping="Wrap" Text="サンクスカード" VerticalAlignment="Top" Width="250" Margin="299,16,0,0" Background="White" FontSize="48"/>
+            <TextBlock HorizontalAlignment="Left" Height="62" TextWrapping="Wrap" Text="掲示板" VerticalAlignment="Top" Width="250" Margin="299,16,0,0" Background="White" FontSize="48"/>
         </Grid>
 </UserControl>
