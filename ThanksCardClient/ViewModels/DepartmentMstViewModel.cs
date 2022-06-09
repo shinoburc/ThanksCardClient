@@ -55,7 +55,7 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteDepartmentCreateCommand()
         {
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.DepartmentCreate));
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.DepartmentCreate));
         }
         #endregion
 
@@ -70,7 +70,7 @@ namespace ThanksCardClient.ViewModels
             var parameters = new NavigationParameters();
             parameters.Add("SelectedDepartment", SelectedDepartment);
 
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.DepartmentEdit), parameters);
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.DepartmentEdit), parameters);
         }
         #endregion
 
