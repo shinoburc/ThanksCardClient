@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Linq;
 using ThanksCardClient.Models;
 using ThanksCardClient.Services;
+using System.Text;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ThanksCardClient.ViewModels
 {
@@ -191,6 +193,13 @@ namespace ThanksCardClient.ViewModels
         async void ExecuteDownloadfileCommand(ThanksCard SelectedThanksCard)
         {
             ThanksCard thanksCard = await SelectedThanksCard.DownloadfileAsync(SelectedThanksCard.Id);
+            string str = "タイトル：" + thanksCard.Title + "\n本文:" + thanksCard.Body;
+            Encoding encoding = Encoding.UTF8;
+            byte[] Bytes = encoding.GetBytes(str);
+
+            ThanksCardDownload thanksCardDownload = new ThanksCardDownload();
+            thanksCardDownload.cardDownload(Bytes);
+
             //    ThanksCard thanksCard = new ThanksCard();
             //    this.ThanksCards = await thanksCard.GetThanksCardsAsync();
 

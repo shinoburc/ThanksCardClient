@@ -9,7 +9,7 @@ using ThanksCardClient.Services;
 
 namespace ThanksCardClient.Models
 {
-    public class ThanksCard : BindableBase
+    public class ThanksCard : BindableBase 
     {
         #region IdProperty
         private long _Id;
