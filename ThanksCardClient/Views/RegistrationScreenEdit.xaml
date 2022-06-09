@@ -13,13 +13,13 @@
             <ImageBrush ImageSource="/Views/2.png"/>
         </Grid.Background>
         <Button Content="更新" Command="{Binding SubmitCommand}" HorizontalAlignment="Center" Height="104" Margin="0,338,0,0" VerticalAlignment="Top" Width="781" FontSize="48" Background="#FF7BF0FF"/>
-        <ComboBox SelectedItem="{Binding User.Department}" ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValue="{Binding User.DepartmentId}" SelectedValuePath="Id" HorizontalAlignment="Left" Height="33" Margin="574,156,0,0" VerticalAlignment="Top" Width="206"/>
+        <ComboBox SelectedItem="{Binding User.Department}" ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValue="{Binding User.DepartmentId}" SelectedValuePath="Id" HorizontalAlignment="Left" Height="33" Margin="574,156,0,0" VerticalAlignment="Top" Width="206" FontSize="20"/>
         <TextBlock HorizontalAlignment="Left" Height="31" Margin="33,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" FontSize="20" RenderTransformOrigin="0.476,1.193"><Run Language="ja-jp" Text="社員"/><LineBreak/><Run Language="ja-jp"/><Run Text="コード"/></TextBlock>
         <Button Content="戻る" HorizontalAlignment="Left" Height="71" VerticalAlignment="Top" Width="202" FontSize="36" Command="{Binding ShowFooterCommand}"/>
         <TextBlock HorizontalAlignment="Left" Height="31" Margin="37,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" FontSize="20" RenderTransformOrigin="0.476,1.193" Background="White" Text="管理者権限"/>
         <TextBlock HorizontalAlignment="Center" Height="31" Margin="0,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" FontSize="20" RenderTransformOrigin="0.476,1.193"><Run Language="ja-jp" Text="PassWord"/></TextBlock>
-        <TextBox Text="{Binding User.Password}" HorizontalAlignment="Center" Height="34" Margin="0,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Foreground="White" Background="#FFE4E4E4"/>
-        <TextBox  Text="{Binding User.Name}" HorizontalAlignment="Left" Height="34" Margin="34,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Foreground="White" Background="#FFE4E4E4"/>
+        <TextBox Text="{Binding User.Password}" HorizontalAlignment="Center" Height="34" Margin="0,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Foreground="Black" Background="#FFE4E4E4" FontSize="20"/>
+        <TextBox  Text="{Binding User.Name}" HorizontalAlignment="Left" Height="34" Margin="34,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Background="#FFE4E4E4" Foreground="Black" FontSize="20"/>
         <TextBlock HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Text="部署名" FontSize="20" Margin="572,110,0,0" Background="White"/>
         <CheckBox IsChecked="{Binding User.IsAdmin}" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="202,256,0,0" Height="24" Width="22" RenderTransformOrigin="-0.364,0.333"/>
     </Grid>

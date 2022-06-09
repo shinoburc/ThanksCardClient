@@ -8,17 +8,15 @@
       xmlns:local="clr-namespace:ThanksCardClient.Views"
       mc:Ignorable="d" 
       d:DesignHeight="400" d:DesignWidth="850">
-    <Grid>
-        <StackPanel>
-            <StackPanel.Background>
-                <ImageBrush ImageSource="/Views/2.png"/>
-            </StackPanel.Background>
-            <TextBlock Text="{Binding ErrorMessage}" Foreground="Red"/>
-            <TextBlock Text="Name:"/>
-            <TextBox Text="{Binding User.Name}"/>
-            <TextBlock Text="Password:"/>
-            <TextBox Text="{Binding User.Password}"/>
-            <Button Content="Logon" Command="{Binding LogonCommand}" Margin="0,0,-2,32"/>
-        </StackPanel>
+    <Grid Height="400" Width="850" Margin="0,-1,0,1">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Views/1.png"/>
+        </Grid.Background>
+        <Button Content="" Command="{Binding LogonCommand}" HorizontalAlignment="Center" Height="23" Margin="0,236,0,0" VerticalAlignment="Top" Width="140" Background="{x:Null}"/>
+        <TextBox Text="{Binding User.Name}" HorizontalAlignment="Center" Height="25" Margin="0,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="217" FontSize="18"/>
+        <TextBox Text="{Binding User.Password}" HorizontalAlignment="Center" Height="25" Margin="0,195,0,0" VerticalAlignment="Top" Width="217" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="PassWord" VerticalAlignment="Top" Width="89" Margin="316,177,0,0" Background="White"/>
+        <TextBlock HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" VerticalAlignment="Top" Width="89" Margin="307,130,0,0" Background="White" Text="   社員名"/>
+        <TextBlock Text="{Binding ErrorMessage}" Foreground="Red" HorizontalAlignment="Center" Height="43" TextWrapping="Wrap" VerticalAlignment="Top" Width="851" Background="White" FontSize="18" TextAlignment="Center"/>
     </Grid>
 </UserControl>

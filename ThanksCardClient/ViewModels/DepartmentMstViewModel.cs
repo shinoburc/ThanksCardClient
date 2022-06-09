@@ -110,5 +110,17 @@ namespace ThanksCardClient.ViewModels
             this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Footer));
         }
         #endregion
+
+        #region UserMstCommand
+        private DelegateCommand _UserMstCommand;
+        public DelegateCommand UserMstCommand =>
+            _UserMstCommand ?? (_UserMstCommand = new DelegateCommand(ExecuteUserMstCommand));
+
+        void ExecuteUserMstCommand()
+        {
+
+            this.regionManager.RequestNavigate("FooterRegion", nameof(Views.UserMst));
+        }
+        #endregion
     }
 }
