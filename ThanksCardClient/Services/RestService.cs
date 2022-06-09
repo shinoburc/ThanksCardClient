@@ -293,7 +293,7 @@ namespace ThanksCardClient.Services
             }
             catch (Exception e)
             {
-                System.Diagnostics.Debug.WriteLine("Exception in RestService.DeleteUserAsync: " + e);
+                System.Diagnostics.Debug.WriteLine("Exception in RestService.GetThanksCardAsync: " + e);
             }
             return responseThanksCard;
         }
