@@ -8,19 +8,19 @@
       xmlns:local="clr-namespace:ThanksCardClient.Views"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800">
-<Grid HorizontalAlignment="Center" Height="450" VerticalAlignment="Center" Width="800">
-            <Grid.Background>
-                <ImageBrush ImageSource="/Views/2.png"/>
-            </Grid.Background>
-            <Button Content="戻る" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="58" VerticalAlignment="Top" Width="190" FontSize="36" Command="{Binding ShowThanksCardReceiveCommand}"/>
-            <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="48" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" Margin="56,73,0,0" FontSize="36"><Run Language="ja-jp" Text="To"/></TextBlock>
+    <Grid HorizontalAlignment="Center" Height="450" VerticalAlignment="Center" Width="800">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Views/2.png"/>
+        </Grid.Background>
+        <Button Content="戻る" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="58" VerticalAlignment="Top" Width="190" FontSize="36" Command="{Binding ShowThanksCardReceiveCommand}"/>
+        <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="48" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" Margin="56,73,0,0" FontSize="36"><Run Language="ja-jp" Text="To"/></TextBlock>
         <ComboBox  x:Name="ToDepartments" ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValuePath="Id" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="27" Margin="170,87,0,0" VerticalAlignment="Top" Width="188">
-        <!-- Deparment が選択されたら ToDepartmentsChangedCommand を発行する -->
-        <i:Interaction.Triggers>
-            <i:EventTrigger EventName="SelectionChanged">
-                <i:InvokeCommandAction Command="{Binding ToDepartmentsChangedCommand}" CommandParameter="{Binding ElementName=ToDepartments, Path=SelectedValue}"/>
-            </i:EventTrigger>
-        </i:Interaction.Triggers>
+            <!-- Deparment が選択されたら ToDepartmentsChangedCommand を発行する -->
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged">
+                    <i:InvokeCommandAction Command="{Binding ToDepartmentsChangedCommand}" CommandParameter="{Binding ElementName=ToDepartments, Path=SelectedValue}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
         </ComboBox>
         <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" Text="部署" VerticalAlignment="Top" Width="126" Margin="170,58,0,0" FontSize="22" RenderTransformOrigin="0.602,0.553"/>
         <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" Text="名前" VerticalAlignment="Top" Width="170" Margin="392,50,0,0" FontSize="24"/>
@@ -36,13 +36,13 @@
         <DatePicker SelectedDate="{Binding ThanksCard.CreatedDateTime}" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="34" VerticalAlignment="Top" Width="411" Margin="169,263,0,0"/>
         <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="48" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" Margin="40,121,0,0" FontSize="36"><Run Language="ja-jp" Text="FromM"/></TextBlock>
         <ComboBox x:Name="FromDepartments" ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValuePath="Id" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="27" Margin="170,142,0,0" VerticalAlignment="Top" Width="188">
-        <!-- Deparment が選択されたら FromDepartmentsChangedCommand を発行する -->
-        <i:Interaction.Triggers>
-            <i:EventTrigger EventName="SelectionChanged">
-                <i:InvokeCommandAction Command="{Binding FromDepartmentsChangedCommand}" CommandParameter="{Binding ElementName=FromDepartments, Path=SelectedValue}"/>
-            </i:EventTrigger>
-        </i:Interaction.Triggers>
+            <!-- Deparment が選択されたら FromDepartmentsChangedCommand を発行する -->
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged">
+                    <i:InvokeCommandAction Command="{Binding FromDepartmentsChangedCommand}" CommandParameter="{Binding ElementName=FromDepartments, Path=SelectedValue}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
         </ComboBox>
         <ComboBox ItemsSource="{Binding FromUsers}" DisplayMemberPath="Name" SelectedValue="{Binding ThanksCard.FromId}" SelectedValuePath="Id" HorizontalAlignment="Left" Height="27" Margin="400,138,0,0" VerticalAlignment="Top" Width="188"/>
-</Grid>
+    </Grid>
 </UserControl>
