@@ -27,6 +27,10 @@
             <Canvas>
                 <Button Content="クリア" Command="{Binding Cleacommand}" Width="122" Canvas.Left="532" Canvas.Top="213"/>
             </Canvas>
+            <Image Height="100" Width="100"/>
+            <Canvas>
+                <Image Height="103" Width="118" Source="/Views/festisite_modelo-especial.png" Canvas.Left="646" Canvas.Top="-171"/>
+            </Canvas>
         </StackPanel>
     </Grid>
 </UserControl>

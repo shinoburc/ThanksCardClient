@@ -30,15 +30,14 @@ namespace ThanksCardClient.ViewModels
             set { SetProperty(ref _AuthorizedUser, value); }
         }
         #endregion
-
         public ThanksCardListViewModel(IRegionManager regionManager)
         {
-
+            
             this.regionManager = regionManager;
             this.AuthorizedUser = SessionService.Instance.AuthorizedUser;
-            this._SearchWord = this.AuthorizedUser.Name;
+           //this._SearchWord = this.AuthorizedUser.Name;
+            //this._rogin = this.AuthorizedUser.Name;
         }
-
         #region SearchWordProperty
         private string _SearchWord;
         public string SearchWord
@@ -50,6 +49,19 @@ namespace ThanksCardClient.ViewModels
                 System.Diagnostics.Debug.WriteLine("SearchWord: " + this.SearchWord); //動作確認用。本来はこの行は必要ありません。
             }
             
+        }
+        #endregion
+        #region roginProperty
+        private string _rogin;
+        public string rogin
+        {
+            get { return _rogin; }
+            set
+            {
+                SetProperty(ref _rogin, value);
+                System.Diagnostics.Debug.WriteLine("rogin: " + this.rogin); //動作確認用。本来はこの行は必要ありません。
+            }
+
         }
         #endregion
 

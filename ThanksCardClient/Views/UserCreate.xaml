@@ -14,15 +14,51 @@
         </Grid.Background>
         <StackPanel>
             <TextBlock Text="{Binding ErrorMessage}" Foreground="Red"/>
-            <TextBlock Text="社員名:"/>
-            <TextBox Text="{Binding User.Name}"/>
-            <TextBlock Text="Password:"/>
-            <TextBox Text="{Binding User.Password}"/>
-            <TextBlock Text="IsAdmin:"/>
-            <CheckBox IsChecked="{Binding User.IsAdmin}"/>
-            <TextBlock Text="所属:"/>
-            <ComboBox ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValue="{Binding User.DepartmentId}" SelectedValuePath="Id"/>
-            <Button Content="Submit" Command="{Binding SubmitCommand}"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="新規社員登録:" Width="103" Height="19"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Canvas>
+                    <TextBlock Text="社員名の変更:" Width="104" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" Height="15" VerticalAlignment="Top" Canvas.Top="16">
+                        <TextBlock.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform AngleX="0"/>
+                                <RotateTransform/>
+                                <TranslateTransform X="0"/>
+                            </TransformGroup>
+                        </TextBlock.RenderTransform>
+                    </TextBlock>
+                </Canvas>
+                <Canvas/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Canvas>
+                    <TextBlock Text="退社・再入社登録:" Width="103" HorizontalAlignment="Center" Height="17" VerticalAlignment="Top" Canvas.Top="48"/>
+                </Canvas>
+                <Canvas>
+                    <TextBox Text="{Binding User.Password}" Width="139" HorizontalAlignment="Left" Height="21" VerticalAlignment="Center" Canvas.Top="49" Canvas.Left="104"/>
+                </Canvas>
+                <Canvas>
+                    <Button Content="" Width="115" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="345" Height="16" Canvas.Top="15"/>
+                </Canvas>
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Canvas>
+                    <TextBlock Text="社員削除:" Width="102" Height="19" HorizontalAlignment="Center" Canvas.Top="89" VerticalAlignment="Top" Canvas.Left="1"/>
+                </Canvas>
+
+                <Canvas>
+                    <Button Content="社員削除画面へ移動" Command="{Binding DeleteCommand}" Width="111" HorizontalAlignment="Left" Height="21" VerticalAlignment="Center" Canvas.Top="87" Canvas.Left="116"/>
+                </Canvas>
+
+            </StackPanel>
+
+            <Canvas>
+                <Button Content="登録" Command="{Binding SubmitCommand}" Width="95" HorizontalAlignment="Left" Canvas.Left="115" Canvas.Top="-23" VerticalAlignment="Top" Height="23"/>
+            </Canvas>
+
         </StackPanel>
     </Grid>
 </UserControl>

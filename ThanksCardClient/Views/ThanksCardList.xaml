@@ -13,28 +13,11 @@
             <StackPanel.Background>
                 <ImageBrush ImageSource="/Views/wallpaper_00001.jpg"/>
             </StackPanel.Background>
-
-             <!--ユーザー表示-->
-            <TextBlock Text="{Binding SearchWord}"/>
-
-
+            <!--ユーザー表示-->
+            <TextBlock Text="{Binding rogin}"/>
             <StackPanel Orientation=" Horizontal">
-                <TextBlock Text="To:" Width="261" TextAlignment="Right"/>
-                <TextBox Height="22" RenderTransformOrigin="0.5,0.5" Width="300" TextChanged="TextBox_TextChanged" Text="{Binding SearchWord2}">
-
-                    <TextBox.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform ScaleY="1" ScaleX="1"/>
-                            <SkewTransform/>
-                            <RotateTransform/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </TextBox.RenderTransform>
-                </TextBox>
-            </StackPanel>
-            <StackPanel Orientation=" Horizontal">
-                <TextBlock Text="From:" TextAlignment="Right" Width="261"/>
-                <TextBox Height="24" RenderTransformOrigin="0.5,0.5" Width="300" Text="{Binding SearchWord}">
+                <TextBlock Text="検索:" Width="261" TextAlignment="Right"/>
+                <TextBox Height="22" RenderTransformOrigin="0.5,0.5" Width="300" TextChanged="TextBox_TextChanged" Text="{Binding SearchWord}">
                     <TextBox.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform ScaleY="1" ScaleX="1"/>
@@ -46,13 +29,11 @@
                 </TextBox>
             </StackPanel>
             <Button Content="検索" Command="{Binding SubmitSearchCommand}" CommandParameter="{Binding SearchWord}" Width="126"/>
-            <Button Content="検索2" Command="{Binding SubmitSearchCommand2}" CommandParameter="{Binding SearchWord2}" Width="126"/>
-            
             <DataGrid ItemsSource="{Binding ThanksCards}" AutoGenerateColumns="False" CanUserAddRows="False" SelectionChanged="DataGrid_SelectionChanged" Height="216" Width="738">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
-                    <DataGridTextColumn Header="To" Binding="{Binding To.Name}" />
-                    <DataGridTextColumn Binding="{Binding Body}"  Width="500"/>
+                    <DataGridTextColumn Header="To" Binding="{Binding To.Name}"/>
+                    <DataGridTextColumn Header="感謝カード" Binding="{Binding Body}"  Width="500"/>
                     <DataGridTextColumn Header="From" Binding="{Binding From.Name}" />
                     <DataGridTextColumn Header="作成日時" Binding="{Binding CreatedDateTime}" />
                     <DataGridTemplateColumn Header="詳細">
